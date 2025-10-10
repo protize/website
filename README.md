@@ -1,13 +1,10 @@
-# Astrolus - A Modern Content-Driven Tech Website
+# Protize - A Modern Portfolio Website
 
-Astrolus is a modern, content-driven tech website template built with **Astro** and **Tailwind CSS**, leveraging **Tailus UI blocks** for fast, responsive, and visually appealing design. Ideal for startups, tech blogs, or SaaS landing pages, it offers performance, flexibility, and easy customization.
-
-![Tailus Astro-based Light Theme](./public/astrolus-light.png)
-![Tailus Astro-based Dark Theme](./public/astrolus-dark.png)
+Protize is a modern, content-driven portfolio website built with **Astro** and **Tailwind CSS**, leveraging **Tailus UI blocks** for fast, responsive, and visually appealing design.
 
 ## 🛠️ Technology Stack
 
-Astrolus is built using a modern, performant, and scalable web stack:
+Protize is built using a modern, performant, and scalable web stack:
 
 - **Astro** – The all-in-one web framework optimized for content-driven sites  
 - **Tailwind CSS** – A utility-first CSS framework for rapid UI development  
@@ -31,11 +28,11 @@ Before you start, ensure you have the following installed on your system:
 
 ### 2. **Installation**
 
-Follow these steps to set up the Astrolus project locally:
+Follow these steps to set up the Protize project locally:
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/<your-username>/protize-website.git
+git clone git@github.com:protize/protize-website.git
 cd protize-website
 ```
 
@@ -48,25 +45,6 @@ npm install
 ```bash
 npm run dev
 ```
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
 
 ## 🧞 Commands
 
@@ -106,8 +84,9 @@ Create branches with descriptive names encapsulating the purpose of the changes:
 
 Examples:
 
-- `feat/checkout-process`
-- `fix/payment-timeout`
+- `feat/add-contact-form`
+- `fix/fix-header-layout`
+- `docs/update-readme`
 - `docs/readme-revision`
 
 ### Pull Requests and Merging
