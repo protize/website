@@ -20,11 +20,11 @@ Protize is built using a modern, performant, and scalable web stack:
 
 Before you start, ensure you have the following installed on your system:
 
-- **Node.js** (v18 or higher) – [Download Node.js](https://nodejs.org/)  
-- **npm** (comes with Node.js) or **Yarn** – For managing project dependencies  
+- **Node.js** (v22 or higher) – [Download Node.js](https://nodejs.org/)  
+- **npm** (comes with Node.js) – For managing project dependencies  
 - **Git** – To clone the repository and manage version control  
 - **VS Code** or any code editor of your choice – Recommended for editing and development  
-- **GitHub account** – Required if you plan to deploy via GitHub Pages  
+- **GitHub account** – To use GitHub Actions for continuous deployment  
 
 ### 2. **Installation**
 
