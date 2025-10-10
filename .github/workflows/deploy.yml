@@ -3,7 +3,7 @@ name: Deploy Astro site to GitHub Pages
 on:
   push:
     branches:
-      - version-update  # trigger workflow on push to main branch
+      - main  # trigger workflow on push to main branch
 
 jobs:
   build:
