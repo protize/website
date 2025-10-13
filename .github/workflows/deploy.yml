@@ -3,7 +3,7 @@ name: Deploy Protize Website to GitHub Pages
 on:
   push:
     branches:
-      - improve-deploy  # trigger workflow on push to main branch
+      - main  # trigger workflow on push to main branch
 
 jobs:
   build:
