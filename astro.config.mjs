@@ -4,7 +4,6 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site:'https://protize.github.io/',
-  base:'/website',
+  site:'https:protize.com',
   integrations: [tailwind()]
 });
