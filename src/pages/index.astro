@@ -1,23 +1,22 @@
 ---
-import Stats from '../components/Stats.astro';
-import Services from '../components/Services.astro';
-import HeroSection from '../components/HeroSection.astro';
-import Layout from '../layouts/Layout.astro';
-import Testimonials from '../components/Testimonials.astro';
-import CallToAction from '../components/CallToAction.astro';
-import Blog from '../components/Blog.astro';
-
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/sections/Hero.astro";
+import Brands from "../components/sections/Brands.astro";
+import Services from "../components/sections/Services.astro";
+import FAQ from "../components/sections/FAQ.astro";
+import Features from "../components/sections/Features.astro";
+import CTA from "../components/sections/CTA.astro";
+import Solutions from "../components/sections/Solutions.astro";
 ---
 
-<Layout title="Welcome to Astrolus.">
-	<main class="space-y-40 mb-40">
-		<HeroSection/>
-		<Services/>
-		<!-- <Stats/>  -->
-		<Testimonials/> 
-		<!-- <CallToAction/>  -->
-		<!-- <Blog/>  -->
-		 <!-- <Careers/>  -->
-			
-	</main>
-</Layout> 
+<Layout title="Welcome to the Agency template">
+  <main class="flex flex-col overflow-hidden">
+    <Hero className="py-10 md:py-16" />
+    <Solutions className="pt-10 md:pt-16" />
+    <Services className="py-10 md:py-16" />
+    <Brands className="py-10 md:py-16" />
+    <Features className="py-10 md:py-16" />
+    <FAQ className="py-10 md:py-16" />
+    <CTA className="py-10 md:py-16" />
+  </main>
+</Layout>

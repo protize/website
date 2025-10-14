@@ -1,0 +1,58 @@
+---
+import { Image } from "astro:assets";
+import Container from "../shared/Container.astro";
+import Paragraph from "../shared/Paragraph.astro";
+
+import myHeroImage3 from "../../assets/images/hero3.jpg";
+import CtaButton from "../shared/CtaButton.astro";
+import GradiantText from "../shared/GradiantText.astro";
+import CounterSection from "./CounterSection.tsx";
+
+export interface Props {
+  className?: string;
+}
+
+const { className } = Astro.props;
+---
+
+<section class=`relative pt-32 lg:pt-34 ${className}`>
+  <Container className={"flex flex-col lg:flex-row gap-10 lg:gap-12"}>
+    <div
+      class="relative flex flex-col items-center text-center lg:text-left lg:py-7 xl:py-8
+        lg:items-start lg:max-w-none max-w-3xl mx-auto lg:mx-0 lg:flex-1 lg:w-1/2 space-y-6"
+    >
+      <h1
+        class="text-4xl/tight sm:text-5xl/tight xl:text-6xl/tight
+             font-bold text-heading-1"
+      >
+        Reimagine Your <br />
+        <GradiantText>Digital Strategy</GradiantText>
+        with Protize!
+      </h1>
+      <Paragraph>
+        Unlock the full potential of your business with cutting-edge technology
+        solutions. Enhance efficiency, drive innovation, and stay ahead in the
+        digital era with Protize Tech.
+      </Paragraph>
+
+      <CtaButton />
+    </div>
+
+    <div
+      class="flex items-center justify-center flex-1 lg:w-1/2 lg:h-auto relative lg:max-w-none lg:mx-0 mx-auto max-w-3xl"
+    >
+      <Image
+        src={myHeroImage3}
+        alt="Hero image"
+        class="my-class"
+        width="2350"
+        height="2359"
+        class="lg:absolute lg:w-full lg:h-full rounded-3xl object-cover lg:max-h-none max-h-96"
+      />
+    </div>
+  </Container>
+
+  <Container className="mt-10">
+    <CounterSection client:load />
+  </Container>
+</section>
