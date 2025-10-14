@@ -1,7 +1,197 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+// Update these image paths to your actual assets.
+// Suggested structure:
+// /public/images/protize/hero-services.jpg
+// /public/images/protize/services/web-app.webp
+// /public/images/protize/services/mobile-app.webp
+// /public/images/protize/services/ui-ux.webp
+// /public/images/protize/services/devops.webp
+// /public/images/protize/services/data.webp
+// /public/images/protize/services/consulting.webp
+
+const services = [
+  {
+    title: "Web Apps (MERN / Next.js)",
+    blurb:
+      "Production-ready web applications with robust backends, secure auth, payments, and analytics. Built for scale and speed.",
+    image: "/images/protize/services/web-app.webp",
+    points: ["Next.js 15 + SSR/ISR", "NestJS APIs", "PostgreSQL / Redis"],
+  },
+  {
+    title: "Mobile Apps",
+    blurb:
+      "High-quality Android/iOS apps with clean architecture, offline support, and smooth CI/CD for rapid releases.",
+    image: "/images/protize/services/mobile-app.webp",
+    points: ["Flutter / React Native", "Crash-free UX", "Play/App Store setup"],
+  },
+  {
+    title: "UI/UX Design",
+    blurb:
+      "Conversion-oriented design systems, design tokens, and component libraries tailored to your brand.",
+    image: "/images/protize/services/ui-ux.webp",
+    points: ["Design systems", "Rapid prototyping", "Accessibility (WCAG)"],
+  },
+  {
+    title: "Cloud & DevOps",
+    blurb:
+      "Automated infrastructure that’s observable, scalable, and cost-efficient across AWS and modern tooling.",
+    image: "/images/protize/services/devops.webp",
+    points: ["AWS / Docker", "CI/CD pipelines", "Monitoring & alerts"],
+  },
+  {
+    title: "Data & Analytics",
+    blurb:
+      "Dashboards and pipelines that turn raw data into decisions—reliability, quality, and real-time insight.",
+    image: "/images/protize/services/data.webp",
+    points: ["ETL/ELT pipelines", "Real-time metrics", "BI dashboards"],
+  },
+  {
+    title: "Product Consulting",
+    blurb:
+      "From MVP to enterprise scale—roadmaps, architecture reviews, cost audits, and growth experiments.",
+    image: "/images/protize/services/consulting.webp",
+    points: ["Tech strategy", "Architecture audits", "Cost optimization"],
+  },
+];
 ---
 
-<Layout title="Welcome to Astrolus.">
-  <main class="space-y-40 mb-40">services</main>
+<Layout title="Services • Protize">
+  <main class="space-y-24 md:space-y-32 mb-24">
+    <!-- Hero -->
+    <section class="relative isolate overflow-hidden">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-center py-14 md:py-24">
+        <div class="space-y-6">
+          <span class="inline-flex items-center rounded-full border px-3 py-1 text-xs font-medium tracking-wide">
+            Protize • Services
+          </span>
+          <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">
+            We design, build & scale<br class="hidden md:block" /> modern products.
+          </h1>
+          <p class="text-base md:text-lg opacity-80 leading-relaxed">
+            From rapid MVPs to high-availability platforms—Protize partners with you across
+            product, engineering, and cloud to deliver outcomes that matter.
+          </p>
+          <div class="flex gap-3">
+            <a href="/contact" class="rounded-xl px-5 py-3 text-sm font-semibold bg-black text-white hover:opacity-90 transition">
+              Start a project
+            </a>
+            <a href="/works" class="rounded-xl px-5 py-3 text-sm font-semibold border hover:bg-black/5 transition">
+              See our work
+            </a>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="aspect-[16/10] w-full overflow-hidden rounded-2xl shadow-xl ring-1 ring-black/5">
+            <img
+              src="/images/protize/hero-services.jpg"
+              alt="Protize – building modern software products"
+              class="h-full w-full object-cover"
+              loading="eager"
+              width="1280"
+              height="800"
+            />
+          </div>
+          <!-- Subtle glow -->
+          <div class="pointer-events-none absolute -inset-8 -z-10 blur-3xl opacity-40"
+               style="background: radial-gradient(40% 40% at 70% 30%, rgba(99,102,241,.35), transparent 60%);">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mb-10 md:mb-14 text-center">
+        <h2 class="text-2xl md:text-4xl font-bold">What we do</h2>
+        <p class="mt-3 text-sm md:text-base opacity-80">
+          Opinionated tech, clean delivery, measurable value.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        {services.map((s) => (
+          <article class="group rounded-2xl border bg-white/60 backdrop-blur supports-[backdrop-filter]:bg-white/40 shadow-sm hover:shadow-lg transition overflow-hidden">
+            <div class="aspect-[16/10] overflow-hidden">
+              <img
+                src={s.image}
+                alt={s.title}
+                class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                loading="lazy"
+                width="640"
+                height="400"
+              />
+            </div>
+            <div class="p-5 md:p-6 space-y-3">
+              <h3 class="text-xl font-semibold">{s.title}</h3>
+              <p class="text-sm opacity-80 leading-relaxed">{s.blurb}</p>
+              <ul class="mt-3 flex flex-wrap gap-2">
+                {s.points.map((p) => (
+                  <li class="text-xs px-2.5 py-1 rounded-full border">{p}</li>
+                ))}
+              </ul>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-10 items-center rounded-3xl border p-6 md:p-10">
+        <div class="space-y-5">
+          <h2 class="text-2xl md:text-4xl font-bold">A clear, outcomes-first process</h2>
+          <p class="text-sm md:text-base opacity-80">
+            We keep feedback loops short and progress visible—from discovery to launch.
+            You’ll always know what’s shipped, what’s next, and why.
+          </p>
+          <ol class="grid sm:grid-cols-2 gap-3 text-sm">
+            <li class="rounded-xl border p-4">
+              <span class="font-semibold">1. Discover</span>
+              <p class="opacity-80">Goals, risks, and constraints.</p>
+            </li>
+            <li class="rounded-xl border p-4">
+              <span class="font-semibold">2. Design</span>
+              <p class="opacity-80">Flows, wireframes, design system.</p>
+            </li>
+            <li class="rounded-xl border p-4">
+              <span class="font-semibold">3. Build</span>
+              <p class="opacity-80">Incremental sprints & demos.</p>
+            </li>
+            <li class="rounded-xl border p-4">
+              <span class="font-semibold">4. Scale</span>
+              <p class="opacity-80">Observability, cost, resilience.</p>
+            </li>
+          </ol>
+        </div>
+        <div class="aspect-[16/10] w-full overflow-hidden rounded-2xl shadow-sm ring-1 ring-black/5">
+          <img
+            src="/images/protize/services/ui-ux.webp"
+            alt="Design to delivery workflow"
+            class="h-full w-full object-cover"
+            loading="lazy"
+            width="1280"
+            height="800"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="rounded-3xl bg-black text-white p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div>
+          <h3 class="text-2xl md:text-3xl font-bold">Build with Protize</h3>
+          <p class="mt-2 opacity-90">
+            Tell us your vision—let’s craft something users love.
+          </p>
+        </div>
+        <a href="/contact" class="rounded-xl bg-white text-black px-5 py-3 font-semibold hover:opacity-90 transition">
+          Book a free consult →
+        </a>
+      </div>
+    </section>
+  </main>
 </Layout>
