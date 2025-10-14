@@ -14,7 +14,7 @@ export default function CounterSection() {
     const duration = 2000;
     const startTime = performance.now();
 
-    const animate = (currentTime) => {
+    const animate = (currentTime: number) => {
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
 
