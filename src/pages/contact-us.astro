@@ -1,7 +1,302 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Container from "../components/shared/Container.astro";
 ---
 
-<Layout title="Welcome to Astrolus.">
-  <main class="space-y-40 mb-40">contact us page content</main>
+<Layout title="Contact • Protize">
+  <main
+    class="space-y-10 md:space-y-20 mb-24 bg-gradient-to-b from-white via-purple-50/40 to-white"
+  >
+    <!-- Hero -->
+    <section class="pt-10 md:pt-16">
+      <Container>
+        <div class="max-w-3xl text-center mx-auto">
+          <h1
+            class="text-2xl sm:text-3xl md:text-5xl font-extrabold leading-tight text-neutral-900"
+          >
+            Let’s build something exceptional together.
+          </h1>
+          <p class="mt-3 text-sm sm:text-base md:text-lg text-neutral-700">
+            Tell us a bit about your goals — our team will reach out within 1
+            business day.
+          </p>
+        </div>
+      </Container>
+    </section>
+
+    <section>
+      <Container>
+        <div class="grid gap-8 items-center">
+          <form
+            action="/api/contact"
+            method="POST"
+            class="rounded-2xl border-2 border-purple-200 bg-white p-6 md:p-8 shadow-sm hover:shadow-md transition space-y-6"
+          >
+            <!-- Honeypot -->
+            <input
+              type="text"
+              name="_hp"
+              class="hidden"
+              tabindex="-1"
+              autocomplete="off"
+            />
+
+            <div class="grid gap-4 sm:grid-cols-2">
+              <div>
+                <label
+                  for="name"
+                  class="block text-sm font-medium text-neutral-800"
+                  >Full name</label
+                >
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  required
+                  placeholder="Jane Doe"
+                  class="mt-1 w-full rounded-xl border border-purple-300 bg-white px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-purple-500"
+                />
+              </div>
+
+              <div>
+                <label
+                  for="company"
+                  class="block text-sm font-medium text-neutral-800"
+                  >Company Name</label
+                >
+                <input
+                  id="company"
+                  name="company"
+                  type="text"
+                  placeholder="Acme Inc."
+                  class="mt-1 w-full rounded-xl border border-purple-300 bg-white px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-purple-500"
+                />
+              </div>
+
+              <div>
+                <label
+                  for="email"
+                  class="block text-sm font-medium text-neutral-800"
+                  >Email</label
+                >
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                  placeholder="jane@company.com"
+                  class="mt-1 w-full rounded-xl border border-purple-300 bg-white px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-purple-500"
+                />
+              </div>
+
+              <div>
+                <label
+                  for="phone"
+                  class="block text-sm font-medium text-neutral-800"
+                  >Email</label
+                >
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  placeholder="9876543210"
+                  class="mt-1 w-full rounded-xl border border-purple-300 bg-white px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-purple-500"
+                />
+              </div>
+
+              <div class="sm:col-span-2">
+                <label
+                  for="message"
+                  class="block text-sm font-medium text-neutral-800"
+                  >Project details</label
+                >
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  rows="6"
+                  placeholder="Goals, scope, timeline, constraints…"
+                  class="mt-1 w-full rounded-xl border border-purple-300 bg-white px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-purple-500"
+                ></textarea>
+              </div>
+
+              <div class="sm:col-span-2 flex items-start gap-3">
+                <input
+                  id="consent"
+                  name="consent"
+                  type="checkbox"
+                  required
+                  class="mt-1 h-4 w-4 rounded border-neutral-300 text-purple-600 focus:ring-purple-500"
+                />
+                <label for="consent" class="text-sm text-neutral-700">
+                  I agree to be contacted by Protize regarding my inquiry.
+                </label>
+              </div>
+            </div>
+
+            <div class="pt-2">
+              <button
+                type="submit"
+                class="inline-flex items-center justify-center rounded-xl bg-purple-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-purple-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400"
+              >
+                Send message
+              </button>
+              <p class="mt-2 text-xs text-neutral-500">
+                We typically reply within 1 business day.
+              </p>
+            </div>
+          </form>
+        </div>
+      </Container>
+    </section>
+
+    <section>
+      <Container>
+        <div class="grid gap-8 lg:gap-12 lg:grid-cols-5">
+          <aside
+            class="lg:col-span-2 rounded-2xl border-2 border-purple-300 bg-white p-6 md:p-8 shadow-sm hover:shadow-md transition space-y-6"
+          >
+            <div>
+              <h2
+                class="text-xl font-semibold text-purple-900 flex items-center gap-2"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 text-purple-700"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3 5h18M8 5v14m8-14v14M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  ></path>
+                </svg>
+                Contact Details
+              </h2>
+              <p class="mt-1 text-sm text-neutral-600">
+                Prefer email or a quick call? We’re here to help.
+              </p>
+            </div>
+
+            <ul class="space-y-4 text-sm">
+              <li class="flex items-start gap-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 mt-0.5 text-purple-700 flex-shrink-0"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21.75 6.75l-9 5.25-9-5.25M3 6.75v10.5A2.25 2.25 0 005.25 19.5h13.5A2.25 2.25 0 0021 17.25V6.75"
+                  ></path>
+                </svg>
+                <div>
+                  <span class="block text-neutral-500">Email</span>
+                  <a
+                    href="mailto:hello@protize.dev"
+                    class="font-medium text-purple-700 hover:text-purple-900"
+                  >
+                    hello@protize.dev
+                  </a>
+                </div>
+              </li>
+
+              <li class="flex items-start gap-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 mt-0.5 text-purple-700 flex-shrink-0"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M2.25 3.75A.75.75 0 013 3h4.25a.75.75 0 01.75.75v3.5a.75.75 0 01-.75.75H5.81a10.38 10.38 0 004.44 4.44v-1.44a.75.75 0 01.75-.75h3.5a.75.75 0 01.75.75V21a.75.75 0 01-.75.75A17.25 17.25 0 013 4.5a.75.75 0 01-.75-.75z"
+                  ></path>
+                </svg>
+                <div>
+                  <span class="block text-neutral-500">Phone</span>
+                  <a
+                    href="tel:+919876543210"
+                    class="font-medium text-purple-700 hover:text-purple-900"
+                  >
+                    +91 98765 43210
+                  </a>
+                </div>
+              </li>
+
+              <li class="flex items-start gap-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 mt-0.5 text-purple-700 flex-shrink-0"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 2.25c4.97 0 9 3.806 9 8.5 0 6.25-9 11-9 11S3 17 3 10.75c0-4.694 4.03-8.5 9-8.5z"
+                  ></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <div>
+                  <span class="block text-neutral-500">Address</span>
+                  <address
+                    class="not-italic font-medium text-purple-700 leading-relaxed"
+                  >
+                    Protize Technologies<br />
+                    12th Main, Indiranagar<br />
+                    Bengaluru, KA 560038, India
+                  </address>
+                </div>
+              </li>
+            </ul>
+
+            <div class="pt-2 border-t border-purple-100 mt-4">
+              <p class="text-xs text-neutral-500">
+                Office hours: Mon–Fri, 9:30–18:30 IST
+              </p>
+            </div>
+          </aside>
+
+          <section class="lg:col-span-3">
+            <div class="space-y-3 text-center">
+              <h2 class="text-xl md:text-3xl font-semibold text-purple-900">
+                Find us
+              </h2>
+              <p class="text-sm text-neutral-700">
+                We’re based in Indiranagar, Bengaluru. Drop by for a coffee and
+                a product chat.
+              </p>
+            </div>
+
+            <div
+              class="mt-6 aspect-[16/9] w-full overflow-hidden rounded-2xl border-2 border-purple-200 shadow-md"
+            >
+              <iframe
+                title="Protize Office Location"
+                width="100%"
+                height="100%"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                class="h-full w-full"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.0307191736307!2d77.640833!3d12.971891!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1402f2f9c5cf%3A0x0000000000000000!2sIndiranagar%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1699999999999"
+              ></iframe>
+            </div>
+          </section>
+        </div>
+      </Container>
+    </section>
+  </main>
 </Layout>
