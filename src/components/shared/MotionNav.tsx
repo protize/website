@@ -3,12 +3,62 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function MobileNav({ navItems = [] }) {
   const [open, setOpen] = useState(false);
+
+  const BASE =
+    (typeof import.meta !== "undefined" &&
+      import.meta.env &&
+      import.meta.env.BASE_URL) ||
+    "/";
+
+  const normalize = (path) => {
+    if (!path) return "/";
+    let p = path.startsWith("/") ? path : "/" + path;
+
+    try {
+      const u = new URL(p, window.location.origin);
+      p = u.pathname;
+    } catch {}
+
+    if (BASE && BASE !== "/" && p.startsWith(BASE)) {
+      p = p.slice(BASE.length - 1);
+    }
+
+    p = p.replace(/index\.html$/i, "");
+
+    if (p.length > 1 && p.endsWith("/")) p = p.slice(0, -1);
+
+    return p || "/";
+  };
+
+  const getCurrent = () => normalize(window.location.pathname);
+
   const [activePath, setActivePath] = useState("/");
 
   useEffect(() => {
-    // Set current path on mount
-    setActivePath(window.location.pathname);
+    setActivePath(getCurrent());
+
+    const onPop = () => setActivePath(getCurrent());
+    window.addEventListener("popstate", onPop);
+    window.addEventListener("hashchange", onPop);
+    return () => {
+      window.removeEventListener("popstate", onPop);
+      window.removeEventListener("hashchange", onPop);
+    };
   }, []);
+
+  const isActiveHref = (href) => {
+    let targetPath = "/";
+    try {
+      targetPath = normalize(new URL(href, window.location.origin).pathname);
+    } catch {
+      targetPath = normalize(href);
+    }
+
+    return (
+      activePath === targetPath ||
+      (targetPath !== "/" && activePath.startsWith(targetPath + "/"))
+    );
+  };
 
   return (
     <div className="lg:hidden flex items-center relative">
@@ -64,7 +114,18 @@ export default function MobileNav({ navItems = [] }) {
                     <li key={item.text}>
                       <a
                         href={item.href}
-                        onClick={() => setOpen(false)}
+                        onClick={(e) => {
+                          try {
+                            const target = new URL(
+                              item.href,
+                              window.location.origin
+                            ).pathname;
+                            setActivePath(normalize(target));
+                          } catch {
+                            setActivePath(normalize(item.href));
+                          }
+                          setOpen(false);
+                        }}
                         className={`block font-semibold transition-colors py-2 ${
                           isActive
                             ? "text-primary"
