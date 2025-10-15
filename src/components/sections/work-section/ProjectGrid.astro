@@ -203,7 +203,7 @@ const allTags = Array.from(new Set(projects.flatMap((p) => p.tags))).sort();
   const cards = Array.from(grid?.children ?? []);
   const pills = Array.from(document.querySelectorAll(".filter-pill"));
 
-  function applyFilter(tag) {
+  function applyFilter(tag: string) {
     cards.forEach((card) => {
       if (tag === "*") {
         card.classList.remove("hidden");
