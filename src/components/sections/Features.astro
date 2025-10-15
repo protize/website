@@ -8,66 +8,66 @@ type FeatureProps = {
   title: string;
   description: string;
 };
-const features = [
+const features: FeatureProps[] = [
   {
-    title: "Advanced Analytics",
+    title: "Architecture-First Delivery",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+      "Design docs, ADRs, and performance budgets up front—so change stays cheap and delivery stays predictable.",
   },
   {
-    title: "Targeted Ad Campaigns",
+    title: "Modern Web & App Engineering",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+      "Next.js/Astro frontends, NestJS APIs, TypeScript everywhere. Clean modules, clear boundaries, fast UIs.",
   },
   {
-    title: "Content Calendar Management",
+    title: "Payments & Fintech Expertise",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+      "Payins, payouts, settlements, chargebacks, and merchant dashboards—built with compliance guardrails.",
   },
   {
-    title: "Influencer Collaborations",
+    title: "Data & Analytics Pipelines",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+      "PostgreSQL time-series, ETL with BullMQ/Python, exports to CSV/Excel, and actionable KPI dashboards.",
   },
   {
-    title: "Customized Reporting",
+    title: "Cloud & DevOps at Scale",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+      "AWS, Docker, pnpm/Nx monorepos, and GitHub Actions CI/CD—secure, reproducible, and cost-aware.",
   },
   {
-    title: "A/B Testing",
+    title: "SRE Mindset",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+      "SLIs/SLOs, error budgets, on-call playbooks, and sensible alerts. Reliability designed in, not bolted on.",
   },
   {
-    title: "Social Listening",
+    title: "Security by Default",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+      "Least-privilege IAM, secret hygiene, audit trails, rate limits, and disaster recovery from day one.",
   },
   {
-    title: "Trend Analysis",
+    title: "Observability that Matters",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+      "Traces, logs, and metrics tied to business KPIs—so issues are found early and fixed quickly.",
   },
   {
-    title: "24/7 Customer Support",
+    title: "Performance Budgets",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+      "Guardrails for latency, throughput, and cost—kept green through CI checks and regression gates.",
   },
   {
-    title: "Cross-Platform Integration",
+    title: "0-to-Launch Playbooks",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+      "Environment templates, staging parity, cutover plans, and rollback switches for calm releases.",
   },
   {
-    title: "Dynamic Content Personalization",
+    title: "Automation & Workflows",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+      "Bots, webhooks, and RPA-style tasks to remove manual toil across ops, support, and reporting.",
   },
   {
-    title: "Competitor Analysis and Benchmarking",
+    title: "Support & Stewardship",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+      "SLA-backed maintenance, dependency hygiene, and continuous tuning to keep systems healthy.",
   },
 ];
 
@@ -80,15 +80,17 @@ const { className } = Astro.props;
 
 <section id="features" class=`${className}`>
   <Container className="">
-    <div class="text-center max-w-3xl mx-auto">
+    <div class="text-center max-w-4xl mx-auto">
       <Title>
-        We provide <GradiantText>Important <br />Features</GradiantText> for Digital
-        Marketing
+        We build <GradiantText>Essential Features</GradiantText> for Modern IT Products
       </Title>
+      <p class="mt-2 text-sm md:text-base text-gray-600">
+        From architecture to operations—Protize ships durable systems with
+        measurable outcomes.
+      </p>
     </div>
+
     <div class="flex flex-row flex-wrap mt-8">
-      <!-- <div class="flex flex-col lg:gap-10 lg:gap-12 midmd:flex-row mt-8"> -->
-      <!-- <div class="flex  lg:w-1/2 flex-row"> -->
       {
         features.map((feature: FeatureProps) => {
           return (
@@ -101,7 +103,6 @@ const { className } = Astro.props;
           );
         })
       }
-      <!-- </div> -->
     </div>
   </Container>
 </section>

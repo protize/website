@@ -1,152 +1,279 @@
-import visibilityDilemma from "../assets/images/visibility-dilemma.jpg";
-import engagementGap from "../assets/images/engagement-gap.jpg";
-import resultsInHibernation from "../assets/images/results-in-hibernation.jpg";
+import team1 from "../assets/team/team-01.png";
+import team2 from "../assets/team/team-02.png";
 
 const services = [
   {
-    title: "Precision Targeting",
+    title: "Web & App Engineering",
     features: [
-      "Advanced Audience Segmentation",
-      "Data-Driven Insights",
-      "Personalized Content Creation",
+      "Next.js/Astro frontends, PWA ready",
+      "NestJS APIs with PostgreSQL",
+      "TypeScript-first, modular code",
     ],
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" stroke-width="1.5" fill="currentColor" class="w-6 h-6"><path d="M256 0c17.7 0 32 14.3 32 32V42.4c93.7 13.9 167.7 88 181.6 181.6H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H469.6c-13.9 93.7-88 167.7-181.6 181.6V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V469.6C130.3 455.7 56.3 381.7 42.4 288H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H42.4C56.3 130.3 130.3 56.3 224 42.4V32c0-17.7 14.3-32 32-32zM107.4 288c12.5 58.3 58.4 104.1 116.6 116.6V384c0-17.7 14.3-32 32-32s32 14.3 32 32v20.6c58.3-12.5 104.1-58.4 116.6-116.6H384c-17.7 0-32-14.3-32-32s14.3-32 32-32h20.6C392.1 165.7 346.3 119.9 288 107.4V128c0 17.7-14.3 32-32 32s-32-14.3-32-32V107.4C165.7 119.9 119.9 165.7 107.4 224H128c17.7 0 32 14.3 32 32s-14.3 32-32 32H107.4zM256 224a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg>`,
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="currentColor" class="w-6 h-6"><path d="M64 48C28.7 48 0 76.7 0 112v288c0 35.3 28.7 64 64 64H224V48H64zM544 48H256V464H544c17.7 0 32-14.3 32-32V80c0-17.7-14.3-32-32-32z"/></svg>`,
   },
   {
-    title: "Captivating Content",
+    title: "Fintech & Payments",
     features: [
-      "Creative Storytelling",
-      "Compelling Visuals",
-      "Interactive Media",
+      "Payins, payouts, settlements",
+      "Chargebacks & reconciliation",
+      "Merchant dashboards & KYC flows",
     ],
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" stroke-width="1.5" fill="currentColor" class="w-6 h-6"><path d="M0 80v48c0 17.7 14.3 32 32 32H48 96V80c0-26.5-21.5-48-48-48S0 53.5 0 80zM112 32c10 13.4 16 30 16 48V384c0 35.3 28.7 64 64 64s64-28.7 64-64v-5.3c0-32.4 26.3-58.7 58.7-58.7H480V128c0-53-43-96-96-96H112zM464 480c61.9 0 112-50.1 112-112c0-8.8-7.2-16-16-16H314.7c-14.7 0-26.7 11.9-26.7 26.7V384c0 53-43 96-96 96H368h96z"/></svg>`,
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" fill="currentColor" class="w-6 h-6"><path d="M0 128C0 92.7 28.7 64 64 64H576c35.3 0 64 28.7 64 64v32H0V128zM0 208H640V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V208zM96 320a32 32 0 1 0 0 64 32 32 0 1 0 0-64z"/></svg>`,
   },
   {
-    title: "Tangible Outcomes",
+    title: "Cloud & DevOps",
     features: [
-      "Comprehensive Analytics",
-      "Goal Tracking",
-      "Conversion Optimization",
+      "AWS (EC2, RDS, S3, CloudFront)",
+      "Docker & CI/CD (GitHub Actions)",
+      "Scalability, caching & cost control",
     ],
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" stroke-width="1.5" fill="currentColor" class="w-6 h-6"><path d="M64 64c0-17.7-14.3-32-32-32S0 46.3 0 64V400c0 44.2 35.8 80 80 80H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H80c-8.8 0-16-7.2-16-16V64zm406.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L320 210.7l-57.4-57.4c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L240 221.3l57.4 57.4c12.5 12.5 32.8 12.5 45.3 0l128-128z"/></svg>`,
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" fill="currentColor" class="w-6 h-6"><path d="M400 96a112 112 0 0 0-214.4 32A96 96 0 1 0 128 416H512a96 96 0 0 0 16-191.1A112 112 0 0 0 400 96z"/></svg>`,
   },
   {
-    title: "Tailored Solutions",
+    title: "Data & Analytics",
     features: [
-      "Customized Strategies",
-      "Individualized Campaigns",
-      "Client-Centric Focus",
+      "Time-series dashboards & KPIs",
+      "ETL with BullMQ & Python",
+      "CSV/Excel exports & reports",
     ],
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" stroke-width="1.5" fill="currentColor" class="w-6 h-6"><path d="M192 104.8c0-9.2-5.8-17.3-13.2-22.8C167.2 73.3 160 61.3 160 48c0-26.5 28.7-48 64-48s64 21.5 64 48c0 13.3-7.2 25.3-18.8 34c-7.4 5.5-13.2 13.6-13.2 22.8c0 12.8 10.4 23.2 23.2 23.2H336c26.5 0 48 21.5 48 48v56.8c0 12.8 10.4 23.2 23.2 23.2c9.2 0 17.3-5.8 22.8-13.2c8.7-11.6 20.7-18.8 34-18.8c26.5 0 48 28.7 48 64s-21.5 64-48 64c-13.3 0-25.3-7.2-34-18.8c-5.5-7.4-13.6-13.2-22.8-13.2c-12.8 0-23.2 10.4-23.2 23.2V464c0 26.5-21.5 48-48 48H279.2c-12.8 0-23.2-10.4-23.2-23.2c0-9.2 5.8-17.3 13.2-22.8c11.6-8.7 18.8-20.7 18.8-34c0-26.5-28.7-48-64-48s-64 21.5-64 48c0 13.3 7.2 25.3 18.8 34c7.4 5.5 13.2 13.6 13.2 22.8c0 12.8-10.4 23.2-23.2 23.2H48c-26.5 0-48-21.5-48-48V343.2C0 330.4 10.4 320 23.2 320c9.2 0 17.3 5.8 22.8 13.2C54.7 344.8 66.7 352 80 352c26.5 0 48-28.7 48-64s-21.5-64-48-64c-13.3 0-25.3 7.2-34 18.8C40.5 250.2 32.4 256 23.2 256C10.4 256 0 245.6 0 232.8V176c0-26.5 21.5-48 48-48H168.8c12.8 0 23.2-10.4 23.2-23.2z"/></svg>`,
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" class="w-6 h-6"><path d="M32 32H96V480H32V32zM160 224h64V480H160V224zM288 128h64V480H288V128zM416 288h64V480H416V288z"/></svg>`,
   },
   {
-    title: "Reliable Assistance",
+    title: "AI & Automation",
     features: [
-      "Dedicated Account Managers",
-      "Prompt Customer Service",
-      "24/7 Support",
+      "Ops copilots & chatbots",
+      "Image/text pipelines & RPA",
+      "Slack/Telegram workflow bots",
     ],
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" stroke-width="1.5" fill="currentColor" class="w-6 h-6"><path d="M544 248v3.3l69.7-69.7c21.9-21.9 21.9-57.3 0-79.2L535.6 24.4c-21.9-21.9-57.3-21.9-79.2 0L416.3 64.5c-2.7-.3-5.5-.5-8.3-.5H296c-37.1 0-67.6 28-71.6 64H224V248c0 22.1 17.9 40 40 40s40-17.9 40-40V176c0 0 0-.1 0-.1V160l16 0 136 0c0 0 0 0 .1 0H464c44.2 0 80 35.8 80 80v8zM336 192v56c0 39.8-32.2 72-72 72s-72-32.2-72-72V129.4c-35.9 6.2-65.8 32.3-76 68.2L99.5 255.2 26.3 328.4c-21.9 21.9-21.9 57.3 0 79.2l78.1 78.1c21.9 21.9 57.3 21.9 79.2 0l37.7-37.7c.9 0 1.8 .1 2.7 .1H384c26.5 0 48-21.5 48-48c0-5.6-1-11-2.7-16H432c26.5 0 48-21.5 48-48c0-12.8-5-24.4-13.2-33c25.7-5 45.1-27.6 45.2-54.8v-.4c-.1-30.8-25.1-55.8-56-55.8c0 0 0 0 0 0l-120 0z"/></svg>`,
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" class="w-6 h-6"><path d="M256 32a64 64 0 1 1 0 128 64 64 0 1 1 0-128zM96 224h320a64 64 0 0 1 64 64v96a64 64 0 0 1-64 64H384v32a32 32 0 1 1-64 0V448H192v32a32 32 0 1 1-64 0V448H96a64 64 0 0 1-64-64V288a64 64 0 0 1 64-64z"/></svg>`,
   },
   {
-    title: "Ahead of the Curve",
+    title: "Security & Compliance",
     features: [
-      "Trend Analysis",
-      "Innovative Campaigns",
-      "Early Adoption of Social Media Trends",
+      "AuthN/Z, sessions, rate limits",
+      "PII handling & audit logs",
+      "Backups & disaster recovery",
     ],
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" stroke-width="1.5" fill="currentColor" class="w-6 h-6"><path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm306.7 69.1L162.4 380.6c-19.4 7.5-38.5-11.6-31-31l55.5-144.3c3.3-8.5 9.9-15.1 18.4-18.4l144.3-55.5c19.4-7.5 38.5 11.6 31 31L325.1 306.7c-3.2 8.5-9.9 15.1-18.4 18.4zM288 256a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"/></svg>`,
-  },
-];
-
-const solutions = [
-  {
-    title: "Operational Inefficiency",
-    painPoint:
-      "Your business processes are fragmented, leading to wasted time, resources, and missed opportunities.",
-    agitatepainPoint:
-      "Manual workflows and outdated systems slow down your team's productivity, making it hard to scale and respond quickly to market demands.",
-    solution:
-      "Protize Tech streamlines operations through automation and smart workflows, helping your business run efficiently and adapt faster. Explore how we optimize processes in our walkthrough.",
-    img: visibilityDilemma,
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor" class="w-6 h-6"><path d="M224 0L32 96V240c0 123.7 86.1 243.2 192 272 105.9-28.8 192-148.3 192-272V96L224 0z"/></svg>`,
   },
   {
-    title: "Limited Digital Reach",
-    painPoint:
-      "Your digital presence isn't reaching its full potential, leaving your products and services unnoticed by the right audience.",
-    agitatepainPoint:
-      "It's challenging when your website, apps, or campaigns don't generate the expected traffic or conversions. Your technology investments aren't paying off as they should.",
-    solution:
-      "We implement scalable digital strategies, leveraging modern platforms and analytics to expand your reach and engage the right audience. Discover our approach to amplifying digital presence.",
-    img: engagementGap,
+    title: "UI/UX & Branding",
+    features: [
+      "Design systems with Tailwind",
+      "Accessible, fast interfaces",
+      "Landing pages & blogs",
+    ],
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" class="w-6 h-6"><path d="M32 32H240V240H32V32zM272 32H480V240H272V32zM32 272H240V480H32V272zM272 272H480V480H272V272z"/></svg>`,
   },
   {
-    title: "Stalled Innovation",
-    painPoint:
-      "Your company struggles to keep up with technological advancements, impacting competitiveness and growth.",
-    agitatepainPoint:
-      "Falling behind on the latest tools and innovations can lead to lost opportunities and reduced market relevance. Your solutions may no longer fully meet client expectations.",
-    solution:
-      "Protize Tech drives innovation with cutting-edge technology solutions tailored to your business needs. See how we transform ideas into actionable tech strategies for measurable impact.",
-    img: resultsInHibernation,
+    title: "Support & Maintenance",
+    features: [
+      "24×7 monitoring & alerts",
+      "Performance tuning & upgrades",
+      "SLA-backed issue resolution",
+    ],
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="currentColor" class="w-6 h-6"><path d="M288 32a144 144 0 0 0-144 144v16H96a96 96 0 0 0-96 96v32a96 96 0 0 0 96 96h64V320H96v-32a32 32 0 0 1 32-32h16v64a144 144 0 0 0 288 0V256h16a32 32 0 0 1 32 32v32H416v64h64a96 96 0 0 0 96-96V272a96 96 0 0 0-96-96H432v-16A144 144 0 0 0 288 32z"/></svg>`,
   },
 ];
 
 const faqs = [
   {
-    question: "How can social media marketing benefit my business?",
+    question: "What does “architecture-first” mean at Protize?",
     answer:
-      "Social media marketing can significantly benefit your business by increasing brand awareness, engaging your target audience, driving website traffic, and generating leads. It also allows for direct interaction with your customers, fostering brand loyalty and providing valuable insights into consumer behavior.",
+      "We begin with concise design docs and ADRs that define APIs, data models, SLIs/SLOs, and performance budgets. This aligns stakeholders early and keeps delivery predictable as scope evolves.",
   },
   {
-    question: "What sets your agency apart from others?",
+    question: "Which tech stack do you specialize in?",
     answer:
-      "Our agency stands out through a combination of tailored strategies, data-driven decision-making, and a commitment to client collaboration. We prioritize understanding your unique business goals and offer personalized solutions that deliver measurable results.",
+      "We ship modern web and platform builds with NestJS, Next.js, Astro, PostgreSQL, BullMQ, Redis, AWS, Docker, and pnpm/Nx. For dashboards we use Tremor. We select components based on your SLAs, scale targets, and compliance needs.",
   },
   {
-    question: "How do you measure the success of social media campaigns?",
+    question: "How do you measure success?",
     answer:
-      "We employ a comprehensive approach to measure campaign success. This includes tracking key performance indicators (KPIs) such as engagement metrics, conversion rates, reach, and customer feedback. Our goal is to provide you with transparent and actionable insights into the effectiveness of your social media efforts.",
+      "Every project is tied to measurable KPIs: latency (p95/p99), throughput, success rate, error budgets, conversion, and cost ceilings. We wire metrics into CI/CD and observability so regressions are caught early.",
   },
   {
-    question:
-      "Can you give examples of your successful social media campaigns?",
+    question: "Can you handle payments and fintech workflows?",
     answer:
-      "Certainly! We have a portfolio of successful campaigns across various industries. Check out our Case Studies to see how we've helped businesses like yours achieve their social media goals.",
+      "Yes. We implement payins, payouts, settlements, chargebacks, routing, reconciliations, reserve balances, and merchant dashboards with auditability and compliance guardrails.",
   },
   {
-    question: "Do you offer customized social media strategies?",
+    question: "How do you approach security?",
     answer:
-      "Absolutely. Our team specializes in creating customized strategies tailored to your brand, industry, and target audience. We believe in the power of uniqueness, and our strategies reflect your specific goals and aspirations.",
+      "Security by default: least-privilege IAM, secret hygiene, rate limits, input validation, audit logs, backups, and DR runbooks. We review dependencies and automate checks in CI.",
   },
   {
-    question: "How do you handle negative comments or reviews on social media?",
+    question: "What’s your typical engagement model and timeline?",
     answer:
-      "We have a proactive approach to managing online reputation. Our social listening tools help us monitor brand mentions in real-time. In case of negative comments, we respond promptly with empathy and seek resolutions. We believe in turning challenges into opportunities for improvement.",
+      "For greenfield MVPs: 4–8 weeks to first launch depending on scope. For platforms: phased milestones. We work on fixed-scope builds or retainer models for continuous delivery.",
   },
   {
-    question: "What social media platforms do you work with?",
+    question: "Do you provide SLAs and post-launch support?",
     answer:
-      "We work with a wide range of social media platforms, including but not limited to Facebook, Instagram, Twitter, LinkedIn, Pinterest, and TikTok. Our strategies are adaptable to the platforms most relevant to your target audience.",
+      "Yes. We offer SLA-backed support with on-call windows, incident response, and regular maintenance (upgrades, security patches, performance tuning).",
   },
   {
-    question:
-      "How often will I receive reports on the performance of my social media campaigns?",
+    question: "How do you handle CI/CD and releases?",
     answer:
-      "We provide regular and detailed reports on the performance of your social media campaigns. The frequency of reporting can be customized based on your preferences, with options for weekly, bi-weekly, or monthly updates.",
+      "We set up GitHub Actions with test gates, linting, type checks, and preview environments. Releases use tagged artifacts, staged rollouts, and rollback switches for safe cutovers.",
   },
   {
-    question:
-      "Is there ongoing support if I have questions or need adjustments to my strategy?",
+    question: "Who owns the code and data?",
     answer:
-      "Absolutely. We offer ongoing support to address any questions or concerns you may have. Our team is readily available to assist you and can make adjustments to your strategy as needed to ensure it aligns with your evolving business goals.",
+      "You do. We commit to your repositories (or hand over a private repo) and provide documentation, runbooks, and knowledge transfer at project close.",
   },
   {
-    question:
-      "Can I see a demo or get a consultation before deciding to work with your agency?",
+    question: "Can you work under NDA and specific compliance requirements?",
     answer:
-      "Certainly! We offer free consultations and personalized demos to showcase our approach, discuss your needs, and determine how we can best support your business. Contact us to schedule a consultation.",
+      "Absolutely. We routinely execute NDAs and can align to your security reviews, VAPT routines, and data handling policies.",
+  },
+  {
+    question: "What does onboarding look like?",
+    answer:
+      "We run a short discovery: goals, constraints, KPIs, integrations, and stakeholders. Then we deliver a brief solution outline, milestone plan, and risk log for sign-off before build.",
+  },
+  {
+    question: "How will we track progress and communicate?",
+    answer:
+      "You’ll get weekly summaries with metrics and risks, access to a shared project board, and demo checkpoints at each milestone.",
   },
 ];
 
-export { services, solutions, faqs };
+const members = [
+  {
+    name: "Alice Kumar",
+    role: "Design Lead",
+    bio: "Loves systems thinking & playful UI.",
+    image: team1,
+    socials: [
+      { label: "linkedin", href: "https://linkedin.com/in/alice" },
+      { label: "github", href: "https://github.com/alice" },
+    ],
+  },
+  {
+    name: "Bob Singh",
+    role: "Frontend Engineer",
+    bio: "TypeScript + Astro enjoyer.",
+    image: team2,
+    socials: [
+      { label: "linkedin", href: "https://linkedin.com/in/alice" },
+      { label: "github", href: "https://github.com/alice" },
+    ],
+  },
+  {
+    name: "Carol Gupta",
+    role: "PM",
+    bio: "Ships the right thing on time.",
+    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2",
+    socials: [
+      { label: "linkedin", href: "https://linkedin.com/in/alice" },
+      { label: "github", href: "https://github.com/alice" },
+    ],
+  },
+  {
+    name: "Bob Singh",
+    role: "Frontend Engineer",
+    bio: "TypeScript + Astro enjoyer.",
+    image: team2,
+    socials: [
+      { label: "linkedin", href: "https://linkedin.com/in/alice" },
+      { label: "github", href: "https://github.com/alice" },
+    ],
+  },
+  {
+    name: "Alice Kumar",
+    role: "Design Lead",
+    bio: "Loves systems thinking & playful UI.",
+    image: team1,
+    socials: [
+      { label: "linkedin", href: "https://linkedin.com/in/alice" },
+      { label: "github", href: "https://github.com/alice" },
+    ],
+  },
+  {
+    name: "Bob Singh",
+    role: "Frontend Engineer",
+    bio: "TypeScript + Astro enjoyer.",
+    image: team2,
+    socials: [
+      { label: "linkedin", href: "https://linkedin.com/in/alice" },
+      { label: "github", href: "https://github.com/alice" },
+    ],
+  },
+  {
+    name: "Carol Gupta",
+    role: "PM",
+    bio: "Ships the right thing on time.",
+    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2",
+    socials: [
+      { label: "linkedin", href: "https://linkedin.com/in/alice" },
+      { label: "github", href: "https://github.com/alice" },
+    ],
+  },
+  {
+    name: "Bob Singh",
+    role: "Frontend Engineer",
+    bio: "TypeScript + Astro enjoyer.",
+    image: team2,
+    socials: [
+      { label: "linkedin", href: "https://linkedin.com/in/alice" },
+      { label: "github", href: "https://github.com/alice" },
+    ],
+  },
+];
+
+const caseStudies = [
+  {
+    title: "Payment Success Uplift for Multi-Acquirer Gateway",
+    industry: "Fintech",
+    problem:
+      "Low success rate during peak traffic windows caused revenue leakage and support escalations.",
+    solution: [
+      "Introduced acquirer-wise routing with real-time fallback",
+      "Optimized retries & timeouts; added idempotency guards",
+      "Built merchant dashboard for live SR, UTR, and chargeback visibility",
+    ],
+    outcome: [
+      { label: "Success Rate", value: "+8.7%" },
+      { label: "Checkout Time", value: "−22%" },
+      { label: "Support Tickets", value: "−41%" },
+    ],
+    href: "/case-studies/payment-success-uplift",
+  },
+  {
+    title: "Catalog Ops Automation for D2C Apparel",
+    industry: "E-commerce",
+    problem:
+      "Manual image prep & product onboarding delayed launches and introduced data inconsistency.",
+    solution: [
+      "Automated image pipelines (normalize, alt-text, variants)",
+      "Bulk CSV/XLSX importers with validation & rollbacks",
+      "Lightweight PIM with roles, drafts, and audit logs",
+    ],
+    outcome: [
+      { label: "Time-to-List", value: "−65%" },
+      { label: "Ops Errors", value: "−72%" },
+      { label: "New SKUs/Week", value: "3×" },
+    ],
+    href: "/case-studies/catalog-ops-automation",
+  },
+  {
+    title: "Scaling Real-Money Gaming During Tournaments",
+    industry: "Gaming",
+    problem:
+      "Spikes during tournaments caused latency, queue backlogs, and wallet reconciliation delays.",
+    solution: [
+      "Horizontally scaled APIs with read/write splitting",
+      "Wallet ledger refactor; async settlements with retries",
+      "Realtime observability (APM, traces, threshold alerts)",
+    ],
+    outcome: [
+      { label: "P99 Latency", value: "−38%" },
+      { label: "Throughput", value: "2.4×" },
+      { label: "Incidents", value: "−50%" },
+    ],
+    href: "/case-studies/gaming-scale",
+  },
+];
+
+export { services, faqs, members, caseStudies };

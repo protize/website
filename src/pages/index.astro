@@ -6,17 +6,26 @@ import Services from "../components/sections/Services.astro";
 import FAQ from "../components/sections/FAQ.astro";
 import Features from "../components/sections/Features.astro";
 import CTA from "../components/sections/CTA.astro";
-import Solutions from "../components/sections/Solutions.astro";
+// import CaseStudies from "../components/sections/CaseStudies.astro";
+import WhyProtize from "../components/sections/WhyProtize.astro";
+import TechStack from "../components/sections/TechStack.astro";
 ---
 
 <Layout title="Welcome to the Agency template">
   <main class="flex flex-col overflow-hidden">
     <Hero className="py-10 md:py-16" />
-    <Solutions className="pt-10 md:pt-16" />
-    <Services className="py-10 md:py-16" />
+
     <Brands className="py-10 md:py-16" />
+
+    <WhyProtize className="py-10 md:py-16" />
+    <Services className="py-10 md:py-16" />
+
+    <!-- <CaseStudies className="py-10 md:py-16" /> -->
+    <TechStack className="py-10 md:py-16" />
+
     <Features className="py-10 md:py-16" />
     <FAQ className="py-10 md:py-16" />
-    <CTA className="py-10 md:py-16" />
+
+    <CTA className="py-10" />
   </main>
 </Layout>

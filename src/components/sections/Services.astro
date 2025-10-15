@@ -1,46 +1,50 @@
 ---
-// Imports
 import Service from "../cards/Service.astro";
 import Container from "../shared/Container.astro";
 import Title from "../shared/Title.astro";
 import { services } from "../../utils/data.ts";
+import CtaButton from "../shared/CtaButton.astro";
 
-// Types
 type ServicesProps = {
   title: string;
   features: string[];
   icon: string;
 };
 
-// Props
 export interface Props {
   className?: string;
 }
 
-const { className } = Astro.props;
+const { className = "" } = Astro.props;
 ---
 
-<section
-  id="services"
-  class={`relative dark:bg-gradient-to-br dark:from-indigo-800 ${className}`}
->
-  <Container className="space-y-10 md:space-y-12">
-    <!-- Section Title -->
-    <div class="text-center max-w-3xl mx-auto space-y-4">
-      <Title className="">Why Choose Protize Tech?</Title>
+<section id="services" class={`relative bg-orange-100 ${className}`}>
+  <Container className="space-y-8 md:space-y-10">
+    <!-- Title -->
+    <div class="text-center max-w-3xl mx-auto space-y-2">
+      <Title>Why Choose Protize Tech?</Title>
+      <p class="text-sm md:text-base text-gray-600">
+        Three core strengths we bring to every project.
+      </p>
     </div>
 
-    <!-- Services Grid -->
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+    <!-- Simple responsive grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
       {
-        services.map((service: ServicesProps) => (
-          <Service
-            title={service.title}
-            features={service.features}
-            icon={service.icon}
-          />
-        ))
+        services
+          .slice(0, 3)
+          .map((service: ServicesProps) => (
+            <Service
+              title={service.title}
+              features={service.features}
+              icon={service.icon}
+            />
+          ))
       }
+    </div>
+
+    <div class="text-center">
+      <a href="/services"><CtaButton> Explore Our Services </CtaButton></a>
     </div>
   </Container>
 </section>

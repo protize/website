@@ -1,0 +1,88 @@
+---
+/* WhyProtize.astro */
+import Container from "../shared/Container.astro";
+import Title from "../shared/Title.astro";
+
+const { className = "" } = Astro.props;
+
+type Diff = {
+  title: string;
+  desc: string;
+  icon: string;
+};
+
+const differentiators: Diff[] = [
+  {
+    title: "Architecture-first",
+    desc:
+      "We lead with design docs, ADRs, and performance budgets—so delivery is predictable and change is cheap.",
+    icon: `<svg viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor" aria-hidden="true"><path d="M12 2 2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>`,
+  },
+  {
+    title: "Measurable KPIs",
+    desc:
+      "Every build ties to clear KPIs—latency, success rate, conversion, ops cost—so progress is visible and defensible.",
+    icon: `<svg viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor" aria-hidden="true"><path d="M3 3h4v18H3zM10 10h4v11h-4zM17 6h4v15h-4z"/></svg>`,
+  },
+  {
+    title: "0-to-Launch Playbooks",
+    desc:
+      "Proven templates for environments, CI/CD, observability, and cutover—so “day-1” is calm and repeatable.",
+    icon: `<svg viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor" aria-hidden="true"><path d="M4 3h12l4 4v14a2 2 0 0 1-2 2H4zM16 3v5h5"/></svg>`,
+  },
+  {
+    title: "SRE Mindset",
+    desc:
+      "SLIs/SLOs, error budgets, and pragmatic alerts—operability is built-in, not bolted on.",
+    icon: `<svg viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor" aria-hidden="true"><path d="M12 3a9 9 0 1 0 .001 18.001A9 9 0 0 0 12 3zm1 5a1 1 0 1 0-2 0v5a1 1 0 0 0 .293.707l3 3a1 1 0 1 0 1.414-1.414L13 12.586V8z"/></svg>`,
+  },
+  {
+    title: "Security by Default",
+    desc:
+      "Least-privilege access, secret hygiene, audit trails, and guardrails from the first commit.",
+    icon: `<svg viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor" aria-hidden="true"><path d="M12 2 5 5v6c0 5 3.8 9.6 7 10 3.2-.4 7-5 7-10V5z"/></svg>`,
+  },
+];
+---
+
+<section id="why-protize" class={`relative ${className}`}>
+  <Container className="space-y-8 md:space-y-12">
+    <!-- Header -->
+    <div class="text-center max-w-3xl mx-auto space-y-2">
+      <Title>Why Protize</Title>
+      <p class="text-sm md:text-base text-gray-600">
+        Differentiators that keep products fast, reliable, and secure—without surprises.
+      </p>
+    </div>
+
+    <!-- Chips -->
+    <div class="mx-auto max-w-4xl">
+      <ul class="mt-2 flex flex-wrap items-center justify-center gap-2">
+        {["architecture-first","measurable KPIs","0-to-launch playbooks","SRE mindset","security by default"].map((t) => (
+          <li class="inline-flex items-center rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-xs font-medium text-gray-700">
+            {t}
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <!-- Differentiators -->
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 md:gap-6">
+      {differentiators.map((d) => (
+        <article class="rounded-3xl border border-gray-200 bg-white p-5 md:p-6 transition-shadow hover:shadow-md">
+          <div class="flex items-start gap-4">
+            <!-- Icon bubble -->
+            <div class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-orange-50 text-orange-700">
+              <span class="sr-only">{d.title} icon</span>
+              <div set:html={d.icon} />
+            </div>
+            <div class="flex-1">
+              <h3 class="text-lg md:text-xl font-semibold text-gray-900">{d.title}</h3>
+              <p class="mt-2 text-sm text-gray-700 leading-relaxed">{d.desc}</p>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </Container>
+</section>

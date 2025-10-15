@@ -1,7 +1,14 @@
 ---
+import TeamGrid from "../components/sections/team-section/TeamGrid.astro";
 import Layout from "../layouts/Layout.astro";
+import { members } from "../utils/data";
 ---
 
-<Layout title="Welcome to Astrolus.">
-  <main class="space-y-40 mb-40">teams</main>
+<Layout title="Our Team">
+  <TeamGrid
+    title="Our Creative Team"
+    subtitle="Our Team Members"
+    description="We are a multidisciplinary crew crafting products and delightful experiences."
+    members={members}
+  />
 </Layout>

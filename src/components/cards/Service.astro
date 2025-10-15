@@ -11,38 +11,32 @@ const { title, features, icon } = Astro.props;
 ---
 
 <div
-  class="p-5 sm:p-6 lg:p-8 relative overflow-hidden rounded-3xl shadow-md shadow-slate-700 dark:shadow-slate-900
-  bg-gradient-to-tr from-slate-100/70 to-zinc-200/60 dark:from-slate-800/10 dark:to-zinc-800/10 backdrop-blur-md hover:bg-black/10 hover:dark:bg-slate-700/10"
+  class="relative overflow-hidden rounded-3xl bg-white border border-gray-200 p-5 sm:p-6 lg:p-7 transition-shadow hover:shadow-md"
 >
-  <div
-    class="rounded-xl p-3 text-heading-1 w-max relative bg-slate-200 dark:bg-slate-800"
-  >
+  <!-- Icon -->
+  <div class="rounded-xl p-3 bg-gray-100 text-gray-900 w-max">
     <slot set:html={icon} />
   </div>
-  <div class="mt-6 space-y-4 relative">
-    <h2 class="text-lg md:text-xl font-semibold text-heading-2">
+
+  <!-- Content -->
+  <div class="mt-5 space-y-4">
+    <h2 class="text-lg md:text-xl font-semibold text-gray-900">
       {title}
     </h2>
+
     <Paragraph>
-      <div
-        class="mt-8 space-y-4 text-heading-3 font-medium list-outside list-disc"
-      >
+      <ul class="mt-4 space-y-3">
         {
-          features.map((feature) => {
-            return (
-              <div class="flex items-center font-medium">
-                <span class="font-bold rounded-full w-8 h-8 mr-3 inline-flex justify-center items-center text-primary dark:text-white">
-                  &checkmark;
-                </span>
-                {feature}
-              </div>
-            );
-          })
+          features.map((feature) => (
+            <li class="flex items-start">
+              <span class="mr-3 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-100 text-orange-700 text-sm leading-none">
+                ✓
+              </span>
+              <span class="text-gray-700">{feature}</span>
+            </li>
+          ))
         }
-      </div>
+      </ul>
     </Paragraph>
   </div>
-  <!-- <span
-    class="absolute w-32 aspect-square -bottom-16 -right-16 bg-primary/10 rounded-full"
-  ></span> -->
 </div>

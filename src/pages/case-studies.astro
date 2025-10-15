@@ -1,0 +1,80 @@
+---
+import WorkHero from "../components/sections/work-section/WorkHero.astro";
+import ProjectGrid from "../components/sections/work-section/ProjectGrid.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Works — Protize">
+  <main class="mb-40 space-y-28">
+    <!-- Hero -->
+
+    <WorkHero />
+
+    <ProjectGrid />
+
+    <!-- Process -->
+    <section>
+      <div class="mx-auto max-w-6xl px-6">
+        <h2 class="text-2xl font-semibold">How we deliver</h2>
+        <div class="mt-6 grid gap-6 md:grid-cols-3">
+          <div
+            class="rounded-2xl border border-neutral-200/60 p-6 dark:border-white/10"
+          >
+            <div class="text-sm font-medium text-indigo-600">01 — Discover</div>
+            <h3 class="mt-2 font-semibold">Scope & Success Metrics</h3>
+            <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">
+              KPI alignment, architecture options, and a pragmatic roadmap.
+            </p>
+          </div>
+          <div
+            class="rounded-2xl border border-neutral-200/60 p-6 dark:border-white/10"
+          >
+            <div class="text-sm font-medium text-indigo-600">02 — Build</div>
+            <h3 class="mt-2 font-semibold">Sprint & Ship</h3>
+            <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">
+              Tight feedback loops, production-ready code, and observability
+              baked in.
+            </p>
+          </div>
+          <div
+            class="rounded-2xl border border-neutral-200/60 p-6 dark:border-white/10"
+          >
+            <div class="text-sm font-medium text-indigo-600">03 — Scale</div>
+            <h3 class="mt-2 font-semibold">Operate & Optimize</h3>
+            <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">
+              Perf budgets, cost controls, A/B tests, and growth experiments.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section>
+      <div class="mx-auto max-w-6xl px-6">
+        <div
+          class="rounded-3xl bg-gradient-to-tr from-indigo-600 to-fuchsia-500 p-[2px]"
+        >
+          <div class="rounded-3xl bg-white p-8 dark:bg-neutral-950">
+            <div
+              class="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center"
+            >
+              <div>
+                <h3 class="text-xl font-semibold">Have a project in mind?</h3>
+                <p class="mt-1 text-neutral-600 dark:text-neutral-300">
+                  Let’s bring it to life with Protize.
+                </p>
+              </div>
+              <a
+                href="/contact"
+                class="inline-flex items-center rounded-xl bg-indigo-600 px-5 py-3 text-white transition hover:opacity-90"
+              >
+                Start a conversation
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
