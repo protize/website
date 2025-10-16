@@ -1,0 +1,60 @@
+---
+interface Props {
+  currentPage: number;
+  totalPages: number;
+  basePath?: string;
+}
+
+const {
+  currentPage,
+  totalPages,
+  basePath = "/blog/page",
+} = Astro.props as Props;
+const prevHref =
+  currentPage > 1
+    ? currentPage === 2
+      ? "/blog/"
+      : `${basePath}/${currentPage - 1}/`
+    : null;
+const nextHref =
+  currentPage < totalPages ? `${basePath}/${currentPage + 1}/` : null;
+---
+
+{
+  totalPages > 1 && (
+    <nav
+      class="mt-10 flex items-center justify-center gap-4"
+      aria-label="Pagination"
+    >
+      {prevHref ? (
+        <a
+          href={prevHref}
+          class="px-4 py-2 text-sm font-medium text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-900 transition-colors duration-150"
+        >
+          ← Previous
+        </a>
+      ) : (
+        <span class="px-4 py-2 text-sm font-medium text-gray-400 border border-gray-200 rounded-lg bg-gray-50 cursor-not-allowed">
+          ← Previous
+        </span>
+      )}
+
+      <span class="text-sm font-medium text-gray-600 select-none">
+        Page {currentPage} of {totalPages}
+      </span>
+
+      {nextHref ? (
+        <a
+          href={nextHref}
+          class="px-4 py-2 text-sm font-medium text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-900 transition-colors duration-150"
+        >
+          Next →
+        </a>
+      ) : (
+        <span class="px-4 py-2 text-sm font-medium text-gray-400 border border-gray-200 rounded-lg bg-gray-50 cursor-not-allowed">
+          Next →
+        </span>
+      )}
+    </nav>
+  )
+}
