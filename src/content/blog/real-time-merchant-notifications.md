@@ -5,6 +5,7 @@ pubDate: 2025-10-17
 author: "Protize Engineering"
 tags: ["notifications", "telegram", "wallet", "monitoring", "real-time"]
 category: "Infrastructure"
+featured: true
 coverImage: "https://images.unsplash.com/photo-1654764450273-59862da1a259?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1169"
 coverAlt: "Digital notification system with network alerts and real-time dashboard"
 draft: false

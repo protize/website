@@ -9,7 +9,9 @@ const blog = defineCollection({
     updatedDate: z.coerce.date().optional(),
     author: z.string().default("Protize Team"),
     tags: z.array(z.string()).default([]),
-    coverImage: z.string().optional(), // e.g. /images/blog/hello.jpg
+    category: z.string().default("Uncategorized"),
+    featured: z.boolean().default(false),
+    coverImage: z.string().optional(),
     coverAlt: z.string().optional(),
     draft: z.boolean().default(false),
   }),

@@ -7,7 +7,7 @@ import { getCollection } from "astro:content";
 
 const PAGE_SIZE = 6;
 
-const formatDate = (date) =>
+const formatDate = (date: Date) =>
   new Date(date).toLocaleDateString("en-US", {
     month: "short",
     day: "2-digit",
@@ -57,29 +57,28 @@ const subtitle = subtitles[Math.floor(Math.random() * subtitles.length)];
 
 <Layout title={`Blog — Page ${currentPage}`}>
   <Container className="space-y-10 py-10">
-    <!-- Hero Section -->
+    <!-- Hero -->
     <div class="pb-10">
       <BlogHero title="Protize Stories" subtitle={subtitle} />
     </div>
 
-    <!-- Blog Cards -->
-
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <!-- Blog Grid -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
       {
         pagePosts.map(({ data, slug }) => (
           <a
             href={`/blog/${slug}`}
-            class="group block rounded-2xl overflow-hidden border border-gray-200 hover:border-purple-300 hover:shadow-lg transition-all duration-200"
+            class="group block rounded-2xl overflow-hidden border border-gray-200 hover:border-purple-300 hover:shadow-lg transition-all duration-200 bg-white"
           >
             {data.coverImage && (
               <img
                 src={data.coverImage}
                 alt={data.coverAlt ?? data.title}
-                class="h-52 w-full object-cover group-hover:opacity-90"
+                class="h-52 w-full object-cover group-hover:opacity-90 transition-opacity duration-200"
                 loading="lazy"
               />
             )}
-            <div class="p-5 bg-white">
+            <div class="p-5">
               <h2 class="text-lg font-semibold text-gray-800 group-hover:text-purple-600 transition-colors">
                 {data.title}
               </h2>
