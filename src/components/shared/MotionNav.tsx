@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function MobileNav({ navItems = [] }) {
@@ -10,7 +10,7 @@ export default function MobileNav({ navItems = [] }) {
       import.meta.env.BASE_URL) ||
     "/";
 
-  const normalize = (path) => {
+  const normalize = (path: string) => {
     if (!path) return "/";
     let p = path.startsWith("/") ? path : "/" + path;
 
@@ -45,20 +45,6 @@ export default function MobileNav({ navItems = [] }) {
       window.removeEventListener("hashchange", onPop);
     };
   }, []);
-
-  const isActiveHref = (href) => {
-    let targetPath = "/";
-    try {
-      targetPath = normalize(new URL(href, window.location.origin).pathname);
-    } catch {
-      targetPath = normalize(href);
-    }
-
-    return (
-      activePath === targetPath ||
-      (targetPath !== "/" && activePath.startsWith(targetPath + "/"))
-    );
-  };
 
   return (
     <div className="lg:hidden flex items-center relative">
@@ -114,7 +100,7 @@ export default function MobileNav({ navItems = [] }) {
                     <li key={item.text}>
                       <a
                         href={item.href}
-                        onClick={(e) => {
+                        onClick={() => {
                           try {
                             const target = new URL(
                               item.href,
