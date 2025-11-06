@@ -25,6 +25,6 @@ if (!entry) {
 const { Content } = await render(entry);
 ---
 
-<BlogPost {...entry.data}>
+<BlogPost {...entry.data} isBlogPost={false}>
   <Content />
 </BlogPost>

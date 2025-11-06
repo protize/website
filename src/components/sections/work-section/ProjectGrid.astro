@@ -95,7 +95,7 @@ const formatDate = (d: Date) =>
 </div>
 
 <!-- Client-side filter handler -->
-<script type="module">
+<script is:inline>
   const container = document.getElementById("grid");
   if (container) {
     const cards = Array.from(container.querySelectorAll("[data-tags]"));

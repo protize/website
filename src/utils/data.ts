@@ -6,6 +6,7 @@ import jay from "../assets/team/jay.png";
 import jatin from "../assets/team/jatin.png";
 import alok from "../assets/team/alok.png";
 import alankrit from "../assets/team/alankrit.png";
+import sid from "../assets/team/sid.png";
 
 const services = [
   {
@@ -230,7 +231,7 @@ const members = [
     name: "Sidharth Mehra",
     role: "UI/UX Designer",
     bio: "",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2",
+    image: sid,
     socials: [
       { label: "linkedin", href: "https://linkedin.com/in/alice" },
       { label: "github", href: "https://github.com/alice" },
