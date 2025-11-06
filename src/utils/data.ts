@@ -1,5 +1,11 @@
-import team1 from "../assets/team/team-01.png";
-import team2 from "../assets/team/team-02.png";
+import abhishek from "../assets/team/abhishek.avif";
+import karan from "../assets/team/karan.avif";
+import ishan from "../assets/team/ishan-baisoya.avif";
+import thomas from "../assets/team/thomas-colvin.avif";
+import jay from "../assets/team/jay.png";
+import jatin from "../assets/team/jatin.png";
+import alok from "../assets/team/alok.png";
+import alankrit from "../assets/team/alankrit.png";
 
 const services = [
   {
@@ -141,80 +147,90 @@ const faqs = [
 
 const members = [
   {
-    name: "Alice Kumar",
-    role: "Design Lead",
-    bio: "Loves systems thinking & playful UI.",
-    image: team1,
+    name: "Abhishek Gupta",
+    role: "Founder & Principal Software Engineer",
+    bio: "",
+    image: abhishek,
     socials: [
       { label: "linkedin", href: "https://linkedin.com/in/alice" },
       { label: "github", href: "https://github.com/alice" },
     ],
   },
   {
-    name: "Bob Singh",
-    role: "Frontend Engineer",
-    bio: "TypeScript + Astro enjoyer.",
-    image: team2,
+    name: "Karan Bohra",
+    role: "Lead Software Engineer",
+    bio: "",
+    image: karan,
     socials: [
       { label: "linkedin", href: "https://linkedin.com/in/alice" },
       { label: "github", href: "https://github.com/alice" },
     ],
   },
   {
-    name: "Carol Gupta",
-    role: "PM",
-    bio: "Ships the right thing on time.",
+    name: "Ishan Baisoya",
+    role: "Financial Analyst",
+    bio: "",
+    image: ishan,
+    socials: [
+      { label: "linkedin", href: "https://linkedin.com/in/alice" },
+      { label: "github", href: "https://github.com/alice" },
+    ],
+  },
+  {
+    name: "Thomas Colvin",
+    role: "Senior Software Engineer",
+    bio: "",
+    image: thomas,
+    socials: [
+      { label: "linkedin", href: "https://linkedin.com/in/alice" },
+      { label: "github", href: "https://github.com/alice" },
+    ],
+  },
+  {
+    name: "Jayshrilal Pandit",
+    role: "Software Developer",
+    bio: "",
+    image: jay,
+    socials: [
+      { label: "linkedin", href: "https://linkedin.com/in/alice" },
+      { label: "github", href: "https://github.com/alice" },
+    ],
+  },
+  {
+    name: "Jatin Jayal",
+    role: "Software Engineer",
+    bio: "",
+    image: jatin,
+    socials: [
+      { label: "linkedin", href: "https://linkedin.com/in/alice" },
+      { label: "github", href: "https://github.com/alice" },
+    ],
+  },
+  {
+    name: "Alok Sharma",
+    role: "Frontend & Backend Developer",
+    bio: "",
+    image: alok,
+    socials: [
+      { label: "linkedin", href: "https://www.linkedin.com/in/aloksharma-ak/" },
+      { label: "github", href: "https://github.com/aloksharma-ak" },
+    ],
+  },
+  {
+    name: "Alankrit Agrawal",
+    role: "Data Analyst",
+    bio: "",
+    image: alankrit,
+    socials: [
+      { label: "linkedin", href: "https://linkedin.com/in/alice" },
+      { label: "github", href: "https://github.com/alice" },
+    ],
+  },
+  {
+    name: "Sidharth Mehra",
+    role: "UI/UX Designer",
+    bio: "",
     image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2",
-    socials: [
-      { label: "linkedin", href: "https://linkedin.com/in/alice" },
-      { label: "github", href: "https://github.com/alice" },
-    ],
-  },
-  {
-    name: "Bob Singh",
-    role: "Frontend Engineer",
-    bio: "TypeScript + Astro enjoyer.",
-    image: team2,
-    socials: [
-      { label: "linkedin", href: "https://linkedin.com/in/alice" },
-      { label: "github", href: "https://github.com/alice" },
-    ],
-  },
-  {
-    name: "Alice Kumar",
-    role: "Design Lead",
-    bio: "Loves systems thinking & playful UI.",
-    image: team1,
-    socials: [
-      { label: "linkedin", href: "https://linkedin.com/in/alice" },
-      { label: "github", href: "https://github.com/alice" },
-    ],
-  },
-  {
-    name: "Bob Singh",
-    role: "Frontend Engineer",
-    bio: "TypeScript + Astro enjoyer.",
-    image: team2,
-    socials: [
-      { label: "linkedin", href: "https://linkedin.com/in/alice" },
-      { label: "github", href: "https://github.com/alice" },
-    ],
-  },
-  {
-    name: "Carol Gupta",
-    role: "PM",
-    bio: "Ships the right thing on time.",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2",
-    socials: [
-      { label: "linkedin", href: "https://linkedin.com/in/alice" },
-      { label: "github", href: "https://github.com/alice" },
-    ],
-  },
-  {
-    name: "Bob Singh",
-    role: "Frontend Engineer",
-    bio: "TypeScript + Astro enjoyer.",
-    image: team2,
     socials: [
       { label: "linkedin", href: "https://linkedin.com/in/alice" },
       { label: "github", href: "https://github.com/alice" },

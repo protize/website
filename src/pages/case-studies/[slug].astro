@@ -1,0 +1,30 @@
+---
+import { getCollection, getEntry, render } from "astro:content";
+import BlogPost from "../../layouts/BlogPost.astro";
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection(
+    "case-studies",
+    ({ data }) => !data.draft
+  );
+
+  return allPosts
+    .sort(
+      (a, b) =>
+        new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
+    )
+    .map(({ slug }) => ({ params: { slug } }));
+}
+
+const { slug } = Astro.params;
+const entry = await getEntry("case-studies", slug);
+if (!entry) {
+  throw new Error(`Case study not found: ${slug}`);
+}
+
+const { Content } = await render(entry);
+---
+
+<BlogPost {...entry.data}>
+  <Content />
+</BlogPost>
