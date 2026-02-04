@@ -13,72 +13,94 @@ type Diff = {
 
 const differentiators: Diff[] = [
   {
-    title: "Architecture-first",
+    title: "Strategic, Not Just Technical",
     desc:
-      "We lead with design docs, ADRs, and performance budgets—so delivery is predictable and change is cheap.",
+      "We begin by understanding your business goals and users, ensuring the solution aligns with long-term growth—not just immediate delivery.",
     icon: `<svg viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor" aria-hidden="true"><path d="M12 2 2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>`,
   },
   {
-    title: "Measurable KPIs",
+    title: "Results You Can Measure",
     desc:
-      "Every build ties to clear KPIs—latency, success rate, conversion, ops cost—so progress is visible and defensible.",
+      "We define success with clear performance and business metrics, so you always know how your product is improving and delivering value.",
     icon: `<svg viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor" aria-hidden="true"><path d="M3 3h4v18H3zM10 10h4v11h-4zM17 6h4v15h-4z"/></svg>`,
   },
   {
-    title: "0-to-Launch Playbooks",
+    title: "Smooth & Predictable Delivery",
     desc:
-      "Proven templates for environments, CI/CD, observability, and cutover—so “day-1” is calm and repeatable.",
+      "Our structured processes and proven workflows keep projects on track, reduce surprises, and ensure a confident path from idea to launch.",
     icon: `<svg viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor" aria-hidden="true"><path d="M4 3h12l4 4v14a2 2 0 0 1-2 2H4zM16 3v5h5"/></svg>`,
   },
   {
-    title: "SRE Mindset",
+    title: "Built for Reliability",
     desc:
-      "SLIs/SLOs, error budgets, and pragmatic alerts—operability is built-in, not bolted on.",
+      "We design systems that stay fast, stable, and dependable—so your users enjoy a seamless experience even as your business scales.",
     icon: `<svg viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor" aria-hidden="true"><path d="M12 3a9 9 0 1 0 .001 18.001A9 9 0 0 0 12 3zm1 5a1 1 0 1 0-2 0v5a1 1 0 0 0 .293.707l3 3a1 1 0 1 0 1.414-1.414L13 12.586V8z"/></svg>`,
   },
   {
-    title: "Security by Default",
+    title: "Security You Can Trust",
     desc:
-      "Least-privilege access, secret hygiene, audit trails, and guardrails from the first commit.",
+      "We prioritize data protection and secure practices from day one, helping you safeguard your users, transactions, and reputation.",
     icon: `<svg viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor" aria-hidden="true"><path d="M12 2 5 5v6c0 5 3.8 9.6 7 10 3.2-.4 7-5 7-10V5z"/></svg>`,
   },
+  {
+    title: "Long-Term Technology Partner",
+    desc:
+      "Beyond launch, we support growth, improvements, and scaling—so your technology evolves with your business.",
+    icon: `<svg viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor" aria-hidden="true"><path d="M12 8v4l3 3M12 3a9 9 0 1 0 9 9 9 9 0 0 0-9-9z"/></svg>`,
+  },
 ];
+
+
 ---
 
-<section id="why-protize" class={`relative ${className}`}>
-  <Container className="space-y-8 md:space-y-12">
+<section id="why-protize" class={`relative overflow-hidden ${className}`}>
+  <!-- Purple background -->
+  <div class="pointer-events-none absolute inset-0 -z-10">
+    <div class="absolute inset-0 bg-gradient-to-b from-white via-purple-50/35 to-white" />
+    <div class="absolute inset-0 bg-[radial-gradient(closest-side_at_50%_0%,rgba(124,58,237,0.22),transparent_65%),radial-gradient(closest-side_at_0%_70%,rgba(99,102,241,0.18),transparent_55%),radial-gradient(closest-side_at_100%_65%,rgba(168,85,247,0.14),transparent_55%)]" />
+    <div class="absolute inset-0 opacity-[0.35] [background-image:linear-gradient(to_right,rgba(15,23,42,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(15,23,42,0.06)_1px,transparent_1px)] [background-size:52px_52px]" />
+  </div>
+
+  <Container className="py-12 md:py-10 space-y-10 md:space-y-14">
     <!-- Header -->
-    <div class="text-center max-w-3xl mx-auto space-y-2">
+    <div class="text-center max-w-3xl mx-auto space-y-3">
+     
+
       <Title>Why Protize</Title>
-      <p class="text-sm md:text-base text-gray-600">
+
+      <p class="text-sm md:text-base text-gray-600 leading-relaxed">
         Differentiators that keep products fast, reliable, and secure—without surprises.
       </p>
-    </div>
-
-    <!-- Chips -->
-    <div class="mx-auto max-w-4xl">
-      <ul class="mt-2 flex flex-wrap items-center justify-center gap-2">
-        {["architecture-first","measurable KPIs","0-to-launch playbooks","SRE mindset","security by default"].map((t) => (
-          <li class="inline-flex items-center rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-xs font-medium text-gray-700">
-            {t}
-          </li>
-        ))}
-      </ul>
     </div>
 
     <!-- Differentiators -->
     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 md:gap-6">
       {differentiators.map((d) => (
-        <article class="rounded-3xl border border-gray-200 bg-white p-5 md:p-6 transition-shadow hover:shadow-md">
-          <div class="flex items-start gap-4">
-            <!-- Icon bubble -->
-            <div class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-orange-50 text-orange-700">
-              <span class="sr-only">{d.title} icon</span>
-              <div set:html={d.icon} />
+        <article class="group relative rounded-3xl bg-gradient-to-br from-purple-600/30 via-indigo-500/20 to-fuchsia-500/20 p-[1px] shadow-[0_18px_55px_-35px_rgba(2,6,23,0.35)]">
+          <div class="relative h-full rounded-3xl border border-purple-200/60 bg-white/70 backdrop-blur-xl p-5 md:p-6 transition-all duration-300 group-hover:-translate-y-1 group-hover:border-purple-300/70 group-hover:bg-white/80 group-hover:shadow-[0_22px_70px_-40px_rgba(2,6,23,0.45)]">
+            <!-- hover glow -->
+            <div class="pointer-events-none absolute -inset-10 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+              <div class="absolute left-1/2 top-0 h-28 w-28 -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.70),transparent_60%)] blur-2xl" />
             </div>
-            <div class="flex-1">
-              <h3 class="text-lg md:text-xl font-semibold text-gray-900">{d.title}</h3>
-              <p class="mt-2 text-sm text-gray-700 leading-relaxed">{d.desc}</p>
+
+            <div class="flex items-start gap-4">
+              <!-- Icon bubble (purple) -->
+              <div class="relative inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-600 to-fuchsia-600 text-white shadow-md ring-1 ring-black/5">
+                <span class="sr-only">{d.title} icon</span>
+                <div class="[&>svg]:h-6 [&>svg]:w-6 [&>svg]:block" set:html={d.icon}></div>
+              </div>
+
+              <div class="flex-1">
+                <h3 class="text-lg md:text-xl font-semibold text-gray-900 tracking-tight">
+                  {d.title}
+                </h3>
+
+                <p class="mt-2 text-sm text-gray-700 leading-relaxed">
+                  {d.desc}
+                </p>
+
+                <div class="mt-4 h-px w-full bg-gradient-to-r from-transparent via-purple-200/80 to-transparent" />
+              </div>
             </div>
           </div>
         </article>
@@ -86,3 +108,4 @@ const differentiators: Diff[] = [
     </div>
   </Container>
 </section>
+
