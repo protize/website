@@ -3,73 +3,9 @@ import Container from "../shared/Container.astro";
 import Title from "../shared/Title.astro";
 
 import GradiantText from "../shared/GradiantText.astro";
-
-type FeatureProps = {
-  title: string;
-  description: string;
-};
-const features: FeatureProps[] = [
-  {
-    title: "Architecture-First Delivery",
-    description:
-      "Design docs, ADRs, and performance budgets up front—so change stays cheap and delivery stays predictable.",
-  },
-  {
-    title: "Modern Web & App Engineering",
-    description:
-      "Next.js/Astro frontends, NestJS APIs, TypeScript everywhere. Clean modules, clear boundaries, fast UIs.",
-  },
-  {
-    title: "Payments & Fintech Expertise",
-    description:
-      "Payins, payouts, settlements, chargebacks, and merchant dashboards—built with compliance guardrails.",
-  },
-  {
-    title: "Data & Analytics Pipelines",
-    description:
-      "PostgreSQL time-series, ETL with BullMQ/Python, exports to CSV/Excel, and actionable KPI dashboards.",
-  },
-  {
-    title: "Cloud & DevOps at Scale",
-    description:
-      "AWS, Docker, pnpm/Nx monorepos, and GitHub Actions CI/CD—secure, reproducible, and cost-aware.",
-  },
-  {
-    title: "SRE Mindset",
-    description:
-      "SLIs/SLOs, error budgets, on-call playbooks, and sensible alerts. Reliability designed in, not bolted on.",
-  },
-  {
-    title: "Security by Default",
-    description:
-      "Least-privilege IAM, secret hygiene, audit trails, rate limits, and disaster recovery from day one.",
-  },
-  {
-    title: "Observability that Matters",
-    description:
-      "Traces, logs, and metrics tied to business KPIs—so issues are found early and fixed quickly.",
-  },
-  {
-    title: "Performance Budgets",
-    description:
-      "Guardrails for latency, throughput, and cost—kept green through CI checks and regression gates.",
-  },
-  {
-    title: "0-to-Launch Playbooks",
-    description:
-      "Environment templates, staging parity, cutover plans, and rollback switches for calm releases.",
-  },
-  {
-    title: "Automation & Workflows",
-    description:
-      "Bots, webhooks, and RPA-style tasks to remove manual toil across ops, support, and reporting.",
-  },
-  {
-    title: "Support & Stewardship",
-    description:
-      "SLA-backed maintenance, dependency hygiene, and continuous tuning to keep systems healthy.",
-  },
-];
+import { features } from "../../data/feature";
+import featureImage from "../../assets/images/feature.png";
+import { Image } from "astro:assets";
 
 export interface Props {
   className?: string;
@@ -78,8 +14,8 @@ export interface Props {
 const { className } = Astro.props;
 ---
 
-<section id="features" class=`${className}`>
-  <Container className="">
+<section id="features" class={className}>
+  <Container className="py-12 md:py-16">
     <div class="text-center max-w-4xl mx-auto">
       <Title>
         We build <GradiantText>Essential Features</GradiantText> for Modern IT Products
@@ -90,19 +26,41 @@ const { className } = Astro.props;
       </p>
     </div>
 
-    <div class="flex flex-row flex-wrap mt-8">
-      {
-        features.map((feature: FeatureProps) => {
-          return (
-            <div class="flex items-center text-heading-3 font-medium basis-full md:basis-1/2 lg:basis-1/3">
-              <span class="font-bold rounded-full w-8 h-8 mr-3 text-primary inline-flex justify-center items-center">
-                &checkmark;
-              </span>
-              {feature.title}
-            </div>
-          );
-        })
-      }
+    <div
+      class="max-w-6xl mx-auto mt-10 flex flex-col lg:flex-row gap-8 items-center"
+    >
+      <!-- Image -->
+      <div class="relative w-full lg:w-2/3">
+        <div class="absolute -inset-6 rounded-3xl bg-purple-100/60 blur-2xl">
+        </div>
+        <Image
+          src={featureImage}
+          alt="Protize essential features illustration"
+          width="640"
+          height="480"
+          loading="lazy"
+          decoding="async"
+          class="relative w-full max-w-xl mx-auto rounded-3xl border border-slate-200 bg-white shadow-md object-cover"
+        />
+      </div>
+
+      <!-- Feature list -->
+      <div class="w-full lg:w-1/3 flex flex-col mt-4 lg:mt-0">
+        {
+          features.map((feature) => {
+            return (
+              <div class="flex items-center text-heading-3 font-medium">
+                {" "}
+                <span class="font-bold rounded-full w-8 h-8 mr-3 text-primary inline-flex justify-center items-center">
+                  {" "}
+                  &checkmark;{" "}
+                </span>{" "}
+                {feature.title}{" "}
+              </div>
+            );
+          })
+        }
+      </div>
     </div>
   </Container>
 </section>

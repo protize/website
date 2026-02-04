@@ -2,8 +2,8 @@
 import Service from "../cards/Service.astro";
 import Container from "../shared/Container.astro";
 import Title from "../shared/Title.astro";
-import { services } from "../../utils/data.ts";
 import CtaButton from "../shared/CtaButton.astro";
+import { services } from "../../data/service";
 
 type ServicesProps = {
   title: string;
@@ -21,18 +21,19 @@ const { className = "" } = Astro.props;
 <section id="services" class={`relative bg-orange-100 ${className}`}>
   <Container className="space-y-8 md:space-y-10">
     <!-- Title -->
-    <div class="text-center max-w-3xl mx-auto space-y-2">
-      <Title>Why Choose Protize Tech?</Title>
+    <div class="text-center max-w-4xl mx-auto space-y-2">
+      <Title>Why Businesses Choose Protize</Title>
       <p class="text-sm md:text-base text-gray-600">
-        Three core strengths we bring to every project.
+        We build secure, scalable products across industries—delivered with
+        clear communication, predictable timelines, and long-term support.
       </p>
     </div>
 
     <!-- Simple responsive grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
       {
         services
-          .slice(0, 3)
+          .slice(0, 8)
           .map((service: ServicesProps) => (
             <Service
               title={service.title}

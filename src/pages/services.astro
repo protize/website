@@ -5,7 +5,7 @@ import CtaButton from "../components/shared/CtaButton.astro";
 import Button from "../components/shared/Button.astro";
 import { Image } from "astro:assets";
 
-import serviceImgHero from "../assets/images/standard-quality-control-concept-m.jpg";
+import serviceImgHero from "../assets/images/services.jpg";
 import DeliveryWorkflow from "../assets/images/design-to-delivery-workflow.jpg";
 
 type Service = {
@@ -17,52 +17,68 @@ type Service = {
 
 const services: Service[] = [
   {
-    title: "Web Apps (MERN / Next.js)",
+    title: "Custom Web Application Development",
     blurb:
-      "Production-ready web applications with robust backends, secure auth, payments, and analytics. Built for scale and speed.",
+      "We build fast, secure, and scalable web applications—from MVPs to enterprise platforms. Perfect for SaaS, fintech, ecommerce, and internal business tools.",
     image:
       "https://images.unsplash.com/photo-1559526324-593bc073d938?auto=format&fit=crop&w=800&q=80",
-    points: ["Next.js 15 + SSR/ISR", "NestJS APIs", "PostgreSQL / Redis"],
+    points: [
+      "High-performance web apps",
+      "Secure login & roles",
+      "Payments & dashboards",
+    ],
   },
   {
-    title: "Mobile Apps",
+    title: "Mobile App Development (Android & iOS)",
     blurb:
-      "High-quality Android/iOS apps with clean architecture, offline support, and smooth CI/CD for rapid releases.",
+      "Modern mobile apps with clean UI, smooth performance, and production-ready releases. Ideal for startups and businesses that need reliable apps users love.",
     image:
       "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80",
-    points: ["Flutter / React Native", "Crash-free UX", "Play/App Store setup"],
+    points: [
+      "Android & iOS apps",
+      "Fast & responsive UX",
+      "Play/App Store publishing",
+    ],
   },
   {
-    title: "UI/UX Design",
+    title: "UI/UX Design & Branding",
     blurb:
-      "Conversion-oriented design systems, design tokens, and component libraries tailored to your brand.",
+      "User-focused design that improves trust and conversions. We create modern interfaces, design systems, and branding that looks premium and works across all devices.",
     image:
       "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80",
-    points: ["Design systems", "Rapid prototyping", "Accessibility (WCAG)"],
+    points: [
+      "Product UI/UX design",
+      "Landing pages that convert",
+      "Accessible design",
+    ],
   },
   {
-    title: "Cloud & DevOps",
+    title: "Cloud Deployment & DevOps",
     blurb:
-      "Automated infrastructure that’s observable, scalable, and cost-efficient across AWS and modern tooling.",
+      "Reliable cloud infrastructure for speed and scalability. We handle hosting, deployments, monitoring, and cost optimization—so your product stays stable under load.",
     image:
       "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
-    points: ["AWS / Docker", "CI/CD pipelines", "Monitoring & alerts"],
+    points: ["Cloud hosting setup", "CI/CD deployments", "Monitoring & alerts"],
   },
   {
-    title: "Data & Analytics",
+    title: "Data, Reporting & Analytics",
     blurb:
-      "Dashboards and pipelines that turn raw data into decisions—reliability, quality, and real-time insight.",
+      "Dashboards and reporting systems that turn your data into decisions. Track KPIs, exports, performance, and operations with clear insights.",
     image:
       "https://images.unsplash.com/photo-1559526324-593bc073d938?auto=format&fit=crop&w=800&q=80",
-    points: ["ETL/ELT pipelines", "Real-time metrics", "BI dashboards"],
+    points: ["KPI dashboards", "CSV/Excel reports", "Operational insights"],
   },
   {
-    title: "Product Consulting",
+    title: "Product & Technology Consulting",
     blurb:
-      "From MVP to enterprise scale—roadmaps, architecture reviews, cost audits, and growth experiments.",
+      "Need clarity before building? We help with planning, feature scoping, architecture guidance, and technical audits—so you avoid costly mistakes and launch faster.",
     image:
       "https://images.unsplash.com/photo-1556761175-129418cb2dfe?auto=format&fit=crop&w=800&q=80",
-    points: ["Tech strategy", "Architecture audits", "Cost optimization"],
+    points: [
+      "Roadmap & scope clarity",
+      "Architecture review",
+      "Cost & performance planning",
+    ],
   },
 ];
 ---
@@ -71,7 +87,7 @@ const services: Service[] = [
   <main class="space-y-24 md:space-y-32 mb-24">
     <!-- Hero -->
     <section id="hero" class="relative isolate overflow-hidden">
-      <Container className="py-10 md:py-16">
+      <Container className="py-10 md:pb-16">
         <div
           class="grid grid-cols-1 lg:grid-cols-2 items-center gap-10 md:gap-12"
         >
@@ -80,39 +96,42 @@ const services: Service[] = [
             <span
               class="inline-flex w-max items-center rounded-full border border-neutral-200 bg-white px-3 py-1 text-xs font-medium tracking-wide text-neutral-700"
             >
-              Protize • Services
+              Protize • Software Development Company
             </span>
 
             <h1
               class="text-3xl md:text-5xl font-extrabold leading-tight text-neutral-900"
             >
-              We design, build &amp; scale<br class="hidden md:block" /> modern products.
+              Custom Web, Mobile & Fintech Software Development Services
             </h1>
 
             <p class="text-base md:text-lg leading-relaxed text-neutral-700">
-              From rapid MVPs to high-availability platforms—Protize partners
-              with you across product, engineering, and cloud to deliver
-              outcomes that matter.
+              Protize helps startups and growing businesses design, develop, and
+              scale secure digital products. From MVP app development to
+              enterprise-grade platforms, we deliver high-performance web
+              applications, mobile apps, fintech systems, and cloud solutions
+              built for reliability and growth.
             </p>
 
             <div class="flex flex-wrap gap-3">
-              <a href="/contact-us" aria-label="Start a project with Protize">
-                <CtaButton>Start a project</CtaButton>
+              <a
+                href="/contact-us"
+                aria-label="Start a software development project with Protize"
+              >
+                <CtaButton>Start Your Project</CtaButton>
               </a>
               <a
                 href="/case-studies"
-                aria-label="See Protize case studies and work"
+                aria-label="View Protize software development case studies"
               >
-                <Button variant="secondary">See our work</Button>
+                <Button variant="secondary">View Case Studies</Button>
               </a>
             </div>
           </div>
 
           <!-- Visual -->
           <div class="relative order-first lg:order-none">
-            <div
-              class="aspect-[16/10] w-full overflow-hidden rounded-2xl shadow-xl ring-1 ring-black/5"
-            >
+            <div class="w-full overflow-hidden">
               <Image
                 src={serviceImgHero}
                 alt="Engineers collaborating on a modern software system"

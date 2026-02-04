@@ -11,28 +11,33 @@ const { title, features, icon } = Astro.props;
 ---
 
 <div
-  class="relative overflow-hidden rounded-3xl bg-white border border-gray-200 p-5 sm:p-6 lg:p-7 transition-shadow hover:shadow-md"
+  class="relative overflow-hidden rounded-3xl bg-white border border-gray-200 px-4 pt-6 pb-0 transition-shadow hover:shadow-md"
 >
   <!-- Icon -->
-  <div class="rounded-xl p-3 bg-gray-100 text-gray-900 w-max">
-    <slot set:html={icon} />
+  <div
+    class="rounded-xl mx-auto p-3 w-max bg-purple-100 text-purple-700 ring-1 ring-purple-200/70"
+  >
+    <div
+      class="[&>svg]:w-6 [&>svg]:h-6 [&>svg]:block [&>svg]:fill-current"
+      set:html={icon}
+    />
   </div>
 
   <!-- Content -->
   <div class="mt-5 space-y-4">
-    <h2 class="text-lg md:text-xl font-semibold text-gray-900">
+    <h2 class="text-lg md:text-xl text-center font-semibold text-gray-900">
       {title}
     </h2>
 
     <Paragraph>
-      <ul class="mt-4 space-y-3">
+      <ul class="mt-4 space-y-1">
         {
           features.map((feature) => (
-            <li class="flex items-start">
-              <span class="mr-3 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-100 text-orange-700 text-sm leading-none">
+            <li class="flex items-center">
+              <span class="mr-3 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-purple-100 text-purple-700 text-sm leading-none ring-1 ring-purple-200/70">
                 ✓
               </span>
-              <span class="text-gray-700">{feature}</span>
+              <span class="text-gray-700 leading-tight">{feature}</span>
             </li>
           ))
         }
