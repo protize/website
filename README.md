@@ -1,45 +1,48 @@
-# Astrolus - A Modern Content-Driven Tech Website
+# Protize Website – Modern Content-Driven Tech Platform
 
-Astrolus is a modern, content-driven tech website template built with **Astro** and **Tailwind CSS**, leveraging **Tailus UI blocks** for fast, responsive, and visually appealing design. Ideal for startups, tech blogs, or SaaS landing pages, it offers performance, flexibility, and easy customization.
+Protize Website is a modern, content-driven company site built with **Astro** and **Tailwind CSS**, using **Tailus UI blocks** for fast, responsive, and premium UI delivery.  
+It is designed for service companies, product studios, SaaS brands, and tech consultancies that need performance, flexibility, and easy content updates.
 
-![Tailus Astro-based Light Theme](./public/astrolus-light.png)
-![Tailus Astro-based Dark Theme](./public/astrolus-dark.png)
+![Protize Light Theme](./public/protize-light.png)
+![Protize Dark Theme](./public/protize-dark.png)
+
+---
 
 ## 🛠️ Technology Stack
 
-Astrolus is built using a modern, performant, and scalable web stack:
+Protize Website is built with a modern, scalable stack:
 
-- **Astro** – The all-in-one web framework optimized for content-driven sites  
-- **Tailwind CSS** – A utility-first CSS framework for rapid UI development  
-- **Tailus Blocks** – Ready-made UI components and layouts for beautiful interfaces  
-- **TypeScript** – Ensures robust, maintainable, and type-safe code  
-- **Markdown & MDX** – Simple, flexible content management  
-- **GitHub Pages** – For easy, fast, and reliable deployment  
-- **GitHub Actions** – Automates builds and deployments for continuous delivery  
+- **Astro** – High-performance framework for content-first websites  
+- **Tailwind CSS** – Utility-first CSS framework for rapid UI development  
+- **Tailus Blocks** – Reusable UI blocks for modern layouts  
+- **TypeScript** – Type safety and maintainable codebase  
+- **Markdown & MDX** – Flexible content authoring  
+- **GitHub Pages / Vercel / Netlify** – Fast deployment options  
+- **GitHub Actions** – Automated CI/CD workflows  
+
+---
 
 ## 🚀 Setup Instructions
 
-### 1. **Prerequisites**
+### 1) Prerequisites
 
-Before you start, ensure you have the following installed on your system:
+Make sure the following are installed:
 
 - **Node.js** (v18 or higher) – [Download Node.js](https://nodejs.org/)  
-- **npm** (comes with Node.js) or **Yarn** – For managing project dependencies  
-- **Git** – To clone the repository and manage version control  
-- **VS Code** or any code editor of your choice – Recommended for editing and development  
-- **GitHub account** – Required if you plan to deploy via GitHub Pages  
+- **npm** (bundled with Node.js) or **Yarn / pnpm**  
+- **Git** – for version control  
+- **VS Code** (recommended)  
+- **GitHub account** (if deploying through GitHub Actions / Pages)
 
-### 2. **Installation**
+---
 
-Follow these steps to set up the Astrolus project locally:
+### 2) Installation
 
 1. **Clone the repository**
 ```bash
 git clone https://github.com/<your-username>/protize-website.git
 cd protize-website
-```
 
-2. **Install dependencies**
 ```bash
 npm install
 ```
