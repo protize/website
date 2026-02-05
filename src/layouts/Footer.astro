@@ -1,8 +1,10 @@
 ---
+import { Image } from "astro:assets";
 import GroupFooterNav from "../components/blocks/GroupFooterNav.astro";
 import Container from "../components/shared/Container.astro";
 import FooterNav from "../components/shared/FooterNav.astro";
 import Paragraph from "../components/shared/Paragraph.astro";
+import protizeLogo from "../assets/logos/protize-logo.png";
 
 const footerNav1 = [
   {
@@ -67,12 +69,14 @@ const footerLegal = [
         <div class="col-span-2 lg:col-span-1 h-auto flex flex-col">
           <div class="h-full">
             <a href="/" class="relative flex items-center gap-3">
-              <div
-                class="inline-flex text-5xl font-bold text-heading-1 text-primary"
-              >
-                Protize
-              </div>
+              <Image
+                src={protizeLogo}
+                alt="Protize Logo"
+                width={180}
+                height={100}
+              />
             </a>
+
             <Paragraph className={"mt-6"}>
               Protize delivers innovative tech solutions for modern digital
               business needs.

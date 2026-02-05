@@ -3,7 +3,7 @@ title: "Scaling Real-Time Payments Infrastructure with NestJS and PostgreSQL"
 excerpt: "How Protize scaled its fintech-grade payment gateway to handle millions of daily transactions using NestJS, PostgreSQL, and Redis."
 pubDate: 2025-11-06
 updatedDate: 2025-11-06
-author: "Protize Engineering Team"
+author: ""
 tags: ["NestJS", "PostgreSQL", "Fintech", "Scalability", "Microservices"]
 category: "Backend Engineering"
 featured: true

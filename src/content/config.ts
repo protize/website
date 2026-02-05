@@ -17,7 +17,7 @@ const blog = defineCollection({
   }),
 });
 
-const caseStudies = defineCollection({
+const Portfolio = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(),
@@ -36,5 +36,5 @@ const caseStudies = defineCollection({
 
 export const collections = {
   blog,
-  "case-studies": caseStudies,
+  portfolio: Portfolio,
 };

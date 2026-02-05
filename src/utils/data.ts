@@ -101,7 +101,7 @@ const members = [
   },
 ];
 
-const caseStudies = [
+const Portfolio = [
   {
     title: "Payment Success Uplift for Multi-Acquirer Gateway",
     industry: "Fintech",
@@ -117,7 +117,7 @@ const caseStudies = [
       { label: "Checkout Time", value: "−22%" },
       { label: "Support Tickets", value: "−41%" },
     ],
-    href: "/case-studies/payment-success-uplift",
+    href: "/portfolio/payment-success-uplift",
   },
   {
     title: "Catalog Ops Automation for D2C Apparel",
@@ -134,7 +134,7 @@ const caseStudies = [
       { label: "Ops Errors", value: "−72%" },
       { label: "New SKUs/Week", value: "3×" },
     ],
-    href: "/case-studies/catalog-ops-automation",
+    href: "/portfolio/catalog-ops-automation",
   },
   {
     title: "Scaling Real-Money Gaming During Tournaments",
@@ -151,8 +151,8 @@ const caseStudies = [
       { label: "Throughput", value: "2.4×" },
       { label: "Incidents", value: "−50%" },
     ],
-    href: "/case-studies/gaming-scale",
+    href: "/portfolio/gaming-scale",
   },
 ];
 
-export { members, caseStudies };
+export { members, Portfolio };

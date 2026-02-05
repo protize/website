@@ -3,9 +3,11 @@ import BtnLink from "../components/shared/BtnLink.astro";
 import Navitem from "../components/shared/Navitem.astro";
 import MotionNav from "../components/shared/MotionNav.tsx";
 import Container from "../components/shared/Container.astro";
+import protizeLogo from "../assets/logos/protize-logo.png";
+import { Image } from "astro:assets";
 
 const navItems = [
-  { href: "/case-studies", text: "Case Studies" },
+  { href: "/portfolio", text: "Portfolio" },
   { href: "/teams", text: "Our Team" },
   { href: "/services", text: "Services" },
   { href: "/about", text: "About Us" },
@@ -13,12 +15,12 @@ const navItems = [
 ];
 ---
 
-<header class="sticky top-0 inset-x-0 z-50 bg-[#f7f7f7] py-4 shadow-sm">
+<header class="sticky top-0 inset-x-0 z-50 bg-[#f7f7f7] py-2 shadow-sm">
   <Container>
     <nav class="flex justify-between items-center w-full relative">
       <!-- logo -->
       <a href="/" class="flex items-center gap-3">
-        <div class="text-3xl font-black text-primary">Protize</div>
+        <Image src={protizeLogo} alt="Protize Logo" width={200} height={100} />
       </a>
 
       <!-- Desktop Menu -->
