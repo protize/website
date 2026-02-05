@@ -41,7 +41,7 @@ const { className = "" } = Astro.props;
           height="480"
           loading="lazy"
           decoding="async"
-          class="relative w-full max-w-xl mx-auto object-cover"
+          class="hero-image relative w-full max-w-xl mx-auto object-cover"
         />
       </div>
 
@@ -123,6 +123,21 @@ const { className = "" } = Astro.props;
   #features.features-visible .features-item {
     animation: fadeUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
     animation-delay: var(--delay);
+  }
+
+  .hero-image {
+    animation: floatY 6s ease-in-out 1.2s infinite;
+    will-change: transform;
+  }
+
+  @keyframes floatY {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
   }
 
   @keyframes fadeUp {

@@ -1,47 +1,41 @@
 ---
-import Paragraph from "../shared/Paragraph.astro";
+import type { LucideIcon } from "lucide-react";
 
 export interface Props {
   title: string;
   features: string[];
-  icon: string;
+  icon: LucideIcon;
+  iconClass?: string;
 }
 
-const { title, features, icon } = Astro.props;
+const {
+  title,
+  features,
+  icon: Icon,
+  iconClass = "bg-blue-50 text-blue-600 ring-blue-200",
+} = Astro.props;
 ---
 
-<div
-  class="relative overflow-hidden rounded-3xl bg-white border border-gray-200 px-4 pt-6 pb-0 transition-shadow hover:shadow-md"
+<article
+  class="h-full rounded-2xl border border-blue-100 bg-white p-5 shadow-sm hover:shadow-md transition"
 >
-  <!-- Icon -->
-  <div
-    class="rounded-xl mx-auto p-3 w-max bg-purple-100 text-purple-700 ring-1 ring-purple-200/70"
-  >
+  <div class="flex items-start gap-3">
     <div
-      class="[&>svg]:w-6 [&>svg]:h-6 [&>svg]:block [&>svg]:fill-current"
-      set:html={icon}
-    />
+      class={`inline-flex h-10 w-10 items-center justify-center rounded-xl ring-1 ${iconClass}`}
+    >
+      <Icon className="h-5 w-5" strokeWidth={2.2} />
+    </div>
+
+    <div class="min-w-0">
+      <h3 class="text-base font-semibold text-gray-900">{title}</h3>
+    </div>
   </div>
 
-  <!-- Content -->
-  <div class="mt-5 space-y-4">
-    <h2 class="text-lg md:text-xl text-center font-semibold text-gray-900">
-      {title}
-    </h2>
-
-    <Paragraph>
-      <ul class="mt-4 space-y-1">
-        {
-          features.map((feature) => (
-            <li class="flex items-center">
-              <span class="mr-3 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-purple-100 text-purple-700 text-sm leading-none ring-1 ring-purple-200/70">
-                ✓
-              </span>
-              <span class="text-gray-700 leading-tight">{feature}</span>
-            </li>
-          ))
-        }
-      </ul>
-    </Paragraph>
-  </div>
-</div>
+  <ul class="mt-4 space-y-2">
+    {
+      features.map((item) => (
+        <li class="text-sm text-gray-600 leading-relaxed">• {item}</li>
+      ))
+    }
+  </ul>
+</article>

@@ -17,7 +17,7 @@ const { className } = Astro.props;
 
 <section class={`relative overflow-hidden ${className ?? ""}`}>
   <Container
-    className={"mt-28 relative flex flex-col lg:flex-row gap-10 lg:gap-12 min-h-[520px]"}
+    className={"mt-28 relative flex flex-col lg:flex-row gap-10 lg:gap-12"}
   >
     <div
       class="hero-content relative z-10 flex flex-col items-center text-center lg:text-left lg:py-7 xl:py-8
@@ -44,14 +44,14 @@ const { className } = Astro.props;
     </div>
   </Container>
   <div
-    class="relative w-full lg:absolute lg:top-0 lg:right-0 lg:w-1/2 lg:h-full"
+    class="hidden md:block absolute -top-52 lg:-top-24 -right-10 w-2/3 h-full"
   >
     <Image
       src={myHeroImage3}
       alt="Hero image"
       width={2350}
       height={2359}
-      class="hero-image w-full h-full object-contain lg:absolute lg:-top-24 lg:right-0"
+      class="hero-image w-full h-full object-contain"
     />
   </div>
 
