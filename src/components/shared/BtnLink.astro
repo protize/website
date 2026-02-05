@@ -30,11 +30,7 @@ const getTextColor = (variant: "primary" | "secondary") => {
     ${getThemeStyle(variant)} hover:after:opacity-100 hover:after:scale-[2.5] ${className ?? ""}`}
 >
   <span
-    class={`relative z-10 transition-colors duration-300 ${
-      variant === "primary"
-        ? "text-white"
-        : `${getTextColor(variant)} text-black group-hover:text-white`
-    }`}
+    class={`relative z-10 transition-colors duration-300 text-black group-hover:text-white`}
   >
     {text}
   </span>
