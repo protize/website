@@ -1,62 +1,77 @@
 export const faqs = [
   {
-    question: "What does your development process look like?",
+    question: "What services do you offer?",
     answer:
-      "We start with a clear understanding of your goals, users, and business requirements. From there, we design the system architecture, plan milestones, and build in structured phases—ensuring predictable timelines and smooth delivery.",
+      "We provide end-to-end software development services, including web apps, mobile apps, backend systems, API development, cloud deployment, UI/UX implementation, and ongoing maintenance.",
   },
   {
-    question: "What technologies do you work with?",
+    question: "What types of businesses do you work with?",
     answer:
-      "We use modern, reliable technologies to build high-performance products. Our expertise includes web platforms, mobile applications, backend systems, databases, cloud infrastructure, and scalable APIs tailored to your business needs.",
+      "We work with startups, growing businesses, and enterprises across industries such as fintech, e-commerce, healthcare, education, logistics, and SaaS.",
   },
   {
-    question: "How do you define project success?",
+    question: "Can you build my product from scratch?",
     answer:
-      "Success is measured through real business outcomes—such as performance, reliability, user experience, and scalability. We work closely with you to define measurable goals and ensure the final product delivers long-term value.",
+      "Yes. We can take your idea from discovery to launch—covering planning, architecture, development, testing, deployment, and post-launch support.",
   },
   {
-    question: "Do you build fintech or payment-related systems?",
+    question: "Can you improve or rebuild my existing software?",
     answer:
-      "Yes. We design and develop secure financial technology solutions including payment integrations, transaction workflows, reporting systems, and dashboards with strong reliability and compliance considerations.",
+      "Absolutely. We can audit your current system, fix performance or security issues, modernize the tech stack, and add new features without disrupting business operations.",
   },
   {
-    question: "How do you ensure security?",
+    question: "What is your development process?",
     answer:
-      "Security is built into every stage of our process. We follow industry best practices including secure authentication, data protection, access controls, regular monitoring, and infrastructure safeguards.",
+      "Our process includes discovery, planning, UI/UX alignment, architecture, development in milestones, QA testing, deployment, and continuous support. You get visibility at every stage.",
   },
   {
-    question: "How long does a typical project take?",
+    question: "How long does a project usually take?",
     answer:
-      "Timelines depend on project scope and complexity. Smaller MVPs may take a few weeks, while larger platforms are delivered in structured phases. We provide clear milestone plans before development begins.",
+      "Timeline depends on scope and complexity. A small MVP can take 4–8 weeks, while larger platforms are delivered in phased releases. We provide a clear delivery roadmap before starting.",
   },
   {
-    question: "Do you offer support after launch?",
+    question: "How much does software development cost?",
     answer:
-      "Yes. We provide ongoing support, maintenance, updates, and performance improvements to ensure your product continues running smoothly after launch.",
+      "Cost depends on requirements, features, integrations, and timeline. After understanding your needs, we provide a transparent estimate with phase-wise effort and deliverables.",
   },
   {
-    question: "How do you manage deployments and updates?",
+    question: "Do you sign NDA and keep project details confidential?",
     answer:
-      "We use automated deployment processes to ensure updates are released safely and efficiently, with testing and monitoring in place to minimize downtime and risk.",
+      "Yes. We are comfortable signing NDAs and follow strict confidentiality practices to protect your business data, product strategy, and intellectual property.",
   },
   {
-    question: "Who owns the product and source code?",
+    question: "Who owns the source code and product after development?",
     answer:
-      "You retain full ownership of your product, code, and data. We ensure everything is delivered transparently and documented properly.",
+      "You do. Once project terms are completed, you receive full ownership of source code, product assets, and data as agreed in the contract.",
   },
   {
-    question: "Can you work under confidentiality agreements?",
+    question: "How do you ensure software quality?",
     answer:
-      "Absolutely. We are comfortable working under NDAs and follow strict confidentiality and data protection practices.",
+      "We follow a quality-focused workflow with code reviews, testing, bug tracking, performance checks, and staged releases to ensure stable and reliable software.",
   },
   {
-    question: "What does the onboarding process involve?",
+    question: "How do you handle security?",
     answer:
-      "We begin with a discovery session to understand your vision, requirements, and constraints. From there, we prepare a clear plan outlining timelines, deliverables, and responsibilities.",
+      "Security is built into development through secure authentication, authorization controls, encrypted data handling, protected APIs, and infrastructure best practices.",
   },
   {
-    question: "How do we stay updated during the project?",
+    question: "Will I get regular project updates?",
     answer:
-      "We provide regular updates, progress reports, and milestone demos. Communication is structured and transparent so you’re always informed.",
+      "Yes. We share regular progress updates, milestone demos, and delivery reports so you always know what is completed, in progress, and next.",
+  },
+  {
+    question: "Do you provide support after launch?",
+    answer:
+      "Yes. We offer post-launch support that includes monitoring, bug fixes, performance optimization, feature enhancements, and version updates.",
+  },
+  {
+    question: "Can you scale the software as my business grows?",
+    answer:
+      "Yes. We build scalable architecture so your platform can handle increased users, transactions, features, and integrations over time.",
+  },
+  {
+    question: "How do we get started?",
+    answer:
+      "Start with a discovery call. We understand your goals, define scope, suggest the right approach, and share a clear proposal with timeline and cost.",
   },
 ];
