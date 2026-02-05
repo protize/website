@@ -2,6 +2,7 @@
 import Carousel from "../shared/Carousel.astro";
 import { logos } from "../../data/logos";
 import Title from "../shared/Title.astro";
+
 interface SkillItem {
   icon: string; // inline SVG
   title: string;
@@ -16,38 +17,73 @@ interface Props {
 const { title, skills } = Astro.props as Props;
 ---
 
-<section class="w-full py-16">
+<section id="tools-carousel-section" class="w-full pt-16">
   <div class="mx-auto max-w-6xl">
-    <div class="text-center">
+    <div class="text-center reveal-title">
       {title && <Title>{title}</Title>}
     </div>
 
-    <div class="my-10">
+    <div class="mt-10 reveal-carousel">
       <Carousel tools={logos} />
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-      {
-        skills.map((skill) => (
-          <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-md transition-all duration-200 hover:-translate-y-1 hover:shadow-xl">
-            <div class="flex flex-col items-center text-center">
-              <div
-                class="mb-4 rounded-xl size-[48px] flex items-center justify-center bg-purple-100 text-purple-700
-                   [&>svg]:w-7 [&>svg]:h-7 [&>svg]:block"
-                style="background: rgba(37, 99, 235, 0.18);"
-                set:html={skill.icon}
-              />
-
-              <h3 class="text-xl font-semibold text-slate-900 mb-2">
-                {skill.title}
-              </h3>
-              <p class="text-slate-700 leading-relaxed max-w-prose">
-                {skill.description}
-              </p>
-            </div>
-          </div>
-        ))
-      }
     </div>
   </div>
 </section>
+
+<script>
+  const section = document.getElementById("tools-carousel-section");
+
+  if (section) {
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    if (prefersReducedMotion) {
+      section.classList.add("is-visible");
+    } else {
+      const observer = new IntersectionObserver(
+        ([entry], obs) => {
+          if (entry.isIntersecting) {
+            section.classList.add("is-visible");
+            obs.disconnect();
+          }
+        },
+        { threshold: 0.2, rootMargin: "0px 0px -8% 0px" },
+      );
+
+      observer.observe(section);
+    }
+  }
+</script>
+
+<style>
+  #tools-carousel-section .reveal-title,
+  #tools-carousel-section .reveal-carousel {
+    opacity: 0;
+    transform: translateY(18px);
+    will-change: transform, opacity;
+  }
+
+  #tools-carousel-section.is-visible .reveal-title {
+    animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  #tools-carousel-section.is-visible .reveal-carousel {
+    animation: fadeUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.15s forwards;
+  }
+
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #tools-carousel-section .reveal-title,
+    #tools-carousel-section .reveal-carousel {
+      opacity: 1 !important;
+      transform: none !important;
+      animation: none !important;
+    }
+  }
+</style>

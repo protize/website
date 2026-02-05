@@ -2,13 +2,22 @@
 /* WhyProtize.astro */
 import Container from "../shared/Container.astro";
 import Title from "../shared/Title.astro";
+import type { LucideIcon } from "lucide-react";
+import {
+  Target,
+  BarChart3,
+  Route,
+  ShieldCheck,
+  Clock3,
+  Handshake,
+} from "lucide-react";
 
 const { className = "" } = Astro.props;
 
 type Diff = {
   title: string;
   desc: string;
-  icon: string;
+  icon: LucideIcon;
 };
 
 const differentiators: Diff[] = [
@@ -16,47 +25,45 @@ const differentiators: Diff[] = [
     title: "Strategic, Not Just Technical",
     desc:
       "We begin by understanding your business goals and users, ensuring the solution aligns with long-term growth—not just immediate delivery.",
-    icon: `<svg viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor" aria-hidden="true"><path d="M12 2 2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>`,
+    icon: Target,
   },
   {
     title: "Results You Can Measure",
     desc:
       "We define success with clear performance and business metrics, so you always know how your product is improving and delivering value.",
-    icon: `<svg viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor" aria-hidden="true"><path d="M3 3h4v18H3zM10 10h4v11h-4zM17 6h4v15h-4z"/></svg>`,
+    icon: BarChart3,
   },
   {
     title: "Smooth & Predictable Delivery",
     desc:
       "Our structured processes and proven workflows keep projects on track, reduce surprises, and ensure a confident path from idea to launch.",
-    icon: `<svg viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor" aria-hidden="true"><path d="M4 3h12l4 4v14a2 2 0 0 1-2 2H4zM16 3v5h5"/></svg>`,
+    icon: Route,
   },
   {
     title: "Built for Reliability",
     desc:
       "We design systems that stay fast, stable, and dependable—so your users enjoy a seamless experience even as your business scales.",
-    icon: `<svg viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor" aria-hidden="true"><path d="M12 3a9 9 0 1 0 .001 18.001A9 9 0 0 0 12 3zm1 5a1 1 0 1 0-2 0v5a1 1 0 0 0 .293.707l3 3a1 1 0 1 0 1.414-1.414L13 12.586V8z"/></svg>`,
+    icon: Clock3,
   },
   {
     title: "Security You Can Trust",
     desc:
       "We prioritize data protection and secure practices from day one, helping you safeguard your users, transactions, and reputation.",
-    icon: `<svg viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor" aria-hidden="true"><path d="M12 2 5 5v6c0 5 3.8 9.6 7 10 3.2-.4 7-5 7-10V5z"/></svg>`,
+    icon: ShieldCheck,
   },
   {
     title: "Long-Term Technology Partner",
     desc:
       "Beyond launch, we support growth, improvements, and scaling—so your technology evolves with your business.",
-    icon: `<svg viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor" aria-hidden="true"><path d="M12 8v4l3 3M12 3a9 9 0 1 0 9 9 9 9 0 0 0-9-9z"/></svg>`,
+    icon: Handshake,
   },
 ];
-
-
 ---
 
 <section id="why-protize" class={`relative overflow-hidden ${className}`}>
-  <!-- Purple background -->
+  <!-- background -->
   <div class="pointer-events-none absolute inset-0 -z-10">
-    <div class="absolute inset-0 bg-gradient-to-b from-white via-purple-50/35 to-white" />
+    <div class="absolute inset-0 bg-gradient-to-b from-white via-blue-50/35 to-white" />
     <div class="absolute inset-0 bg-[radial-gradient(closest-side_at_50%_0%,rgba(124,58,237,0.22),transparent_65%),radial-gradient(closest-side_at_0%_70%,rgba(99,102,241,0.18),transparent_55%),radial-gradient(closest-side_at_100%_65%,rgba(168,85,247,0.14),transparent_55%)]" />
     <div class="absolute inset-0 opacity-[0.35] [background-image:linear-gradient(to_right,rgba(15,23,42,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(15,23,42,0.06)_1px,transparent_1px)] [background-size:52px_52px]" />
   </div>
@@ -64,48 +71,104 @@ const differentiators: Diff[] = [
   <Container className="py-12 md:py-10 space-y-10 md:space-y-14">
     <!-- Header -->
     <div class="text-center max-w-3xl mx-auto space-y-3">
-     
-
       <Title>Why Protize</Title>
-
       <p class="text-sm md:text-base text-gray-600 leading-relaxed">
         Differentiators that keep products fast, reliable, and secure—without surprises.
       </p>
     </div>
 
     <!-- Differentiators -->
-    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 md:gap-6">
-      {differentiators.map((d) => (
-        <article class="group relative rounded-3xl bg-gradient-to-br from-purple-600/30 via-indigo-500/20 to-fuchsia-500/20 p-[1px] shadow-[0_18px_55px_-35px_rgba(2,6,23,0.35)]">
-          <div class="relative h-full rounded-3xl border border-purple-200/60 bg-white/70 backdrop-blur-xl p-5 md:p-6 transition-all duration-300 group-hover:-translate-y-1 group-hover:border-purple-300/70 group-hover:bg-white/80 group-hover:shadow-[0_22px_70px_-40px_rgba(2,6,23,0.45)]">
-            <!-- hover glow -->
-            <div class="pointer-events-none absolute -inset-10 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-              <div class="absolute left-1/2 top-0 h-28 w-28 -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.70),transparent_60%)] blur-2xl" />
-            </div>
-
-            <div class="flex items-start gap-4">
-              <!-- Icon bubble (purple) -->
-              <div class="relative inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-600 to-fuchsia-600 text-white shadow-md ring-1 ring-black/5">
-                <span class="sr-only">{d.title} icon</span>
-                <div class="[&>svg]:h-6 [&>svg]:w-6 [&>svg]:block" set:html={d.icon}></div>
+    <div id="why-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 md:gap-6">
+      {differentiators.map((d, idx) => {
+        const Icon = d.icon;
+        return (
+          <article
+            class="why-card group relative rounded-3xl bg-gradient-to-br from-blue-600/30 via-indigo-500/20 to-fuchsia-500/20 p-[1px] shadow-[0_18px_55px_-35px_rgba(2,6,23,0.35)]"
+            style={`--delay:${idx * 90}ms`}
+          >
+            <div class="relative h-full rounded-3xl border border-blue-200/60 bg-white/70 backdrop-blur-xl p-5 md:p-6 transition-all duration-300 group-hover:-translate-y-1 group-hover:border-blue-300/70 group-hover:bg-white/80 group-hover:shadow-[0_22px_70px_-40px_rgba(2,6,23,0.45)]">
+              <!-- hover glow -->
+              <div class="pointer-events-none absolute -inset-10 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                <div class="absolute left-1/2 top-0 h-28 w-28 -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.70),transparent_60%)] blur-2xl" />
               </div>
 
-              <div class="flex-1">
-                <h3 class="text-lg md:text-xl font-semibold text-gray-900 tracking-tight">
-                  {d.title}
-                </h3>
+              <div class="flex items-start gap-4">
+                <!-- Icon bubble (blue icon) -->
+                <div class="relative inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-blue-600 shadow-sm ring-1 ring-blue-100 transition-transform duration-300 group-hover:scale-105">
+                  <span class="sr-only">{d.title} icon</span>
+                  <Icon class="h-6 w-6 text-blue-600" strokeWidth={2.2} />
+                </div>
 
-                <p class="mt-2 text-sm text-gray-700 leading-relaxed">
-                  {d.desc}
-                </p>
+                <div class="flex-1">
+                  <h3 class="text-lg md:text-xl font-semibold text-gray-900 tracking-tight">
+                    {d.title}
+                  </h3>
 
-                <div class="mt-4 h-px w-full bg-gradient-to-r from-transparent via-purple-200/80 to-transparent" />
+                  <p class="mt-2 text-sm text-gray-700 leading-relaxed">
+                    {d.desc}
+                  </p>
+
+                  <div class="mt-4 h-px w-full bg-gradient-to-r from-transparent via-blue-200/80 to-transparent" />
+                </div>
               </div>
             </div>
-          </div>
-        </article>
-      ))}
+          </article>
+        );
+      })}
     </div>
   </Container>
 </section>
 
+<script>
+  const grid = document.getElementById("why-grid");
+
+  if (grid) {
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (prefersReducedMotion) {
+      grid.classList.add("why-visible");
+    } else {
+      const observer = new IntersectionObserver(
+        ([entry], obs) => {
+          if (entry.isIntersecting) {
+            grid.classList.add("why-visible");
+            obs.disconnect();
+          }
+        },
+        { threshold: 0.18, rootMargin: "0px 0px -8% 0px" }
+      );
+
+      observer.observe(grid);
+    }
+  }
+</script>
+
+<style>
+  .why-card {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+    will-change: transform, opacity;
+  }
+
+  :global(.why-visible) .why-card {
+    animation: whyReveal 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation-delay: var(--delay);
+  }
+
+  @keyframes whyReveal {
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .why-card {
+      opacity: 1 !important;
+      transform: none !important;
+      animation: none !important;
+    }
+  }
+</style>
