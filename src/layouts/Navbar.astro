@@ -1,0 +1,39 @@
+---
+import BtnLink from "../components/shared/BtnLink.astro";
+import Navitem from "../components/shared/Navitem.astro";
+import MotionNav from "../components/shared/MotionNav.tsx";
+import Container from "../components/shared/Container.astro";
+import protizeLogo from "../assets/logos/protize-logo.png";
+import { Image } from "astro:assets";
+
+const navItems = [
+  { href: "/portfolio", text: "Portfolio" },
+  { href: "/teams", text: "Our Team" },
+  { href: "/services", text: "Services" },
+  { href: "/about", text: "About Us" },
+  { href: "/blog", text: "Blogs" },
+];
+---
+
+<header class="sticky top-0 inset-x-0 z-50 bg-[#f7f7f7] py-2 shadow-sm">
+  <Container>
+    <nav class="flex justify-between items-center w-full relative">
+      <!-- logo -->
+      <a href="/" class="flex items-center gap-3">
+        <Image src={protizeLogo} alt="Protize Logo" width={200} height={100} />
+      </a>
+
+      <!-- Desktop Menu -->
+      <ul class="hidden lg:flex gap-x-6">
+        {navItems.map((item) => <Navitem {...item} />)}
+      </ul>
+
+      <div class="hidden lg:flex items-center gap-x-4">
+        <BtnLink text="Contact Us" href="/contact-us" variant="primary" />
+      </div>
+
+      <!-- Mobile Menu Button: hydrate on the client -->
+      <MotionNav client:load navItems={navItems} />
+    </nav>
+  </Container>
+</header>

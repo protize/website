@@ -1,0 +1,163 @@
+---
+const { title, url = Astro.url?.href || "" } = Astro.props;
+
+const encodedURL = encodeURIComponent(url);
+const encodedTitle = encodeURIComponent(title);
+
+const shareLinks = {
+  whatsapp: `https://wa.me/?text=${encodedTitle}%20${encodedURL}`,
+  facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodedURL}`,
+  twitter: `https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedURL}`,
+  linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedURL}`,
+  instagram: `https://www.instagram.com/`,
+};
+---
+
+<!-- Share button -->
+<div class="relative">
+  <button
+    id="shareBtn"
+    class="inline-flex items-center gap-2 rounded-lg border border-gray-200 px-3 py-1.5 text-sm font-medium text-gray-700 hover:bg-gray-50"
+    aria-haspopup="dialog"
+    aria-controls="shareModal"
+    aria-expanded="false"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-4 w-4"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+    >
+      <path
+        d="M18 8a3 3 0 10-2.83-4H15a3 3 0 00.17 1L8.91 9.07A3 3 0 007 8a3 3 0 100 6 3 3 0 001.91-.72l6.26 4.07A3 3 0 0015 19a3 3 0 103-3 3 3 0 00-.21-1.1l-6.2-4.02A3 3 0 0012 11a3 3 0 00-.25-1.2l6.04-3.93A3 3 0 0018 8z"
+      ></path>
+    </svg>
+    Share
+  </button>
+
+  <!-- Modal -->
+  <div
+    id="shareModal"
+    class="fixed inset-0 z-50 hidden"
+    role="dialog"
+    aria-modal="true"
+  >
+    <button
+      id="shareOverlay"
+      class="absolute inset-0 bg-black/50"
+      aria-label="Close share dialog"></button>
+
+    <div
+      class="absolute inset-x-4 top-16 mx-auto max-w-sm rounded-2xl bg-white p-5 shadow-xl"
+    >
+      <div class="mb-4 flex items-center justify-between">
+        <h2 class="text-sm font-semibold text-gray-700">Share this post</h2>
+        <button
+          id="shareClose"
+          class="p-1 rounded hover:bg-gray-100"
+          aria-label="Close"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            ><path
+              fill-rule="evenodd"
+              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+              clip-rule="evenodd"></path></svg
+          >
+        </button>
+      </div>
+
+      <div class="grid grid-cols-5 gap-3 text-center">
+        {
+          Object.entries(shareLinks).map(([name, link]) => (
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener"
+              class="group flex flex-col items-center gap-1 rounded-lg p-2 hover:bg-gray-50"
+            >
+              <img
+                src={`/images/icons/${name}.png`}
+                alt={name}
+                class="h-6 w-6 text-gray-700 group-hover:opacity-80"
+                loading="lazy"
+              />
+              <span class="text-[11px] text-gray-600 capitalize">{name}</span>
+            </a>
+          ))
+        }
+      </div>
+
+      <div class="mt-5 flex items-center justify-between gap-3">
+        <button
+          id="nativeShare"
+          class="flex-1 rounded-lg border border-gray-200 px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
+        >
+          Share via device
+        </button>
+        <button
+          id="copyLink"
+          class="flex-1 rounded-lg border border-gray-200 px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
+        >
+          Copy link
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    const modal = document.getElementById("shareModal");
+    const openBtn = document.getElementById("shareBtn");
+    const closeBtn = document.getElementById("shareClose");
+    const overlay = document.getElementById("shareOverlay");
+    const copyBtn = document.getElementById("copyLink");
+    const nativeBtn = document.getElementById("nativeShare");
+
+    const url = window.location.href;
+    const title = document.title;
+
+    function openModal() {
+      modal.classList.remove("hidden");
+      openBtn.setAttribute("aria-expanded", "true");
+      document.body.classList.add("overflow-hidden");
+    }
+    function closeModal() {
+      modal.classList.add("hidden");
+      openBtn.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("overflow-hidden");
+    }
+
+    openBtn.addEventListener("click", openModal);
+    closeBtn.addEventListener("click", closeModal);
+    overlay.addEventListener("click", closeModal);
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeModal();
+    });
+
+    nativeBtn.addEventListener("click", async () => {
+      if (navigator.share) {
+        try {
+          await navigator.share({ title, url });
+          closeModal();
+        } catch {}
+      } else {
+        alert("Sharing not supported on this device.");
+      }
+    });
+
+    copyBtn.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(url);
+        copyBtn.textContent = "Copied!";
+        setTimeout(() => (copyBtn.textContent = "Copy link"), 1200);
+      } catch {
+        alert("Unable to copy link.");
+      }
+    });
+  })();
+</script>

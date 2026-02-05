@@ -1,0 +1,53 @@
+---
+import Carousel from "../shared/Carousel.astro";
+import { logos } from "../../data/logos";
+import Title from "../shared/Title.astro";
+interface SkillItem {
+  icon: string; // inline SVG
+  title: string;
+  description: string;
+}
+
+interface Props {
+  title?: string;
+  skills: SkillItem[];
+}
+
+const { title, skills } = Astro.props as Props;
+---
+
+<section class="w-full py-16">
+  <div class="mx-auto max-w-6xl">
+    <div class="text-center">
+      {title && <Title>{title}</Title>}
+    </div>
+
+    <div class="my-10">
+      <Carousel tools={logos} />
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+      {
+        skills.map((skill) => (
+          <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-md transition-all duration-200 hover:-translate-y-1 hover:shadow-xl">
+            <div class="flex flex-col items-center text-center">
+              <div
+                class="mb-4 rounded-xl size-[48px] flex items-center justify-center bg-purple-100 text-purple-700
+                   [&>svg]:w-7 [&>svg]:h-7 [&>svg]:block"
+                style="background: rgba(37, 99, 235, 0.18);"
+                set:html={skill.icon}
+              />
+
+              <h3 class="text-xl font-semibold text-slate-900 mb-2">
+                {skill.title}
+              </h3>
+              <p class="text-slate-700 leading-relaxed max-w-prose">
+                {skill.description}
+              </p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,47 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import PortfolioHero from "../../components/sections/portfolio-section/PortfolioHero.astro";
+import ProjectGrid from "../../components/sections/portfolio-section/ProjectGrid.astro";
+import Container from "../../components/shared/Container.astro";
+import Title from "../../components/shared/Title.astro";
+import Paragraph from "../../components/shared/Paragraph.astro";
+
+const allPosts = (await getCollection("portfolio"))
+  .filter((p) => !p.data.draft)
+  .sort(
+    (a, b) =>
+      new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime(),
+  );
+
+const tagMap = new Map<string, string>();
+for (const p of allPosts) {
+  for (const raw of p.data.tags ?? []) {
+    const t = String(raw).trim();
+    if (!t) continue;
+    const key = t.toLowerCase();
+    if (!tagMap.has(key)) tagMap.set(key, t);
+  }
+}
+const allTags = Array.from(tagMap.values()).sort((a, b) =>
+  a.localeCompare(b, "en", { sensitivity: "base" }),
+);
+---
+
+<Layout title="Portfolio">
+  <section>
+    <PortfolioHero />
+    <Container className="mb-10">
+      <div
+        class="text-center space-y-4 py-10 scroll-mt-28 md:scroll-mt-32"
+        id="project-grid"
+      >
+        <Title>Projects</Title>
+        <Paragraph
+          >Explore my projects and know about development journey</Paragraph
+        >
+      </div>
+      <ProjectGrid posts={allPosts} />
+    </Container>
+  </section>
+</Layout>

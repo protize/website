@@ -1,0 +1,232 @@
+---
+import Container from "../components/shared/Container.astro";
+import CtaButton from "../components/shared/CtaButton.astro";
+import Layout from "../layouts/Layout.astro";
+
+const stats = [
+  { label: "Years of Experience", value: "10+" },
+  { label: "Projects Delivered", value: "250+" },
+  { label: "Active Clients", value: "40+" },
+  { label: "Uptime Across Products", value: "99.9%" },
+];
+
+const values = [
+  {
+    title: "Ownership",
+    text: "We act like product owners, not vendors—prioritizing outcomes over outputs.",
+  },
+  {
+    title: "Security by Design",
+    text: "OWASP-first development, threat modeling, and infra hardening from day one.",
+  },
+  {
+    title: "Velocity with Quality",
+    text: "Automated testing, CI/CD, and observability to ship fast without surprises.",
+  },
+  {
+    title: "Transparent Partnering",
+    text: "Clear estimates, proactive updates, and zero hidden costs.",
+  },
+];
+
+const capabilities = [
+  "Custom Web & Mobile Apps (React/Next.js, Flutter)",
+  "Backend & APIs (Node/NestJS, PostgreSQL, Redis, BullMQ)",
+  "Cloud & DevOps (AWS, Docker, CI/CD, IaC)",
+  "Data & Analytics (Pandas, SQL, dashboards)",
+  "E-commerce (WooCommerce, Shopify, payments)",
+  "Integrations (Slack, Telegram bots, webhooks)",
+];
+---
+
+<Layout title="About • Protize">
+  <main class="mb-10 space-y-28 md:space-y-32">
+    <!-- HERO -->
+    <section
+      class="py-10 md:py-20 lg:py-32 relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"
+    >
+      <!-- soft texture / halo -->
+      <div
+        class="absolute inset-0 opacity-20 bg-[radial-gradient(60%_50%_at_70%_20%,rgba(255,255,255,0.25),transparent_70%)]"
+      >
+      </div>
+
+      <Container className="">
+        <div class="grid gap-10 md:gap-12 md:grid-cols-2 items-center">
+          <!-- Copy -->
+          <div class="flex flex-col justify-center">
+            <span
+              class="inline-flex w-max items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs uppercase tracking-wide text-slate-200 backdrop-blur"
+            >
+              About Protize
+            </span>
+
+            <h1
+              class="mt-4 text-4xl md:text-5xl font-extrabold leading-tight text-white"
+            >
+              We build reliable, secure, and scalable software—fast.
+            </h1>
+
+            <p class="mt-5 max-w-xl text-slate-300">
+              Protize is an IT services company helping startups and enterprises
+              ship production-grade products. From architecture and APIs to
+              dashboards and mobile apps, we turn business goals into shipping
+              software.
+            </p>
+
+            <div class="mt-6 flex flex-wrap gap-3">
+              <a href="/contact-us">
+                <CtaButton> Talk to us</CtaButton>
+              </a>
+              <a
+                href="/services"
+                class="text-white hover:text-white/80 px-6 py-3 rounded-full outline-none relative overflow-hidden border duration-300 ease-linear"
+              >
+                Our services
+              </a>
+            </div>
+          </div>
+
+          <!-- Visual -->
+          <div class="relative">
+            <div
+              class="absolute -inset-6 -z-10 blur-2xl opacity-40 bg-gradient-to-tr from-cyan-400/40 to-indigo-400/40"
+            >
+            </div>
+            <img
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1600&auto=format&fit=crop"
+              alt="Protize team collaborating in a modern workspace"
+              class="h-full w-full rounded-2xl object-cover shadow-2xl ring-1 ring-white/10"
+              loading="eager"
+              decoding="async"
+            />
+          </div>
+        </div>
+      </Container>
+    </section>
+
+    <!-- STATS -->
+    <Container
+      ><ul class="grid gap-4 sm:grid-cols-2 md:grid-cols-4">
+        {
+          stats.map((s) => (
+            <li class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition">
+              <div class="text-3xl font-semibold text-slate-900">{s.value}</div>
+              <div class="mt-1 text-sm text-slate-500">{s.label}</div>
+            </li>
+          ))
+        }
+      </ul></Container
+    >
+
+    <!-- WHO WE ARE -->
+    <Container>
+      <div class="grid items-start gap-10 md:grid-cols-2">
+        <div class="space-y-5">
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">
+            Who we are
+          </h2>
+          <p class="text-slate-700">
+            Founded with a builder’s mindset, Protize blends product thinking
+            with deep engineering. We’ve shipped payment gateways, data
+            platforms, and high-traffic web apps with zero-downtime releases and
+            strong SLAs.
+          </p>
+          <p class="text-slate-700">
+            Our teams are small, senior, and autonomous—focused on clarity,
+            measurable progress, and long-term maintainability.
+          </p>
+
+          <div class="mt-6 grid gap-4 sm:grid-cols-2">
+            <div
+              class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm"
+            >
+              <h3 class="font-semibold text-slate-900">
+                Product-minded engineers
+              </h3>
+              <p class="mt-1 text-sm text-slate-600">
+                We ask “why” before “how,” aligning tech with business outcomes.
+              </p>
+            </div>
+            <div
+              class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm"
+            >
+              <h3 class="font-semibold text-slate-900">
+                Security & reliability
+              </h3>
+              <p class="mt-1 text-sm text-slate-600">
+                From auth to observability, we bake reliability into every
+                layer.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h3 class="text-lg font-semibold text-slate-900">What we do</h3>
+          <ul class="mt-4 grid list-disc gap-2 pl-5 text-slate-700">
+            {capabilities.map((c) => <li>{c}</li>)}
+          </ul>
+          <a
+            href="/services"
+            class="mt-6 inline-block rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50"
+          >
+            Explore services →
+          </a>
+        </div>
+      </div>
+    </Container>
+
+    <!-- VALUES -->
+    <Container>
+      <div class="max-w-2xl">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900">
+          Our values
+        </h2>
+        <p class="mt-2 text-slate-600">
+          Principles that keep our work calm, focused, and consistently
+          excellent.
+        </p>
+      </div>
+
+      <div class="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {
+          values.map((v) => (
+            <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm hover:shadow-md transition">
+              <h3 class="font-semibold text-slate-900">{v.title}</h3>
+              <p class="mt-1 text-sm text-slate-600">{v.text}</p>
+            </div>
+          ))
+        }
+      </div>
+    </Container>
+
+    <!-- CTA -->
+    <Container>
+      <div
+        class="overflow-hidden rounded-3xl border border-indigo-200 bg-gradient-to-br from-indigo-600 to-cyan-500 p-8 text-white shadow-sm"
+      >
+        <div class="grid items-center gap-6 md:grid-cols-3">
+          <div class="md:col-span-2">
+            <h2 class="text-2xl md:text-3xl font-semibold">
+              Let’s build something impactful
+            </h2>
+            <p class="mt-2 text-white/90">
+              Whether it’s a greenfield MVP or scaling an existing product,
+              Protize brings the focus, craftsmanship, and speed you need to
+              ship with confidence.
+            </p>
+          </div>
+          <div class="md:justify-self-end">
+            <a
+              href="/contact-us"
+              class="inline-block rounded-xl bg-white px-5 py-3 text-sm font-semibold text-slate-900 shadow hover:shadow-lg transition"
+            >
+              Get in touch
+            </a>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </main>
+</Layout>

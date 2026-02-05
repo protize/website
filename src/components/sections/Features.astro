@@ -1,0 +1,66 @@
+---
+import Container from "../shared/Container.astro";
+import Title from "../shared/Title.astro";
+
+import GradiantText from "../shared/GradiantText.astro";
+import { features } from "../../data/feature";
+import featureImage from "../../assets/images/feature.png";
+import { Image } from "astro:assets";
+
+export interface Props {
+  className?: string;
+}
+
+const { className } = Astro.props;
+---
+
+<section id="features" class={className}>
+  <Container className="py-12 md:py-16">
+    <div class="text-center max-w-4xl mx-auto">
+      <Title>
+        We build <GradiantText>Essential Features</GradiantText> for Modern IT Products
+      </Title>
+      <p class="mt-2 text-sm md:text-base text-gray-600">
+        From architecture to operations—Protize ships durable systems with
+        measurable outcomes.
+      </p>
+    </div>
+
+    <div
+      class="max-w-6xl mx-auto mt-10 flex flex-col lg:flex-row gap-8 items-center"
+    >
+      <!-- Image -->
+      <div class="relative w-full lg:w-2/3">
+        <div class="absolute -inset-6 rounded-3xl bg-purple-100/60 blur-2xl">
+        </div>
+        <Image
+          src={featureImage}
+          alt="Protize essential features illustration"
+          width="640"
+          height="480"
+          loading="lazy"
+          decoding="async"
+          class="relative w-full max-w-xl mx-auto rounded-3xl border border-slate-200 bg-white shadow-md object-cover"
+        />
+      </div>
+
+      <!-- Feature list -->
+      <div class="w-full lg:w-1/3 flex flex-col mt-4 lg:mt-0">
+        {
+          features.map((feature) => {
+            return (
+              <div class="flex items-center text-heading-3 font-medium">
+                {" "}
+                <span class="font-bold rounded-full w-8 h-8 mr-3 text-primary inline-flex justify-center items-center">
+                  {" "}
+                  &checkmark;{" "}
+                </span>{" "}
+                {feature.title}{" "}
+              </div>
+            );
+          })
+        }
+      </div>
+    </div>
+  </Container>
+</section>

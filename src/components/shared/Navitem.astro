@@ -1,0 +1,37 @@
+---
+export interface Props {
+  href: string;
+  text: string;
+}
+
+const { href, text } = Astro.props;
+
+const BASE = import.meta.env.BASE_URL || "/";
+const normalize = (p: string) => {
+  let path = p || "/";
+  path = path.replace(/index\.html$/i, "");
+  if (BASE !== "/" && path.startsWith(BASE)) {
+    path = path.slice(BASE.length - 1);
+  }
+  if (path.length > 1 && path.endsWith("/")) path = path.slice(0, -1);
+  return path || "/";
+};
+
+const currentPath = normalize(Astro.url.pathname);
+const targetPath = normalize(new URL(href, Astro.url).pathname);
+
+const isActive =
+  currentPath === targetPath ||
+  (targetPath !== "/" && currentPath.startsWith(targetPath + "/"));
+---
+
+<li>
+  <a
+    href={href}
+    class={`duration-300 font-medium ease-linear hover:text-primary py-3 ${
+      isActive ? "text-primary" : ""
+    }`}
+  >
+    {text}
+  </a>
+</li>
