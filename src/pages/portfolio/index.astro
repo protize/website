@@ -7,6 +7,8 @@ import Container from "../../components/shared/Container.astro";
 import Title from "../../components/shared/Title.astro";
 import Paragraph from "../../components/shared/Paragraph.astro";
 import TestimonialsCarousel from "../../components/sections/TestimonialsCarousel";
+import TeamGrid from "../../components/sections/team-section/TeamGrid.astro";
+import { members } from "../../utils/data";
 
 const allPosts = (await getCollection("portfolio"))
   .filter((p) => !p.data.draft)
@@ -33,7 +35,7 @@ const allTags = Array.from(tagMap.values()).sort((a, b) =>
   <section>
     <PortfolioHero />
     <Container className="mb-10">
-      <div
+      <!-- <div
         class="text-center space-y-4 py-10 scroll-mt-28 md:scroll-mt-32"
         id="project-grid"
       >
@@ -42,7 +44,14 @@ const allTags = Array.from(tagMap.values()).sort((a, b) =>
           >Explore my projects and know about development journey</Paragraph
         >
       </div>
-      <ProjectGrid posts={allPosts} />
+      <ProjectGrid posts={allPosts} /> -->
+
+      <TeamGrid
+        title="Our Creative Team"
+        subtitle="Our Team Members"
+        description="We are a multidisciplinary crew crafting products and delightful experiences."
+        members={members}
+      />
     </Container>
     <TestimonialsCarousel client:load />
   </section>

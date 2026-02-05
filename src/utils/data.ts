@@ -1,12 +1,13 @@
-import abhishek from "../assets/team/abhishek.avif";
-import karan from "../assets/team/karan.avif";
-import ishan from "../assets/team/ishan-baisoya.avif";
-import thomas from "../assets/team/thomas-colvin.avif";
+import abhishek from "../assets/team/abhishek.png";
+import karan from "../assets/team/karan.png";
+import ishan from "../assets/team/ishan-baisoya.png";
+import thomas from "../assets/team/thomas-colvin.png";
 import jay from "../assets/team/jay.png";
 import jatin from "../assets/team/jatin.png";
 import alok from "../assets/team/alok.png";
 import alankrit from "../assets/team/alankrit.png";
 import sid from "../assets/team/sid.png";
+import manil from "../assets/team/manil.png";
 
 const members = [
   {
@@ -30,8 +31,18 @@ const members = [
     ],
   },
   {
+    name: "Manil Malhotra",
+    role: "Lead Software Engineer",
+    bio: "",
+    image: manil,
+    socials: [
+      { label: "linkedin", href: "https://linkedin.com/in/alice" },
+      { label: "github", href: "https://github.com/alice" },
+    ],
+  },
+  {
     name: "Ishan Baisoya",
-    role: "Financial Analyst",
+    role: "Business Analyst",
     bio: "",
     image: ishan,
     socials: [
