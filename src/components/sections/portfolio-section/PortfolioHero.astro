@@ -22,39 +22,165 @@ const { className = "" } = Astro.props;
   </div>
 
   <Container className="grid items-center gap-10 lg:grid-cols-2">
-    <!-- Left: very light content -->
-    <div class="max-w-xl">
+    <!-- Left -->
+    <div class="max-w-xl hero-left">
       <h1
-        class="mt-4 text-3xl font-extrabold leading-tight text-slate-900 sm:text-5xl"
+        class="hero-title mt-4 text-3xl font-extrabold leading-tight text-slate-900 sm:text-5xl"
+        style="--delay:80ms"
       >
         Real projects, real outcomes.
       </h1>
 
-      <p class="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
+      <p
+        class="hero-text mt-3 text-sm leading-relaxed text-slate-600 sm:text-base"
+        style="--delay:180ms"
+      >
         Web, mobile, fintech, and cloud builds designed for performance and
         scale.
       </p>
 
-      <div class="mt-6">
+      <div class="hero-cta mt-6" style="--delay:280ms">
         <a href="#project-grid" aria-label="View portfolio projects">
           <CtaButton>View Projects</CtaButton>
         </a>
       </div>
     </div>
 
-    <!-- Right: image -->
-    <div class="relative">
-      <div class="absolute -inset-6 rounded-3xl bg-purple-200/35 blur-3xl">
+    <!-- Right -->
+    <div class="relative hero-right">
+      <div
+        class="absolute -inset-6 rounded-3xl bg-purple-200/35 blur-3xl hero-glow"
+      >
       </div>
       <Image
         src={portfolioHero}
         alt="Protize portfolio projects preview"
         width={1200}
         height={800}
-        class="relative w-full rounded-3xl border border-slate-200 bg-white object-cover shadow-md"
+        class="relative w-full hero-image"
         loading="eager"
         decoding="async"
       />
     </div>
   </Container>
 </section>
+
+<script>
+  const section = document.getElementById("portfolio-hero");
+
+  if (section) {
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    if (prefersReducedMotion) {
+      section.classList.add("hero-visible");
+    } else {
+      const observer = new IntersectionObserver(
+        ([entry], obs) => {
+          if (entry.isIntersecting) {
+            section.classList.add("hero-visible");
+            obs.disconnect();
+          }
+        },
+        { threshold: 0.2, rootMargin: "0px 0px -8% 0px" },
+      );
+
+      observer.observe(section);
+    }
+  }
+</script>
+
+<style>
+  /* Initial state */
+  #portfolio-hero .hero-title,
+  #portfolio-hero .hero-text,
+  #portfolio-hero .hero-cta,
+  #portfolio-hero .hero-right {
+    opacity: 0;
+    will-change: transform, opacity;
+  }
+
+  #portfolio-hero .hero-title,
+  #portfolio-hero .hero-text,
+  #portfolio-hero .hero-cta {
+    transform: translateY(18px);
+  }
+
+  #portfolio-hero .hero-right {
+    transform: translateX(24px) scale(0.985);
+  }
+
+  /* Reveal */
+  #portfolio-hero.hero-visible .hero-title,
+  #portfolio-hero.hero-visible .hero-text,
+  #portfolio-hero.hero-visible .hero-cta {
+    animation: heroFadeUp 0.68s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation-delay: var(--delay, 0ms);
+  }
+
+  #portfolio-hero.hero-visible .hero-right {
+    animation: heroImageIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) 140ms forwards;
+  }
+
+  /* Subtle floating after reveal */
+  #portfolio-hero.hero-visible .hero-image {
+    animation: heroFloat 6s ease-in-out 1s infinite;
+  }
+
+  #portfolio-hero.hero-visible .hero-glow {
+    animation: glowPulse 4.5s ease-in-out 0.6s infinite;
+  }
+
+  @keyframes heroFadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes heroImageIn {
+    to {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+    }
+  }
+
+  @keyframes heroFloat {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
+  @keyframes glowPulse {
+    0%,
+    100% {
+      opacity: 0.75;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.03);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #portfolio-hero .hero-title,
+    #portfolio-hero .hero-text,
+    #portfolio-hero .hero-cta,
+    #portfolio-hero .hero-right {
+      opacity: 1 !important;
+      transform: none !important;
+      animation: none !important;
+    }
+
+    #portfolio-hero .hero-image,
+    #portfolio-hero .hero-glow {
+      animation: none !important;
+    }
+  }
+</style>
