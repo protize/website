@@ -8,6 +8,7 @@ import CTA from "../components/sections/CTA.astro";
 import WhyProtize from "../components/sections/WhyProtize.astro";
 import TechStack from "../components/sections/TechStack.astro";
 import { skills } from "../data/skills";
+import TeamImpactBadge from "../components/sections/TeamImpactBadge.astro";
 ---
 
 <Layout title="Welcome to the Protize Website">
@@ -20,6 +21,7 @@ import { skills } from "../data/skills";
     <TechStack title="Tech & Tools" skills={skills} />
 
     <Features className="py-10 md:py-16" />
+    <TeamImpactBadge className="py-10 md:py-16" />
     <FAQ className="py-10 md:py-16" />
     <CTA className="py-10" />
   </main>
