@@ -21,7 +21,7 @@ const services: Service[] = [
     blurb:
       "We build fast, secure, and scalable web applications—from MVPs to enterprise platforms. Perfect for SaaS, fintech, ecommerce, and internal business tools.",
     image:
-      "https://images.unsplash.com/photo-1559526324-593bc073d938?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     points: [
       "High-performance web apps",
       "Secure login & roles",
@@ -45,7 +45,7 @@ const services: Service[] = [
     blurb:
       "User-focused design that improves trust and conversions. We create modern interfaces, design systems, and branding that looks premium and works across all devices.",
     image:
-      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1541462608143-67571c6738dd?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     points: [
       "Product UI/UX design",
       "Landing pages that convert",
@@ -57,7 +57,7 @@ const services: Service[] = [
     blurb:
       "Reliable cloud infrastructure for speed and scalability. We handle hosting, deployments, monitoring, and cost optimization—so your product stays stable under load.",
     image:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1667372283545-1261fb5c427a?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     points: ["Cloud hosting setup", "CI/CD deployments", "Monitoring & alerts"],
   },
   {
@@ -73,7 +73,7 @@ const services: Service[] = [
     blurb:
       "Need clarity before building? We help with planning, feature scoping, architecture guidance, and technical audits—so you avoid costly mistakes and launch faster.",
     image:
-      "https://images.unsplash.com/photo-1556761175-129418cb2dfe?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/vector-1761074561542-1e434d39e97b?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     points: [
       "Roadmap & scope clarity",
       "Architecture review",
@@ -86,19 +86,13 @@ const services: Service[] = [
 <Layout title="Services • Protize">
   <main class="space-y-24 md:space-y-32 mb-24">
     <!-- Hero -->
-    <section id="hero" class="relative isolate overflow-hidden">
+    <section id="hero" class="relative isolate overflow-hidden bg-[#FDFDFD]">
       <Container className="py-10 md:pb-16">
         <div
           class="grid grid-cols-1 lg:grid-cols-2 items-center gap-10 md:gap-12"
         >
           <!-- Copy -->
           <div class="space-y-6 max-w-3xl">
-            <span
-              class="inline-flex w-max items-center rounded-full border border-neutral-200 bg-white px-3 py-1 text-xs font-medium tracking-wide text-neutral-700"
-            >
-              Protize • Software Development Company
-            </span>
-
             <h1
               class="text-3xl md:text-5xl font-extrabold leading-tight text-neutral-900"
             >
@@ -121,10 +115,10 @@ const services: Service[] = [
                 <CtaButton>Start Your Project</CtaButton>
               </a>
               <a
-                href="/case-studies"
-                aria-label="View Protize software development case studies"
+                href="/portfolio"
+                aria-label="View Protize software development Portfolio"
               >
-                <Button variant="secondary">View Case Studies</Button>
+                <Button variant="secondary">View Portfolio</Button>
               </a>
             </div>
           </div>
@@ -198,56 +192,91 @@ const services: Service[] = [
       </Container>
 
       <Container className="py-10 md:py-16">
-        <div
-          class="grid lg:grid-cols-2 gap-10 items-center rounded-3xl border border-neutral-200 p-6 md:p-10 bg-white shadow-sm hover:shadow-md transition"
-        >
-          <!-- Left: Text -->
-          <div class="space-y-5">
-            <h2 class="text-2xl md:text-4xl font-bold text-neutral-900">
-              A clear, outcomes-first process
-            </h2>
-            <p class="text-sm md:text-base text-neutral-700 leading-relaxed">
-              We keep feedback loops short and progress visible—from discovery
-              to launch. You’ll always know what’s shipped, what’s next, and
-              why.
-            </p>
-
-            <ol class="grid sm:grid-cols-2 gap-3 text-sm">
-              <li
-                class="rounded-xl border border-neutral-200 p-4 hover:bg-neutral-50 transition"
-              >
-                <span class="font-semibold text-neutral-900">1. Discover</span>
-                <p class="text-neutral-700">Goals, risks, and constraints.</p>
-              </li>
-              <li
-                class="rounded-xl border border-neutral-200 p-4 hover:bg-neutral-50 transition"
-              >
-                <span class="font-semibold text-neutral-900">2. Design</span>
-                <p class="text-neutral-700">
-                  Flows, wireframes, design system.
-                </p>
-              </li>
-              <li
-                class="rounded-xl border border-neutral-200 p-4 hover:bg-neutral-50 transition"
-              >
-                <span class="font-semibold text-neutral-900">3. Build</span>
-                <p class="text-neutral-700">Incremental sprints &amp; demos.</p>
-              </li>
-              <li
-                class="rounded-xl border border-neutral-200 p-4 hover:bg-neutral-50 transition"
-              >
-                <span class="font-semibold text-neutral-900">4. Scale</span>
-                <p class="text-neutral-700">Observability, cost, resilience.</p>
-              </li>
-            </ol>
+        <div class="text-center space-y-4 py-10">
+          <div
+            class="inline-flex items-center rounded-full border border-purple-200 bg-purple-50 px-3 py-1 text-xs font-semibold text-purple-700"
+          >
+            End-to-End Delivery Process
           </div>
 
-          <div
-            class="aspect-[16/10] w-full overflow-hidden rounded-2xl shadow-sm ring-1 ring-black/5"
+          <h2
+            id="delivery-process-title"
+            class="text-2xl md:text-4xl font-bold text-neutral-900"
           >
+            From strategy to launch — with complete visibility
+          </h2>
+
+          <p class="text-sm md:text-base text-neutral-700 leading-relaxed">
+            Our delivery model is designed for business outcomes: clear scope,
+            predictable milestones, and production-ready releases. You always
+            know what is in progress, what is delivered, and what comes next.
+          </p>
+        </div>
+        <section
+          aria-labelledby="delivery-process-title"
+          class="grid lg:grid-cols-2 gap-10 items-center"
+        >
+          <div class="space-y-5">
+            <ol class="grid sm:grid-cols-2 gap-3 text-sm">
+              <li
+                class="rounded-xl border border-neutral-200 p-4 hover:bg-purple-50 transition"
+              >
+                <span class="font-semibold text-neutral-900"
+                  >1. Discovery & Planning</span
+                >
+                <p class="text-neutral-700 mt-1">
+                  Business goals, user needs, scope, timelines, and risk
+                  mapping.
+                </p>
+              </li>
+
+              <li
+                class="rounded-xl border border-neutral-200 p-4 hover:bg-purple-50 transition"
+              >
+                <span class="font-semibold text-neutral-900"
+                  >2. UX/UI & Architecture</span
+                >
+                <p class="text-neutral-700 mt-1">
+                  User journeys, interface design, technical architecture, and
+                  API planning.
+                </p>
+              </li>
+
+              <li
+                class="rounded-xl border border-neutral-200 p-4 hover:bg-purple-50 transition"
+              >
+                <span class="font-semibold text-neutral-900"
+                  >3. Agile Development</span
+                >
+                <p class="text-neutral-700 mt-1">
+                  Sprint-based implementation with weekly demos, QA, and
+                  feedback loops.
+                </p>
+              </li>
+
+              <li
+                class="rounded-xl border border-neutral-200 p-4 hover:bg-purple-50 transition"
+              >
+                <span class="font-semibold text-neutral-900"
+                  >4. Launch & Growth</span
+                >
+                <p class="text-neutral-700 mt-1">
+                  Deployment, monitoring, optimization, and post-launch support.
+                </p>
+              </li>
+            </ol>
+
+            <p class="text-xs md:text-sm text-neutral-600">
+              Typical engagement includes roadmap planning, transparent
+              reporting, and SLA-based support options.
+            </p>
+          </div>
+
+          <!-- Right: Visual -->
+          <div class="aspect-[16/10] w-full overflow-hidden">
             <Image
               src={DeliveryWorkflow}
-              alt="Design to delivery workflow – Protize process"
+              alt="Protize delivery process from discovery to launch and scale"
               width={1280}
               height={800}
               loading="lazy"
@@ -255,7 +284,7 @@ const services: Service[] = [
               class="h-full w-full object-cover transition-transform duration-500 hover:scale-[1.03]"
             />
           </div>
-        </div>
+        </section>
       </Container>
 
       <Container className="pt-10 md:pt-16">

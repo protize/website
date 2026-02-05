@@ -6,6 +6,9 @@ import CtaButton from "../components/shared/CtaButton.astro";
 import GradiantText from "../components/shared/GradiantText.astro";
 import Layout from "../layouts/Layout.astro";
 import { members } from "../utils/data";
+import team from "../assets/images/team.jpg";
+import { Image } from "astro:assets";
+import teamGroup from "../assets/images/team-group.jpg";
 ---
 
 <Layout title="Our Team">
@@ -49,17 +52,18 @@ import { members } from "../utils/data";
               class="rounded-2xl shadow-md w-full object-cover h-56 sm:h-64"
             />
             <img
-              src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1974"
-              alt="Collaboration meeting"
-              class="rounded-2xl shadow-md w-full object-cover h-40 sm:h-48"
-            />
-          </div>
-          <div class="space-y-4 mt-8">
-            <img
               src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170"
               alt="Office environment"
               class="rounded-2xl shadow-md w-full object-cover h-40 sm:h-48"
             />
+          </div>
+          <div class="space-y-4 mt-8">
+            <Image
+              src={team}
+              alt="Collaboration meeting"
+              class="rounded-2xl shadow-md w-full object-cover h-40 sm:h-48"
+            />
+
             <img
               src="https://images.unsplash.com/photo-1635185481431-661b09594e6c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=627"
               alt="Creative session"
@@ -78,10 +82,22 @@ import { members } from "../utils/data";
   <section id="our-team" class="bg-white py-20 md:py-28">
     <Container>
       <div class="grid grid-cols-1 items-start gap-12 md:grid-cols-2 lg:gap-16">
-        <!-- Left: Text -->
-        <div class="order-2 md:order-1">
+        <div class="order-1">
+          <figure class="overflow-hidden h-[600px]">
+            <Image
+              src={teamGroup}
+              alt="Protize team collaboration"
+              width="1600"
+              height="600"
+              class="block h-full w-full object-cover object-center"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+        </div>
+        <div class="order-2">
           <p
-            class="text-xl font-extrabold tracking-tight text-cyan-700 md:text-3xl"
+            class="text-xl font-extrabold tracking-tight text-purple-700 md:text-3xl"
           >
             OUR PEOPLE. OUR POWER
           </p>
@@ -93,9 +109,8 @@ import { members } from "../utils/data";
           </h2>
 
           <div class="mt-10 space-y-8">
-            <!-- Block 1 -->
             <section>
-              <h3 class="text-2xl font-semibold text-amber-500 md:text-3xl">
+              <h3 class="text-2xl font-semibold text-purple-900 md:text-3xl">
                 A Culture of Creativity and Growth
               </h3>
               <p
@@ -109,9 +124,8 @@ import { members } from "../utils/data";
               </p>
             </section>
 
-            <!-- Block 2 -->
             <section>
-              <h3 class="text-2xl font-semibold text-amber-500 md:text-3xl">
+              <h3 class="text-2xl font-semibold text-purple-900 md:text-3xl">
                 Expertise That Powers Tomorrow
               </h3>
               <p
@@ -126,23 +140,6 @@ import { members } from "../utils/data";
               </p>
             </section>
           </div>
-        </div>
-
-        <!-- Right: Image -->
-        <div class="order-1 md:order-2">
-          <figure
-            class="overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5 h-[600px]"
-          >
-            <img
-              src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687"
-              alt="Protize team collaboration"
-              width="1600"
-              height="600"
-              class="block h-full w-full object-cover object-center"
-              loading="lazy"
-              decoding="async"
-            />
-          </figure>
         </div>
       </div>
     </Container>

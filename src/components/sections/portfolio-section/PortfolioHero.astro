@@ -1,0 +1,60 @@
+---
+import Container from "../../shared/Container.astro";
+import CtaButton from "../../shared/CtaButton.astro";
+import { Image } from "astro:assets";
+import portfolioHero from "../../../assets/images/design-to-delivery-workflow.jpg";
+
+export interface Props {
+  className?: string;
+}
+
+const { className = "" } = Astro.props;
+---
+
+<section
+  id="portfolio-hero"
+  class={`relative overflow-hidden py-14 md:py-20 ${className}`}
+>
+  <!-- soft light background -->
+  <div
+    class="absolute inset-0 -z-10 bg-gradient-to-b from-white via-purple-50/35 to-white"
+  >
+  </div>
+
+  <Container className="grid items-center gap-10 lg:grid-cols-2">
+    <!-- Left: very light content -->
+    <div class="max-w-xl">
+      <h1
+        class="mt-4 text-3xl font-extrabold leading-tight text-slate-900 sm:text-5xl"
+      >
+        Real projects, real outcomes.
+      </h1>
+
+      <p class="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
+        Web, mobile, fintech, and cloud builds designed for performance and
+        scale.
+      </p>
+
+      <div class="mt-6">
+        <a href="#project-grid" aria-label="View portfolio projects">
+          <CtaButton>View Projects</CtaButton>
+        </a>
+      </div>
+    </div>
+
+    <!-- Right: image -->
+    <div class="relative">
+      <div class="absolute -inset-6 rounded-3xl bg-purple-200/35 blur-3xl">
+      </div>
+      <Image
+        src={portfolioHero}
+        alt="Protize portfolio projects preview"
+        width={1200}
+        height={800}
+        class="relative w-full rounded-3xl border border-slate-200 bg-white object-cover shadow-md"
+        loading="eager"
+        decoding="async"
+      />
+    </div>
+  </Container>
+</section>

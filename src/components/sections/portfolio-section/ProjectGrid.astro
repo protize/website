@@ -2,7 +2,7 @@
 import type { CollectionEntry } from "astro:content";
 
 type Props = {
-  posts: CollectionEntry<"case-studies">[];
+  posts: CollectionEntry<"portfolio">[];
 };
 
 const { posts = [] } = Astro.props as Props;
@@ -32,8 +32,7 @@ const formatDate = (d: Date) =>
         author,
       } = post.data;
 
-      const href = `/case-studies/${post.slug}`;
-      // Store lowercase tags in the attribute for case-insensitive filtering
+      const href = `/portfolio/${post.slug}`;
       const tagsAttr = tags
         .map((t) => String(t).trim().toLowerCase())
         .filter(Boolean)
