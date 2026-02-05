@@ -1,0 +1,227 @@
+---
+import Container from "../../shared/Container.astro";
+import user from "../../../assets/logos/user.png";
+
+export interface TestimonialItem {
+  name: string;
+  role?: string;
+  image: string;
+  quote: string;
+}
+
+export interface Props {
+  className?: string;
+  title?: string;
+  subtitle?: string;
+  autoPlayMs?: number;
+}
+
+const testimonials: TestimonialItem[] = [
+  {
+    name: "Aman Verma",
+    role: "Founder, Fintech Startup",
+    image: user.src,
+    quote:
+      "Protize helped us redesign our full payment journey end-to-end—from checkout flow to payout operations. Their team improved transaction reliability, reduced failure scenarios, and made our dashboard far more actionable for daily operations. What stood out most was their ownership, technical depth, and clarity in communication throughout the project.",
+  },
+  {
+    name: "Ritika Shah",
+    role: "Product Manager, D2C Brand",
+    image: user.src,
+    quote:
+      "We partnered with Protize for both frontend experience and backend stabilization, and the outcome exceeded expectations. They delivered a cleaner UI, faster loading pages, and a more scalable architecture that our internal team can confidently build on. The planning was structured, milestones were clear, and releases were consistently on time.",
+  },
+  {
+    name: "Harsh Mehta",
+    role: "CTO, Gaming Platform",
+    image: user.src,
+    quote:
+      "Our biggest concern was handling sudden traffic spikes during tournaments without degrading user experience. Protize optimized our core services, improved response times, and introduced better observability for faster incident resolution. Since launch, platform stability has improved significantly and our team spends much less time firefighting.",
+  },
+  {
+    name: "Neha Kapoor",
+    role: "Director, Services Company",
+    image: user.src,
+    quote:
+      "Protize felt less like a vendor and more like a long-term technology partner. They understood our business goals, translated them into practical technical decisions, and delivered high-quality output with strong post-launch support. Their focus on maintainability and process made handover smooth for our internal stakeholders.",
+  },
+];
+
+const {
+  className = "",
+  title = "Client Testimonials",
+  subtitle = "What clients say after working with Protize",
+  autoPlayMs = 4500,
+} = Astro.props as Props;
+---
+
+<section
+  class={`relative py-14 sm:py-16 ${className}`}
+  aria-label="Client testimonials"
+>
+  <div
+    aria-hidden="true"
+    class="pointer-events-none absolute inset-x-0 top-0 -z-10 h-48 bg-gradient-to-b from-purple-50/70 via-white to-transparent"
+  >
+  </div>
+
+  <Container className="max-w-7xl">
+    <header class="mx-auto max-w-3xl text-center">
+      <h2 class="text-2xl font-bold text-slate-900 sm:text-3xl md:text-4xl">
+        {title}
+      </h2>
+      <p class="mt-3 text-sm text-slate-600 sm:text-base">{subtitle}</p>
+    </header>
+
+    <div class="mt-10 relative">
+      <!-- Track -->
+      <div
+        id="testimonial-track"
+        class="flex transition-transform duration-500 ease-out"
+        style="transform: translateX(0%);"
+      >
+        {
+          testimonials.map((t, i) => (
+            <article
+              class="w-full shrink-0 px-1"
+              data-slide={i}
+              aria-hidden={i === 0 ? "false" : "true"}
+            >
+              <div class="mx-auto max-w-4xl rounded-3xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm">
+                <div class="flex flex-col sm:flex-row items-center sm:items-start gap-5">
+                  <img
+                    src={t.image}
+                    alt={`${t.name} profile`}
+                    loading="lazy"
+                    decoding="async"
+                    class="h-16 w-16 sm:h-20 sm:w-20 p-1 rounded-full object-cover ring-2 ring-purple-100"
+                  />
+
+                  <div class="text-center sm:text-left">
+                    <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+                      “{t.quote}”
+                    </p>
+                    <div class="mt-4">
+                      <div class="font-semibold text-slate-900">{t.name}</div>
+                      {t.role && (
+                        <div class="text-xs sm:text-sm text-slate-500">
+                          {t.role}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+
+      <!-- Controls -->
+      <div class="mt-6 flex items-center justify-center gap-3">
+        <button
+          id="testimonial-prev"
+          type="button"
+          class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-300 bg-white text-slate-700 hover:bg-slate-50"
+          aria-label="Previous testimonial"
+        >
+          ‹
+        </button>
+
+        <div id="testimonial-dots" class="flex items-center gap-2">
+          {
+            testimonials.map((_, i) => (
+              <button
+                type="button"
+                class={`testimonial-dot h-2.5 w-2.5 rounded-full transition ${
+                  i === 0 ? "bg-purple-600" : "bg-slate-300"
+                }`}
+                aria-label={`Go to testimonial ${i + 1}`}
+                data-dot={i}
+              />
+            ))
+          }
+        </div>
+
+        <button
+          id="testimonial-next"
+          type="button"
+          class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-300 bg-white text-slate-700 hover:bg-slate-50"
+          aria-label="Next testimonial"
+        >
+          ›
+        </button>
+      </div>
+    </div>
+  </Container>
+</section>
+
+<script is:inline define:vars={{ autoPlayMs, total: testimonials.length }}>
+  const track = document.getElementById("testimonial-track");
+  const prevBtn = document.getElementById("testimonial-prev");
+  const nextBtn = document.getElementById("testimonial-next");
+  const dots = Array.from(document.querySelectorAll(".testimonial-dot"));
+  const slides = Array.from(document.querySelectorAll("[data-slide]"));
+
+  let current = 0;
+  let timer;
+
+  function render() {
+    if (!track) return;
+    track.style.transform = `translateX(-${current * 100}%)`;
+
+    dots.forEach((d, i) => {
+      d.classList.toggle("bg-purple-600", i === current);
+      d.classList.toggle("bg-slate-300", i !== current);
+    });
+
+    slides.forEach((s, i) => {
+      s.setAttribute("aria-hidden", i === current ? "false" : "true");
+    });
+  }
+
+  function next() {
+    current = (current + 1) % total;
+    render();
+  }
+
+  function prev() {
+    current = (current - 1 + total) % total;
+    render();
+  }
+
+  function startAuto() {
+    stopAuto();
+    timer = setInterval(next, autoPlayMs);
+  }
+
+  function stopAuto() {
+    if (timer) clearInterval(timer);
+  }
+
+  prevBtn?.addEventListener("click", () => {
+    prev();
+    startAuto();
+  });
+
+  nextBtn?.addEventListener("click", () => {
+    next();
+    startAuto();
+  });
+
+  dots.forEach((dot) => {
+    dot.addEventListener("click", () => {
+      const idx = Number(dot.getAttribute("data-dot") || 0);
+      current = idx;
+      render();
+      startAuto();
+    });
+  });
+
+  const wrapper = track?.parentElement;
+  wrapper?.addEventListener("mouseenter", stopAuto);
+  wrapper?.addEventListener("mouseleave", startAuto);
+
+  render();
+  startAuto();
+</script>
