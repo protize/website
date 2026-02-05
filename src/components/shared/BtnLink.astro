@@ -33,7 +33,7 @@ const getTextColor = (variant: "primary" | "secondary") => {
     class={`relative z-10 transition-colors duration-300 ${
       variant === "primary"
         ? "text-white"
-        : `${getTextColor(variant)} group-hover:text-white`
+        : `${getTextColor(variant)} text-white group-hover:text-white`
     }`}
   >
     {text}

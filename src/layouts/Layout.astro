@@ -38,7 +38,7 @@ const { title } = Astro.props;
     detectSystemTheme();
 
     const switchTheme = document.querySelector(
-      "[data-switch-theme]"
+      "[data-switch-theme]",
     ) as HTMLButtonElement;
     switchTheme.addEventListener("click", (e) => {
       e.preventDefault();
@@ -85,11 +85,11 @@ const { title } = Astro.props;
   </script>
   <script>
     const toggleMenu = document.querySelector(
-      "[data-toggle-nav]"
+      "[data-toggle-nav]",
     ) as HTMLButtonElement;
     const navbar = document.querySelector("[data-navbar]") as HTMLDivElement;
     const overlayNav = document.querySelector(
-      "[data-nav-overlay]"
+      "[data-nav-overlay]",
     ) as HTMLDivElement;
     if (toggleMenu) {
       toggleMenu.addEventListener("click", (e) => {
