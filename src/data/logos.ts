@@ -1,7 +1,7 @@
 // Build a list of available SVG logos from src/assets/logos
 // Using Vite's import.meta.glob to keep imports clean and centralized
 
-const modules = import.meta.glob("../assets/logos/*.svg", {
+const modules = import.meta.glob("../assets/tech-logo/*.svg", {
   eager: true,
   // Vite v5 style: returns string URLs
   query: "?url",

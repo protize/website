@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import Container from "../shared/Container.astro";
 import Paragraph from "../shared/Paragraph.astro";
 
-import myHeroImage3 from "../../assets/images/representation-user-experience-interface-design.jpg";
+import myHeroImage3 from "../../assets/images/home-hero.jpg";
 import CtaButton from "../shared/CtaButton.astro";
 import GradiantText from "../shared/GradiantText.astro";
 import CounterSection from "./CounterSection.tsx";
@@ -15,38 +15,41 @@ export interface Props {
 const { className } = Astro.props;
 ---
 
-<section class=`relative pt-32 lg:pt-34 ${className}`>
+<section class={`relative ${className ?? ""}`}>
   <Container className={"flex flex-col lg:flex-row gap-10 lg:gap-12"}>
     <div
-      class="relative flex flex-col items-center text-center lg:text-left lg:py-7 xl:py-8
+      class="hero-content relative flex flex-col items-center text-center lg:text-left lg:py-7 xl:py-8
         lg:items-start lg:max-w-none max-w-3xl mx-auto lg:mx-0 lg:flex-1 lg:w-1/2 space-y-6"
     >
       <h1
-        class="text-4xl/tight sm:text-5xl/tight xl:text-6xl/tight
-             font-bold text-heading-1"
+        class="hero-heading text-4xl/tight sm:text-5xl/tight xl:text-6xl/tight font-bold text-heading-1"
       >
         <GradiantText>Trusted Engineering</GradiantText>
         Launch Fast. Scale Smart. Build Right.
       </h1>
-      <Paragraph>
-        We design, build, and maintain reliable digital products for startups
-        and growing businesses—focused on performance, security, and clean
-        architecture.
-      </Paragraph>
 
-      <CtaButton> Get Started Today </CtaButton>
+      <div class="hero-para">
+        <Paragraph>
+          We design, build, and maintain reliable digital products for startups
+          and growing businesses—focused on performance, security, and clean
+          architecture.
+        </Paragraph>
+      </div>
+
+      <div class="hero-cta">
+        <CtaButton>Get Started Today</CtaButton>
+      </div>
     </div>
 
     <div
-      class="flex items-center justify-center flex-1 lg:w-1/2 lg:h-auto relative lg:max-w-none lg:mx-0 mx-auto max-w-3xl"
+      class="hero-image-wrap flex items-center justify-center flex-1 lg:w-1/2 lg:h-auto relative"
     >
       <Image
         src={myHeroImage3}
         alt="Hero image"
-        class="my-class"
         width="2350"
         height="2359"
-        class="lg:absolute z-20 lg:w-full lg:h-full rounded-3xl object-cover lg:max-h-none max-h-96"
+        class="my-class lg:absolute lg:w-full lg:h-full object-cover lg:max-h-none hero-image"
       />
     </div>
   </Container>
@@ -55,3 +58,92 @@ const { className } = Astro.props;
     <CounterSection client:load />
   </Container>
 </section>
+
+<style>
+  /* Base entrance */
+  .hero-content {
+    opacity: 0;
+    transform: translateY(24px);
+    animation: fadeUp 0.8s ease-out 0.1s forwards;
+  }
+
+  .hero-heading,
+  .hero-para,
+  .hero-cta {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  .hero-heading {
+    animation: fadeUp 0.7s ease-out 0.2s forwards;
+  }
+
+  .hero-para {
+    animation: fadeUp 0.7s ease-out 0.35s forwards;
+  }
+
+  .hero-cta {
+    animation: fadeUp 0.7s ease-out 0.5s forwards;
+  }
+
+  .hero-image-wrap {
+    opacity: 0;
+    transform: translateX(22px);
+    animation: fadeRight 0.9s ease-out 0.25s forwards;
+  }
+
+  .hero-image {
+    animation: floatY 6s ease-in-out 1.2s infinite;
+    will-change: transform;
+  }
+
+  .hero-cta :global(a),
+  .hero-cta :global(button) {
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+
+  .hero-cta :global(a:hover),
+  .hero-cta :global(button:hover) {
+    transform: translateY(-2px);
+  }
+
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeRight {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes floatY {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  /* Accessibility: reduce motion */
+  @media (prefers-reduced-motion: reduce) {
+    .hero-content,
+    .hero-heading,
+    .hero-para,
+    .hero-cta,
+    .hero-image-wrap,
+    .hero-image {
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
+</style>

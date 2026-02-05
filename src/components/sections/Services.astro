@@ -18,7 +18,7 @@ export interface Props {
 const { className = "" } = Astro.props;
 ---
 
-<section id="services" class={`relative bg-orange-100 ${className}`}>
+<section id="services" class={`relative bg-blue-50 ${className}`}>
   <Container className="space-y-8 md:space-y-10">
     <!-- Title -->
     <div class="text-center max-w-4xl mx-auto space-y-2">
@@ -29,18 +29,21 @@ const { className = "" } = Astro.props;
       </p>
     </div>
 
-    <!-- Simple responsive grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    <!-- Animated grid -->
+    <div
+      id="services-grid"
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
+    >
       {
-        services
-          .slice(0, 8)
-          .map((service: ServicesProps) => (
+        services.slice(0, 8).map((service: ServicesProps, idx: number) => (
+          <div class="service-reveal" style={`--delay:${idx * 90}ms`}>
             <Service
               title={service.title}
               features={service.features}
               icon={service.icon}
             />
-          ))
+          </div>
+        ))
       }
     </div>
 
@@ -49,3 +52,57 @@ const { className = "" } = Astro.props;
     </div>
   </Container>
 </section>
+
+<script>
+  const grid = document.getElementById("services-grid");
+
+  if (grid) {
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    if (prefersReducedMotion) {
+      grid.classList.add("services-visible");
+    } else {
+      const observer = new IntersectionObserver(
+        ([entry], obs) => {
+          if (entry.isIntersecting) {
+            grid.classList.add("services-visible");
+            obs.disconnect();
+          }
+        },
+        { threshold: 0.2, rootMargin: "0px 0px -8% 0px" },
+      );
+
+      observer.observe(grid);
+    }
+  }
+</script>
+
+<style>
+  .service-reveal {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+    will-change: transform, opacity;
+  }
+
+  #services-grid.services-visible .service-reveal {
+    animation: serviceIn 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation-delay: var(--delay);
+  }
+
+  @keyframes serviceIn {
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .service-reveal {
+      opacity: 1 !important;
+      transform: none !important;
+      animation: none !important;
+    }
+  }
+</style>

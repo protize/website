@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { ReactNode } from "react";
+import { FolderKanban, Boxes, Users, Clock3 } from "lucide-react";
 
 type CounterItem = {
   label: string;
@@ -24,15 +25,7 @@ export default function CounterSection() {
         suffix: "+",
         description: "",
         icon: (
-          <svg
-            viewBox="0 0 24 24"
-            className="h-5 w-5"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-          >
-            <path d="M4 7h16M4 12h16M4 17h16" />
-          </svg>
+          <FolderKanban className="h-10 w-10 text-blue-600" strokeWidth={2} />
         ),
       },
       {
@@ -40,56 +33,21 @@ export default function CounterSection() {
         target: 13,
         suffix: "+",
         description: "",
-        icon: (
-          <svg
-            viewBox="0 0 24 24"
-            className="h-5 w-5"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-          >
-            <path d="M12 3l9 6-9 6-9-6 9-6z" />
-            <path d="M3 9v6l9 6 9-6V9" />
-          </svg>
-        ),
+        icon: <Boxes className="h-10 w-10 text-green-600" strokeWidth={2} />,
       },
       {
         label: "Happy Clients",
         target: 25,
         suffix: "+",
         description: "",
-        icon: (
-          <svg
-            viewBox="0 0 24 24"
-            className="h-5 w-5"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-          >
-            <path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2" />
-            <circle cx="9" cy="7" r="4" />
-            <path d="M22 21v-2a4 4 0 00-3-3.87" />
-            <path d="M16 3.13a4 4 0 010 7.75" />
-          </svg>
-        ),
+        icon: <Users className="h-10 w-10 text-yellow-600" strokeWidth={2} />,
       },
       {
         label: "Years Experience",
         target: 11,
         suffix: "+",
         description: "",
-        icon: (
-          <svg
-            viewBox="0 0 24 24"
-            className="h-5 w-5"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-          >
-            <path d="M12 8v4l3 3" />
-            <circle cx="12" cy="12" r="9" />
-          </svg>
-        ),
+        icon: <Clock3 className="h-10 w-10 text-cyan-600" strokeWidth={2} />,
       },
     ],
     [],
@@ -172,13 +130,20 @@ export default function CounterSection() {
                 <div className="absolute left-1/2 top-0 h-40 w-40 -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.65),transparent_60%)] blur-xl" />
               </div>
 
+              {/* Icon */}
+              <div className="flex justify-center">
+                <div className="inline-flex items-center justify-center rounded-xl bg-white/80 p-2.5 ring-1 ring-slate-200 text-slate-700">
+                  {item.icon}
+                </div>
+              </div>
+
               <div className="mt-4 text-center">
                 <div className="flex items-baseline gap-1 justify-center">
                   <div className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight tabular-nums text-slate-900">
                     {counters[idx]}
                   </div>
                   {item.suffix && (
-                    <div className="text-2xl sm:text-3xl md:text-4xl font-semibold text-slate-600">
+                    <div className="text-2xl sm:text-3xl md:text-4xl font-semibold text-slate-900">
                       {item.suffix}
                     </div>
                   )}
