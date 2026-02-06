@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import Container from "../shared/Container.astro";
 import Paragraph from "../shared/Paragraph.astro";
 
-import myHeroImage3 from "../../assets/images/home-hero.jpg";
+import myHeroImage3 from "../../assets/images/3189013_1076.jpg";
 import CtaButton from "../shared/CtaButton.astro";
 import GradiantText from "../shared/GradiantText.astro";
 import CounterSection from "./CounterSection.tsx";
@@ -12,12 +12,12 @@ export interface Props {
   className?: string;
 }
 
-const { className } = Astro.props;
+const { className = "" } = Astro.props;
 ---
 
-<section class={`relative overflow-hidden ${className ?? ""}`}>
+<section class={`relative overflow-hidden ${className}`}>
   <Container
-    className={"mt-28 relative flex flex-col lg:flex-row gap-10 lg:gap-12"}
+    className="relative mt-20 lg:mt-28 flex flex-col lg:flex-row items-center lg:items-start gap-10 lg:gap-12"
   >
     <div
       class="hero-content relative z-10 flex flex-col items-center text-center lg:text-left lg:py-7 xl:py-8
@@ -42,26 +42,28 @@ const { className } = Astro.props;
         <CtaButton>Get Started Today</CtaButton>
       </div>
     </div>
-  </Container>
-  <div
-    class="hidden md:block absolute -top-52 lg:-top-24 -right-10 w-2/3 h-full"
-  >
-    <Image
-      src={myHeroImage3}
-      alt="Hero image"
-      width={2350}
-      height={2359}
-      class="hero-image w-full h-full object-contain"
-    />
-  </div>
 
-  <Container className="mt-10">
+    <!-- Hero image -->
+    <div
+      class="relative lg:absolute lg:-top-16 xl:-top-8 lg:right-0 w-full lg:w-[48%] z-0"
+    >
+      <Image
+        src={myHeroImage3}
+        alt="Hero image"
+        width={2350}
+        height={2359}
+        class="hero-image w-full h-auto object-contain"
+        loading="eager"
+      />
+    </div>
+  </Container>
+
+  <Container className="mt-10 sm:mt-14 lg:mt-20">
     <CounterSection client:load />
   </Container>
 </section>
 
 <style>
-  /* Base entrance */
   .hero-content {
     opacity: 0;
     transform: translateY(24px);
@@ -111,13 +113,6 @@ const { className } = Astro.props;
     }
   }
 
-  @keyframes fadeRight {
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
   @keyframes floatY {
     0%,
     100% {
@@ -128,7 +123,6 @@ const { className } = Astro.props;
     }
   }
 
-  /* Accessibility: reduce motion */
   @media (prefers-reduced-motion: reduce) {
     .hero-content,
     .hero-heading,
