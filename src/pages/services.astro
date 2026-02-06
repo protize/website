@@ -124,7 +124,7 @@ const services: Service[] = [
 
             <!-- Visual -->
             <div
-              class="relative lg:absolute -top-10 lg:right-0 w-full lg:w-[52%] z-0"
+              class="hero-image relative lg:absolute -top-10 lg:right-0 w-full lg:w-[52%] z-0"
             >
               <Image
                 src="/images/25860683_7081473.jpg"
@@ -336,6 +336,21 @@ const services: Service[] = [
 
   .reveal-delay-3 {
     animation-delay: 0.32s;
+  }
+
+  .hero-image {
+    animation: floatY 4s ease-in-out 1.2s infinite;
+    will-change: transform;
+  }
+
+  @keyframes floatY {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
   }
 
   @keyframes revealUp {
