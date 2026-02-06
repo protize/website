@@ -3,7 +3,6 @@ import { Image } from "astro:assets";
 import Container from "../shared/Container.astro";
 import Paragraph from "../shared/Paragraph.astro";
 
-import myHeroImage3 from "../../assets/images/3189013_1076.jpg";
 import CtaButton from "../shared/CtaButton.astro";
 import GradiantText from "../shared/GradiantText.astro";
 import CounterSection from "./CounterSection.tsx";
@@ -17,7 +16,7 @@ const { className = "" } = Astro.props;
 
 <section class={`relative overflow-hidden ${className}`}>
   <Container
-    className="relative mt-20 lg:mt-28 flex flex-col lg:flex-row items-center lg:items-start gap-10 lg:gap-12"
+    className="relative mt-20 flex flex-col lg:flex-row items-center lg:items-start gap-10 lg:gap-12"
   >
     <div
       class="hero-content relative z-10 flex flex-col items-center text-center lg:text-left lg:py-7 xl:py-8
@@ -44,11 +43,9 @@ const { className = "" } = Astro.props;
     </div>
 
     <!-- Hero image -->
-    <div
-      class="relative lg:absolute lg:-top-16 xl:-top-8 lg:right-0 w-full lg:w-[48%] z-0"
-    >
+    <div class="relative lg:absolute lg:right-0 w-full lg:w-[42%] z-0">
       <Image
-        src={myHeroImage3}
+        src="/images/3189013_1076.png"
         alt="Hero image"
         width={2350}
         height={2359}

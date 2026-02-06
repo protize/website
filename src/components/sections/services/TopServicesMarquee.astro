@@ -1,0 +1,170 @@
+---
+/**
+ * TopServicesMarquee.astro
+ * Exact-style marquee bar like your screenshot
+ */
+const items = [
+  "Consulting Service",
+  "IT Consulting",
+  "Project Management",
+  "Business Analysis",
+  "Software Development",
+  "Manage it Services",
+  "Cloud Services",
+  "Data Science",
+  "DevOps Services",
+  "IT Support",
+  "Web Development",
+  "Data Analytics",
+  "Cloud Solution",
+  "Data Analytics",
+  "Consulting Service",
+  "IT Consulting",
+  "Project Management",
+  "Business Analysis",
+  "Software Development",
+  "Manage it Services",
+  "Cloud Services",
+  "Data Science",
+  "DevOps Services",
+  "IT Support",
+  "Web Development",
+  "Data Analytics",
+  "Cloud Solution",
+  "Data Analytics",
+];
+---
+
+<section class="marquee-wrap" aria-label="Services marquee">
+  <div class="marquee-track">
+    <!-- set 1 -->
+    <div class="marquee-group" aria-hidden="false">
+      {
+        items.map((label) => (
+          <span class="marquee-item">
+            <span class="spark" aria-hidden="true">
+              ✺
+            </span>
+            <span class="label">{label}</span>
+          </span>
+        ))
+      }
+    </div>
+
+    <!-- set 2 (duplicate for seamless infinite loop) -->
+    <div class="marquee-group" aria-hidden="true">
+      {
+        items.map((label) => (
+          <span class="marquee-item">
+            <span class="spark" aria-hidden="true">
+              ✺
+            </span>
+            <span class="label">{label}</span>
+          </span>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .marquee-wrap {
+    width: 100%;
+    overflow: hidden;
+    background: #1f4acc; /* deep blue from screenshot */
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    position: relative;
+    z-index: 1;
+  }
+
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marqueeLeft 30s linear infinite;
+    will-change: transform;
+    padding: 10px 0;
+  }
+
+  .marquee-group {
+    display: flex;
+    align-items: center;
+    gap: 42px; /* spacing between labels */
+    white-space: nowrap;
+    padding: 10px 0; /* bar height look */
+    padding-right: 42px; /* seam spacing */
+  }
+
+  .marquee-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 30px; /* screenshot text looks ~30px */
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0.1px;
+  }
+
+  .spark {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-1px);
+  }
+
+  .label {
+    display: inline-block;
+    font-size: 16px;
+  }
+
+  @keyframes marqueeLeft {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* hover pause (nice UX) */
+  .marquee-wrap:hover .marquee-track {
+    animation-play-state: paused;
+  }
+
+  /* responsive tuning */
+  @media (max-width: 1024px) {
+    .marquee-item {
+      font-size: 24px;
+    }
+    .spark {
+      font-size: 16px;
+    }
+    .marquee-group {
+      gap: 30px;
+      padding: 8px 0;
+      padding-right: 30px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .marquee-item {
+      font-size: 18px;
+    }
+    .spark {
+      font-size: 13px;
+    }
+    .marquee-group {
+      gap: 22px;
+      padding: 7px 0;
+      padding-right: 22px;
+    }
+  }
+
+  /* accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+      animation: none;
+      transform: translateX(0);
+    }
+  }
+</style>

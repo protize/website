@@ -123,7 +123,7 @@ export default function CounterSection() {
         {countersData.map((item, idx) => (
           <div
             key={item.label}
-            className="group relative rounded-2xl bg-gradient-to-br from-indigo-500/20 via-emerald-500/15 to-fuchsia-500/20 p-[1px] shadow-[0_18px_50px_-25px_rgba(2,6,23,0.25)]"
+            className="group relative rounded-2xl bg-gray-100 p-[1px] shadow-[0_18px_50px_-25px_rgba(2,6,23,0.25)]"
           >
             <div className="relative h-full rounded-2xl bg-white/70 backdrop-blur-xl p-4 sm:p-5 ring-1 ring-slate-200/70 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:bg-white/80 group-hover:ring-slate-300/70 group-hover:shadow-[0_22px_60px_-28px_rgba(2,6,23,0.35)]">
               <div className="pointer-events-none absolute -inset-16 opacity-0 transition-opacity duration-500 group-hover:opacity-100">

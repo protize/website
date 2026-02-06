@@ -12,30 +12,51 @@ const {
   title,
   features,
   icon: Icon,
-  iconClass = "bg-blue-50 text-blue-600 ring-blue-200",
+  iconClass = "bg-blue-50 text-blue-600 ring-blue-200/80 group-hover:bg-blue-100",
 } = Astro.props;
 ---
 
 <article
-  class="h-full rounded-2xl border border-blue-100 bg-white p-5 shadow-sm hover:shadow-md transition"
+  class="group relative h-full rounded-3xl bg-gradient-to-br bg-white p-[1px] shadow-[0_18px_50px_-25px_rgba(2,6,23,0.25)] transition-all duration-300"
 >
-  <div class="flex items-start gap-3">
+  <div
+    class="relative h-full rounded-3xl bg-white/75 backdrop-blur-xl p-5 ring-1 ring-slate-200/70 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:bg-white/85 group-hover:ring-slate-300/70 group-hover:shadow-[0_22px_60px_-28px_rgba(2,6,23,0.35)]"
+  >
+    <!-- glow -->
     <div
-      class={`inline-flex h-10 w-10 items-center justify-center rounded-xl ring-1 ${iconClass}`}
+      class="pointer-events-none absolute -inset-14 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
     >
-      <Icon className="h-5 w-5" strokeWidth={2.2} />
+      <div
+        class="absolute left-1/2 top-0 h-36 w-36 -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.65),transparent_60%)] blur-xl"
+      >
+      </div>
     </div>
 
-    <div class="min-w-0">
-      <h3 class="text-base font-semibold text-gray-900">{title}</h3>
+    <div class="flex items-start gap-3">
+      <div
+        class={`relative inline-flex h-10 w-10 items-center justify-center rounded-xl ring-1 shadow-sm transition-all duration-300 group-hover:scale-105 group-hover:-translate-y-0.5 ${iconClass}`}
+      >
+        <Icon className="h-5 w-5" strokeWidth={2.2} />
+      </div>
+
+      <div class="min-w-0">
+        <h3
+          class="text-base md:text-lg font-semibold tracking-tight text-slate-900"
+        >
+          {title}
+        </h3>
+      </div>
     </div>
+
+    <ul class="mt-4 space-y-2.5">
+      {
+        features.map((item) => (
+          <li class="flex items-start gap-2 text-sm text-slate-700 leading-relaxed">
+            <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-slate-400/90" />
+            <span>{item}</span>
+          </li>
+        ))
+      }
+    </ul>
   </div>
-
-  <ul class="mt-4 space-y-2">
-    {
-      features.map((item) => (
-        <li class="text-sm text-gray-600 leading-relaxed">• {item}</li>
-      ))
-    }
-  </ul>
 </article>
