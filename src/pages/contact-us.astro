@@ -1,6 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Container from "../components/shared/Container.astro";
+import { Image } from "astro:assets";
+import GradiantText from "../components/shared/GradiantText.astro";
+import { Mail, Phone, MapPin, Building2 } from "lucide-react";
 ---
 
 <Layout title="Contact • Protize">
@@ -10,15 +13,18 @@ import Container from "../components/shared/Container.astro";
     <!-- Hero -->
     <section class="pt-10 md:pt-16">
       <Container>
-        <div class="max-w-3xl text-center mx-auto">
+        <div class="max-w-3xl text-center mx-auto hero-intro">
           <h1
-            class="text-2xl sm:text-3xl md:text-5xl font-extrabold leading-tight text-neutral-900"
+            class="hero-title text-2xl sm:text-3xl md:text-5xl font-extrabold leading-tight text-neutral-900"
           >
-            Let’s build something exceptional together.
+            Let’s build something exceptional together with
+            <GradiantText>Protize</GradiantText>.
           </h1>
-          <p class="mt-3 text-sm sm:text-base md:text-lg text-neutral-700">
-            Tell us a bit about your goals — our team will reach out within 1
-            business day.
+          <p
+            class="hero-sub mt-3 text-sm sm:text-base md:text-lg text-neutral-700"
+          >
+            Share your goals with us, and our team will get back to you within
+            one business day.
           </p>
         </div>
       </Container>
@@ -26,263 +32,254 @@ import Container from "../components/shared/Container.astro";
 
     <section>
       <Container>
-        <div class="grid gap-8 items-center">
-          <form
-            action="/api/contact"
-            method="POST"
-            class="rounded-2xl border-2 border-purple-200 bg-white p-6 md:p-8 shadow-sm hover:shadow-md transition space-y-6"
-          >
-            <!-- Honeypot -->
-            <input
-              type="text"
-              name="_hp"
-              class="hidden"
-              tabindex="-1"
-              autocomplete="off"
+        <div class="grid gap-8 lg:grid-cols-2 lg:gap-10 items-start">
+          <!-- Left: Image -->
+          <div class="order-2 lg:order-1 contact-visual">
+            <Image
+              src="/images/contact.png"
+              alt="Contact Protize"
+              width={1200}
+              height={900}
+              loading="lazy"
+              class="contact-image w-full h-auto rounded-2xl object-cover"
             />
+          </div>
 
-            <div class="grid gap-4 sm:grid-cols-2">
-              <div>
-                <label
-                  for="name"
-                  class="block text-sm font-medium text-neutral-800"
-                  >Full name</label
+          <!-- Right: Form -->
+          <div class="order-1 lg:order-2 form-wrap">
+            <form
+              action="/api/contact"
+              method="POST"
+              class="contact-form rounded-2xl border-2 border-purple-200 bg-white p-6 md:p-8 shadow-sm hover:shadow-md transition space-y-6"
+            >
+              <!-- Honeypot -->
+              <input
+                type="text"
+                name="_hp"
+                class="hidden"
+                tabindex="-1"
+                autocomplete="off"
+                aria-hidden="true"
+              />
+
+              <div class="grid gap-4 sm:grid-cols-2">
+                <div class="field" style="--fdelay: 80ms;">
+                  <label
+                    for="name"
+                    class="block text-sm font-medium text-neutral-800"
+                  >
+                    Full name
+                  </label>
+                  <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    required
+                    placeholder="Jane Doe"
+                    class="mt-1 w-full rounded-xl border border-purple-300 bg-white px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-purple-500"
+                  />
+                </div>
+
+                <div class="field" style="--fdelay: 130ms;">
+                  <label
+                    for="company"
+                    class="block text-sm font-medium text-neutral-800"
+                  >
+                    Company name
+                  </label>
+                  <input
+                    id="company"
+                    name="company"
+                    type="text"
+                    placeholder="Acme Inc."
+                    class="mt-1 w-full rounded-xl border border-purple-300 bg-white px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-purple-500"
+                  />
+                </div>
+
+                <div class="field" style="--fdelay: 180ms;">
+                  <label
+                    for="email"
+                    class="block text-sm font-medium text-neutral-800"
+                  >
+                    Email
+                  </label>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    required
+                    placeholder="jane@company.com"
+                    class="mt-1 w-full rounded-xl border border-purple-300 bg-white px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-purple-500"
+                  />
+                </div>
+
+                <div class="field" style="--fdelay: 230ms;">
+                  <label
+                    for="phone"
+                    class="block text-sm font-medium text-neutral-800"
+                  >
+                    Phone
+                  </label>
+                  <input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    inputmode="tel"
+                    placeholder="9876543210"
+                    class="mt-1 w-full rounded-xl border border-purple-300 bg-white px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-purple-500"
+                  />
+                </div>
+
+                <div class="sm:col-span-2 field" style="--fdelay: 280ms;">
+                  <label
+                    for="message"
+                    class="block text-sm font-medium text-neutral-800"
+                  >
+                    Project details
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    required
+                    rows="6"
+                    placeholder="Goals, scope, timeline, constraints…"
+                    class="mt-1 w-full rounded-xl border border-purple-300 bg-white px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-purple-500"
+                  ></textarea>
+                </div>
+
+                <div
+                  class="sm:col-span-2 flex items-start gap-3 field"
+                  style="--fdelay: 330ms;"
                 >
-                <input
-                  id="name"
-                  name="name"
-                  type="text"
-                  required
-                  placeholder="Jane Doe"
-                  class="mt-1 w-full rounded-xl border border-purple-300 bg-white px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-purple-500"
-                />
+                  <input
+                    id="consent"
+                    name="consent"
+                    type="checkbox"
+                    required
+                    class="mt-1 h-4 w-4 rounded border-neutral-300 text-purple-600 focus:ring-purple-500"
+                  />
+                  <label for="consent" class="text-sm text-neutral-700">
+                    I agree to be contacted by Protize regarding my inquiry.
+                  </label>
+                </div>
               </div>
 
-              <div>
-                <label
-                  for="company"
-                  class="block text-sm font-medium text-neutral-800"
-                  >Company Name</label
+              <div class="pt-2 field" style="--fdelay: 380ms;">
+                <button
+                  type="submit"
+                  class="submit-btn inline-flex items-center justify-center rounded-xl bg-purple-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-purple-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400"
                 >
-                <input
-                  id="company"
-                  name="company"
-                  type="text"
-                  placeholder="Acme Inc."
-                  class="mt-1 w-full rounded-xl border border-purple-300 bg-white px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-purple-500"
-                />
+                  Send message
+                </button>
+                <p class="mt-2 text-xs text-neutral-500">
+                  We typically reply within 1 business day.
+                </p>
               </div>
-
-              <div>
-                <label
-                  for="email"
-                  class="block text-sm font-medium text-neutral-800"
-                  >Email</label
-                >
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  required
-                  placeholder="jane@company.com"
-                  class="mt-1 w-full rounded-xl border border-purple-300 bg-white px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-purple-500"
-                />
-              </div>
-
-              <div>
-                <label
-                  for="phone"
-                  class="block text-sm font-medium text-neutral-800"
-                  >Email</label
-                >
-                <input
-                  id="phone"
-                  name="phone"
-                  type="tel"
-                  placeholder="9876543210"
-                  class="mt-1 w-full rounded-xl border border-purple-300 bg-white px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-purple-500"
-                />
-              </div>
-
-              <div class="sm:col-span-2">
-                <label
-                  for="message"
-                  class="block text-sm font-medium text-neutral-800"
-                  >Project details</label
-                >
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  rows="6"
-                  placeholder="Goals, scope, timeline, constraints…"
-                  class="mt-1 w-full rounded-xl border border-purple-300 bg-white px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-purple-500"
-                ></textarea>
-              </div>
-
-              <div class="sm:col-span-2 flex items-start gap-3">
-                <input
-                  id="consent"
-                  name="consent"
-                  type="checkbox"
-                  required
-                  class="mt-1 h-4 w-4 rounded border-neutral-300 text-purple-600 focus:ring-purple-500"
-                />
-                <label for="consent" class="text-sm text-neutral-700">
-                  I agree to be contacted by Protize regarding my inquiry.
-                </label>
-              </div>
-            </div>
-
-            <div class="pt-2">
-              <button
-                type="submit"
-                class="inline-flex items-center justify-center rounded-xl bg-purple-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-purple-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400"
-              >
-                Send message
-              </button>
-              <p class="mt-2 text-xs text-neutral-500">
-                We typically reply within 1 business day.
-              </p>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </Container>
     </section>
 
-    <section>
+    <section class="overflow-hidden">
       <Container>
-        <div class="grid gap-8 lg:gap-12 lg:grid-cols-5">
+        <!-- Top centered heading -->
+        <div class="mb-8 md:mb-10 space-y-3 text-center reveal-up">
+          <h2 class="text-2xl md:text-4xl font-bold text-purple-900">
+            Find Us
+          </h2>
+          <p class="text-sm md:text-base text-neutral-700">
+            We’re based in Indiranagar, Bengaluru. Drop by for a coffee and a
+            product chat.
+          </p>
+        </div>
+
+        <div id="findus-grid" class="grid gap-8 lg:gap-12 lg:grid-cols-5">
+          <!-- Left: Contact card -->
           <aside
-            class="lg:col-span-2 rounded-2xl border-2 border-purple-300 bg-white p-6 md:p-8 shadow-sm hover:shadow-md transition space-y-6"
+            class="lg:col-span-2 rounded-2xl border-2 border-purple-300 bg-white p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5 reveal-left"
           >
             <div>
-              <h2
+              <h3
                 class="text-xl font-semibold text-purple-900 flex items-center gap-2"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5 text-purple-700"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="2"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M3 5h18M8 5v14m8-14v14M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                  ></path>
-                </svg>
+                <Building2 className="h-5 w-5 icon-pop" strokeWidth={2} />
                 Contact Details
-              </h2>
+              </h3>
               <p class="mt-1 text-sm text-neutral-600">
                 Prefer email or a quick call? We’re here to help.
               </p>
             </div>
 
-            <ul class="space-y-4 text-sm">
-              <li class="flex items-start gap-3">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5 mt-0.5 text-purple-700 flex-shrink-0"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="2"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M21.75 6.75l-9 5.25-9-5.25M3 6.75v10.5A2.25 2.25 0 005.25 19.5h13.5A2.25 2.25 0 0021 17.25V6.75"
-                  ></path>
-                </svg>
+            <ul class="mt-6 space-y-4 text-sm">
+              <li
+                class="contact-item flex items-start gap-3"
+                style="--delay:80ms;"
+              >
+                <Mail
+                  className="h-5 w-5 mt-0.5 text-primary flex-shrink-0 icon-pop"
+                  strokeWidth={2}
+                />
                 <div>
                   <span class="block text-neutral-500">Email</span>
                   <a
                     href="mailto:hello@protize.dev"
-                    class="font-medium text-purple-700 hover:text-purple-900"
+                    class="font-medium hover:text-purple-900 transition-colors"
                   >
                     hello@protize.dev
                   </a>
                 </div>
               </li>
 
-              <li class="flex items-start gap-3">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5 mt-0.5 text-purple-700 flex-shrink-0"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="2"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M2.25 3.75A.75.75 0 013 3h4.25a.75.75 0 01.75.75v3.5a.75.75 0 01-.75.75H5.81a10.38 10.38 0 004.44 4.44v-1.44a.75.75 0 01.75-.75h3.5a.75.75 0 01.75.75V21a.75.75 0 01-.75.75A17.25 17.25 0 013 4.5a.75.75 0 01-.75-.75z"
-                  ></path>
-                </svg>
+              <li
+                class="contact-item flex items-start gap-3"
+                style="--delay:180ms;"
+              >
+                <Phone
+                  className="h-5 w-5 mt-0.5 text-primary flex-shrink-0 icon-pop"
+                  strokeWidth={2}
+                />
                 <div>
                   <span class="block text-neutral-500">Phone</span>
                   <a
                     href="tel:+919876543210"
-                    class="font-medium text-purple-700 hover:text-purple-900"
+                    class="font-medium hover:text-purple-900 transition-colors"
                   >
                     +91 98765 43210
                   </a>
                 </div>
               </li>
 
-              <li class="flex items-start gap-3">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5 mt-0.5 text-purple-700 flex-shrink-0"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="2"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M12 2.25c4.97 0 9 3.806 9 8.5 0 6.25-9 11-9 11S3 17 3 10.75c0-4.694 4.03-8.5 9-8.5z"
-                  ></path>
-                  <circle cx="12" cy="10" r="3"></circle>
-                </svg>
+              <li
+                class="contact-item flex items-start gap-3"
+                style="--delay:280ms;"
+              >
+                <MapPin
+                  className="h-5 w-5 mt-0.5 text-primary flex-shrink-0 icon-pop"
+                  strokeWidth={2}
+                />
                 <div>
                   <span class="block text-neutral-500">Address</span>
-                  <address
-                    class="not-italic font-medium text-purple-700 leading-relaxed"
-                  >
+                  <address class="not-italic font-medium leading-relaxed">
                     Protize Technologies<br />
-                    12th Main, Indiranagar<br />
-                    Bengaluru, KA 560038, India
+                    Paschim Vihar<br />
+                    Delhi, India
                   </address>
                 </div>
               </li>
             </ul>
 
-            <div class="pt-2 border-t border-purple-100 mt-4">
+            <div class="pt-2 border-t border-purple-100 mt-5">
               <p class="text-xs text-neutral-500">
                 Office hours: Mon–Fri, 9:30–18:30 IST
               </p>
             </div>
           </aside>
 
-          <section class="lg:col-span-3">
-            <div class="space-y-3 text-center">
-              <h2 class="text-xl md:text-3xl font-semibold text-purple-900">
-                Find us
-              </h2>
-              <p class="text-sm text-neutral-700">
-                We’re based in Indiranagar, Bengaluru. Drop by for a coffee and
-                a product chat.
-              </p>
-            </div>
-
+          <!-- Right: Map -->
+          <section class="lg:col-span-3 reveal-right">
             <div
-              class="mt-6 aspect-[16/9] w-full overflow-hidden rounded-2xl border-2 border-purple-200 shadow-md"
+              class="map-wrap aspect-[16/9] w-full overflow-hidden rounded-2xl border-2 border-purple-200 shadow-md"
             >
               <iframe
                 title="Protize Office Location"
@@ -300,3 +297,301 @@ import Container from "../components/shared/Container.astro";
     </section>
   </main>
 </Layout>
+
+<script>
+  // Find us section reveal
+  const grid = document.getElementById("findus-grid");
+  if (grid) {
+    const reduce = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    if (reduce) {
+      grid.classList.add("in-view");
+    } else {
+      const io = new IntersectionObserver(
+        ([entry], obs) => {
+          if (entry.isIntersecting) {
+            grid.classList.add("in-view");
+            obs.disconnect();
+          }
+        },
+        { threshold: 0.2, rootMargin: "0px 0px -8% 0px" },
+      );
+      io.observe(grid);
+    }
+  }
+
+  // Form + image + hero reveal
+  const formWrap = document.querySelector(".form-wrap");
+  const visual = document.querySelector(".contact-visual");
+  const intro = document.querySelector(".hero-intro");
+
+  const reduceMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
+  if (!reduceMotion) {
+    const io2 = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.classList.add("in-view");
+        });
+      },
+      { threshold: 0.16, rootMargin: "0px 0px -6% 0px" },
+    );
+
+    if (formWrap) io2.observe(formWrap);
+    if (visual) io2.observe(visual);
+    if (intro) io2.observe(intro);
+  } else {
+    intro?.classList.add("in-view");
+    formWrap?.classList.add("in-view");
+    visual?.classList.add("in-view");
+  }
+</script>
+
+<style>
+  /* =========================
+     Hero animation
+  ========================== */
+  .hero-title,
+  .hero-sub {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  :global(.hero-intro.in-view) .hero-title {
+    animation: fadeUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.04s forwards;
+  }
+
+  :global(.hero-intro.in-view) .hero-sub {
+    animation: fadeUp 0.72s cubic-bezier(0.22, 1, 0.36, 1) 0.16s forwards;
+  }
+
+  /* =========================
+     Image / Form animation
+  ========================== */
+  .contact-visual,
+  .contact-form,
+  .field {
+    opacity: 0;
+    will-change: transform, opacity;
+  }
+
+  .contact-visual {
+    transform: translateX(-18px) scale(0.985);
+  }
+
+  :global(.contact-visual.in-view) {
+    animation: revealVisual 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.05s forwards;
+  }
+
+  .contact-image {
+    transition:
+      transform 0.6s ease,
+      filter 0.6s ease;
+    animation: floatSoft 6s ease-in-out 1.3s infinite;
+  }
+
+  .contact-visual:hover .contact-image {
+    transform: scale(1.02);
+    filter: saturate(1.03);
+  }
+
+  .contact-form {
+    transform: translateX(18px);
+  }
+
+  :global(.form-wrap.in-view) .contact-form {
+    animation: fadeRight 0.78s cubic-bezier(0.22, 1, 0.36, 1) 0.05s forwards;
+  }
+
+  :global(.form-wrap.in-view) .field {
+    animation: itemIn 0.58s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation-delay: var(--fdelay);
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    transition:
+      border-color 0.25s ease,
+      box-shadow 0.25s ease,
+      transform 0.2s ease;
+  }
+
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    transform: translateY(-1px);
+  }
+
+  .submit-btn {
+    position: relative;
+    overflow: hidden;
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+
+  .submit-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 26px -14px rgba(109, 40, 217, 0.75);
+  }
+
+  .submit-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -140%;
+    width: 120%;
+    height: 100%;
+    background: linear-gradient(
+      110deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.35) 45%,
+      transparent 100%
+    );
+    transition: left 0.6s ease;
+  }
+
+  .submit-btn:hover::after {
+    left: 140%;
+  }
+
+  /* =========================
+     Existing Find Us animation
+  ========================== */
+  .reveal-up,
+  .reveal-left,
+  .reveal-right,
+  .contact-item {
+    opacity: 0;
+    will-change: transform, opacity;
+  }
+
+  .reveal-up {
+    transform: translateY(16px);
+    animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.05s forwards;
+  }
+
+  :global(.in-view) .reveal-left {
+    animation: fadeLeft 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.08s forwards;
+  }
+
+  :global(.in-view) .reveal-right {
+    animation: fadeRight 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.16s forwards;
+  }
+
+  :global(.in-view) .contact-item {
+    animation: itemIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation-delay: var(--delay);
+  }
+
+  .map-wrap {
+    transition:
+      transform 0.4s ease,
+      box-shadow 0.4s ease;
+  }
+
+  .map-wrap:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 44px -24px rgba(46, 16, 101, 0.35);
+  }
+
+  .icon-pop {
+    transition: transform 0.25s ease;
+  }
+
+  aside:hover .icon-pop {
+    transform: scale(1.06);
+  }
+
+  /* =========================
+     Keyframes
+  ========================== */
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fadeRight {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes itemIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes revealVisual {
+    to {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+    }
+  }
+
+  @keyframes floatSoft {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-6px);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-title,
+    .hero-sub,
+    .contact-visual,
+    .contact-form,
+    .field,
+    .reveal-up,
+    .reveal-left,
+    .reveal-right,
+    .contact-item {
+      opacity: 1 !important;
+      transform: none !important;
+      animation: none !important;
+    }
+
+    .map-wrap,
+    .icon-pop,
+    .contact-image,
+    .submit-btn,
+    .contact-form input,
+    .contact-form textarea {
+      transition: none !important;
+      animation: none !important;
+    }
+
+    .submit-btn::after {
+      display: none !important;
+    }
+  }
+</style>
