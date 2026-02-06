@@ -1,152 +1,206 @@
 ---
+import { Image } from "astro:assets";
+import Button from "../../shared/Button.astro";
 import Container from "../../shared/Container.astro";
 import CtaButton from "../../shared/CtaButton.astro";
-import { Image } from "astro:assets";
-import portfolioHero from "../../../assets/images/design-to-delivery-workflow.jpg";
-
-export interface Props {
-  className?: string;
-}
-
-const { className = "" } = Astro.props;
+import GradiantText from "../../shared/GradiantText.astro";
 ---
 
-<section
-  id="portfolio-hero"
-  class={`relative overflow-hidden py-14 md:py-20 ${className}`}
->
-  <!-- soft light background -->
-  <div
-    class="absolute inset-0 -z-10 bg-gradient-to-b from-white via-purple-50/35 to-white"
-  >
+<section class="portfolio-hero relative isolate overflow-hidden">
+  <!-- Background layers -->
+  <div class="pointer-events-none absolute inset-0 -z-20">
+    <div
+      class="absolute inset-0 bg-gradient-to-b from-white via-indigo-50/40 to-white"
+    >
+    </div>
+    <div
+      class="absolute inset-0 opacity-[0.35]
+      [background-image:linear-gradient(to_right,rgba(15,23,42,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(15,23,42,0.06)_1px,transparent_1px)]
+      [background-size:48px_48px]"
+    >
+    </div>
+    <div
+      class="absolute -top-28 -left-24 h-[28rem] w-[28rem] rounded-full blur-3xl bg-indigo-200/40"
+    >
+    </div>
+    <div
+      class="absolute -bottom-24 -right-20 h-[24rem] w-[24rem] rounded-full blur-3xl bg-fuchsia-200/35"
+    >
+    </div>
   </div>
 
-  <Container className="grid items-center gap-10 lg:grid-cols-2">
-    <!-- Left -->
-    <div class="max-w-xl hero-left">
-      <h1
-        class="hero-title mt-4 text-3xl font-extrabold leading-tight text-slate-900 sm:text-5xl"
-        style="--delay:80ms"
-      >
-        Real projects, real outcomes.
-      </h1>
+  <Container className="relative py-10">
+    <div class="grid items-center gap-4 lg:grid-cols-2 lg:gap-12">
+      <!-- LEFT -->
+      <div class="hero-copy max-w-2xl">
+        <h1
+          class="hero-title mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-[50px] font-bold leading-[1.1] tracking-tight text-slate-900"
+        >
+          We Build
+          <GradiantText>High-Impact Digital Products</GradiantText>
+          That Scale with Confidence.
+        </h1>
 
-      <p
-        class="hero-text mt-3 text-sm leading-relaxed text-slate-600 sm:text-base"
-        style="--delay:180ms"
-      >
-        Web, mobile, fintech, and cloud builds designed for performance and
-        scale.
-      </p>
+        <p
+          class="hero-desc mt-4 md:mt-5 text-sm sm:text-base md:text-lg text-slate-700 leading-relaxed"
+        >
+          From web and mobile apps to fintech-grade systems, we deliver secure,
+          reliable, and business-focused solutions with measurable outcomes.
+        </p>
 
-      <div class="hero-cta mt-6" style="--delay:280ms">
-        <a href="#project-grid" aria-label="View portfolio projects">
-          <CtaButton>View Projects</CtaButton>
-        </a>
+        <div class="hero-cta mt-7 flex flex-wrap gap-3">
+          <a
+            href="/contact-us"
+            aria-label="Start your project with Protize"
+            class="cta-lift"
+          >
+            <CtaButton>Start Your Project</CtaButton>
+          </a>
+          <a
+            href="/services"
+            aria-label="Explore Protize services"
+            class="cta-lift"
+          >
+            <Button variant="secondary">Explore Services</Button>
+          </a>
+        </div>
+
+        <!-- compact trust row -->
+        <div
+          class="hero-trust mt-7 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs sm:text-sm text-slate-600"
+        >
+          <span class="trust-item">✓ Fast Delivery</span>
+          <span class="trust-item">✓ Clean Architecture</span>
+          <span class="trust-item">✓ Ongoing Support</span>
+        </div>
       </div>
-    </div>
 
-    <!-- Right -->
-    <div class="relative hero-right">
-      <div
-        class="absolute -inset-6 rounded-3xl bg-purple-200/35 blur-3xl hero-glow"
-      >
+      <!-- RIGHT -->
+      <div class="hero-visual relative">
+        <div
+          class="relative overflow-hidden rounded-3xl border border-slate-200 bg-white/60 p-2 shadow-[0_24px_70px_-32px_rgba(2,6,23,0.35)] backdrop-blur"
+        >
+          <Image
+            src="/images/ppp.png"
+            alt="Protize portfolio hero"
+            width={1400}
+            height={980}
+            loading="eager"
+            class="hero-image h-[50%] w-full rounded-2xl object-cover"
+          />
+        </div>
+
+        <!-- floating mini card -->
+        <div
+          class="hero-chip absolute -bottom-4 -left-4 md:-left-6 rounded-xl border border-white/70 bg-white/90 px-4 py-3 shadow-lg backdrop-blur"
+        >
+          <p class="text-[11px] uppercase tracking-wide text-slate-500">
+            Recent Result
+          </p>
+          <p class="mt-0.5 text-sm md:text-base font-semibold text-slate-900">
+            +38% faster release cycle
+          </p>
+        </div>
       </div>
-      <Image
-        src={portfolioHero}
-        alt="Protize portfolio projects preview"
-        width={1200}
-        height={800}
-        class="relative w-full hero-image"
-        loading="eager"
-        decoding="async"
-      />
     </div>
   </Container>
 </section>
 
-<script>
-  const section = document.getElementById("portfolio-hero");
-
-  if (section) {
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-
-    if (prefersReducedMotion) {
-      section.classList.add("hero-visible");
-    } else {
-      const observer = new IntersectionObserver(
-        ([entry], obs) => {
-          if (entry.isIntersecting) {
-            section.classList.add("hero-visible");
-            obs.disconnect();
-          }
-        },
-        { threshold: 0.2, rootMargin: "0px 0px -8% 0px" },
-      );
-
-      observer.observe(section);
-    }
-  }
-</script>
-
 <style>
-  /* Initial state */
-  #portfolio-hero .hero-title,
-  #portfolio-hero .hero-text,
-  #portfolio-hero .hero-cta,
-  #portfolio-hero .hero-right {
+  /* ===== initial states ===== */
+  .hero-badge,
+  .hero-title,
+  .hero-desc,
+  .hero-cta,
+  .hero-trust,
+  .hero-visual,
+  .hero-chip {
     opacity: 0;
     will-change: transform, opacity;
   }
 
-  #portfolio-hero .hero-title,
-  #portfolio-hero .hero-text,
-  #portfolio-hero .hero-cta {
-    transform: translateY(18px);
+  .hero-badge {
+    transform: translateY(10px);
+    animation: fadeUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.02s forwards;
   }
 
-  #portfolio-hero .hero-right {
-    transform: translateX(24px) scale(0.985);
+  .hero-title {
+    transform: translateY(16px);
+    animation: fadeUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards;
   }
 
-  /* Reveal */
-  #portfolio-hero.hero-visible .hero-title,
-  #portfolio-hero.hero-visible .hero-text,
-  #portfolio-hero.hero-visible .hero-cta {
-    animation: heroFadeUp 0.68s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-    animation-delay: var(--delay, 0ms);
+  .hero-desc {
+    transform: translateY(14px);
+    animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.24s forwards;
   }
 
-  #portfolio-hero.hero-visible .hero-right {
-    animation: heroImageIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) 140ms forwards;
+  .hero-cta {
+    transform: translateY(12px);
+    animation: fadeUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.34s forwards;
   }
 
-  /* Subtle floating after reveal */
-  #portfolio-hero.hero-visible .hero-image {
-    animation: heroFloat 6s ease-in-out 1s infinite;
+  .hero-trust {
+    transform: translateY(10px);
+    animation: fadeUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.44s forwards;
   }
 
-  #portfolio-hero.hero-visible .hero-glow {
-    animation: glowPulse 4.5s ease-in-out 0.6s infinite;
+  .hero-visual {
+    transform: translateX(18px) scale(0.985);
+    animation: visualIn 0.95s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
   }
 
-  @keyframes heroFadeUp {
+  .hero-chip {
+    transform: translateY(10px) scale(0.98);
+    animation: chipIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.6s forwards;
+  }
+
+  .hero-image {
+    animation: floatY 4s ease-in-out 1.1s infinite;
+    transition:
+      transform 0.45s ease,
+      filter 0.45s ease;
+  }
+
+  .hero-visual:hover .hero-image {
+    transform: scale(1.02);
+    filter: saturate(1.04);
+  }
+
+  .cta-lift {
+    transition: transform 0.25s ease;
+  }
+
+  .cta-lift:hover {
+    transform: translateY(-2px);
+  }
+
+  .trust-item {
+    position: relative;
+    padding-left: 2px;
+  }
+
+  @keyframes fadeUp {
     to {
       opacity: 1;
       transform: translateY(0);
     }
   }
 
-  @keyframes heroImageIn {
+  @keyframes visualIn {
     to {
       opacity: 1;
       transform: translateX(0) scale(1);
     }
   }
 
-  @keyframes heroFloat {
+  @keyframes chipIn {
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes floatY {
     0%,
     100% {
       transform: translateY(0);
@@ -156,31 +210,30 @@ const { className = "" } = Astro.props;
     }
   }
 
-  @keyframes glowPulse {
-    0%,
-    100% {
-      opacity: 0.75;
-      transform: scale(1);
-    }
-    50% {
-      opacity: 1;
-      transform: scale(1.03);
+  @media (max-width: 767px) {
+    .hero-chip {
+      left: 10px;
+      bottom: 10px;
     }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    #portfolio-hero .hero-title,
-    #portfolio-hero .hero-text,
-    #portfolio-hero .hero-cta,
-    #portfolio-hero .hero-right {
+    .hero-badge,
+    .hero-title,
+    .hero-desc,
+    .hero-cta,
+    .hero-trust,
+    .hero-visual,
+    .hero-chip,
+    .hero-image {
+      animation: none !important;
       opacity: 1 !important;
       transform: none !important;
-      animation: none !important;
     }
 
-    #portfolio-hero .hero-image,
-    #portfolio-hero .hero-glow {
-      animation: none !important;
+    .hero-image,
+    .cta-lift {
+      transition: none !important;
     }
   }
 </style>

@@ -29,6 +29,7 @@ const Portfolio = defineCollection({
     category: z.string().default("Uncategorized"),
     featured: z.boolean().default(false),
     draft: z.boolean().default(false),
+    logo: z.string().optional(),
     coverImage: z.string().optional(),
     coverAlt: z.string().optional(),
   }),

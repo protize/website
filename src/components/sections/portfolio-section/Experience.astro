@@ -1,0 +1,118 @@
+---
+type Engagement = {
+  title: string;
+  category: string;
+  summary: string;
+  logo?: string;
+  image?: string;
+};
+
+const engagements: Engagement[] = [
+  {
+    title: "Global Retail Enterprise (FTSE100 Category)",
+    category: "Platform Modernization Program",
+    summary:
+      "Led multi-team modernization for high-traffic digital commerce with rollout strategy for experimentation, caching, analytics, and CMS readiness.",
+    logo: "/images/experience/retail-logo.png",
+    image: "/images/experience/retail-program.jpg",
+  },
+  {
+    title: "Top-Tier UK Property Platform",
+    category: "Architecture & Delivery Acceleration",
+    summary:
+      "Improved SDLC maturity, testing culture, observability standards, and platform reliability across cross-functional engineering teams.",
+    logo: "/images/experience/property-logo.png",
+    image: "/images/experience/property-platform.jpg",
+  },
+  {
+    title: "Investment & Data-Focused Organization",
+    category: "Secure Engineering & Data Operations",
+    summary:
+      "Built secure technical workflows and data-driven engineering capabilities to support high-confidence analytical operations.",
+    logo: "/images/experience/investment-logo.png",
+    image: "/images/experience/investment-data.jpg",
+  },
+  {
+    title: "Technology Consulting Partnerships",
+    category: "Due Diligence & Team Scaling",
+    summary:
+      "Delivered architecture assessments, technical due diligence, and leadership-level hiring support for enterprise and mid-market clients.",
+    logo: "/images/experience/consulting-logo.png",
+    image: "/images/experience/consulting-team.jpg",
+  },
+  {
+    title: "Startup & Scaleup Ecosystem Engagements",
+    category: "0→1 Product + Scale Foundation",
+    summary:
+      "Enabled idea-to-launch execution, architecture foundations, and engineering operating models for rapid growth.",
+    logo: "/images/experience/startup-logo.png",
+    image: "/images/experience/startup-build.jpg",
+  },
+];
+---
+
+<section id="experience" class="border-y border-white/10 bg-white/[0.02]">
+  <div class="mx-auto max-w-7xl px-6 py-20">
+    <div class="mb-10">
+      <p class="text-sm font-semibold uppercase tracking-wider text-sky-300">
+        Leadership & Consulting Experience
+      </p>
+      <h2 class="mt-2 text-3xl font-bold md:text-4xl">
+        Transformation Experience Across Enterprise & Growth Companies
+      </h2>
+      <p class="mt-3 max-w-3xl text-slate-300">
+        Our consulting and delivery teams have partnered with enterprise clients
+        and high-growth ventures to modernize platforms and improve software
+        delivery maturity.
+      </p>
+    </div>
+
+    <div class="space-y-5">
+      {
+        engagements.map((item) => (
+          <article class="rounded-2xl border border-white/10 bg-slate-900/60 p-5 md:p-6">
+            <div class="grid gap-5 md:grid-cols-[120px_1fr]">
+              <div class="flex flex-col gap-3">
+                <div class="h-16 w-16 overflow-hidden rounded-xl border border-white/10 bg-white/5 p-2">
+                  {item.logo ? (
+                    <img
+                      src={item.logo}
+                      alt={`${item.title} logo`}
+                      loading="lazy"
+                      class="h-full w-full object-contain"
+                    />
+                  ) : (
+                    <div class="flex h-full w-full items-center justify-center text-[10px] text-slate-400">
+                      Logo
+                    </div>
+                  )}
+                </div>
+
+                {item.image && (
+                  <div class="hidden overflow-hidden rounded-xl border border-white/10 md:block">
+                    <img
+                      src={item.image}
+                      alt={`${item.title} engagement`}
+                      loading="lazy"
+                      class="h-24 w-full object-cover"
+                    />
+                  </div>
+                )}
+              </div>
+
+              <div>
+                <p class="text-xs uppercase tracking-wide text-violet-300">
+                  {item.category}
+                </p>
+                <h3 class="mt-1 text-lg font-semibold">{item.title}</h3>
+                <p class="mt-3 text-sm leading-6 text-slate-300">
+                  {item.summary}
+                </p>
+              </div>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

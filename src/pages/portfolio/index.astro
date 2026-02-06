@@ -9,6 +9,7 @@ import Paragraph from "../../components/shared/Paragraph.astro";
 import TestimonialsCarousel from "../../components/sections/TestimonialsCarousel";
 import TeamGrid from "../../components/sections/team-section/TeamGrid.astro";
 import { members } from "../../utils/data";
+import KpiResults from "../../components/sections/portfolio-section/KpiResults.astro";
 
 const allPosts = (await getCollection("portfolio"))
   .filter((p) => !p.data.draft)
@@ -34,8 +35,9 @@ const allTags = Array.from(tagMap.values()).sort((a, b) =>
 <Layout title="Portfolio">
   <section>
     <PortfolioHero />
+    <!-- <Experience /> -->
     <Container className="mb-10">
-      <!-- <div
+      <div
         class="text-center space-y-4 py-10 scroll-mt-28 md:scroll-mt-32"
         id="project-grid"
       >
@@ -44,7 +46,8 @@ const allTags = Array.from(tagMap.values()).sort((a, b) =>
           >Explore my projects and know about development journey</Paragraph
         >
       </div>
-      <ProjectGrid posts={allPosts} /> -->
+      <ProjectGrid posts={allPosts} />
+      <KpiResults />
 
       <TeamGrid
         title="Our Creative Team"
