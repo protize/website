@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from 'react';
-import { cn } from '../../lib/utils';
+import React, { useEffect, useRef, useState } from "react";
+import { cn } from "../../lib/utils";
 
-export interface GlowingCardProps {
+export interface GlowingCardProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
   className?: string;
   glowColor?: string;
@@ -44,6 +44,14 @@ export interface GlowingCardsProps {
   };
 }
 
+const isGlowingCardElement = (
+  node: React.ReactNode,
+): node is React.ReactElement<GlowingCardProps> => {
+  return (
+    React.isValidElement<GlowingCardProps>(node) && node.type === GlowingCard
+  );
+};
+
 export const GlowingCard: React.FC<GlowingCardProps> = ({
   children,
   className,
@@ -55,13 +63,17 @@ export const GlowingCard: React.FC<GlowingCardProps> = ({
     <div
       className={cn(
         "relative flex-1 min-w-[14rem] p-6 rounded-2xl text-black dark:text-white",
-        "bg-background border ",
-        "transition-all duration-400 ease-out",
-        className
+        "bg-background border",
+        "transition-all duration-[400ms] ease-out",
+        hoverEffect && "hover:-translate-y-0.5",
+        className,
       )}
-      style={{
-        '--glow-color': glowColor, // CSS variable definition
-      } as React.CSSProperties}
+      style={
+        {
+          "--glow-color": glowColor,
+          ...(props.style ?? {}),
+        } as React.CSSProperties
+      }
       {...props}
     >
       {children}
@@ -87,7 +99,6 @@ export const GlowingCards: React.FC<GlowingCardsProps> = ({
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [showOverlay, setShowOverlay] = useState(false);
 
   useEffect(() => {
@@ -101,58 +112,63 @@ export const GlowingCards: React.FC<GlowingCardsProps> = ({
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
 
-      setMousePosition({ x, y });
       setShowOverlay(true);
 
-      // Using string concatenation for style properties
-      overlay.style.setProperty('--x', x + 'px');
-      overlay.style.setProperty('--y', y + 'px');
-      overlay.style.setProperty('--opacity', glowOpacity.toString());
+      overlay.style.setProperty("--x", `${x}px`);
+      overlay.style.setProperty("--y", `${y}px`);
+      overlay.style.setProperty("--opacity", glowOpacity.toString());
     };
 
     const handleMouseLeave = () => {
       setShowOverlay(false);
-      overlay.style.setProperty('--opacity', '0');
+      overlay.style.setProperty("--opacity", "0");
     };
 
-    container.addEventListener('mousemove', handleMouseMove);
-    container.addEventListener('mouseleave', handleMouseLeave);
+    container.addEventListener("mousemove", handleMouseMove);
+    container.addEventListener("mouseleave", handleMouseLeave);
 
     return () => {
-      container.removeEventListener('mousemove', handleMouseMove);
-      container.removeEventListener('mouseleave', handleMouseLeave);
+      container.removeEventListener("mousemove", handleMouseMove);
+      container.removeEventListener("mouseleave", handleMouseLeave);
     };
   }, [enableGlow, glowOpacity]);
 
   const containerStyle = {
-    '--gap': gap,
-    '--max-width': maxWidth,
-    '--padding': padding,
-    '--border-radius': borderRadius,
-    '--animation-duration': animationDuration + 'ms', // Concatenation
-    '--glow-radius': glowRadius + 'rem', // Concatenation
-    '--glow-opacity': glowOpacity,
+    "--gap": gap,
+    "--max-width": maxWidth,
+    "--padding": padding,
+    "--border-radius": borderRadius,
+    "--animation-duration": `${animationDuration}ms`,
+    "--glow-radius": `${glowRadius}rem`,
+    "--glow-opacity": glowOpacity,
     backgroundColor: backgroundColor || undefined,
-    ...customTheme,
+
+    // Optional theme vars
+    ...(customTheme?.cardBg
+      ? ({ "--card-bg": customTheme.cardBg } as React.CSSProperties)
+      : {}),
+    ...(customTheme?.cardBorder
+      ? ({ "--card-border": customTheme.cardBorder } as React.CSSProperties)
+      : {}),
+    ...(customTheme?.textColor
+      ? ({ "--card-text": customTheme.textColor } as React.CSSProperties)
+      : {}),
+    ...(customTheme?.hoverBg
+      ? ({ "--card-hover-bg": customTheme.hoverBg } as React.CSSProperties)
+      : {}),
   } as React.CSSProperties;
 
   return (
-    <div
-      className={cn("relative w-full", className)}
-      style={containerStyle}
-    >
+    <div className={cn("relative w-full", className)} style={containerStyle}>
       <div
         ref={containerRef}
-        className={cn(
-          "relative max-w-[var(--max-width)] mx-auto ",
-          "px-6 py-2"
-        )}
-        style={{ padding: "var(--padding)" }} // String literal
+        className={cn("relative max-w-[var(--max-width)] mx-auto", "px-6 py-2")}
+        style={{ padding: "var(--padding)" }}
       >
         <div
           className={cn(
             "flex items-center justify-center flex-wrap gap-[var(--gap)]",
-            responsive && "flex-col sm:flex-row "
+            responsive && "flex-col sm:flex-row",
           )}
         >
           {children}
@@ -163,43 +179,43 @@ export const GlowingCards: React.FC<GlowingCardsProps> = ({
             ref={overlayRef}
             className={cn(
               "absolute inset-0 pointer-events-none select-none",
-              "opacity-0 transition-all duration-[var(--animation-duration)] ease-out"
+              "opacity-0 transition-all duration-[var(--animation-duration)] ease-out",
             )}
             style={{
-              // String concatenation for WebkitMask and mask
               WebkitMask:
                 "radial-gradient(var(--glow-radius) var(--glow-radius) at var(--x, 0) var(--y, 0), #000 1%, transparent 50%)",
-              mask:
-                "radial-gradient(var(--glow-radius) var(--glow-radius) at var(--x, 0) var(--y, 0), #000 1%, transparent 50%)",
-              opacity: showOverlay ? 'var(--opacity)' : '0',
+              mask: "radial-gradient(var(--glow-radius) var(--glow-radius) at var(--x, 0) var(--y, 0), #000 1%, transparent 50%)",
+              opacity: showOverlay ? "var(--opacity)" : "0",
             }}
           >
             <div
               className={cn(
-                "flex items-center justify-center flex-wrap gap-[var(--gap)] max-w-[var(--max-width)] center mx-auto",
-                responsive && "flex-col sm:flex-row"
+                "flex items-center justify-center flex-wrap gap-[var(--gap)] max-w-[var(--max-width)] mx-auto",
+                responsive && "flex-col sm:flex-row",
               )}
-              style={{ padding: "var(--padding)" }} // String literal
+              style={{ padding: "var(--padding)" }}
             >
-              {React.Children.map(children, (child, index) => {
-                if (React.isValidElement(child) && child.type === GlowingCard) {
-                  const cardGlowColor = child.props.glowColor || "#3b82f6";
-                  return React.cloneElement(child as React.ReactElement<any>, {
-                    className: cn(
-                      child.props.className,
-                      "bg-opacity-15 dark:bg-opacity-15",
-                      "border-opacity-100 dark:border-opacity-100"
-                    ),
-                    style: {
-                      ...child.props.style,
-                      // String concatenation for background, border, and boxShadow
-                      backgroundColor: cardGlowColor + "15",
-                      borderColor: cardGlowColor,
-                      boxShadow: "0 0 0 1px inset " + cardGlowColor,
-                    },
-                  });
-                }
-                return child;
+              {React.Children.map(children, (child) => {
+                if (!isGlowingCardElement(child)) return child;
+
+                const cardGlowColor = child.props.glowColor ?? "#3b82f6";
+                const cardHoverEnabled =
+                  enableHover && child.props.hoverEffect !== false;
+
+                return React.cloneElement(child, {
+                  className: cn(
+                    child.props.className,
+                    "bg-opacity-15 dark:bg-opacity-15",
+                    "border-opacity-100 dark:border-opacity-100",
+                    cardHoverEnabled && "transition-all duration-300",
+                  ),
+                  style: {
+                    ...(child.props.style ?? {}),
+                    backgroundColor: `${cardGlowColor}15`,
+                    borderColor: cardGlowColor,
+                    boxShadow: `0 0 0 1px inset ${cardGlowColor}`,
+                  },
+                });
               })}
             </div>
           </div>
