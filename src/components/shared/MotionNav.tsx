@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function MobileNav({ navItems = [] }) {
+export default function MobileNav({ navItems }) {
   const [open, setOpen] = useState(false);
 
   const BASE =
@@ -104,7 +104,7 @@ export default function MobileNav({ navItems = [] }) {
                           try {
                             const target = new URL(
                               item.href,
-                              window.location.origin
+                              window.location.origin,
                             ).pathname;
                             setActivePath(normalize(target));
                           } catch {

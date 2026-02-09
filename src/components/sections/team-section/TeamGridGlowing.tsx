@@ -37,10 +37,6 @@ export default function TeamGridGlowing({ members }: Props) {
                 decoding="async"
               />
             </div>
-
-            <span className="badge absolute -right-1 -top-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-primary text-[10px] font-semibold text-white shadow">
-              {(idx + 1).toString().padStart(2, "0")}
-            </span>
           </div>
 
           {/* Text content */}
