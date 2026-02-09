@@ -4,7 +4,6 @@ import Title from "../shared/Title.astro";
 
 import GradiantText from "../shared/GradiantText.astro";
 import { features } from "../../data/feature";
-import featureImage from "../../assets/images/feature-tech.png";
 import { Image } from "astro:assets";
 
 export interface Props {
@@ -14,7 +13,7 @@ export interface Props {
 const { className = "" } = Astro.props;
 ---
 
-<section id="features" class={`bg-[#F4F1F6] ${className}`}>
+<section id="features" class={`bg-white ${className}`}>
   <Container>
     <!-- Header -->
     <div class="text-center max-w-4xl mx-auto features-reveal features-head">
@@ -35,7 +34,7 @@ const { className = "" } = Astro.props;
         <div class="absolute -inset-6 rounded-3xl bg-purple-100/60 blur-2xl">
         </div>
         <Image
-          src={featureImage}
+          src="/images/feature-tech-1.png"
           alt="Protize essential features illustration"
           width="640"
           height="480"

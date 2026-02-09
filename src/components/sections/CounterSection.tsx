@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { ReactNode } from "react";
 import { FolderKanban, Boxes, Users, Clock3 } from "lucide-react";
+import { BorderBeam } from "../lightswind/border-beam";
 
 type CounterItem = {
   label: string;
@@ -125,6 +126,15 @@ export default function CounterSection() {
             key={item.label}
             className="group relative rounded-2xl bg-gray-100 p-[1px] shadow-[0_18px_50px_-25px_rgba(2,6,23,0.25)]"
           >
+            <BorderBeam
+              colorFrom="#1D4ED8"
+              colorTo="#38BDF8"
+              size={50}
+              duration={6}
+              borderThickness={2}
+              glowIntensity={3}
+            />
+
             <div className="relative h-full rounded-2xl bg-white/70 backdrop-blur-xl p-4 sm:p-5 ring-1 ring-slate-200/70 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:bg-white/80 group-hover:ring-slate-300/70 group-hover:shadow-[0_22px_60px_-28px_rgba(2,6,23,0.35)]">
               <div className="pointer-events-none absolute -inset-16 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                 <div className="absolute left-1/2 top-0 h-40 w-40 -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.65),transparent_60%)] blur-xl" />

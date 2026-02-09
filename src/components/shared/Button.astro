@@ -8,7 +8,7 @@ const { className, variant } = Astro.props;
 
 const getThemeStyle = (variant: "primary" | "secondary") => {
   if (variant === "primary") {
-    return "bg-primary border-transparent relative after:bg-[#172554] hover:border-[#172554]";
+    return "bg-primarylw border-transparent relative after:bg-[#172554] hover:border-[#172554]";
   }
   return "text-primary bg-white text-[#172554] border-[#172554] after:bg-[#172554]/10 hover:bg-[#172554]/5 hover:after:opacity-100 hover:after:scale-[2.5] focus-visible:ring-2 focus-visible:ring-[#172554]/30";
 };

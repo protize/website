@@ -10,6 +10,7 @@ import TestimonialsCarousel from "../../components/sections/TestimonialsCarousel
 import TeamGrid from "../../components/sections/team-section/TeamGrid.astro";
 import { members } from "../../utils/data";
 import KpiResults from "../../components/sections/portfolio-section/KpiResults.astro";
+import About from "../../components/sections/portfolio-section/about";
 
 const allPosts = (await getCollection("portfolio"))
   .filter((p) => !p.data.draft)
@@ -45,6 +46,8 @@ const allTags = Array.from(tagMap.values()).sort((a, b) =>
       </div>
       <ProjectGrid posts={allPosts} />
       <KpiResults />
+
+      <About client:load />
 
       <TeamGrid
         title="Our Creative Team"

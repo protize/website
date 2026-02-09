@@ -82,7 +82,7 @@ const members = [
   },
   {
     name: "Alok Sharma",
-    role: "Frontend & Backend Developer",
+    role: "Full Stack Developer",
     bio: "",
     image: alok,
     socials: [
@@ -92,7 +92,7 @@ const members = [
   },
   {
     name: "Alankrit Agrawal",
-    role: "Data Analyst",
+    role: "Data Scientist",
     bio: "",
     image: alankrit,
     socials: [
