@@ -1,8 +1,7 @@
 ---
-// components/team-section/TeamGrid.astro
 import type { ImageMetadata } from "astro";
-import { Image } from "astro:assets";
 import Container from "../../shared/Container.astro";
+import TeamGridGlowing from "./TeamGridGlowing";
 
 export type SocialLink = {
   label: "facebook" | "twitter" | "instagram" | "linkedin" | "github" | string;
@@ -30,18 +29,20 @@ const {
   title = "Our Creative Team",
   subtitle = "Our Team Members",
   description = "We are a multidisciplinary crew crafting products and delightful experiences.",
-  members,
+  members = [],
   className = "",
 } = Astro.props;
 
-const isRemote = (img: string | ImageMetadata) => typeof img === "string";
-const getImgSrc = (img: string | ImageMetadata) =>
-  typeof img === "string" ? img : (img?.src ?? "");
+// ImageMetadata|string -> string URL
+const normalizedMembers = (members ?? []).map((m) => ({
+  ...m,
+  image: typeof m.image === "string" ? m.image : (m.image?.src ?? ""),
+}));
 ---
 
-<section class={`relative py-16 ${className}`}>
+<section class={`relative pt-16 ${className}`}>
   <Container>
-    <div class="mx-auto mb-14 max-w-2xl text-center">
+    <div class="mx-auto mb-4 max-w-2xl text-center">
       <p
         class="mb-2 text-sm font-semibold tracking-wide text-primary uppercase"
       >
@@ -59,145 +60,8 @@ const getImgSrc = (img: string | ImageMetadata) =>
       }
     </div>
 
-    <div
-      class="team-grid grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
-    >
-      {
-        members.map((m, idx) => (
-          <article
-            class="card group relative overflow-hidden rounded-2xl border border-gray-200/60 bg-white p-6 shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
-            style={{ "--delay": `${idx * 90}ms` }}
-          >
-            {/* Glow ring on hover */}
-            <div class="pointer-events-none absolute inset-0 rounded-2xl opacity-0 ring-2 ring-primary/40 ring-offset-2 ring-offset-transparent transition-opacity duration-300 group-hover:opacity-100" />
-
-            {/* Shimmer sweep */}
-            <div class="pointer-events-none absolute -inset-x-1/2 top-0 h-full w-1/2 -skew-x-12 bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 transition-all duration-700 group-hover:left-full group-hover:opacity-100" />
-
-            {/* Avatar */}
-            <div class="relative mx-auto mb-5 h-28 w-28">
-              <div class="avatar-wrap h-28 w-28 overflow-hidden rounded-full shadow-md ring-1 ring-black/5">
-                {isRemote(m.image) ? (
-                  <img
-                    src={getImgSrc(m.image)}
-                    alt={m.name}
-                    class="avatar h-28 w-28 object-cover"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                ) : (
-                  <Image
-                    src={m.image}
-                    alt={m.name}
-                    width={224}
-                    height={224}
-                    format="webp"
-                    quality={72}
-                    loading="lazy"
-                    sizes="(max-width: 640px) 112px, 112px"
-                    class="avatar h-28 w-28 object-cover"
-                  />
-                )}
-              </div>
-
-              <span class="badge absolute -right-1 -top-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-primary text-[10px] font-semibold text-white shadow">
-                {(idx + 1).toString().padStart(2, "0")}
-              </span>
-            </div>
-
-            {/* Text content */}
-            <div class="text-center">
-              <h3 class="text-lg font-semibold text-gray-900">{m.name}</h3>
-              {m.role && (
-                <p class="mt-0.5 text-sm font-medium text-primary">{m.role}</p>
-              )}
-              {m.bio && (
-                <p class="mt-3 line-clamp-3 text-sm text-gray-600">{m.bio}</p>
-              )}
-            </div>
-
-            {/* Subtle background dots */}
-            <div class="pointer-events-none absolute -right-5 -top-5 -z-10 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-              <svg
-                width="90"
-                height="90"
-                viewBox="0 0 90 90"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                {Array.from({ length: 45 }).map((_, i) => (
-                  <circle
-                    cx={(i % 9) * 10 + 5}
-                    cy={Math.floor(i / 9) * 10 + 5}
-                    r="1.5"
-                    fill="currentColor"
-                    class="text-primary/30"
-                  />
-                ))}
-              </svg>
-            </div>
-          </article>
-        ))
-      }
+    <div class="lw-scope">
+      <TeamGridGlowing members={normalizedMembers} client:visible />
     </div>
   </Container>
 </section>
-
-<style>
-  /* Entrance animation */
-  .team-grid .card {
-    opacity: 0;
-    transform: translateY(24px) scale(0.98);
-    animation: fadeInUp 620ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
-    animation-delay: var(--delay, 0ms);
-    will-change: transform, opacity;
-  }
-
-  /* Avatar motion */
-  .avatar {
-    transition:
-      transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-      filter 0.3s ease;
-    will-change: transform;
-  }
-
-  .group:hover .avatar {
-    transform: scale(1.08);
-    filter: saturate(1.06) contrast(1.02);
-  }
-
-  /* Badge float */
-  .badge {
-    animation: floatBadge 3s ease-in-out infinite;
-    will-change: transform;
-  }
-
-  @keyframes fadeInUp {
-    to {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-  }
-
-  @keyframes floatBadge {
-    0%,
-    100% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-2px);
-    }
-  }
-
-  /* Reduced motion accessibility */
-  @media (prefers-reduced-motion: reduce) {
-    .team-grid .card,
-    .avatar,
-    .badge {
-      animation: none !important;
-      transition: none !important;
-      transform: none !important;
-      opacity: 1 !important;
-    }
-  }
-</style>

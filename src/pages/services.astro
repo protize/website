@@ -87,7 +87,7 @@ const services: Service[] = [
             class="hero-grid reveal relative mt-20 flex flex-col lg:flex-row items-center lg:items-start gap-10 lg:gap-12"
           >
             <!-- Copy -->
-            <div class="hero-copy space-y-6 max-w-2xl">
+            <div class="hero-copy space-y-6 max-w-xl">
               <h1
                 class="hero-title text-3xl md:text-5xl font-extrabold leading-tight text-neutral-900"
               >
@@ -124,16 +124,30 @@ const services: Service[] = [
 
             <!-- Visual -->
             <div
-              class="hero-image relative lg:absolute -top-10 lg:right-0 w-full lg:w-[52%] z-0"
+              class="relative lg:absolute -top-10 lg:right-0 w-full lg:w-[45%] z-0 rounded-3xl border border-slate-200 bg-white/60 p-2 shadow-[0_24px_70px_-32px_rgba(2,6,23,0.35)] backdrop-blur"
             >
-              <Image
-                src="/images/25860683_7081473.png"
-                alt="Engineers collaborating on a modern software system"
-                width={2350}
-                height={2359}
-                class="w-full h-auto object-contain"
-                loading="eager"
-              />
+              <div class="hero-image">
+                <Image
+                  src="/images/service-hero.png"
+                  alt="Engineers collaborating on a modern software system"
+                  width={2350}
+                  height={2359}
+                  class="w-full h-auto object-contain"
+                  loading="eager"
+                />
+              </div>
+              <div
+                class="absolute -bottom-4 -left-4 md:-left-6 rounded-xl border border-white bg-white/90 px-4 py-3 shadow-lg backdrop-blur"
+              >
+                <p class="text-[11px] uppercase tracking-wide text-slate-500">
+                  Engineering Results
+                </p>
+                <p
+                  class="mt-0.5 text-sm md:text-base font-semibold text-slate-900"
+                >
+                  High-quality, low-regression releases
+                </p>
+              </div>
             </div>
           </div>
         </Container>
@@ -155,7 +169,7 @@ const services: Service[] = [
             services.map((s) => (
               <article class="service-card group relative rounded-2xl border border-neutral-200 bg-white/60 backdrop-blur supports-[backdrop-filter]:bg-white/40 shadow-sm overflow-hidden">
                 {/* Image */}
-                <div class="aspect-[16/13] overflow-hidden">
+                <div class="aspect-[16/13] overflow-hidden  ">
                   <Image
                     src={s.image}
                     alt={s.title}
@@ -163,7 +177,7 @@ const services: Service[] = [
                     height={400}
                     loading="lazy"
                     decoding="async"
-                    class="service-image h-full w-full object-cover"
+                    class="service-image h-full w-full object-cover backdrop-blur-sm"
                   />
                 </div>
 
@@ -211,12 +225,6 @@ const services: Service[] = [
           <div class="relative px-5 py-10 md:px-10 md:py-14 lg:px-12">
             <!-- Header -->
             <div class="mx-auto max-w-4xl text-center">
-              <p
-                class="text-[11px] md:text-xs font-bold tracking-[0.14em] text-blue-600 uppercase"
-              >
-                Our Process
-              </p>
-
               <h2
                 id="delivery-process-title"
                 class="mt-3 text-3xl md:text-4xl font-extrabold leading-tight tracking-tight text"

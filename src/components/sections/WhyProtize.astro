@@ -11,6 +11,8 @@ import {
   Clock3,
   Handshake,
 } from "lucide-react";
+import BeamGridBackground from "../lightswind/beam-grid-background";
+import { BorderBeam } from "../lightswind/border-beam";
 
 const { className = "" } = Astro.props;
 
@@ -24,105 +26,105 @@ type Diff = {
 const differentiators: Diff[] = [
   {
     title: "Strategic, Not Just Technical",
-    desc:
-      "We begin by understanding your business goals and users, ensuring the solution aligns with long-term growth—not just immediate delivery.",
+    desc: "We begin by understanding your business goals and users, ensuring the solution aligns with long-term growth—not just immediate delivery.",
     icon: Target,
-    iconClass: " text-rose-600 ring-rose-100",
+    iconClass: "text-rose-600 ring-rose-100",
   },
   {
     title: "Results You Can Measure",
-    desc:
-      "We define success with clear performance and business metrics, so you always know how your product is improving and delivering value.",
+    desc: "We define success with clear performance and business metrics, so you always know how your product is improving and delivering value.",
     icon: BarChart3,
-    iconClass: " text-emerald-600 ring-emerald-100",
+    iconClass: "text-emerald-600 ring-emerald-100",
   },
   {
     title: "Smooth & Predictable Delivery",
-    desc:
-      "Our structured processes and proven workflows keep projects on track, reduce surprises, and ensure a confident path from idea to launch.",
+    desc: "Our structured processes and proven workflows keep projects on track, reduce surprises, and ensure a confident path from idea to launch.",
     icon: Route,
-    iconClass: " text-violet-600 ring-violet-100",
+    iconClass: "text-violet-600 ring-violet-100",
   },
   {
     title: "Built for Reliability",
-    desc:
-      "We design systems that stay fast, stable, and dependable—so your users enjoy a seamless experience even as your business scales.",
+    desc: "We design systems that stay fast, stable, and dependable—so your users enjoy a seamless experience even as your business scales.",
     icon: Clock3,
-    iconClass: " text-amber-600 ring-amber-100",
+    iconClass: "text-amber-600 ring-amber-100",
   },
   {
     title: "Security You Can Trust",
-    desc:
-      "We prioritize data protection and secure practices from day one, helping you safeguard your users, transactions, and reputation.",
+    desc: "We prioritize data protection and secure practices from day one, helping you safeguard your users, transactions, and reputation.",
     icon: ShieldCheck,
-    iconClass: " text-cyan-600 ring-cyan-100",
+    iconClass: "text-cyan-600 ring-cyan-100",
   },
   {
     title: "Long-Term Technology Partner",
-    desc:
-      "Beyond launch, we support growth, improvements, and scaling—so your technology evolves with your business.",
+    desc: "Beyond launch, we support growth, improvements, and scaling—so your technology evolves with your business.",
     icon: Handshake,
-    iconClass: " text-fuchsia-600 ring-fuchsia-100",
+    iconClass: "text-fuchsia-600 ring-fuchsia-100",
   },
 ];
 ---
 
 <section id="why-protize" class={`relative overflow-hidden ${className}`}>
-  <!-- background -->
-  <div class="pointer-events-none absolute inset-0 -z-10">
-    <div class="absolute inset-0 bg-gradient-to-b from-white via-blue-50/35 to-white" />
-    <div class="absolute inset-0 bg-[radial-gradient(closest-side_at_50%_0%,rgba(124,58,237,0.22),transparent_65%),radial-gradient(closest-side_at_0%_70%,rgba(99,102,241,0.18),transparent_55%),radial-gradient(closest-side_at_100%_65%,rgba(168,85,247,0.14),transparent_55%)]" />
-    <div class="absolute inset-0 opacity-[1] [background-image:linear-gradient(to_right,rgba(15,23,42,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(15,23,42,0.06)_1px,transparent_1px)] [background-size:52px_52px]" />
-  </div>
-
   <Container className="py-4 space-y-10 md:space-y-14">
     <!-- Header -->
     <div class="text-center max-w-3xl mx-auto space-y-3 reveal-up">
       <Title>Why Protize</Title>
       <p class="text-sm md:text-base text-gray-600 leading-relaxed">
-        Differentiators that keep products fast, reliable, and secure—without surprises.
+        Differentiators that keep products fast, reliable, and secure—without
+        surprises.
       </p>
     </div>
 
-    <!-- Differentiators -->
-    <div id="why-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 md:gap-6">
-      {differentiators.map((d, idx) => {
-        const Icon = d.icon;
-        return (
-          <article
-            class="why-card group relative rounded-3xl bg-gray-100 p-[1px] shadow-[0_18px_50px_-25px_rgba(2,6,23,0.25)]"
-            style={`--delay:${idx * 90}ms`}
-          >
-            <div class="relative h-full rounded-3xl bg-white/70 backdrop-blur-xl p-5 md:p-6 ring-1 ring-slate-200/70 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:bg-white/80 group-hover:ring-slate-300/70 group-hover:shadow-[0_22px_60px_-28px_rgba(2,6,23,0.35)]">
-              <!-- hover glow -->
-              <div class="pointer-events-none absolute -inset-16 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-                <div class="absolute left-1/2 top-0 h-40 w-40 -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.65),transparent_60%)] blur-xl" />
+    <!-- Cards -->
+    <div
+      id="why-grid"
+      class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 md:gap-6"
+    >
+      {
+        differentiators.map((d, idx) => {
+          const Icon = d.icon;
+          return (
+            <article
+              class="why-card group relative overflow-hidden rounded-3xl bg-white p-[1px] shadow-[0_18px_50px_-25px_rgba(2,6,23,0.25)]"
+              style={`--delay:${idx * 90}ms`}
+            >
+              {/* Border beam layer */}
+              <div class="pointer-events-none absolute inset-0 z-[1]">
+                <BorderBeam
+                  colorFrom="rgba(29,78,216,0.45)"
+                  colorTo="rgba(56,189,248,0.45)"
+                  size={56}
+                  duration={7}
+                  borderThickness={1.5}
+                  glowIntensity={1.8}
+                  client:load
+                />
               </div>
 
-              <div class="flex items-start gap-4">
-               <div
-  class={`relative inline-flex h-12 w-12 items-center justify-center rounded-2xl p-2.5 ring-1 shadow-sm transition-all duration-300 group-hover:scale-105 group-hover:-translate-y-0.5 ${d.iconClass}`}
->
-  <span class="sr-only">{d.title} icon</span>
-  <Icon strokeWidth={2.2}  />
-</div>
+              {/* Card content */}
+              <div class="relative z-[2] h-full rounded-[calc(1.5rem-1px)] bg-white/85 backdrop-blur-xl p-5 md:p-6 ring-1 ring-slate-200/70 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:bg-white group-hover:ring-slate-300/70 group-hover:shadow-[0_22px_60px_-28px_rgba(2,6,23,0.35)]">
+                <div class="flex items-start gap-4">
+                  <div
+                    class={`relative inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl p-2.5 ring-1 shadow-sm transition-all duration-300 group-hover:scale-105 group-hover:-translate-y-0.5 ${d.iconClass}`}
+                  >
+                    <span class="sr-only">{d.title} icon</span>
+                    <Icon strokeWidth={2.2} />
+                  </div>
 
-                <div class="flex-1">
-                  <h3 class="text-lg md:text-xl font-semibold text-slate-900 tracking-tight">
-                    {d.title}
-                  </h3>
-
-                  <p class="mt-2 text-sm text-slate-700 leading-relaxed">
-                    {d.desc}
-                  </p>
-
-                  <div class="mt-4 h-px w-full bg-gradient-to-r from-transparent via-slate-200/80 to-transparent" />
+                  <div class="flex-1">
+                    <h3 class="text-lg md:text-xl font-semibold text-slate-900 tracking-tight">
+                      {d.title}
+                    </h3>
+                    <p class="mt-2 text-sm text-slate-700 leading-relaxed">
+                      {d.desc}
+                    </p>
+                    <div class="mt-4 h-px w-full bg-gradient-to-r from-transparent via-slate-200/80 to-transparent" />
+                  </div>
                 </div>
               </div>
-            </div>
-          </article>
-        );
-      })}
+            </article>
+          );
+        })
+      }
     </div>
   </Container>
 </section>
@@ -132,7 +134,7 @@ const differentiators: Diff[] = [
 
   if (grid) {
     const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
+      "(prefers-reduced-motion: reduce)",
     ).matches;
 
     if (prefersReducedMotion) {
@@ -145,7 +147,7 @@ const differentiators: Diff[] = [
             obs.disconnect();
           }
         },
-        { threshold: 0.18, rootMargin: "0px 0px -8% 0px" }
+        { threshold: 0.18, rootMargin: "0px 0px -8% 0px" },
       );
 
       observer.observe(grid);

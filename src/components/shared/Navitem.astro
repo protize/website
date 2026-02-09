@@ -25,13 +25,21 @@ const isActive =
   (targetPath !== "/" && currentPath.startsWith(targetPath + "/"));
 ---
 
-<li>
+<li class="relative group">
   <a
     href={href}
-    class={`duration-300 text-base font-normal ease-linear hover:text-primary py-3 ${
-      isActive ? "text-primary" : ""
+    aria-current={isActive ? "page" : undefined}
+    class={`inline-block py-1 text-base transition-colors duration-300 ease-out ${
+      isActive
+        ? "text-blue-700 font-bold"
+        : "text-slate-700 font-normal hover:text-blue-700"
     }`}
   >
     {text}
   </a>
+
+  <span
+    class={`pointer-events-none absolute left-0 -bottom-0.5 h-0.5 w-full origin-left bg-blue-700 transition-transform duration-300 ease-out ${
+      isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+    }`}></span>
 </li>
