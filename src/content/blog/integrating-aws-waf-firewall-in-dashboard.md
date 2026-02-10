@@ -5,7 +5,7 @@ coverImage: "https://images.unsplash.com/photo-1605902711622-cfb43c4437b5?ixlib=
 description: Enhancing platform security with AWS WAF integration for
   dynamic IP whitelisting of merchants and users through the dashboard.
 draft: false
-pubDate: 2025-10-16
+pubDate: 2024-01-25
 tags:
 - security
 - aws

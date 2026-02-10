@@ -81,12 +81,11 @@ const services: Service[] = [
   <main class="space-y-24 md:space-y-32 motion-safe:[scroll-behavior:smooth]">
     <!-- Hero -->
     <section id="hero" class="relative isolate overflow-hidden">
-      <div class="min-h-[88vh] flex flex-col justify-between">
-        <Container className="pt-10 lg:py-10 lg:pb-10 ">
+      <div class="min-h-[88vh] flex flex-col justify-between gap-10">
+        <Container className="md:pt-10 lg:py-10 lg:pb-10 ">
           <div
-            class="hero-grid reveal relative mt-20 flex flex-col lg:flex-row items-center lg:items-start gap-10 lg:gap-12"
+            class="hero-grid reveal relative mt-10 lg:mt-20 flex flex-col lg:flex-row items-center lg:items-start gap-10 lg:gap-12"
           >
-            <!-- Copy -->
             <div class="hero-copy space-y-6 max-w-xl">
               <h1
                 class="hero-title text-3xl md:text-5xl font-extrabold leading-tight text-neutral-900"
@@ -122,9 +121,8 @@ const services: Service[] = [
               </div>
             </div>
 
-            <!-- Visual -->
             <div
-              class="relative lg:absolute -top-10 lg:right-0 w-full lg:w-[45%] z-0 rounded-3xl border border-slate-200 bg-white/60 p-2 shadow-[0_24px_70px_-32px_rgba(2,6,23,0.35)] backdrop-blur"
+              class="relative lg:absolute lg:-top-10 lg:right-0 w-full lg:w-[45%] z-0 rounded-3xl border border-slate-200 bg-white/60 p-2 shadow-[0_24px_70px_-32px_rgba(2,6,23,0.35)] backdrop-blur"
             >
               <div class="hero-image">
                 <Image

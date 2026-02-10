@@ -36,20 +36,20 @@ const { title, navItems } = Astro.props;
 </nav>
 
 <style>
-  .animated-underline::after {
+  .animated-underline::before {
     content: "";
     position: absolute;
     width: 100%;
     transform: scaleX(0);
-    height: 1px;
-    bottom: 0;
+    height: 1.5px;
+    bottom: -2px;
     left: 0;
-    background-color: currentColor;
+    background-color: blue;
     transform-origin: bottom right;
     transition: transform 0.3s ease-out;
   }
 
-  .animated-underline:hover::after {
+  .animated-underline:hover::before {
     transform: scaleX(1);
     transform-origin: bottom left;
   }

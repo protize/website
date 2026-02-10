@@ -167,7 +167,7 @@ export const GlowingCards: React.FC<GlowingCardsProps> = ({
       >
         <div
           className={cn(
-            "flex items-center justify-center flex-wrap gap-[var(--gap)]",
+            "relative z-10 flex items-center justify-center flex-wrap gap-[var(--gap)]",
             responsive && "flex-col sm:flex-row",
           )}
         >
@@ -178,7 +178,7 @@ export const GlowingCards: React.FC<GlowingCardsProps> = ({
           <div
             ref={overlayRef}
             className={cn(
-              "absolute inset-0 pointer-events-none select-none",
+              "absolute inset-0 z-0 pointer-events-none select-none",
               "opacity-0 transition-all duration-[var(--animation-duration)] ease-out",
             )}
             style={{

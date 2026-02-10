@@ -1,7 +1,7 @@
 ---
 title: "Secure Login System with Temporary Account Lock Using Redis"
 description: "Stop brute-force attacks with a scalable login throttle using Redis counters and TTL-based account locks."
-pubDate: 2025-10-16
+pubDate: 2025-02-16
 author: "Protize Engineering"
 tags: ["security", "redis", "authentication", "nodejs"]
 category: "Security"

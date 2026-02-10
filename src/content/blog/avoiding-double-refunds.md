@@ -1,7 +1,7 @@
 ---
 title: "Avoiding Double Refunds: How We Solved a Race Condition in Our Payout System"
 description: "How we used optimistic locking to prevent double refunds and maintain wallet accuracy under high concurrency."
-pubDate: 2025-10-16
+pubDate: 2024-10-16
 author: "Protize Engineering"
 tags: ["fintech", "payouts", "concurrency", "optimistic-locking", "wallet-system"]
 category: "Engineering"
@@ -113,6 +113,5 @@ Before deploying, we stress-tested the new logic to ensure it handled real-world
 
 In payment systems, concurrency control is just as critical as correctness. By adding a version-based optimistic lock to our wallet updates, we eliminated duplicate refunds — without adding latency or operational complexity.
 
-**Simple fix. Huge impact.**
 
 — *Protize Engineering Team*

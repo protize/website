@@ -67,7 +67,7 @@ Here’s a simplified view of our real-time notification architecture:
 ```
 🚨 LOW WALLET BALANCE ALERT 🚨
 
-Merchant: PayPro Pvt Ltd
+Merchant: ABC Merchant
 Current Balance: ₹3,254
 Threshold: ₹5,000
 
@@ -97,9 +97,7 @@ Triggered by heartbeat monitors when servers or APIs go down.
 **Goal:** Immediate visibility into infrastructure problems.
 
 ---
-
-![Monitoring dashboard showing uptime metrics and alerts](https://images.unsplash.com/photo-1581090700227-1e37b190418e?q=80&w=1600&auto=format&fit=crop)
-
+<!-- Below is the code of c:\Users\Alok\Desktop\website\src\content\blog\real-time-merchant-notifications.md -->
 ---
 
 ## 🔧 Best Practices for Notification Systems

@@ -183,10 +183,10 @@ function PremiumCard({
           <BorderBeam
             colorFrom="rgba(37,99,235,0.35)"
             colorTo="rgba(56,189,248,0.35)"
-            size={56}
+            size={150}
             duration={8}
-            borderThickness={1.25}
-            glowIntensity={1.2}
+            borderThickness={20}
+            glowIntensity={1}
           />
         </div>
       )}
@@ -257,7 +257,7 @@ function About() {
                 key={`${item.title}-${idx}`}
                 custom={idx}
                 variants={cardIn}
-                className="rounded-2xl border border-slate-200 bg-white/85 p-5 shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
+                className="rounded-2xl border border-slate-300 bg-white/85 p-5 shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
               >
                 <div className="mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-blue-600 to-cyan-500" />
                 <h3 className="text-base font-semibold text-slate-900">
@@ -291,7 +291,7 @@ function About() {
                   key={`${item.text}-${i}`}
                   custom={i}
                   variants={cardIn}
-                  className="flex h-full items-start gap-3 rounded-xl border border-slate-200/80 bg-white/85 p-4 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
+                  className="flex h-full items-start gap-3 rounded-xl border border-slate-300 bg-white/85 p-4 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
                 >
                   <span
                     className={`mt-0.5 inline-flex rounded-lg p-1.5 ring-1 ${item.chipClass} ${item.iconClass}`}

@@ -32,7 +32,7 @@ export default function TeamGridGlowing({ members }: Props) {
               <img
                 src={m.image}
                 alt={m.name}
-                className="avatar h-28 w-28 object-cover"
+                className="avatar h-28 w-28 object-cover transition-transform duration-300 ease-out group-hover:scale-110"
                 loading="lazy"
                 decoding="async"
               />
