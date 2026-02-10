@@ -9,7 +9,7 @@ interface Props {
 const { title = "Blog", subtitle } = Astro.props as Props;
 ---
 
-<div class="grid items-center gap-4 md:grid-cols-2">
+<div class="text-center space-y-4">
   <h1
     class="text-4xl md:text-6xl font-extrabold tracking-tight text-foreground"
   >
@@ -20,7 +20,7 @@ const { title = "Blog", subtitle } = Astro.props as Props;
   </h1>
   {
     subtitle && (
-      <p class="text-base md:text-lg text-[color:var(--color-text-secondary)] md:text-right">
+      <p class="text-base md:text-lg text-[color:var(--color-text-secondary)] ">
         {subtitle}
       </p>
     )

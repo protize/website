@@ -8,12 +8,12 @@ interface Props {
 const {
   currentPage,
   totalPages,
-  basePath = "/blog/page",
+  basePath = "/insights/page",
 } = Astro.props as Props;
 const prevHref =
   currentPage > 1
     ? currentPage === 2
-      ? "/blog/"
+      ? "/insights/"
       : `${basePath}/${currentPage - 1}/`
     : null;
 const nextHref =

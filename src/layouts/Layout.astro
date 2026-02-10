@@ -2,7 +2,7 @@
 import Navbar from "./Navbar.astro";
 import Footer from "./Footer.astro";
 import ScrollToTop from "../components/shared/ScrollToTop.astro";
-import SmoothCursorIsland from "../components/cursor/SmoothCursorIsland.tsx";
+// import SmoothCursorIsland from "../components/cursor/SmoothCursorIsland.tsx";
 
 export interface Props {
   title: string;
@@ -34,7 +34,7 @@ const { title } = Astro.props;
     <slot />
     <Footer />
     <ScrollToTop />
-    <SmoothCursorIsland client:load />
+    <!-- <SmoothCursorIsland client:load /> -->
   </body>
   <script>
     // detectSystemTheme();

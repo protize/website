@@ -6,6 +6,7 @@ import Button from "../components/shared/Button.astro";
 import { Image } from "astro:assets";
 import CtaExpert from "../components/sections/services/CtaExpert.astro";
 import TopServicesMarquee from "../components/sections/services/TopServicesMarquee.astro";
+import GradiantText from "../components/shared/GradiantText.astro";
 
 type Service = {
   title: string;
@@ -75,6 +76,21 @@ const services: Service[] = [
     ],
   },
 ];
+
+const items = [
+  {
+    title: "End to End Solutions and Services Guaranteed",
+    desc: "We help transform businesses into resilient organizations that adapt quickly, move with market shifts, and execute with clarity.",
+  },
+  {
+    title: "Ahead of The Curve We Future-proof Your IT",
+    desc: "We architect and deliver scalable systems so your product remains stable, secure, and ready for growth.",
+  },
+  {
+    title: "Experience Certainty Every Project Executed",
+    desc: "With transparent milestones and strong delivery governance, you always know what’s done and what’s next.",
+  },
+];
 ---
 
 <Layout title="Services • Protize">
@@ -90,7 +106,9 @@ const services: Service[] = [
               <h1
                 class="hero-title text-3xl md:text-5xl font-extrabold leading-tight text-neutral-900"
               >
-                Custom Web, Mobile & Fintech Software Development Services
+                <GradiantText>
+                  Custom Web, Mobile & Fintech Software
+                </GradiantText>Development Services
               </h1>
 
               <p
@@ -235,80 +253,26 @@ const services: Service[] = [
 
             <!-- Step cards -->
             <ol
-              class="mt-12 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-7"
+              class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-7 xl:grid-cols-3"
             >
-              <li
-                class="rounded-3xl group relative border border-slate-300/80 bg-white/60 p-6 md:p-7 transition-all duration-300 hover:-translate-y-1 hover:bg-white/80 hover:shadow-[0_20px_50px_-28px_rgba(2,6,23,0.35)]"
-              >
-                <div
-                  class="absolute -top-6 left-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#d9dbe1] text-4xl font-extrabold leading-none text-blue-600 shadow-sm"
-                >
-                  01
-                </div>
+              {
+                items.map((it, i) => (
+                  <li class="group relative rounded-3xl border border-slate-300/80 bg-white/60 p-6 md:p-7 transition-all duration-300 hover:-translate-y-1 hover:bg-white/80 hover:shadow-[0_20px_50px_-28px_rgba(2,6,23,0.35)]">
+                    <div class="absolute -top-6 left-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#d9dbe1] text-4xl font-bold leading-none text-blue-600 shadow-sm">
+                      {String(i + 1).padStart(2, "0")}
+                    </div>
 
-                <div class="pt-8">
-                  <h3
-                    class="text-xl md:text-2xl leading-tight font-semibold text-[#0c1b4d]"
-                  >
-                    End to End Solutions and Services Guaranteed
-                  </h3>
-                  <p
-                    class="mt-4 text-base md:text-lg leading-relaxed text-slate-800"
-                  >
-                    We help transform businesses into resilient organizations
-                    that adapt quickly, move with market shifts, and execute
-                    with clarity.
-                  </p>
-                </div>
-              </li>
-
-              <li
-                class="rounded-3xl group relative border border-slate-300/80 bg-white/60 p-6 md:p-7 transition-all duration-300 hover:-translate-y-1 hover:bg-white/80 hover:shadow-[0_20px_50px_-28px_rgba(2,6,23,0.35)]"
-              >
-                <div
-                  class="absolute -top-6 left-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#d9dbe1] text-4xl font-extrabold leading-none text-blue-600 shadow-sm"
-                >
-                  02
-                </div>
-
-                <div class="pt-8">
-                  <h3
-                    class="text-xl md:text-2xl leading-tight font-semibold text-[#0c1b4d]"
-                  >
-                    Ahead of The Curve We Future-proof Your IT
-                  </h3>
-                  <p
-                    class="mt-4 text-base md:text-lg leading-relaxed text-slate-800"
-                  >
-                    We architect and deliver scalable systems so your product
-                    remains stable, secure, and ready for growth.
-                  </p>
-                </div>
-              </li>
-
-              <li
-                class="rounded-3xl group relative border border-slate-300/80 bg-white/60 p-6 md:p-7 transition-all duration-300 hover:-translate-y-1 hover:bg-white/80 hover:shadow-[0_20px_50px_-28px_rgba(2,6,23,0.35)]"
-              >
-                <div
-                  class="absolute -top-6 left-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#d9dbe1] text-4xl font-extrabold leading-none text-blue-600 shadow-sm"
-                >
-                  03
-                </div>
-
-                <div class="pt-8">
-                  <h3
-                    class="text-xl md:text-2xl leading-tight font-semibold text-[#0c1b4d]"
-                  >
-                    Experience Certainty Every Project Executed
-                  </h3>
-                  <p
-                    class="mt-4 text-base md:text-lg leading-relaxed text-slate-800"
-                  >
-                    With transparent milestones and strong delivery governance,
-                    you always know what’s done and what’s next.
-                  </p>
-                </div>
-              </li>
+                    <div class="pt-8">
+                      <h3 class="text-lg font-semibold leading-tight text-[#0c1b4d] md:text-xl">
+                        {it.title}
+                      </h3>
+                      <p class="mt-4 text-sm leading-relaxed text-slate-800 md:text-base">
+                        {it.desc}
+                      </p>
+                    </div>
+                  </li>
+                ))
+              }
             </ol>
           </div>
         </Container>

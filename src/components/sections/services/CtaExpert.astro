@@ -1,11 +1,5 @@
 ---
 import CtaButton from "../../shared/CtaButton.astro";
-
-/**
- * HeroCtaExpert.astro
- * Background image file: /public/images/hero-bg2.png
- * Person image file (cutout): /public/images/hero-girl.png
- */
 ---
 
 <section
@@ -16,11 +10,11 @@ import CtaButton from "../../shared/CtaButton.astro";
   <div class="pointer-events-none absolute inset-0 hero2-overlay"></div>
 
   <div class="mx-auto max-w-7xl px-4 md:px-8 lg:px-12">
-    <div class="relative min-h-[430px] md:min-h-[460px] flex items-center">
+    <div class="relative min-h-[430px] md:min-h-[400px] flex items-center">
       <!-- LEFT CONTENT -->
       <div class="relative z-20 w-full max-w-[760px] py-14 md:py-16">
         <h2
-          class="hero2-title text-white font-extrabold leading-[1.08] tracking-[-0.02em] text-[42px] md:text-5xl"
+          class="hero2-title text-white font-extrabold leading-[1.08] tracking-[-0.02em] text-4xl md:text-3xl"
         >
           Transform Your IT Today-
           <br />
@@ -28,7 +22,7 @@ import CtaButton from "../../shared/CtaButton.astro";
         </h2>
 
         <p
-          class="hero2-desc mt-5 text-white/95 leading-[1.38] font-medium text-[22px] md:text-xl max-w-2xl"
+          class="hero2-desc mt-5 text-white/95 leading-[1.38] font-medium text-sm md:text-base max-w-sm"
         >
           Ready to take your business to the next level with cutting-edge IT
           solutions? Our team is here to help you transform.
@@ -36,7 +30,7 @@ import CtaButton from "../../shared/CtaButton.astro";
 
         <!-- Subscribe form -->
         <form
-          class="hero2-form mt-8 flex items-center gap-3 bg-white rounded-xl p-2 w-full max-w-xl shadow-[0_18px_60px_-30px_rgba(0,0,0,0.35)]"
+          class="hero2-form mt-8 flex items-center gap-3 pl-2 bg-white rounded-3xl w-full max-w-sm shadow-[0_18px_60px_-30px_rgba(0,0,0,0.35)]"
           onsubmit="event.preventDefault()"
         >
           <label for="hero2-email" class="sr-only">Email Address</label>
@@ -44,7 +38,7 @@ import CtaButton from "../../shared/CtaButton.astro";
             id="hero2-email"
             type="email"
             placeholder="Email Address"
-            class="h-10 w-full rounded-lg px-2 text-base font-medium text-slate-900 placeholder:text-slate-500/95 outline-none border-0 focus:ring-0"
+            class="h-10 w-full rounded-3xl px-2 text-base font-medium text-slate-900 placeholder:text-slate-500/95 outline-none border-0 focus:ring-0"
           />
 
           <CtaButton> Subscribe ↗</CtaButton>

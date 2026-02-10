@@ -14,9 +14,17 @@ const formatDate = (date: Date) =>
     year: "numeric",
   });
 
-const allPosts = (await getCollection("blog"))
+const raw = await getCollection("insights");
+console.log("RAW COUNT", raw.length);
+console.log(
+  raw.map((p) => ({ slug: p.slug, draft: p.data.draft, title: p.data.title })),
+);
+
+const allPosts = raw
   .filter((p) => !p.data.draft)
   .sort((a, b) => +new Date(b.data.pubDate) - +new Date(a.data.pubDate));
+
+console.log("PUBLISHED COUNT", allPosts.length);
 
 const featuredPost = allPosts.find((p) => p.data.featured === true) ?? null;
 
@@ -39,11 +47,11 @@ const subtitles = [
 const subtitle = subtitles[Math.floor(Math.random() * subtitles.length)];
 ---
 
-<Layout title="Blog">
+<Layout title="Insights">
   <Container className="space-y-10 py-10">
     <!-- Hero Section -->
-    <div class="pb-10">
-      <BlogHero title="Protize Stories" subtitle={subtitle} />
+    <div class="pb-6">
+      <BlogHero title="Protize Insights" subtitle={subtitle} />
     </div>
 
     <!-- Featured Posts Section -->
@@ -55,7 +63,7 @@ const subtitle = subtitles[Math.floor(Math.random() * subtitles.length)];
             return (
               <section class="mb-10">
                 <a
-                  href={`/blog/${featuredPost.slug}`}
+                  href={`/insights/${featuredPost.slug}`}
                   class="block rounded-3xl border border-gray-200 bg-white p-4 sm:p-6 md:p-7 shadow-sm hover:shadow-md transition-shadow duration-200"
                 >
                   <div class="grid gap-6 md:grid-cols-[300px,1fr] lg:grid-cols-[360px,1fr] items-start">

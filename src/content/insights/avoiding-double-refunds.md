@@ -1,7 +1,7 @@
 ---
 title: "Avoiding Double Refunds: How We Solved a Race Condition in Our Payout System"
 description: "How we used optimistic locking to prevent double refunds and maintain wallet accuracy under high concurrency."
-pubDate: 2024-10-16
+pubDate: "2026-02-10"
 author: "Protize Engineering"
 tags: ["fintech", "payouts", "concurrency", "optimistic-locking", "wallet-system"]
 category: "Engineering"

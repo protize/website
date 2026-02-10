@@ -1,6 +1,6 @@
 <button
   id="scrollToTopBtn"
-  class="fixed z-10 bottom-6 right-6 hidden rounded-full bg-purple-600 text-white p-3 shadow-lg hover:bg-purple-700 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-400"
+  class="fixed bottom-6 right-6 z-10 hidden rounded-full bg-blue-600 p-3 text-white shadow-lg transition-all duration-300 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 opacity-0"
   aria-label="Scroll to top"
 >
   <svg
@@ -16,17 +16,23 @@
 <script>
   const scrollBtn = document.getElementById("scrollToTopBtn");
 
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 250) {
-      scrollBtn.classList.remove("hidden");
-      scrollBtn.classList.add("opacity-100");
-    } else {
-      scrollBtn.classList.add("hidden");
-      scrollBtn.classList.remove("opacity-100");
-    }
-  });
+  if (scrollBtn) {
+    const toggleBtn = () => {
+      if (window.scrollY > 250) {
+        scrollBtn.classList.remove("hidden", "opacity-0");
+        scrollBtn.classList.add("opacity-100");
+      } else {
+        scrollBtn.classList.add("opacity-0");
+        scrollBtn.classList.remove("opacity-100");
+        window.setTimeout(() => scrollBtn.classList.add("hidden"), 300);
+      }
+    };
 
-  scrollBtn.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
+    window.addEventListener("scroll", toggleBtn, { passive: true });
+    toggleBtn();
+
+    scrollBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
 </script>
