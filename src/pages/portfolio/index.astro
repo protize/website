@@ -18,19 +18,6 @@ const allPosts = (await getCollection("portfolio"))
     (a, b) =>
       new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime(),
   );
-
-const tagMap = new Map<string, string>();
-for (const p of allPosts) {
-  for (const raw of p.data.tags ?? []) {
-    const t = String(raw).trim();
-    if (!t) continue;
-    const key = t.toLowerCase();
-    if (!tagMap.has(key)) tagMap.set(key, t);
-  }
-}
-const allTags = Array.from(tagMap.values()).sort((a, b) =>
-  a.localeCompare(b, "en", { sensitivity: "base" }),
-);
 ---
 
 <Layout title="Portfolio">

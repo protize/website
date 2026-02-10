@@ -1,12 +1,13 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Container from "../components/shared/Container.astro";
-import CtaButton from "../components/shared/CtaButton.astro";
-import Button from "../components/shared/Button.astro";
+import Layout from "../../layouts/Layout.astro";
+import Container from "../../components/shared/Container.astro";
+import CtaButton from "../../components/shared/CtaButton.astro";
+import Button from "../../components/shared/Button.astro";
 import { Image } from "astro:assets";
-import CtaExpert from "../components/sections/services/CtaExpert.astro";
-import TopServicesMarquee from "../components/sections/services/TopServicesMarquee.astro";
-import GradiantText from "../components/shared/GradiantText.astro";
+import CtaExpert from "../../components/sections/services/CtaExpert.astro";
+import TopServicesMarquee from "../../components/sections/services/TopServicesMarquee.astro";
+import GradiantText from "../../components/shared/GradiantText.astro";
+import { getCollection } from "astro:content";
 
 type Service = {
   title: string;
@@ -91,6 +92,10 @@ const items = [
     desc: "With transparent milestones and strong delivery governance, you always know what’s done and what’s next.",
   },
 ];
+
+const allServices = (await getCollection("services"))
+  .filter((p) => !p.data.draft)
+  .sort((a, b) => (b.data.order ?? 0) - (a.data.order ?? 0));
 ---
 
 <Layout title="Services • Protize">
@@ -182,43 +187,51 @@ const items = [
           class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 premium-grid"
         >
           {
-            services.map((s) => (
-              <article class="service-card group relative rounded-2xl border border-neutral-200 bg-white/60 backdrop-blur supports-[backdrop-filter]:bg-white/40 shadow-sm overflow-hidden">
-                {/* Image */}
-                <div class="aspect-[16/13] overflow-hidden  ">
-                  <Image
-                    src={s.image}
-                    alt={s.title}
-                    width={640}
-                    height={400}
-                    loading="lazy"
-                    decoding="async"
-                    class="service-image h-full w-full object-cover backdrop-blur-sm"
-                  />
-                </div>
+            allServices.map((s) => (
+              <a
+                href={`/services/${s.slug}`}
+                class="block"
+                aria-label={`View service: ${s.data.title}`}
+              >
+                <article class="service-card group relative overflow-hidden rounded-2xl border border-neutral-200 bg-white/60 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-white/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                  {/* Image */}
+                  <div class="aspect-[16/13] overflow-hidden">
+                    <Image
+                      src={s.data.image}
+                      alt={s.data.title}
+                      width={640}
+                      height={400}
+                      loading="lazy"
+                      decoding="async"
+                      class="service-image h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                  </div>
 
-                {/* Overlay */}
-                <div class="service-overlay pointer-events-none absolute inset-0" />
+                  {/* Overlay */}
+                  <div class="service-overlay pointer-events-none absolute inset-0" />
 
-                {/* Content (reveals on hover) */}
-                <div class="service-content absolute inset-x-0 bottom-0 z-10 p-5 md:p-6">
-                  <h3 class="service-title text-lg md:text-xl font-semibold text-white">
-                    {s.title}
-                  </h3>
+                  {/* Content */}
+                  <div class="service-content absolute inset-x-0 bottom-0 z-10 p-5 md:p-6">
+                    <h3 class="service-title text-lg font-semibold text-white md:text-xl">
+                      {s.data.title}
+                    </h3>
 
-                  <p class="service-blurb mt-2 text-sm text-white/90 leading-relaxed">
-                    {s.blurb}
-                  </p>
+                    <p class="service-blurb mt-2 text-sm leading-relaxed text-white/90">
+                      {s.data.blurb}
+                    </p>
 
-                  <ul class="service-points mt-3 flex flex-wrap gap-2">
-                    {s.points.map((p) => (
-                      <li class="text-[11px] md:text-xs px-2.5 py-1 rounded-full border border-white/35 bg-white/10 text-white backdrop-blur-sm">
-                        {p}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </article>
+                    {s.data.points?.length > 0 && (
+                      <ul class="service-points mt-3 flex flex-wrap gap-2">
+                        {s.data.points.map((p) => (
+                          <li class="rounded-full border border-white/35 bg-white/10 px-2.5 py-1 text-[11px] text-white backdrop-blur-sm md:text-xs">
+                            {p}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                </article>
+              </a>
             ))
           }
         </div>

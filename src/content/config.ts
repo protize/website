@@ -35,7 +35,22 @@ const Portfolio = defineCollection({
   }),
 });
 
+export const Services = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+    blurb: z.string(),
+    image: z.string(),
+    category: z.string().default("Uncategorized"),
+    points: z.array(z.string()).default([]),
+    featured: z.boolean().default(false),
+    order: z.number().int().optional(),
+    draft: z.boolean().default(false),
+  }),
+});
+
 export const collections = {
   insights: Insights,
   portfolio: Portfolio,
+  services: Services,
 };
