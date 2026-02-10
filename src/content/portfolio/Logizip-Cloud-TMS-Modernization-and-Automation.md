@@ -1,10 +1,11 @@
 ---
 title: "Logizip LLC — Cloud TMS Modernization, Automation & Intelligent Operations"
 excerpt: "Protize helped Logizip modernize trucking operations through a cloud-based Trucking Management System, scalable web/mobile architecture, and AI-driven automation for faster processing and improved operational efficiency."
-pubDate: 2025-11-06
-updatedDate: 2025-11-06
+pubDate: 2021-11-06
+updatedDate: 2023-10-23
 author: "Protize Team"
 tags:
+  - "Consultancy"
   - "React.js"
   - "NestJS"
   - "GraphQL"
@@ -30,19 +31,24 @@ coverAlt: "Logizip cloud trucking management modernization and AI automation cas
 ---
 
 ## Client
+
 Logizip LLC
 
 ## Engagement Period
-(As per engagement timeline)
+
+Nov 2021 - Oct 2023
 
 ## Overview
+
 Protize partnered with Logizip LLC to modernize logistics operations through a cloud-based Trucking Management System (TMS).  
 The engagement covered architecture leadership, full-stack development for web and mobile applications, critical third-party integrations, and AI-powered workflow automation.
 
 ## Business Context
+
 Logizip needed a robust digital foundation to streamline trucking operations, improve dispatch and order workflows, and enable secure, scalable growth across logistics processes.
 
 ## Challenges
+
 - Operational complexity across trucking workflows
 - Need for scalable cloud architecture across web and mobile channels
 - Fragmented external systems requiring deep integrations
@@ -50,6 +56,7 @@ Logizip needed a robust digital foundation to streamline trucking operations, im
 - Need for stronger authentication and communication automation
 
 ## Protize Scope
+
 - Architecture and solution design for cloud TMS platform
 - Full-stack web and mobile development leadership
 - Integration of logistics and mapping partners
@@ -58,9 +65,11 @@ Logizip needed a robust digital foundation to streamline trucking operations, im
 - Cross-functional team coordination and delivery governance
 
 ## Technology Stack
+
 GraphQL, React.js, NestJS, PostgreSQL, Redux.js, Express.js, Python, OpenAI, WhatsApp APIs, Google OAuth2
 
 ## What We Delivered
+
 - Designed and developed a cloud-based Trucking Management System
 - Built web/mobile product capabilities on scalable full-stack architecture
 - Integrated ecosystem services:
@@ -72,6 +81,7 @@ GraphQL, React.js, NestJS, PostgreSQL, Redux.js, Express.js, Python, OpenAI, Wha
 - Strengthened platform security, extensibility, and operational visibility
 
 ## Outcomes
+
 - Increased trucking operational efficiency by **~25%**
 - Improved workflow automation and processing turnaround
 - Enhanced TMS capabilities through deep ecosystem integrations
@@ -79,16 +89,5 @@ GraphQL, React.js, NestJS, PostgreSQL, Redux.js, Express.js, Python, OpenAI, Wha
 - Established scalable foundation for continued logistics product growth
 
 ## Team & Delivery
-Protize led platform architecture and implementation while enabling cross-team collaboration, communication standards, and delivery management across product and engineering streams.
 
-## Project Card Data (for portfolio listing)
-- **title:** Logizip LLC — Cloud TMS Modernization, Automation & Intelligent Operations
-- **duration:** As per engagement timeline
-- **category:** Logistics / Cloud Platform & AI Automation
-- **excerpt:** Protize helped Logizip modernize trucking operations through a cloud-based Trucking Management System, scalable web/mobile architecture, and AI-driven automation for faster processing and improved operational efficiency.
-- **highlights:**
-  - ~25% operational efficiency improvement
-  - Cloud TMS architecture and development delivered
-  - Integrations: BorderConnect, GoMotive, Trimble Maps, Google OAuth2
-  - OpenAI + WhatsApp automation for order workflows
-  - Full-stack stack: React, NestJS, GraphQL, PostgreSQL
+Protize led platform architecture and implementation while enabling cross-team collaboration, communication standards, and delivery management across product and engineering streams.
