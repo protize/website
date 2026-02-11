@@ -95,7 +95,7 @@ const items = [
 
 const allServices = (await getCollection("services"))
   .filter((p) => !p.data.draft)
-  .sort((a, b) => (b.data.order ?? 0) - (a.data.order ?? 0));
+  .sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
 ---
 
 <Layout title="Services • Protize">
@@ -145,29 +145,17 @@ const allServices = (await getCollection("services"))
             </div>
 
             <div
-              class="relative lg:absolute lg:-top-10 lg:right-0 w-full lg:w-[45%] z-0 rounded-3xl border border-slate-200 bg-white/60 p-2 shadow-[0_24px_70px_-32px_rgba(2,6,23,0.35)] backdrop-blur"
+              class="relative lg:absolute lg:-top-20 lg:right-0 w-full lg:w-[46%] z-0 rounded-3xl"
             >
               <div class="hero-image">
                 <Image
-                  src="/images/service-hero.png"
+                  src="/images/services-section.png"
                   alt="Engineers collaborating on a modern software system"
                   width={2350}
                   height={2359}
-                  class="w-full h-auto object-contain"
+                  class="w-full h-auto object-cover"
                   loading="eager"
                 />
-              </div>
-              <div
-                class="absolute -bottom-4 -left-4 md:-left-6 rounded-xl border border-white bg-white/90 px-4 py-3 shadow-lg backdrop-blur"
-              >
-                <p class="text-[11px] uppercase tracking-wide text-slate-500">
-                  Engineering Results
-                </p>
-                <p
-                  class="mt-0.5 text-sm md:text-base font-semibold text-slate-900"
-                >
-                  High-quality, low-regression releases
-                </p>
               </div>
             </div>
           </div>

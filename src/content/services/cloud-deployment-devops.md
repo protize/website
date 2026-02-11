@@ -8,7 +8,7 @@ points:
   - "Monitoring & alerts"
 category: "Cloud & DevOps"
 featured: false
-order: 4
+order: 5
 draft: false
 ---
 
@@ -19,18 +19,23 @@ From first deployment to large-scale production systems, we ensure your platform
 ## What We Deliver
 
 ### ☁️ Cloud Infrastructure Setup
+
 We configure secure and scalable hosting environments tailored to your product’s needs using leading cloud providers.
 
 ### 🚀 CI/CD Pipelines
+
 Automated build, test, and deployment pipelines allow you to release updates quickly and safely without manual errors.
 
 ### 📦 Containerization
+
 We use Docker and modern container practices to ensure your applications run consistently across environments.
 
 ### 📊 Monitoring & Alerts
+
 Real-time monitoring, logging, and alerting help detect issues before users are affected.
 
 ### 🔐 Security Best Practices
+
 We implement firewalls, secure networking, secrets management, and access controls to protect your infrastructure.
 
 ---
@@ -39,10 +44,10 @@ We implement firewalls, secure networking, secrets management, and access contro
 
 We architect systems that can handle growth without performance degradation.
 
-- Auto-scaling infrastructure  
-- Load balancing  
-- Caching strategies  
-- Database performance tuning  
+- Auto-scaling infrastructure
+- Load balancing
+- Caching strategies
+- Database performance tuning
 
 ---
 
@@ -50,18 +55,18 @@ We architect systems that can handle growth without performance degradation.
 
 Cloud costs can grow fast without planning. We help you control expenses by:
 
-- Choosing the right resource sizes  
-- Eliminating unused services  
-- Implementing efficient scaling strategies  
+- Choosing the right resource sizes
+- Eliminating unused services
+- Implementing efficient scaling strategies
 
 ---
 
 ## Technologies & Platforms
 
-- AWS, GCP, Azure  
-- Docker & container orchestration  
-- CI/CD tools (GitHub Actions, GitLab CI, etc.)  
-- Monitoring tools (CloudWatch, Grafana, etc.)  
+- AWS, GCP, Azure
+- Docker & container orchestration
+- CI/CD tools (GitHub Actions, GitLab CI, etc.)
+- Monitoring tools (CloudWatch, Grafana, etc.)
 
 ---
 
@@ -69,10 +74,10 @@ Cloud costs can grow fast without planning. We help you control expenses by:
 
 This service is ideal for:
 
-- Startups launching their first production system  
-- Growing products facing scaling challenges  
-- SaaS platforms needing reliable uptime  
-- Businesses modernizing legacy hosting  
+- Startups launching their first production system
+- Growing products facing scaling challenges
+- SaaS platforms needing reliable uptime
+- Businesses modernizing legacy hosting
 
 ---
 

@@ -7,7 +7,7 @@ points:
   - "Fast & responsive UX"
   - "Play/App Store publishing"
 featured: false
-order: 2
+order: 3
 draft: false
 ---
 
@@ -18,29 +18,34 @@ From idea validation to App Store release, we handle the full mobile product jou
 ## What We Deliver
 
 ### 📱 Cross-Platform & Native Apps
+
 We build apps using modern frameworks that allow shared logic across platforms while keeping native performance and user experience intact.
 
 ### 🎨 Clean, Intuitive UI/UX
+
 Our design-first approach ensures your app is easy to use, visually polished, and aligned with your brand identity.
 
 ### ⚡ Smooth Performance
+
 We optimize for fast load times, smooth animations, and minimal crashes — even on lower-end devices.
 
 ### 🔔 Push Notifications & Real-Time Features
+
 Keep users engaged with smart notifications, chat systems, live updates, and background sync.
 
 ### 🔐 Secure Data Handling
+
 We implement best practices for authentication, encryption, and secure API communication.
 
 ---
 
 ## Technologies We Use
 
-- **Frameworks:** Flutter, React Native  
-- **Native:** Kotlin (Android), Swift (iOS)  
-- **Backend:** Node.js, NestJS  
-- **Database:** PostgreSQL, Firebase, Redis  
-- **Cloud & APIs:** AWS, REST, WebSockets  
+- **Frameworks:** Flutter, React Native
+- **Native:** Kotlin (Android), Swift (iOS)
+- **Backend:** Node.js, NestJS
+- **Database:** PostgreSQL, Firebase, Redis
+- **Cloud & APIs:** AWS, REST, WebSockets
 
 ---
 
@@ -48,10 +53,10 @@ We implement best practices for authentication, encryption, and secure API commu
 
 We help you publish your app successfully by handling:
 
-- Store listing setup  
-- Screenshots and metadata guidance  
-- Versioning and release management  
-- Compliance with store policies  
+- Store listing setup
+- Screenshots and metadata guidance
+- Versioning and release management
+- Compliance with store policies
 
 ---
 
@@ -59,10 +64,10 @@ We help you publish your app successfully by handling:
 
 This service is ideal for:
 
-- Startups launching new mobile products  
-- Businesses extending their web platform to mobile  
-- Ecommerce and service-based apps  
-- Fintech, booking, and marketplace apps  
+- Startups launching new mobile products
+- Businesses extending their web platform to mobile
+- Ecommerce and service-based apps
+- Fintech, booking, and marketplace apps
 
 ---
 

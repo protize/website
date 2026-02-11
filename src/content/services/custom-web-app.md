@@ -1,58 +1,56 @@
 ---
-title: "Mobile App Development (Android & iOS)"
-blurb: "Modern mobile apps with clean UI, smooth performance, and production-ready releases. Ideal for startups and businesses that need reliable apps users love."
-image: "/images/86868887979779.jpg"
+title: "Custom Web Application Development"
+blurb: "We build fast, secure, and scalable web applications—from MVPs to enterprise platforms. Perfect for SaaS, fintech, ecommerce, and internal business tools."
+image: "/images/5569517_2885174.jpg"
 points:
-  - "Android & iOS apps"
-  - "Fast & responsive UX"
-  - "Play/App Store publishing"
-category: "Development"
+  - "High-performance web apps"
+  - "Secure login & roles"
+  - "Payments & dashboards"
 featured: false
 order: 2
 draft: false
 ---
 
-Mobile apps are where your customers live. We design and develop high-quality Android and iOS applications that are fast, reliable, and built to scale as your user base grows.
+Modern businesses run on powerful web applications. We design and develop secure, scalable, and high-performance web platforms that help you automate processes, serve customers, and grow without technical limitations.
 
-From idea validation to App Store release, we handle the full mobile product journey — ensuring your app not only looks great but performs smoothly in real-world usage.
+Whether you need an MVP to validate your idea or a full enterprise-grade system, we build web apps that are reliable, easy to use, and ready for real-world scale.
 
 ## What We Deliver
 
-### 📱 Cross-Platform & Native Apps
-We build apps using modern frameworks that allow shared logic across platforms while keeping native performance and user experience intact.
+### 🚀 High-Performance Web Apps
 
-### 🎨 Clean, Intuitive UI/UX
-Our design-first approach ensures your app is easy to use, visually polished, and aligned with your brand identity.
+We build fast-loading, responsive applications optimized for performance, stability, and smooth user experience — even under heavy traffic.
 
-### ⚡ Smooth Performance
-We optimize for fast load times, smooth animations, and minimal crashes — even on lower-end devices.
+### 🔐 Secure Authentication & Role-Based Access
 
-### 🔔 Push Notifications & Real-Time Features
-Keep users engaged with smart notifications, chat systems, live updates, and background sync.
+From simple login systems to complex permission structures, we implement secure authentication, user roles, and access control to protect your platform and data.
 
-### 🔐 Secure Data Handling
-We implement best practices for authentication, encryption, and secure API communication.
+### 📊 Dashboards & Admin Panels
+
+We create powerful dashboards with real-time data, analytics, reporting tools, and management features that help you run your business efficiently.
+
+### 💳 Payment Integrations
+
+We integrate secure payment systems, subscriptions, wallets, and transaction tracking — ideal for SaaS platforms, fintech apps, and marketplaces.
+
+### 🔄 API & System Integrations
+
+Need to connect with third-party services, CRMs, ERPs, or internal tools? We build robust APIs and seamless integrations to keep everything connected.
+
+### ⚙️ Scalable Backend Architecture
+
+Our systems are built with scalability in mind — ensuring your platform performs smoothly as users, data, and features grow.
 
 ---
 
 ## Technologies We Use
 
-- **Frameworks:** Flutter, React Native  
-- **Native:** Kotlin (Android), Swift (iOS)  
-- **Backend:** Node.js, NestJS  
-- **Database:** PostgreSQL, Firebase, Redis  
-- **Cloud & APIs:** AWS, REST, WebSockets  
-
----
-
-## App Store & Play Store Launch Support
-
-We help you publish your app successfully by handling:
-
-- Store listing setup  
-- Screenshots and metadata guidance  
-- Versioning and release management  
-- Compliance with store policies  
+- **Frontend:** React, Next.js, Vue
+- **Backend:** Node.js, NestJS
+- **Database:** PostgreSQL, MongoDB, Redis
+- **Infrastructure:** AWS, Docker, CI/CD
+- **Real-Time:** WebSockets, Queues
+- **Security:** JWT, OAuth, Encryption
 
 ---
 
@@ -60,15 +58,16 @@ We help you publish your app successfully by handling:
 
 This service is ideal for:
 
-- Startups launching new mobile products  
-- Businesses extending their web platform to mobile  
-- Ecommerce and service-based apps  
-- Fintech, booking, and marketplace apps  
+- SaaS platforms and subscription-based products
+- Fintech and payment-related platforms
+- Ecommerce and marketplace applications
+- Startups building MVPs
+- Businesses digitizing internal workflows
 
 ---
 
 ## The Result
 
-You get a production-ready mobile app that delivers a premium user experience, scales with growth, and is fully prepared for app store distribution.
+You get a secure, scalable, and professionally built web application that supports your business growth, improves operational efficiency, and delivers a smooth experience for your users.
 
-We don’t just build apps — we build mobile experiences that users return to.
+We don’t just build web apps — we build digital systems that power your business.

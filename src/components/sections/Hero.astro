@@ -44,52 +44,17 @@ const { className = "" } = Astro.props;
 
     <!-- Hero image -->
     <div
-      class="relative lg:absolute lg:-top-10 lg:right-0 w-full lg:w-[43%] z-0 rounded-3xl border border-slate-200 bg-white/60 p-2 shadow-[0_24px_70px_-32px_rgba(2,6,23,0.35)] backdrop-blur"
+      class="relative lg:absolute lg:top-0 lg:right-0 w-full lg:w-[50%] z-0 rounded-3xl"
     >
       <div class="hero-visual">
         <Image
-          src="/images/3189013_1076.png"
+          src="/images/img.avif"
           alt="Hero image"
           width={2350}
           height={2359}
-          class="hero-image w-full h-auto object-contain"
+          class="hero-image w-full h-auto object-cover"
           loading="eager"
         />
-      </div>
-      <!-- Card 1 -->
-      <div
-        class="absolute bottom-16 -left-4 md:-left-16 rounded-xl border border-cyan-200/60 bg-gradient-to-br from-cyan-50 via-sky-50 to-blue-50 px-4 py-3 shadow-lg backdrop-blur"
-      >
-        <p class="text-[11px] uppercase tracking-wide text-blue-700/80">
-          Delivery Speed
-        </p>
-        <p class="mt-0.5 text-sm md:text-base font-semibold text-slate-900">
-          Faster release cycles
-        </p>
-      </div>
-
-      <!-- Card 2 -->
-      <div
-        class="absolute -bottom-4 -left-4 md:-left-16 rounded-xl border border-indigo-200/60 bg-gradient-to-br from-blue-100 via-indigo-200 to-purple-50 px-4 py-3 shadow-lg backdrop-blur"
-      >
-        <p class="text-[11px] uppercase tracking-wide text-indigo-700/80">
-          Release Quality
-        </p>
-        <p class="mt-0.5 text-sm md:text-base font-semibold text-slate-900">
-          Stable, low-regression deployments
-        </p>
-      </div>
-
-      <!-- Card 3 -->
-      <div
-        class="absolute -top-4 -right-4 md:-right-16 rounded-xl border border-pink-200/60 bg-gradient-to-br from-pink-50 via-rose-50 to-purple-50 px-4 py-3 shadow-lg backdrop-blur"
-      >
-        <p class="text-[11px] uppercase tracking-wide text-blue-700/80">
-          Reliability
-        </p>
-        <p class="mt-0.5 text-sm md:text-base font-semibold text-slate-900">
-          Stable builds with predictable delivery
-        </p>
       </div>
     </div>
   </Container>

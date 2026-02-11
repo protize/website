@@ -1,14 +1,14 @@
 ---
 title: "Product & Technology Consulting"
 blurb: "Need clarity before building? We help with planning, feature scoping, architecture guidance, and technical audits—so you avoid costly mistakes and launch faster."
-image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1172&q=80"
+image: "/images/consulting.png"
 points:
   - "Roadmap & scope clarity"
   - "Architecture review"
   - "Cost & performance planning"
 category: "Consulting"
 featured: false
-order: 6
+order: 1
 draft: false
 ---
 
@@ -19,18 +19,23 @@ Whether you are starting from scratch or improving an existing system, we bring 
 ## What We Deliver
 
 ### 🗺️ Roadmap & Scope Definition
+
 We help you identify what to build first, what can wait, and how to structure a realistic development roadmap.
 
 ### 🧱 System Architecture Guidance
+
 We design scalable and maintainable system architectures that support long-term growth.
 
 ### 🔍 Technical Audits
+
 Already have a system? We review your codebase, infrastructure, and workflows to identify risks, inefficiencies, and improvement areas.
 
 ### ⚙️ Technology Stack Selection
+
 We recommend the right tools and frameworks based on your product goals, budget, and team structure.
 
 ### 💰 Cost & Performance Planning
+
 We help you estimate infrastructure and development costs while ensuring your system is optimized for performance.
 
 ---
@@ -39,10 +44,10 @@ We help you estimate infrastructure and development costs while ensuring your sy
 
 This service is ideal for:
 
-- Startups planning their first product  
-- Founders validating technical feasibility  
-- Businesses scaling existing systems  
-- Teams needing expert architectural review  
+- Startups planning their first product
+- Founders validating technical feasibility
+- Businesses scaling existing systems
+- Teams needing expert architectural review
 
 ---
 
