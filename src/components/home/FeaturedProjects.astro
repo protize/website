@@ -1,0 +1,85 @@
+---
+import FadeIn from '../animations/FadeIn';
+import projects from '../../data/projects.json';
+
+const featuredProjects = projects.filter(p => p.featured).slice(0, 3);
+---
+
+<section class="section-padding bg-gray-light">
+  <div class="container-custom">
+    <FadeIn client:load direction="up">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-4xl md:text-5xl font-heading font-bold mb-6">
+          Featured <span class="gradient-text">Projects</span>
+        </h2>
+        <p class="text-xl text-gray-600">
+          Explore some of our most impactful work and the results we've achieved for our clients
+        </p>
+      </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {featuredProjects.map((project, index) => (
+          <a href={`/portfolio/${project.slug}`} class="group block">
+            <div class="card overflow-hidden hover:scale-105 p-0">
+              <!-- Project Image -->
+              <div class="relative h-64 overflow-hidden bg-gradient-to-br from-primary/10 to-accent/10">
+                <img 
+                  src={project.image}
+                  alt={project.title}
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  loading="lazy"
+                />
+                {/* <div class="absolute top-4 left-4">
+                  <span class="px-3 py-1 bg-primary text-white text-sm rounded-full font-medium">
+                    {project.category}
+                  </span>
+                </div> */}
+              </div>
+
+              <!-- Project Info -->
+              <div class="p-6">
+                <h3 class="text-xl font-heading font-bold mb-2 group-hover:text-primary transition-colors">
+                  {project.title}
+                </h3>
+                <p class="text-gray-600 mb-4 line-clamp-2">
+                  {project.shortDescription}
+                </p>
+
+                <!-- Tech Stack Tags -->
+                <div class="flex flex-wrap gap-2 mb-4">
+                  {project.technologies.slice(0, 3).map((tech) => (
+                    <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded font-medium">
+                      {tech}
+                    </span>
+                  ))}
+                  {project.technologies.length > 3 && (
+                    <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded font-medium">
+                      +{project.technologies.length - 3}
+                    </span>
+                  )}
+                </div>
+
+                <!-- View Project Link -->
+                <div class="flex items-center text-primary font-semibold group-hover:translate-x-2 transition-transform">
+                  View Case Study
+                  <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </a>
+      ))}
+    </div>
+
+      <div class="text-center mt-12">
+        <a href="/portfolio" class="btn-primary">
+          View All Projects
+          <svg class="inline-block w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+          </svg>
+        </a>
+      </div>
+    </FadeIn>
+  </div>
+</section>

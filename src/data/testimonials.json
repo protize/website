@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Sean Cansdale",
+    "position": "Engineering Manager",
+    "company": "@Zoopla",
+    "image": "/images/avatars/sean.jpeg",
+    "rating": 5,
+    "quote": "There are a handful of companies we work with in our career that leave a lasting impression — Protize is one of them. Protize stood out as a top-quality technology partner and problem solver, while staying humble, approachable, and most of all, a true team player alongside our internal teams.",
+    "project": ""
+  },
+  {
+    "id": 2,
+    "name": "Amit Kapila Sharma",
+    "position": "Co-Founder",
+    "company": "@eMediNexus",
+    "image": "/images/avatars/amit.jpeg",
+    "rating": 5,
+    "quote": "Had the pleasure of working with Protize for close to 6 months. The team is quick to understand requirements, hardworking, and resourceful across all things technology. Their ability to bring structure to unstructured environments is a real asset. I'd recommend Protize for any startup and technology-focused work they choose to take up globally.",
+    "project": ""
+  },
+  {
+    "id": 3,
+    "name": "Alexandros Neophytou",
+    "position": "Principal Researcher",
+    "company": "@Microsoft",
+    "image": "/images/avatars/alex.jpeg",
+    "rating": 5,
+    "quote": "Protize is the kind of technology partner that never stops asking the tough questions until the solution is clear. They're hardworking, dedicated, and always up for a challenge — exactly what you want in an engineering team you can rely on.",
+    "project": ""
+  }
+]

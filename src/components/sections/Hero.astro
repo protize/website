@@ -5,7 +5,6 @@ import Paragraph from "../shared/Paragraph.astro";
 
 import CtaButton from "../shared/CtaButton.astro";
 import GradiantText from "../shared/GradiantText.astro";
-import CounterSection from "./CounterSection.tsx";
 
 export interface Props {
   className?: string;
@@ -57,10 +56,6 @@ const { className = "" } = Astro.props;
         />
       </div>
     </div>
-  </Container>
-
-  <Container className="mt-10 sm:mt-14 lg:mt-20">
-    <CounterSection client:load />
   </Container>
 </section>
 

@@ -1,0 +1,200 @@
+[
+  {
+    "id": "marks-and-spencer",
+    "title": "Marks & Spencer — Enterprise Commerce Modernization",
+    "slug": "marks-and-spencer",
+    "category": "Web Development",
+    "client": "ShopHub Inc.",
+    "date": "2024-10",
+    "image": "/images/projects/marks_and_spencer_logo.jpg",
+    "featured": true,
+    "shortDescription": "Protize worked with Marks & Spencer to drive enterprise-wide technology modernization across multiple portfolios. The engagement focused on upgrading architecture, improving delivery velocity, and enabling a scalable, experimentation-ready digital platform.",
+    "challenge": "ShopHub's legacy platform struggled with poor performance, outdated UI, and scalability issues. They needed a modern solution that could handle high traffic while providing an excellent user experience.",
+    "solution": "We rebuilt the entire platform using Next.js and Node.js with a microservices architecture. Implemented advanced caching strategies, optimized database queries, and created a modern, responsive design with seamless checkout flow.",
+    "results": [
+      { "metric": "Page Load Time", "value": "65% faster" },
+      { "metric": "Conversion Rate", "value": "+42% increase" },
+      { "metric": "Mobile Traffic", "value": "+85% increase" },
+      { "metric": "Cart Abandonment", "value": "28% reduction" }
+    ],
+    "technologies": [
+      "Next.js",
+      "Node.js",
+      "PostgreSQL",
+      "Redis",
+      "AWS",
+      "Stripe"
+    ],
+    "duration": "6 months",
+    "teamSize": 8,
+    "liveUrl": "https://example.com",
+    "images": [
+      "/images/portfolio/ecommerce-1.jpg",
+      "/images/portfolio/ecommerce-2.jpg",
+      "/images/portfolio/ecommerce-3.jpg"
+    ]
+  },
+  {
+    "id": "broomberg",
+    "title": "Broomberg — ERP/CRM Modernization, Team Build & Scale Enablement",
+    "slug": "broomberg-erp-crm-modernization-team-build-scale-enablement",
+    "category": "Mobile Apps",
+    "client": "MediCare Solutions",
+    "date": "2024-08",
+    "image": "/images/logos/broomberg.avif",
+    "featured": true,
+    "shortDescription": "Protize supported Broomberg’s growth journey by building and leading a focused engineering function, modernizing internal operations technology, and strengthening delivery practices.",
+    "challenge": "MediCare needed a HIPAA-compliant mobile solution for patient health monitoring with real-time doctor consultations and secure data management.",
+    "solution": "Developed a cross-platform app using React Native with end-to-end encryption, integrated wearable device data, and implemented video consultation features with AI-powered health insights.",
+    "results": [
+      { "metric": "Active Users", "value": "50K+ in 3 months" },
+      { "metric": "Patient Satisfaction", "value": "4.8/5 rating" },
+      { "metric": "Doctor Response Time", "value": "60% faster" },
+      { "metric": "App Store Rating", "value": "4.9 stars" }
+    ],
+    "technologies": [
+      "React Native",
+      "Firebase",
+      "TensorFlow",
+      "WebRTC",
+      "Node.js"
+    ],
+    "duration": "5 months",
+    "teamSize": 6,
+    "liveUrl": "https://example.com",
+    "images": [
+      "/images/portfolio/healthcare-1.jpg",
+      "/images/portfolio/healthcare-2.jpg",
+      "/images/portfolio/healthcare-3.jpg"
+    ]
+  },
+  {
+    "id": "zoopla",
+    "title": "Zoopla — Property Platform Modernization & Engineering Transformation",
+    "slug": "zoopla-property-platform-modernization",
+    "category": "UI/UX",
+    "client": "InvestSmart",
+    "date": "2024-09",
+    "image": "/images/logos/zoopla.avif",
+    "featured": true,
+    "shortDescription": "Protize collaborated with Zoopla to guide large-scale engineering transformation across multiple products and teams.",
+    "challenge": "InvestSmart required an intuitive dashboard to visualize complex financial data while maintaining high performance with real-time updates.",
+    "solution": "Designed and developed a data-rich dashboard using React and D3.js with WebSocket connections for real-time updates, custom charts, and AI-powered investment recommendations.",
+    "results": [
+      { "metric": "User Engagement", "value": "+120% increase" },
+      { "metric": "Data Processing", "value": "10x faster" },
+      { "metric": "User Retention", "value": "89%" },
+      { "metric": "Decision Speed", "value": "45% faster" }
+    ],
+    "technologies": [
+      "React",
+      "D3.js",
+      "Python",
+      "WebSocket",
+      "PostgreSQL",
+      "AWS"
+    ],
+    "duration": "4 months",
+    "teamSize": 5,
+    "liveUrl": "https://example.com",
+    "images": [
+      "/images/portfolio/fintech-1.jpg",
+      "/images/portfolio/fintech-2.jpg",
+      "/images/portfolio/fintech-3.jpg"
+    ]
+  },
+  {
+    "id": "cloud-migration",
+    "title": "Enterprise Cloud Migration",
+    "slug": "enterprise-cloud-migration",
+    "category": "Cloud Solutions",
+    "client": "TechCorp Global",
+    "date": "2024-07",
+    "image": "/images/portfolio/cloud.jpg",
+    "featured": false,
+    "shortDescription": "Large-scale migration of on-premise infrastructure to AWS cloud with zero downtime.",
+    "challenge": "TechCorp needed to migrate their entire on-premise infrastructure to the cloud while maintaining 24/7 availability and ensuring data security.",
+    "solution": "Executed a phased migration strategy using AWS services, implemented Infrastructure as Code with Terraform, and set up comprehensive monitoring and auto-scaling.",
+    "results": [
+      { "metric": "Infrastructure Costs", "value": "40% reduction" },
+      { "metric": "Deployment Speed", "value": "80% faster" },
+      { "metric": "System Uptime", "value": "99.99%" },
+      { "metric": "Scalability", "value": "10x capacity" }
+    ],
+    "technologies": [
+      "AWS",
+      "Terraform",
+      "Docker",
+      "Kubernetes",
+      "Jenkins",
+      "Prometheus"
+    ],
+    "duration": "8 months",
+    "teamSize": 10,
+    "images": ["/images/portfolio/cloud-1.jpg", "/images/portfolio/cloud-2.jpg"]
+  },
+  {
+    "id": "education-platform",
+    "title": "EduLearn Online Platform",
+    "slug": "edulearn-online-platform",
+    "category": "Web Development",
+    "client": "EduTech Institute",
+    "date": "2024-06",
+    "image": "/images/portfolio/education.jpg",
+    "featured": false,
+    "shortDescription": "Interactive e-learning platform with live classes, assessments, and progress tracking.",
+    "challenge": "EduTech needed a comprehensive learning management system with video streaming, real-time collaboration, and automated grading.",
+    "solution": "Built a scalable platform using modern web technologies with integrated video conferencing, interactive quizzes, automated grading, and detailed analytics for teachers and students.",
+    "results": [
+      { "metric": "Students Enrolled", "value": "25K+" },
+      { "metric": "Course Completion", "value": "+55% increase" },
+      { "metric": "Teacher Productivity", "value": "70% improvement" },
+      { "metric": "Platform Rating", "value": "4.7/5" }
+    ],
+    "technologies": [
+      "Vue.js",
+      "Node.js",
+      "MongoDB",
+      "Socket.io",
+      "AWS",
+      "FFmpeg"
+    ],
+    "duration": "7 months",
+    "teamSize": 9,
+    "liveUrl": "https://example.com",
+    "images": [
+      "/images/portfolio/education-1.jpg",
+      "/images/portfolio/education-2.jpg"
+    ]
+  },
+  {
+    "id": "restaurant-app",
+    "title": "FoodieHub Delivery App",
+    "slug": "foodiehub-delivery-app",
+    "category": "Mobile Apps",
+    "client": "FoodieHub",
+    "date": "2024-05",
+    "image": "/images/portfolio/food.jpg",
+    "featured": false,
+    "shortDescription": "On-demand food delivery app with real-time tracking and smart recommendations.",
+    "challenge": "FoodieHub wanted to compete with major delivery platforms by offering better user experience, faster delivery, and personalized recommendations.",
+    "solution": "Created a feature-rich mobile app with AI-powered recommendations, real-time order tracking, optimized delivery routing, and seamless payment integration.",
+    "results": [
+      { "metric": "Daily Orders", "value": "15K+" },
+      { "metric": "Delivery Time", "value": "30% faster" },
+      { "metric": "Customer Retention", "value": "82%" },
+      { "metric": "Revenue Growth", "value": "+150%" }
+    ],
+    "technologies": [
+      "Flutter",
+      "Firebase",
+      "Google Maps API",
+      "Stripe",
+      "Node.js"
+    ],
+    "duration": "5 months",
+    "teamSize": 7,
+    "liveUrl": "https://example.com",
+    "images": ["/images/portfolio/food-1.jpg", "/images/portfolio/food-2.jpg"]
+  }
+]

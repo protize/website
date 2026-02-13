@@ -1,5 +1,4 @@
 ---
-import BtnLink from "../components/shared/BtnLink.astro";
 import Navitem from "../components/shared/Navitem.astro";
 import MotionNav from "../components/shared/MotionNav.tsx";
 import Container from "../components/shared/Container.astro";
@@ -27,7 +26,11 @@ const navItems = [
       </ul>
 
       <div class="hidden lg:flex items-center gap-x-4">
-        <BtnLink text="Contact Us" href="/contact-us" variant="secondary" />
+        <a
+          href="/contact-us"
+          class="py-2 px-4 rounded-lg border-2 border-primary hover:bg-primary/80 hover:text-white transition-all duration-300"
+          >Contact Us</a
+        >
       </div>
 
       <!-- Mobile Menu Button: hydrate on the client -->
