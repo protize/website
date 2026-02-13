@@ -12,6 +12,7 @@ export type Service = {
   id: string;
   title: string;
   icon: LucideIcon;
+  image: string;
   shortDescription: string;
   description: string;
   features: string[];
@@ -23,6 +24,7 @@ export const services: Service[] = [
     id: "web-development",
     title: "Web Development",
     icon: Globe,
+    image: "/images/86868887979779.jpg",
     shortDescription:
       "Custom, responsive websites built with modern technologies for optimal performance and user experience.",
     description:
@@ -50,6 +52,7 @@ export const services: Service[] = [
     id: "mobile-app-development",
     title: "Mobile App Development",
     icon: Smartphone,
+    image: "/images/86868887979779.jpg",
     shortDescription:
       "Native and cross-platform mobile applications for iOS and Android that users love.",
     description:
@@ -77,6 +80,7 @@ export const services: Service[] = [
     id: "cloud-solutions",
     title: "Cloud Solutions",
     icon: Cloud,
+    image: "/images/25561384_7090544.jpg",
     shortDescription:
       "Scalable cloud infrastructure and migration services for modern businesses.",
     description:
@@ -104,6 +108,7 @@ export const services: Service[] = [
     id: "ui-ux-design",
     title: "UI/UX Design",
     icon: Palette,
+    image: "/images/5809245.jpg",
     shortDescription:
       "User-centered design that creates engaging and intuitive digital experiences.",
     description:
@@ -131,6 +136,7 @@ export const services: Service[] = [
     id: "devops-automation",
     title: "DevOps & Automation",
     icon: Cog,
+    image: "/images/",
     shortDescription:
       "Streamline your development workflow with CI/CD pipelines and automation.",
     description:
@@ -158,6 +164,7 @@ export const services: Service[] = [
     id: "it-consulting",
     title: "IT Consulting",
     icon: Lightbulb,
+    image: "/images/",
     shortDescription:
       "Strategic technology guidance to drive digital transformation and business growth.",
     description:

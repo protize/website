@@ -1,0 +1,105 @@
+---
+import Layout from "../layouts/Layout.astro";
+import FadeIn from "../components/animations/FadeIn";
+import ServicesHero from "../components/services/ServicesHero.astro";
+import ServicesGrid from "../components/services/ServicesGrid.astro";
+---
+
+<Layout title="Services">
+  <!-- Hero Section -->
+  <ServicesHero />
+
+  <!-- Services Grid -->
+  <ServicesGrid />
+  <!-- FAQ Section -->
+  <!-- <section class="section-padding bg-gray-light">
+    <div class="container-custom">
+      <FadeIn client:load direction="up">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-4xl md:text-5xl font-heading font-bold mb-6">
+            Frequently Asked <span class="gradient-text">Questions</span>
+          </h2>
+        </div>
+      </FadeIn>
+
+      <div class="max-w-3xl mx-auto space-y-4">
+        {
+          [
+            {
+              q: "How long does a typical project take?",
+              a: "Project timelines vary based on complexity. Simple websites take 4-6 weeks, while complex applications can take 3-6 months. We'll provide a detailed timeline during consultation.",
+            },
+            {
+              q: "Do you offer ongoing support and maintenance?",
+              a: "Yes, we offer comprehensive support and maintenance packages to ensure your solution continues to perform optimally after launch.",
+            },
+            {
+              q: "What is your development process?",
+              a: "We follow an agile methodology with regular client check-ins. Our process includes Discovery, Design, Development, Testing, and Deployment phases.",
+            },
+            {
+              q: "Can you work with our existing tech stack?",
+              a: "Absolutely! Our team has experience with a wide range of technologies and can integrate with your existing systems seamlessly.",
+            },
+          ].map((faq, index) => (
+            <FadeIn client:load direction="up" delay={index * 0.1}>
+              <details class="group card cursor-pointer">
+                <summary class="flex justify-between items-center font-semibold text-lg text-navy">
+                  {faq.q}
+                  <svg
+                    class="w-5 h-5 text-primary group-open:rotate-180 transition-transform"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </summary>
+                <p class="text-gray-600 mt-4 leading-relaxed">{faq.a}</p>
+              </details>
+            </FadeIn>
+          ))
+        }
+      </div>
+    </div>
+  </section> -->
+
+  <!-- CTA -->
+  <section
+    class="section-padding bg-gradient-to-br from-primary to-accent text-white"
+  >
+    <div class="container-custom text-center">
+      <FadeIn client:load direction="up">
+        <h2 class="text-4xl md:text-5xl font-heading font-bold mb-6">
+          Ready to Get Started?
+        </h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto">
+          Let's discuss how we can help bring your project to life
+        </p>
+        <a
+          href="/contact"
+          class="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all inline-flex items-center"
+        >
+          Contact Us Today
+          <svg
+            class="w-5 h-5 ml-2"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+          </svg>
+        </a>
+      </FadeIn>
+    </div>
+  </section>
+</Layout>
