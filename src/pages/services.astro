@@ -1,0 +1,51 @@
+---
+import Layout from "../layouts/Layout.astro";
+import FadeIn from "../components/animations/FadeIn";
+import ServicesHero from "../components/services/ServicesHero.astro";
+import ServicesGrid from "../components/services/ServicesGrid.astro";
+import FaqService from "../components/services/FaqService.astro";
+---
+
+<Layout title="Services">
+  <!-- Hero Section -->
+  <ServicesHero />
+
+  <!-- Services Grid -->
+  <ServicesGrid />
+  <!-- FAQ Section -->
+  <FaqService />
+
+  <!-- CTA -->
+  <section
+    class="section-padding bg-gradient-to-br from-primary to-accent text-white"
+  >
+    <div class="container-custom text-center">
+      <FadeIn client:load direction="up">
+        <h2 class="text-4xl md:text-5xl font-heading font-bold mb-6">
+          Ready to Get Started?
+        </h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto">
+          Let's discuss how we can help bring your project to life
+        </p>
+        <a
+          href="/contact-us"
+          class="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all inline-flex items-center"
+        >
+          Contact Us Today
+          <svg
+            class="w-5 h-5 ml-2"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+          </svg>
+        </a>
+      </FadeIn>
+    </div>
+  </section>
+</Layout>
