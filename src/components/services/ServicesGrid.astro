@@ -9,10 +9,10 @@ import services from "../../data/services";
   <div class="container-custom relative z-10">
     <section class="section-padding bg-white">
       <div class="container-custom">
-        <div class="space-y-24">
+        <div class="space-y-14">
           {
             services.map((service, index) => (
-              <div id={service.id} class="scroll-mt-24">
+              <div id={service.id} class="scroll-mt-14">
                 <FadeIn client:load direction="up">
                   <div
                     class={`grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? "lg:flex-row-reverse" : ""}`}
@@ -72,17 +72,17 @@ import services from "../../data/services";
                           ))}
                         </div>
                       </div>
-
-                      <a href="/contact" class="btn-primary">
-                        Request a Quote
-                      </a>
                     </div>
 
                     {/* Image/Illustration */}
                     <div class={index % 2 === 1 ? "lg:order-1" : ""}>
                       <div class="relative">
-                        <div class="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl p-8 shadow-xl">
-                          <img src={service.image} alt={service.title} />
+                        <div class="">
+                          <img
+                            src={service.image}
+                            alt={service.title}
+                            class="rounded-2xl"
+                          />
                         </div>
                         <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-primary/20 rounded-full blur-3xl -z-10" />
                       </div>
@@ -92,7 +92,7 @@ import services from "../../data/services";
 
                 {/* Divider */}
                 {index < services.length - 1 && (
-                  <div class="mt-24 border-t border-gray-200" />
+                  <div class="mt-14 border-t border-gray-200" />
                 )}
               </div>
             ))

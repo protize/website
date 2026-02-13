@@ -6,6 +6,9 @@ import {
   Palette,
   Cog,
   Lightbulb,
+  Brain,
+  Workflow,
+  BarChart3,
 } from "lucide-react";
 
 export type Service = {
@@ -24,7 +27,7 @@ export const services: Service[] = [
     id: "web-development",
     title: "Web Development",
     icon: Globe,
-    image: "/images/86868887979779.jpg",
+    image: "/images/5569517_2885174.jpg",
     shortDescription:
       "Custom, responsive websites built with modern technologies for optimal performance and user experience.",
     description:
@@ -80,7 +83,7 @@ export const services: Service[] = [
     id: "cloud-solutions",
     title: "Cloud Solutions",
     icon: Cloud,
-    image: "/images/25561384_7090544.jpg",
+    image: "/images/cloud-solution.png",
     shortDescription:
       "Scalable cloud infrastructure and migration services for modern businesses.",
     description:
@@ -108,7 +111,7 @@ export const services: Service[] = [
     id: "ui-ux-design",
     title: "UI/UX Design",
     icon: Palette,
-    image: "/images/5809245.jpg",
+    image: "/images/ui-ux.png",
     shortDescription:
       "User-centered design that creates engaging and intuitive digital experiences.",
     description:
@@ -136,7 +139,7 @@ export const services: Service[] = [
     id: "devops-automation",
     title: "DevOps & Automation",
     icon: Cog,
-    image: "/images/",
+    image: "/images/dev-ops.png",
     shortDescription:
       "Streamline your development workflow with CI/CD pipelines and automation.",
     description:
@@ -164,7 +167,7 @@ export const services: Service[] = [
     id: "it-consulting",
     title: "IT Consulting",
     icon: Lightbulb,
-    image: "/images/",
+    image: "/images/consulting.png",
     shortDescription:
       "Strategic technology guidance to drive digital transformation and business growth.",
     description:
@@ -186,6 +189,98 @@ export const services: Service[] = [
       "Scrum",
       "SAFe",
       "TOGAF",
+    ],
+  },
+  {
+    id: "ai-ml",
+    title: "AI / ML Solutions",
+    icon: Brain,
+    image: "/images/ai-ml.png",
+    shortDescription:
+      "AI-powered products and automation using LLMs, RAG, and machine learning to boost efficiency and unlock insights.",
+    description:
+      "Build intelligent systems that automate workflows, enhance customer experiences, and generate actionable insights. We design and deploy AI/ML solutions—from LLM-based assistants and RAG search to custom ML models—integrated securely into your web, mobile, and enterprise platforms.",
+    features: [
+      "LLM Apps & Assistants (Chatbots, Copilots)",
+      "RAG (Retrieval-Augmented Generation)",
+      "Vector Search & Knowledge Bases",
+      "Text Classification & NLP Pipelines",
+      "Recommendations & Personalization",
+      "Document AI (OCR, Extraction, Summarization)",
+      "Speech (STT/TTS) & Voice Bots",
+      "Model Evaluation, Monitoring & Guardrails",
+    ],
+    technologies: [
+      "OpenAI",
+      "LangChain",
+      "LlamaIndex",
+      "Python",
+      "PyTorch",
+      "TensorFlow",
+      "Vector DBs (Pinecone/Qdrant/Weaviate)",
+      "MLflow",
+    ],
+  },
+
+  {
+    id: "automation-scripting",
+    title: "Automation & Scripting",
+    icon: Workflow,
+    image: "/images/automation.png",
+    shortDescription:
+      "Custom automation to reduce manual work—scripts, bots, integrations, and reliable job pipelines.",
+    description:
+      "We automate repetitive tasks across systems and teams—data sync, reporting, notifications, compliance workflows, and ops routines. From quick scripts to scalable automation pipelines, we build maintainable solutions that save time, minimize errors, and improve operational reliability.",
+    features: [
+      "Custom Scripts & CLI Tools",
+      "API Integrations & Webhooks",
+      "Background Jobs & Scheduling",
+      "ETL Automation & Data Sync",
+      "Alerts, Notifications & ChatOps Bots",
+      "Batch Processing & File Pipelines (CSV/Excel/PDF)",
+      "RPA-style Workflow Automations",
+      "DevOps Automation (Build/Deploy/Infra Tasks)",
+    ],
+    technologies: [
+      "Node.js",
+      "Python",
+      "Bash",
+      "PowerShell",
+      "Cron",
+      "BullMQ",
+      "Zapier/Make",
+      "GitHub Actions",
+    ],
+  },
+
+  {
+    id: "data-analytics",
+    title: "Data Analytics",
+    icon: BarChart3,
+    image: "/images/data-analytics.png",
+    shortDescription:
+      "Dashboards, reporting, and analytics pipelines to track KPIs, find trends, and drive smarter decisions.",
+    description:
+      "Turn raw data into clear insights. We build analytics pipelines, dashboards, and automated reporting for product, finance, operations, and growth teams. Whether you need real-time metrics, monthly reports, or advanced analysis, we design solutions that are accurate, secure, and scalable.",
+    features: [
+      "KPI Dashboards & Executive Reporting",
+      "Data Modeling & Warehousing",
+      "ETL / ELT Pipelines",
+      "Real-time & Time-series Analytics",
+      "Cohort, Funnel & Retention Analysis",
+      "Data Quality Checks & Monitoring",
+      "Automated Scheduled Reports",
+      "Forecasting & Trend Analysis",
+    ],
+    technologies: [
+      "PostgreSQL",
+      "Redis",
+      "Python",
+      "Pandas",
+      "Power BI",
+      "Metabase",
+      "Superset",
+      "Elasticsearch/OpenSearch",
     ],
   },
 ];
