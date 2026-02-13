@@ -1,0 +1,346 @@
+---
+import FadeIn from "../animations/FadeIn";
+
+const tabs = [
+  {
+    key: "frontend",
+    label: "Frontend",
+    items: [
+      { name: "HTML", icon: "/images/tech-stack/html5.svg" },
+      { name: "CSS", icon: "/images/tech-stack/css3.svg" },
+      { name: "JavaScript", icon: "/images/tech-stack/javascript.svg" },
+      { name: "TypeScript", icon: "/images/tech-stack/typescript.svg" },
+
+      { name: "Angular", icon: "/images/tech-stack/angular.svg" },
+      { name: "React", icon: "/images/tech-stack/react.svg" },
+      { name: "Vue", icon: "/images/tech-stack/vuedotjs.svg" },
+      { name: "Svelte", icon: "/images/tech-stack/svelte.svg" },
+
+      { name: "Next.js", icon: "/images/tech-stack/nextdotjs.svg" },
+      { name: "Astro", icon: "/images/tech-stack/astro.svg" },
+      { name: "Vite", icon: "/images/tech-stack/vite.svg" },
+
+      { name: "Tailwind", icon: "/images/tech-stack/tailwindcss.svg" },
+      { name: "Bootstrap", icon: "/images/tech-stack/bootstrap.svg" },
+      { name: "Sass", icon: "/images/tech-stack/sass.svg" },
+
+      { name: "Redux", icon: "/images/tech-stack/redux.svg" },
+      { name: "Zustand", icon: "/images/tech-stack/zustand.svg" },
+      { name: "React Query", icon: "/images/tech-stack/reactquery.svg" },
+
+      { name: "Framer Motion", icon: "/images/tech-stack/framer.svg" },
+      { name: "Three.js", icon: "/images/tech-stack/threedotjs.svg" },
+    ],
+  },
+
+  {
+    key: "backend",
+    label: "Backend",
+    items: [
+      { name: "Node.js", icon: "/images/tech-stack/nodedotjs.svg" },
+      { name: "NestJS", icon: "/images/tech-stack/nestjs.svg" },
+      { name: "Express", icon: "/images/tech-stack/express.svg" },
+
+      { name: "Python", icon: "/images/tech-stack/python.svg" },
+      { name: "FastAPI", icon: "/images/tech-stack/fastapi.svg" },
+      { name: "Django", icon: "/images/tech-stack/django.svg" },
+
+      { name: "Java", icon: "/images/tech-stack/openjdk.svg" },
+      { name: "Spring Boot", icon: "/images/tech-stack/springboot.svg" },
+
+      { name: "Go", icon: "/images/tech-stack/go.svg" },
+      { name: "Gin", icon: "/images/tech-stack/gin.svg" },
+
+      { name: "PHP", icon: "/images/tech-stack/php.svg" },
+      { name: "Laravel", icon: "/images/tech-stack/laravel.svg" },
+
+      { name: "GraphQL", icon: "/images/tech-stack/graphql.svg" },
+      { name: "REST APIs", icon: "/images/tech-stack/rest.svg" },
+
+      { name: "Socket.IO", icon: "/images/tech-stack/socketdotio.svg" },
+      { name: "gRPC", icon: "/images/tech-stack/grpc.svg" },
+
+      { name: "Auth (JWT/OAuth)", icon: "/images/tech-stack/oauth.svg" },
+    ],
+  },
+
+  {
+    key: "mobile",
+    label: "Mobile App",
+    items: [
+      { name: "Flutter", icon: "/images/tech-stack/flutter.svg" },
+      { name: "React Native", icon: "/images/tech-stack/react.svg" },
+      { name: "Swift", icon: "/images/tech-stack/swift.svg" },
+      { name: "Kotlin", icon: "/images/tech-stack/kotlin.svg" },
+      { name: "Ionic", icon: "/images/tech-stack/ionic.svg" },
+      { name: "Xamarin", icon: "/images/tech-stack/xamarin.svg" },
+    ],
+  },
+
+  {
+    key: "database",
+    label: "Database",
+    items: [
+      { name: "MySQL", icon: "/images/tech-stack/mysql.svg" },
+      { name: "PostgreSQL", icon: "/images/tech-stack/postgresql.svg" },
+      { name: "MongoDB", icon: "/images/tech-stack/mongodb.svg" },
+      { name: "Firebase", icon: "/images/tech-stack/firebase.svg" },
+      { name: "Redis", icon: "/images/tech-stack/redis.svg" },
+      { name: "Memcached", icon: "/images/tech-stack/memcached.svg" },
+
+      { name: "Elasticsearch", icon: "/images/tech-stack/elasticsearch.svg" },
+      { name: "OpenSearch", icon: "/images/tech-stack/opensearch.svg" },
+
+      { name: "SQLite", icon: "/images/tech-stack/sqlite.svg" },
+      { name: "MariaDB", icon: "/images/tech-stack/mariadb.svg" },
+
+      { name: "DynamoDB", icon: "/images/tech-stack/amazondynamodb.svg" },
+
+      { name: "RabbitMQ", icon: "/images/tech-stack/rabbitmq.svg" },
+      { name: "Kafka", icon: "/images/tech-stack/apachekafka.svg" },
+    ],
+  },
+
+  {
+    key: "devops",
+    label: "DevOps",
+    items: [
+      { name: "AWS", icon: "/images/tech-stack/amazonaws.svg" },
+      { name: "Azure", icon: "/images/tech-stack/microsoftazure.svg" },
+      { name: "Google Cloud", icon: "/images/tech-stack/googlecloud.svg" },
+
+      { name: "Docker", icon: "/images/tech-stack/docker.svg" },
+      { name: "Kubernetes", icon: "/images/tech-stack/kubernetes.svg" },
+      { name: "Nginx", icon: "/images/tech-stack/nginx.svg" },
+
+      { name: "Terraform", icon: "/images/tech-stack/terraform.svg" },
+      { name: "Ansible", icon: "/images/tech-stack/ansible.svg" },
+
+      { name: "GitHub Actions", icon: "/images/tech-stack/githubactions.svg" },
+      { name: "GitLab CI", icon: "/images/tech-stack/gitlab.svg" },
+      { name: "Jenkins", icon: "/images/tech-stack/jenkins.svg" },
+
+      { name: "Linux", icon: "/images/tech-stack/linux.svg" },
+      { name: "NPM", icon: "/images/tech-stack/npm.svg" },
+      { name: "PNPM", icon: "/images/tech-stack/pnpm.svg" },
+
+      { name: "Prometheus", icon: "/images/tech-stack/prometheus.svg" },
+      { name: "Grafana", icon: "/images/tech-stack/grafana.svg" },
+
+      { name: "Sentry", icon: "/images/tech-stack/sentry.svg" },
+      { name: "New Relic", icon: "/images/tech-stack/newrelic.svg" },
+
+      { name: "CI/CD", icon: "/images/tech-stack/cicd.svg" },
+    ],
+  },
+
+  {
+    key: "ai",
+    label: "AI/ML",
+    items: [
+      // LLM Providers / Models
+      { name: "OpenAI", icon: "/images/tech-stack/openai.svg" },
+      { name: "Anthropic", icon: "/images/tech-stack/anthropic.svg" },
+      { name: "Google Gemini", icon: "/images/tech-stack/googlegemini.svg" },
+      { name: "Meta Llama", icon: "/images/tech-stack/meta.svg" },
+      { name: "Mistral", icon: "/images/tech-stack/mistral.svg" },
+
+      // Frameworks / Orchestration
+      { name: "LlamaIndex", icon: "/images/tech-stack/llamaindex.svg" },
+
+      // RAG + Retrieval
+      { name: "RAG", icon: "/images/tech-stack/rag.svg" },
+      { name: "Embeddings", icon: "/images/tech-stack/embeddings.svg" },
+      { name: "Re-Ranking", icon: "/images/tech-stack/rerank.svg" },
+      { name: "Document Parsing", icon: "/images/tech-stack/documentai.svg" },
+
+      // Vector DBs
+      { name: "Pinecone", icon: "/images/tech-stack/pinecone.svg" },
+      { name: "Weaviate", icon: "/images/tech-stack/weaviate.svg" },
+      { name: "Qdrant", icon: "/images/tech-stack/qdrant.svg" },
+      { name: "Milvus", icon: "/images/tech-stack/milvus.svg" },
+      { name: "Chroma", icon: "/images/tech-stack/chroma.svg" },
+      { name: "FAISS", icon: "/images/tech-stack/faiss.svg" },
+
+      // Speech / Audio
+      { name: "Whisper", icon: "/images/tech-stack/whisper.svg" },
+      { name: "TTS", icon: "/images/tech-stack/tts.svg" },
+      { name: "Speech-to-Text", icon: "/images/tech-stack/stt.svg" },
+
+      // Vision
+      { name: "Vision AI", icon: "/images/tech-stack/vision.svg" },
+      { name: "OCR", icon: "/images/tech-stack/ocr.svg" },
+
+      // Agents / Tooling
+      { name: "AI Agents", icon: "/images/tech-stack/agents.svg" },
+      {
+        name: "Function Calling",
+        icon: "/images/tech-stack/functioncalling.svg",
+      },
+      { name: "Tool Use", icon: "/images/tech-stack/tools.svg" },
+
+      // MLOps / Serving
+      { name: "Hugging Face", icon: "/images/tech-stack/huggingface.svg" },
+      { name: "PyTorch", icon: "/images/tech-stack/pytorch.svg" },
+      { name: "TensorFlow", icon: "/images/tech-stack/tensorflow.svg" },
+      { name: "ONNX", icon: "/images/tech-stack/onnx.svg" },
+      { name: "MLflow", icon: "/images/tech-stack/mlflow.svg" },
+      { name: "Kubeflow", icon: "/images/tech-stack/kubeflow.svg" },
+
+      // Deployment / Infra
+      { name: "GPU Inference", icon: "/images/tech-stack/gpu.svg" },
+      { name: "Serverless AI", icon: "/images/tech-stack/serverless.svg" },
+    ],
+  },
+];
+
+const defaultTab = "frontend";
+---
+
+<section
+  class="section-padding bg-gray-50 text-black overflow-hidden"
+  data-tech-tabs
+>
+  <div class="container-custom">
+    <FadeIn client:load direction="up">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-4xl md:text-5xl font-heading font-bold mb-4">
+          Our Technology <span class="text-secondary">Stack</span>
+        </h2>
+        <p class="text-xl text-gray-600">
+          We leverage the latest technologies to build scalable, efficient, and
+          future-proof solutions
+        </p>
+      </div>
+
+      <!-- Tabs -->
+      <FadeIn client:load direction="up" delay={0.2}>
+        <div class="flex flex-wrap justify-center gap-3 mb-10">
+          {
+            tabs.map((t) => (
+              <button
+                type="button"
+                class="tab-pill"
+                data-tab-trigger={t.key}
+                aria-selected={t.key === defaultTab ? "true" : "false"}
+              >
+                {t.label}
+              </button>
+            ))
+          }
+        </div>
+
+        <!-- Banner (each tab has its own scroller; only active one is visible) -->
+        <div class="relative">
+          <div
+            class="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10"
+          >
+          </div>
+          <div
+            class="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10"
+          >
+          </div>
+
+          {
+            tabs.map((t) => {
+              const loopItems = [...t.items, ...t.items]; // repeat for infinite feel
+              return (
+                <div
+                  class="tab-panel"
+                  data-tab-panel={t.key}
+                  hidden={t.key !== defaultTab}
+                >
+                  <div class="overflow-hidden py-4">
+                    <div class="flex animate-scroll">
+                      {loopItems.map((tech, i) => (
+                        <div class="flex-shrink-0 mx-4 bg-white rounded-xl border border-gray-200 hover:border-primary transition-colors px-5 py-3">
+                          <div class="flex flex-col items-center gap-3">
+                            <img
+                              src={tech.icon}
+                              alt={tech.name}
+                              class="w-20 h-20"
+                            />
+                            <div class="text-gray-900 font-semibold whitespace-nowrap">
+                              {tech.name}
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              );
+            })
+          }
+        </div>
+      </FadeIn>
+    </FadeIn>
+  </div>
+
+  <script is:inline define:vars={{ defaultTab }}>
+    const root = document.querySelector("[data-tech-tabs]");
+    if (!root) return;
+
+    const triggers = Array.from(root.querySelectorAll("[data-tab-trigger]"));
+    const panels = Array.from(root.querySelectorAll("[data-tab-panel]"));
+
+    function setActive(key) {
+      triggers.forEach((btn) => {
+        const active = btn.getAttribute("data-tab-trigger") === key;
+        btn.classList.toggle("is-active", active);
+        btn.setAttribute("aria-selected", String(active));
+      });
+
+      panels.forEach((p) => {
+        const show = p.getAttribute("data-tab-panel") === key;
+        p.toggleAttribute("hidden", !show);
+      });
+    }
+
+    triggers.forEach((btn) => {
+      btn.addEventListener("click", () =>
+        setActive(btn.getAttribute("data-tab-trigger")),
+      );
+    });
+
+    setActive(defaultTab);
+  </script>
+
+  <style>
+    /* tabs like screenshot */
+    .tab-pill {
+      padding: 10px 22px;
+      border-radius: 999px;
+      background: #00000042;
+      color: #000;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 1;
+      transition: all 0.25s ease;
+    }
+    .tab-pill:hover {
+      opacity: 0.92;
+    }
+    .tab-pill.is-active {
+      background: #3b82f6;
+      color: #fff;
+    }
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .animate-scroll {
+      animation: scroll 28s linear infinite;
+      will-change: transform;
+    }
+    .animate-scroll:hover {
+      animation-play-state: paused;
+    }
+  </style>
+</section>

@@ -1,0 +1,122 @@
+---
+import FadeIn from "../animations/FadeIn";
+import { Search, Palette, Settings, Rocket } from "lucide-react";
+
+const steps = [
+  {
+    number: "01",
+    title: "Discovery",
+    description:
+      "We start by understanding your business goals, challenges, and requirements through in-depth consultation.",
+    Icon: Search,
+  },
+  {
+    number: "02",
+    title: "Design",
+    description:
+      "Our design team creates intuitive, user-friendly solutions that align with your brand and objectives.",
+    Icon: Palette,
+  },
+  {
+    number: "03",
+    title: "Development",
+    description:
+      "We build robust, scalable solutions using cutting-edge technologies and best practices.",
+    Icon: Settings,
+  },
+  {
+    number: "04",
+    title: "Delivery",
+    description:
+      "We deploy your solution, provide training, and ensure a smooth transition with ongoing support.",
+    Icon: Rocket,
+  },
+];
+---
+
+<section class="section-padding bg-white relative overflow-hidden">
+  <!-- Background Pattern -->
+  <div class="absolute inset-0 opacity-5">
+    <div
+      class="absolute inset-0"
+      style="background-image: radial-gradient(circle, #0061DC 1px, transparent 1px); background-size: 30px 30px;"
+    >
+    </div>
+  </div>
+
+  <div class="container-custom relative z-10">
+    <FadeIn client:load direction="up">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-4xl md:text-5xl font-heading font-bold mb-6">
+          Our <span class="gradient-text">Process</span>
+        </h2>
+        <p class="text-xl text-gray-600">
+          A proven methodology that ensures successful project delivery every
+          time
+        </p>
+      </div>
+
+      <div class="relative">
+        <!-- Connection Line (Desktop) -->
+        <div
+          class="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-primary via-accent to-primary transform -translate-y-1/2 opacity-20"
+        >
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+          {
+            steps.map((step, index) => {
+              const Icon = step.Icon;
+
+              return (
+                <div class="relative">
+                  <div class="card text-center group hover:shadow-2xl hover:scale-105 bg-white">
+                    {/* Step Number */}
+                    {/* <div class="absolute -top-6 left-1/2 transform -translate-x-1/2">
+                      <div class="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent text-white font-bold text-lg flex items-center justify-center shadow-lg">
+                        {step.number}
+                      </div>
+                    </div> */}
+
+                    {/* Icon */}
+                    <div class="flex justify-center group-hover:scale-110 transition-transform">
+                      <div class="w-20 h-20 rounded-2xl  flex items-center justify-center">
+                        <Icon className="text-primary" size={40} />
+                      </div>
+                    </div>
+
+                    {/* Content */}
+                    <h3 class="text-2xl font-heading font-bold mb-3 text-navy group-hover:text-primary transition-colors">
+                      {step.title}
+                    </h3>
+                    <p class="text-gray-600 leading-relaxed">
+                      {step.description}
+                    </p>
+                  </div>
+
+                  {index < steps.length - 1 && (
+                    <div class="lg:hidden flex justify-center my-4">
+                      <svg
+                        class="w-6 h-6 text-primary"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                        />
+                      </svg>
+                    </div>
+                  )}
+                </div>
+              );
+            })
+          }
+        </div>
+      </div>
+    </FadeIn>
+  </div>
+</section>

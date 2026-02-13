@@ -1,0 +1,104 @@
+---
+import FadeIn from "../animations/FadeIn";
+import services from "../../data/services";
+---
+
+<section
+  class="relative py-4 lg:pb-10 flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-light"
+>
+  <div class="container-custom relative z-10">
+    <section class="section-padding bg-white">
+      <div class="container-custom">
+        <div class="space-y-14">
+          {
+            services.map((service, index) => (
+              <div id={service.id} class="scroll-mt-14">
+                <FadeIn client:load direction="up">
+                  <div
+                    class={`grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? "lg:flex-row-reverse" : ""}`}
+                  >
+                    {/* Content */}
+                    <div class={index % 2 === 1 ? "lg:order-2" : ""}>
+                      <div class="inline-block mb-4">
+                        <span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold">
+                          {service.icon} Service{" "}
+                          {(index + 1).toString().padStart(2, "0")}
+                        </span>
+                      </div>
+
+                      <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-navy">
+                        {service.title}
+                      </h2>
+
+                      <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                        {service.description}
+                      </p>
+
+                      {/* Key Features */}
+                      <div class="mb-6">
+                        <h4 class="font-semibold text-lg mb-4 text-navy">
+                          Key Features:
+                        </h4>
+                        <ul class="grid sm:grid-cols-2 gap-3">
+                          {service.features.map((feature) => (
+                            <li class="flex items-start space-x-2">
+                              <svg
+                                class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                              >
+                                <path
+                                  fill-rule="evenodd"
+                                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                  clip-rule="evenodd"
+                                />
+                              </svg>
+                              <span class="text-gray-700">{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* Technologies */}
+                      <div class="mb-6">
+                        <h4 class="font-semibold text-lg mb-3 text-navy">
+                          Technologies We Use:
+                        </h4>
+                        <div class="flex flex-wrap gap-2">
+                          {service.technologies.map((tech) => (
+                            <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Image/Illustration */}
+                    <div class={index % 2 === 1 ? "lg:order-1" : ""}>
+                      <div class="relative">
+                        <div class="">
+                          <img
+                            src={service.image}
+                            alt={service.title}
+                            class="rounded-2xl"
+                          />
+                        </div>
+                        <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-primary/20 rounded-full blur-3xl -z-10" />
+                      </div>
+                    </div>
+                  </div>
+                </FadeIn>
+
+                {/* Divider */}
+                {index < services.length - 1 && (
+                  <div class="mt-14 border-t border-gray-200" />
+                )}
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+  </div>
+</section>

@@ -1,0 +1,40 @@
+---
+import CountUp from "../animations/CountUp";
+import FadeIn from "../animations/FadeIn";
+import { Trophy, Rocket, Handshake, Puzzle } from "lucide-react";
+
+const stats = [
+  { value: 15, suffix: "+", label: "Years Experience", Icon: Trophy },
+  { value: 28, suffix: "+", label: "Delivered Projects", Icon: Rocket },
+  { value: 25, suffix: "+", label: "Happy Clients", Icon: Handshake },
+  { value: 13, suffix: "+", label: "Live Solutions", Icon: Puzzle },
+];
+---
+
+<section class="section-padding bg-white">
+  <div class="container-custom">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+      {
+        stats.map((stat, index) => {
+          const Icon = stat.Icon;
+
+          return (
+            <FadeIn client:load direction="up" delay={index * 0.1}>
+              <div class="text-center p-6 rounded-xl hover:bg-gray-50 transition-colors duration-300">
+                <div class="flex justify-center mb-4">
+                  <Icon className="w-10 h-10 text-primary" />
+                </div>
+
+                <div class="text-4xl md:text-5xl font-bold gradient-text mb-2">
+                  <CountUp client:load to={stat.value} suffix={stat.suffix} />
+                </div>
+
+                <p class="text-gray-600 font-medium">{stat.label}</p>
+              </div>
+            </FadeIn>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>
