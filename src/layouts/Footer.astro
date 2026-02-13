@@ -1,132 +1,258 @@
 ---
 import { Image } from "astro:assets";
-import GroupFooterNav from "../components/blocks/GroupFooterNav.astro";
-import Container from "../components/shared/Container.astro";
-import FooterNav from "../components/shared/FooterNav.astro";
-import Paragraph from "../components/shared/Paragraph.astro";
-import { Facebook, Linkedin, Twitter, Github } from "lucide-react";
 
-const footerNav1 = [
-  {
-    itemText: "Marketing",
-    itemLink: "#",
-  },
-  {
-    itemText: "Analylitics",
-    itemLink: "#",
-  },
-  {
-    itemText: "Insights",
-    itemLink: "/blog",
-  },
+const currentYear = new Date().getFullYear();
+
+const quickLinks = [
+  { name: "About Us", href: "/about" },
+  { name: "Portfolio", href: "/portfolio" },
+  { name: "Our Team", href: "/team" },
+  { name: "Blog", href: "/blog" },
+  { name: "Careers", href: "/careers" },
+  { name: "Privacy Policy", href: "/privacy" },
 ];
 
-const footerSupport = [
-  {
-    itemText: "Contact",
-    itemLink: "/contact-us",
-  },
+const services = [
+  { name: "Web Development", href: "/services#web-development" },
+  { name: "Mobile Apps", href: "/services#mobile-app-development" },
+  { name: "Cloud Solutions", href: "/services#cloud-solutions" },
+  { name: "UI/UX Design", href: "/services#ui-ux-design" },
+  { name: "DevOps", href: "/services#devops-automation" },
+  { name: "IT Consulting", href: "/services#it-consulting" },
 ];
 
-const footerCompany = [
-  {
-    itemText: "Insights",
-    itemLink: "/insights",
-  },
-  {
-    itemText: "Partners",
-    itemLink: "/partners",
-  },
-  {
-    itemText: "Jobs",
-    itemLink: "/jobs",
-  },
-];
-
-const footerLegal = [
-  {
-    itemText: "Privacy Policy",
-    itemLink: "/privacy-policy",
-  },
-  {
-    itemText: "Terms & Conditions",
-    itemLink: "/terms-and-conditions",
-  },
-];
-
-const links = [
-  { label: "Facebook", href: "#", Icon: Facebook },
-  { label: "LinkedIn", href: "#", Icon: Linkedin },
-  { label: "X/Twitter", href: "#", Icon: Twitter },
-  { label: "GitHub", href: "#", Icon: Github },
+const socialLinks = [
+  { name: "LinkedIn", icon: "linkedin", href: "https://linkedin.com" },
+  { name: "Twitter", icon: "twitter", href: "https://twitter.com" },
+  { name: "GitHub", icon: "github", href: "https://github.com" },
+  { name: "Facebook", icon: "facebook", href: "https://facebook.com" },
 ];
 ---
 
-<div class="relative">
-  <footer
-    class="relative bg-gradient-to-tr from-slate-100 to-zinc-200 py-6 backdrop-blur-md"
-  >
-    <Container className="py-10 relative overflow-auto ">
-      <div
-        class="grid grid-cols-2 lg:grid-cols-3 lg:items-stretch gap-8 relative"
-      >
-        <div class="col-span-2 lg:col-span-1 h-auto flex flex-col">
-          <div class="h-full">
-            <a href="/" class="relative flex items-center gap-3">
-              <Image
-                src="/Protize.png"
-                alt="Protize Logo"
-                width={180}
-                height={100}
-              />
-            </a>
-
-            <Paragraph className={"mt-6"}>
-              Protize delivers innovative tech solutions for modern digital
-              business needs.
-            </Paragraph>
-          </div>
-
-          <!-- social links -->
-          <div class="mt-6 flex min-h-max items-center gap-4 text-heading-3">
-            {
-              links.map(({ label, href, Icon }) => (
-                <a
-                  href={href}
-                  aria-label={label}
-                  class="inline-flex items-center justify-center transition-transform transition-colors duration-300 hover:text-blue-700 hover:scale-150"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <Icon className="h-5 w-5" />
-                  <span class="sr-only">{label} link</span>
-                </a>
-              ))
-            }
-          </div>
+<footer class="bg-navy text-white">
+  <div class="container-custom section-padding">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+      <!-- About Column -->
+      <div>
+        <div class="flex items-center space-x-2 mb-6">
+          <a href="/" class="flex items-center gap-3">
+            <Image
+              src="/protize-footer.png"
+              alt="Protize Logo"
+              width={200}
+              height={100}
+            />
+          </a>
         </div>
-
-        <GroupFooterNav>
-          <FooterNav title={"Company"} navItems={footerCompany} />
-          <FooterNav title={"Solutions"} navItems={footerNav1} />
-        </GroupFooterNav>
-
-        <GroupFooterNav>
-          <FooterNav title={"Support"} navItems={footerSupport} />
-          <FooterNav title={"Ressources"} navItems={footerLegal} />
-        </GroupFooterNav>
+        <p class="text-gray-300 mb-6 leading-relaxed">
+          Transforming businesses through innovative IT solutions and
+          cutting-edge technology.
+        </p>
+        <div class="flex space-x-4">
+          {
+            socialLinks.map((social) => (
+              <a
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-10 h-10 rounded-full bg-white/10 hover:bg-primary flex items-center justify-center transition-all duration-300 hover:scale-110"
+                aria-label={social.name}
+              >
+                <span class="text-sm">
+                  {social.icon === "linkedin"
+                    ? "in"
+                    : social.icon === "twitter"
+                      ? "𝕏"
+                      : social.icon === "github"
+                        ? "gh"
+                        : "f"}
+                </span>
+              </a>
+            ))
+          }
+        </div>
       </div>
-    </Container>
-    <div class="py-2 relative">
-      <Container>
-        <div
-          class="flex justify-center items-center gap-6 md:text-lg text-heading-3"
-        >
-          <div>
-            &copy; <span id="year"></span> Protize. All right reserved
-          </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h4 class="text-lg font-heading font-semibold mb-6">Quick Links</h4>
+        <ul class="space-y-3">
+          {
+            quickLinks.map((link) => (
+              <li>
+                <a
+                  href={link.href}
+                  class="text-gray-300 hover:text-primary transition-colors duration-300 inline-block"
+                >
+                  {link.name}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div>
+        <h4 class="text-lg font-heading font-semibold mb-6">Services</h4>
+        <ul class="space-y-3">
+          {
+            services.map((service) => (
+              <li>
+                <a
+                  href={service.href}
+                  class="text-gray-300 hover:text-primary transition-colors duration-300 inline-block"
+                >
+                  {service.name}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div>
+        <h4 class="text-lg font-heading font-semibold mb-6">Contact Us</h4>
+        <ul class="space-y-4 text-gray-300">
+          <li class="flex items-start space-x-3">
+            <svg
+              class="w-5 h-5 mt-1 flex-shrink-0 text-primary"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+              ></path>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+            <span>123 Tech Street, Silicon Valley, CA 94025</span>
+          </li>
+          <li class="flex items-center space-x-3">
+            <svg
+              class="w-5 h-5 flex-shrink-0 text-primary"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+              ></path>
+            </svg>
+            <a
+              href="mailto:hello@protize.com"
+              class="hover:text-primary transition-colors"
+            >
+              hello@protize.com
+            </a>
+          </li>
+          <li class="flex items-center space-x-3">
+            <svg
+              class="w-5 h-5 flex-shrink-0 text-primary"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+              ></path>
+            </svg>
+            <a
+              href="tel:+15551234567"
+              class="hover:text-primary transition-colors"
+            >
+              +1 (555) 123-4567
+            </a>
+          </li>
+        </ul>
+
+        <!-- Newsletter -->
+        <div class="mt-6">
+          <h5 class="font-semibold mb-3">Newsletter</h5>
+          <form class="flex">
+            <input
+              type="email"
+              placeholder="Your email"
+              class="flex-1 px-4 py-2 rounded-l-lg bg-white/10 border border-white/20 focus:outline-none focus:border-primary text-white placeholder-gray-400"
+            />
+            <button
+              type="submit"
+              class="px-4 py-2 bg-primary hover:bg-blue-700 rounded-r-lg transition-colors duration-300"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </button>
+          </form>
         </div>
-      </Container>
+      </div>
     </div>
-  </footer>
-</div>
+
+    <!-- Bottom Bar -->
+    <div class="border-t border-white/10 pt-8">
+      <div
+        class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0"
+      >
+        <p class="text-gray-400 text-sm">
+          © {currentYear} Protize. All rights reserved.
+        </p>
+        <div class="flex space-x-6 text-sm">
+          <a
+            href="/privacy"
+            class="text-gray-400 hover:text-primary transition-colors"
+          >
+            Privacy Policy
+          </a>
+          <a
+            href="/terms"
+            class="text-gray-400 hover:text-primary transition-colors"
+          >
+            Terms of Service
+          </a>
+          <a
+            href="/sitemap"
+            class="text-gray-400 hover:text-primary transition-colors"
+          >
+            Sitemap
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Newsletter form handling
+  const newsletterForm = document.querySelector("footer form");
+  newsletterForm?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const email = (e.target as HTMLFormElement).querySelector("input")?.value;
+    if (email) {
+      alert("Thank you for subscribing! (This is a demo)");
+      (e.target as HTMLFormElement).reset();
+    }
+  });
+</script>

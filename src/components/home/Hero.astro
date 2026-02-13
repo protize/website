@@ -1,0 +1,82 @@
+---
+import { Image } from "astro:assets";
+import FadeIn from "../animations/FadeIn";
+---
+
+<section
+  class="relative py-10 lg:py-20 flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-light"
+>
+  <div class="container-custom relative z-10">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <!-- Left Content -->
+      <div>
+        <FadeIn client:load direction="up" delay={0.2}>
+          <div class="inline-block mb-6">
+            <span
+              class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold"
+            >
+              Welcome to Protize
+            </span>
+          </div>
+        </FadeIn>
+
+        <FadeIn client:load direction="up" delay={0.3}>
+          <h1
+            class="text-4xl md:text-[50px] font-heading font-bold mb-6 leading-tight"
+          >
+            Trusted Engineering. Launch Fast. Build Smart.
+            <span class="gradient-text mt-2"> Scale Fast.</span>
+          </h1>
+        </FadeIn>
+
+        <FadeIn client:load direction="up" delay={0.4}>
+          <p class="text-xl text-gray-600 mb-8 leading-relaxed max-w-2xl">
+            We deliver cutting-edge IT solutions that drive business growth.
+            From web development to cloud infrastructure, we're your partner in
+            digital transformation.
+          </p>
+        </FadeIn>
+
+        <FadeIn client:load direction="up" delay={0.5}>
+          <div class="flex flex-wrap gap-4">
+            <a href="/contact" class="btn-primary">
+              Start Your Project
+              <svg
+                class="inline-block w-5 h-5 ml-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+              </svg>
+            </a>
+            <a href="/portfolio" class="btn-secondary"> View Our Work </a>
+          </div>
+        </FadeIn>
+      </div>
+
+      <!-- Right Illustration -->
+      <FadeIn
+        client:load
+        direction="right"
+        delay={0.4}
+        className="hidden lg:block"
+      >
+        <div class="relative">
+          <Image
+            src="/images/img.avif"
+            alt="Hero image"
+            width={2350}
+            height={2359}
+            class="hero-image w-full h-auto object-cover"
+            loading="eager"
+          />
+        </div>
+      </FadeIn>
+    </div>
+  </div>
+</section>

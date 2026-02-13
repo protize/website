@@ -1,28 +1,26 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Hero from "../components/sections/Hero.astro";
-import Services from "../components/sections/Services.astro";
-import FAQ from "../components/sections/FAQ.astro";
-import Features from "../components/sections/Features.astro";
-import CTA from "../components/sections/CTA.astro";
-import WhyProtize from "../components/sections/WhyProtize.astro";
-import TechStack from "../components/sections/TechStack.astro";
-import { skills } from "../data/skills";
-import TestimonialsCarousel from "../components/sections/TestimonialsCarousel";
+import Hero from "../components/home/Hero.astro";
+import Stats from "../components/home/Stats.astro";
+import ServicesOverview from "../components/home/ServicesOverview.astro";
+import WhyChooseUs from "../components/home/WhyChooseUs.astro";
+import FeaturedProjects from "../components/home/FeaturedProjects.astro";
+import Process from "../components/home/Process.astro";
+import Testimonials from "../components/home/Testimonials.astro";
+import TechStack from "../components/home/TechStack.astro";
+import CTASection from "../components/home/CTASection.astro";
 ---
 
 <Layout title="Welcome to the Protize Website">
   <main class="flex flex-col overflow-hidden">
-    <Hero className="pb-10 md:pb-16" />
-
-    <WhyProtize className="py-10" />
-    <Services className="py-10 md:py-16" />
-
-    <TechStack title="Technologies We Master" skills={skills} />
-
-    <Features className="py-10 md:py-16" />
-    <TestimonialsCarousel client:load />
-    <FAQ className="py-10 md:py-16" />
-    <CTA className="py-10" />
+    <Hero />
+    <Stats />
+    <ServicesOverview />
+    <WhyChooseUs />
+    <FeaturedProjects />
+    <Process />
+    <Testimonials />
+    <TechStack />
+    <CTASection />
   </main>
 </Layout>
