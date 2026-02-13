@@ -27,7 +27,7 @@ export const services: Service[] = [
     id: "web-development",
     title: "Web Development",
     icon: Globe,
-    image: "/images/5569517_2885174.jpg",
+    image: "/images/web.png",
     shortDescription:
       "Custom, responsive websites built with modern technologies for optimal performance and user experience.",
     description:
