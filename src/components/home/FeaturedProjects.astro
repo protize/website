@@ -16,11 +16,9 @@ const featuredProjects = projects.filter(p => p.featured).slice(0, 3);
           Explore some of our most impactful work and the results we've achieved for our clients
         </p>
       </div>
-    </FadeIn>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       {featuredProjects.map((project, index) => (
-        <FadeIn client:load direction="up" delay={index * 0.15}>
           <a href={`/portfolio/${project.slug}`} class="group block">
             <div class="card overflow-hidden hover:scale-105 p-0">
               <!-- Project Image -->
@@ -71,11 +69,9 @@ const featuredProjects = projects.filter(p => p.featured).slice(0, 3);
               </div>
             </div>
           </a>
-        </FadeIn>
       ))}
     </div>
 
-    <FadeIn client:load direction="up" delay={0.5}>
       <div class="text-center mt-12">
         <a href="/portfolio" class="btn-primary">
           View All Projects

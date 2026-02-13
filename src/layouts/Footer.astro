@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import { Facebook, Github, Linkedin, X } from "lucide-react";
 
 const currentYear = new Date().getFullYear();
 
@@ -7,9 +8,8 @@ const quickLinks = [
   { name: "About Us", href: "/about" },
   { name: "Portfolio", href: "/portfolio" },
   { name: "Our Team", href: "/team" },
+  { name: "Contact", href: "/contact-us" },
   { name: "Blog", href: "/blog" },
-  { name: "Careers", href: "/careers" },
-  { name: "Privacy Policy", href: "/privacy" },
 ];
 
 const services = [
@@ -31,7 +31,7 @@ const socialLinks = [
 
 <footer class="bg-navy text-white">
   <div class="container-custom section-padding">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
       <!-- About Column -->
       <div>
         <div class="flex items-center space-x-2 mb-6">
@@ -59,13 +59,15 @@ const socialLinks = [
                 aria-label={social.name}
               >
                 <span class="text-sm">
-                  {social.icon === "linkedin"
-                    ? "in"
-                    : social.icon === "twitter"
-                      ? "𝕏"
-                      : social.icon === "github"
-                        ? "gh"
-                        : "f"}
+                  {social.icon === "linkedin" ? (
+                    <Linkedin />
+                  ) : social.icon === "twitter" ? (
+                    <X />
+                  ) : social.icon === "github" ? (
+                    <Github />
+                  ) : (
+                    <Facebook />
+                  )}
                 </span>
               </a>
             ))
@@ -93,7 +95,7 @@ const socialLinks = [
       </div>
 
       <!-- Services -->
-      <div>
+      <!-- <div>
         <h4 class="text-lg font-heading font-semibold mb-6">Services</h4>
         <ul class="space-y-3">
           {
@@ -109,7 +111,7 @@ const socialLinks = [
             ))
           }
         </ul>
-      </div>
+      </div> -->
 
       <!-- Contact Info -->
       <div>
@@ -230,29 +232,29 @@ const socialLinks = [
             href="/terms"
             class="text-gray-400 hover:text-primary transition-colors"
           >
-            Terms of Service
+            Terms and Conditions
           </a>
           <a
-            href="/sitemap"
+            href="/cookies"
             class="text-gray-400 hover:text-primary transition-colors"
           >
-            Sitemap
+            Cookie Policy
           </a>
         </div>
       </div>
     </div>
   </div>
-</footer>
 
-<script>
-  // Newsletter form handling
-  const newsletterForm = document.querySelector("footer form");
-  newsletterForm?.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const email = (e.target as HTMLFormElement).querySelector("input")?.value;
-    if (email) {
-      alert("Thank you for subscribing! (This is a demo)");
-      (e.target as HTMLFormElement).reset();
-    }
-  });
-</script>
+  <script>
+    // Newsletter form handling
+    const newsletterForm = document.querySelector("footer form");
+    newsletterForm?.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const email = (e.target as HTMLFormElement).querySelector("input")?.value;
+      if (email) {
+        alert("Thank you for subscribing! (This is a demo)");
+        (e.target as HTMLFormElement).reset();
+      }
+    });
+  </script>
+</footer>

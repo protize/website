@@ -16,14 +16,12 @@ const featuredServices = services.slice(0, 6);
           Comprehensive IT solutions tailored to your business needs
         </p>
       </div>
-    </FadeIn>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {
-        featuredServices.map((service, index) => {
-          const Icon = service.icon;
-          return (
-            <FadeIn client:load direction="up" delay={index * 0.1}>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {
+          featuredServices.map((service, index) => {
+            const Icon = service.icon;
+            return (
               <a
                 href={`/services#${service.id}`}
                 class="group cursor-pointer hover:scale-105 "
@@ -52,13 +50,11 @@ const featuredServices = services.slice(0, 6);
                 </svg>
               </div> */}
               </a>
-            </FadeIn>
-          );
-        })
-      }
-    </div>
+            );
+          })
+        }
+      </div>
 
-    <FadeIn client:load direction="up" delay={0.6}>
       <div class="text-center mt-12">
         <a href="/services" class="btn-primary"> View All Services </a>
       </div>

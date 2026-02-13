@@ -17,13 +17,11 @@ const displayTestimonials = testimonials.slice(0, 6);
           helped transform
         </p>
       </div>
-    </FadeIn>
 
-    <div id="testimonials-carousel" class="relative">
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {
-          displayTestimonials.map((testimonial, index) => (
-            <FadeIn client:load direction="up" delay={index * 0.1}>
+      <div id="testimonials-carousel" class="relative">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {
+            displayTestimonials.map((testimonial, index) => (
               <div class="card bg-white h-full flex flex-col">
                 {/* Stars */}
                 <div class="flex mb-4">
@@ -78,10 +76,10 @@ const displayTestimonials = testimonials.slice(0, 6);
                   </div>
                 </div>
               </div>
-            </FadeIn>
-          ))
-        }
+            ))
+          }
+        </div>
       </div>
-    </div>
+    </FadeIn>
   </div>
 </section>
