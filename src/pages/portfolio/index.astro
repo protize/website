@@ -39,54 +39,13 @@ const categories = [
   <PortfolioGrid categories={categories} projects={projects} />
 
   <!-- CTA Section -->
-  <section
-    class="section-padding bg-gradient-to-br from-primary to-accent text-white"
-  >
-    <div class="container-custom text-center">
-      <FadeIn client:load direction="up">
-        <h2 class="text-4xl md:text-5xl font-heading font-bold mb-6">
-          Ready to Start Your Project?
-        </h2>
-        <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-          Let's discuss how we can help you achieve similar results for your
-          business
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href="/contact"
-            class="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all inline-flex items-center justify-center"
-          >
-            Get Started
-            <svg
-              class="w-5 h-5 ml-2"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-            </svg>
-          </a>
-          <a
-            href="/services"
-            class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary transition-all inline-flex items-center justify-center"
-          >
-            View Services
-          </a>
-        </div>
-      </FadeIn>
-    </div>
-  </section>
 
   <CTASection
     title="Ready to Start Your Project?"
     subtitle="Let's discuss how we can help you achieve similar results for your business"
     actions={[
       {
-        label: "Book a Call",
+        label: "Get Started",
         href: "/contact-us",
         variant: "primary",
         icon: true,
