@@ -1,48 +1,97 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import FadeIn from "../../components/animations/FadeIn";
 import { getCollection } from "astro:content";
-import PortfolioHero from "../../components/sections/portfolio-section/PortfolioHero.astro";
-import ProjectGrid from "../../components/sections/portfolio-section/ProjectGrid.astro";
-import Container from "../../components/shared/Container.astro";
-import Title from "../../components/shared/Title.astro";
-import Paragraph from "../../components/shared/Paragraph.astro";
-import TestimonialsCarousel from "../../components/sections/TestimonialsCarousel";
-import TeamGrid from "../../components/sections/team-section/TeamGrid.astro";
-import { members } from "../../utils/data";
-import KpiResults from "../../components/sections/portfolio-section/KpiResults.astro";
-import About from "../../components/sections/portfolio-section/about";
+import PortfolioHero from "../../components/portfolio/PortfolioHero.astro";
+import PortfolioStats from "../../components/portfolio/PortfolioStats.astro";
+import PortfolioGrid from "../../components/portfolio/PortfolioGrid.astro";
+import CTASection from "../../components/home/CTASection.astro";
 
-const allPosts = (await getCollection("portfolio"))
-  .filter((p) => !p.data.draft)
+// Get all portfolio entries
+const portfolioEntries = await getCollection("portfolio");
+
+// Sort by date (newest first)
+const projects = portfolioEntries
   .sort(
-    (a, b) =>
-      new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime(),
-  );
+    (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
+  )
+  .map((entry) => ({
+    id: entry.id,
+    slug: entry.slug,
+    ...entry.data,
+  }));
+
+// ✅ Get unique categories safely + ensure "All" first + remove empty
+const categories = [
+  "All",
+  ...Array.from(new Set(projects.map((p) => p.category).filter(Boolean))),
+];
 ---
 
 <Layout title="Portfolio">
-  <section>
-    <PortfolioHero />
-    <!-- <Experience /> -->
-    <Container className="mb-10">
-      <div class="text-center space-y-4 pt-16 pb-4" id="project-grid">
-        <Title>Projects</Title>
-        <Paragraph
-          >Explore our portfolio and see how our development expertise has grown
-          over time</Paragraph
-        >
-      </div>
-      <ProjectGrid posts={allPosts} />
-      <KpiResults />
+  <!-- Hero Section -->
+  <PortfolioHero />
 
-      <About client:load />
+  <!-- Stats Overview -->
+  <PortfolioStats />
 
-      <TeamGrid
-        title="Our Creative Team"
-        description="We are a multidisciplinary crew crafting products and delightful experiences."
-        members={members}
-      />
-    </Container>
-    <TestimonialsCarousel client:load />
+  <!-- Portfolio Grid -->
+  <PortfolioGrid categories={categories} projects={projects} />
+
+  <!-- CTA Section -->
+  <section
+    class="section-padding bg-gradient-to-br from-primary to-accent text-white"
+  >
+    <div class="container-custom text-center">
+      <FadeIn client:load direction="up">
+        <h2 class="text-4xl md:text-5xl font-heading font-bold mb-6">
+          Ready to Start Your Project?
+        </h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+          Let's discuss how we can help you achieve similar results for your
+          business
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/contact"
+            class="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all inline-flex items-center justify-center"
+          >
+            Get Started
+            <svg
+              class="w-5 h-5 ml-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+          </a>
+          <a
+            href="/services"
+            class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary transition-all inline-flex items-center justify-center"
+          >
+            View Services
+          </a>
+        </div>
+      </FadeIn>
+    </div>
   </section>
+
+  <CTASection
+    title="Ready to Start Your Project?"
+    subtitle="Let's discuss how we can help you achieve similar results for your business"
+    actions={[
+      {
+        label: "Book a Call",
+        href: "/contact-us",
+        variant: "primary",
+        icon: true,
+      },
+      { label: "View Services", href: "/services", variant: "outline" },
+    ]}
+  />
 </Layout>

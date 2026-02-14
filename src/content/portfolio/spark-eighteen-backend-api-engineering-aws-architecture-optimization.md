@@ -1,28 +1,43 @@
 ---
 title: "Spark Eighteen — Backend API Engineering & AWS Architecture Optimization"
-excerpt: "Protize supported Spark Eighteen by building scalable backend APIs, integrating Strapi-based content workflows, and optimizing AWS architecture across multi-project delivery."
-pubDate: 2022-02-01
-updatedDate: 2022-11-06
-author: "Protize Team"
-tags:
+category: "Platform"
+client: "Spark Eighteen"
+date: "2022-02-01"
+featured: true
+featuredImage: "/images/projects/spark-eighteen-logo.jpg"
+shortDescription: "Protize supported Spark Eighteen by building scalable backend APIs, integrating Strapi-based content workflows, and optimizing AWS architecture across multi-project delivery."
+liveUrl: "" # optional - add if available
+githubUrl: "" # optional - add if available
+duration: "Feb 2022 – Nov 2022"
+teamSize: 2
+technologies:
   - "Node.js"
   - "Express.js"
-  - "AWS"
   - "Strapi"
   - "REST APIs"
-  - "Backend Architecture"
   - "MySQL"
-  - "Web Crawling"
-  - "Razorpay Integration"
+  - "AWS"
+  - "Backend Architecture"
   - "API Development"
+  - "Razorpay Integration"
+  - "Web Crawling"
   - "Cloud Optimization"
-category: "Backend Engineering / API & Cloud Architecture"
-featured: true
-draft: false
-logo: "/images/projects/spark-eighteen-logo.jpg"
-coverImage: "/images/projects/spark-eighteen-cover.png"
-coverAlt: "Spark Eighteen backend API engineering and AWS architecture optimization case study cover"
+challenge: "Spark Eighteen needed reliable, scalable backend systems across multiple projects—covering API development, content workflows, and third-party integrations—while also improving AWS infrastructure efficiency. The challenge was to move fast across parallel deliveries without sacrificing stability, security, or operational cost control."
+solution: "Protize built and optimized backend services using Node.js/Express with well-structured REST APIs and MySQL persistence. We integrated Strapi to streamline content publishing workflows and implemented automation for data ingestion (web crawling) and payments (Razorpay). In parallel, we reviewed and optimized AWS architecture to improve reliability and reduce infrastructure overhead across multi-project deployments."
+results:
+  - metric: "API Delivery"
+    value: "Scalable backend APIs shipped across multi-project scope"
+  - metric: "Content Operations"
+    value: "Strapi workflow integration for faster publishing"
+  - metric: "Integrations"
+    value: "Razorpay + data ingestion automation via crawling"
+  - metric: "Cloud Efficiency"
+    value: "AWS architecture optimization for reliability and cost"
+gallery:
+  - "/images/projects/spark-eighteen-cover.png"
+  - "/images/projects/spark-eighteen-logo.jpg"
 ---
+
 
 ## Client
 

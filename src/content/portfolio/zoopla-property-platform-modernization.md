@@ -1,40 +1,52 @@
 ---
 title: "Zoopla — Property Platform Modernization & Engineering Transformation"
-excerpt: "Protize partnered with Zoopla to modernize architecture, scale engineering delivery, and strengthen quality, security, and observability across high-traffic property platform systems."
-pubDate: 2019-08-02
-updatedDate: 2021-09-06
-author: "Protize Team"
-tags:
-  [
-    "Consultancy",
-    "React",
-    "TypeScript",
-    "Next.js",
-    "GraphQL",
-    "Serverless",
-    "Terraform",
-    "CloudFront",
-    "Docker",
-    "CI/CD",
-    "Apache Spark",
-    "Cypress",
-    "Jest",
-    "FastAPI",
-    "AWS",
-    "Architecture",
-    "Agile Delivery",
-    "Hiring",
-    "Observability",
-    "A/B Testing",
-    "Security",
-  ]
-category: "Enterprise PropTech / Digital Transformation"
+category: "Enterprise"
+client: "Zoopla"
+date: "2019-08-02"
 featured: true
-draft: false
-logo: "/images/projects/zoopla.avif"
-coverImage: "/images/projects/zoopla_cover.png"
-coverAlt: "Zoopla property platform modernization case study cover"
+featuredImage: "/images/projects/zoopla.avif"
+shortDescription: "Protize partnered with Zoopla to modernize architecture, scale engineering delivery, and strengthen quality, security, and observability across high-traffic property platform systems."
+liveUrl: "" # optional - add if available
+githubUrl: "" # optional - add if available
+duration: "Aug 2019 – Sep 2021"
+teamSize: 5
+technologies:
+  - "React"
+  - "TypeScript"
+  - "Next.js"
+  - "GraphQL"
+  - "FastAPI"
+  - "Serverless"
+  - "AWS"
+  - "Terraform"
+  - "CloudFront"
+  - "Docker"
+  - "CI/CD"
+  - "Apache Spark"
+  - "Cypress"
+  - "Jest"
+  - "A/B Testing"
+  - "Observability"
+  - "Security"
+  - "Architecture"
+  - "Agile Delivery"
+  - "Hiring"
+challenge: "Zoopla needed to modernize a high-traffic property platform while maintaining performance, reliability, and security at scale. The challenge included improving frontend architecture, strengthening observability, enabling safer experimentation (A/B testing), and evolving cloud infrastructure—without disrupting millions of monthly user interactions."
+solution: "Protize supported architecture modernization across frontend and backend services, introducing stronger TypeScript/React/Next.js foundations and service-oriented APIs (FastAPI + GraphQL). We enhanced infrastructure using AWS, Terraform, Docker, and Serverless patterns, and strengthened CI/CD pipelines. Quality and experimentation improved through Cypress/Jest and A/B testing capabilities, alongside improved observability and security posture across production systems."
+results:
+  - metric: "Platform Modernization"
+    value: "Scalable architecture for high-traffic property platform"
+  - metric: "Delivery & Quality"
+    value: "Improved CI/CD reliability + automated testing"
+  - metric: "Experimentation"
+    value: "Enabled safer A/B testing at scale"
+  - metric: "Cloud & Observability"
+    value: "Stronger AWS infrastructure + monitoring foundations"
+gallery:
+  - "/images/projects/zoopla_cover.png"
+  - "/images/projects/zoopla.avif"
 ---
+
 
 ## Client
 

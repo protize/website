@@ -1,33 +1,47 @@
 ---
 title: "Hubble — Platform Modernization, Search Acceleration & Revenue-Driven Engineering"
-excerpt: "Protize partnered with Hubble to modernize architecture, improve delivery speed, and build high-performance search and sales workflow systems that supported major revenue growth."
-pubDate: 2016-09-01
-updatedDate: 2018-09-27
-author: "Protize Team"
-tags:
-  - "Consultancy"
+category: "SaaS"
+client: "Hubble"
+date: "2016-09-01"
+featured: true
+featuredImage: "/images/projects/hubblehq_logo.jpg"
+shortDescription: "Protize partnered with Hubble to modernize architecture, improve delivery speed, and build high-performance search and sales workflow systems that supported major revenue growth."
+liveUrl: "" # optional - add if available
+githubUrl: "" # optional - add if available
+duration: "Sep 2016 – Sep 2018"
+teamSize: 3
+technologies:
   - "React"
   - "Angular"
   - "Express"
-  - "Jest"
   - "Python"
   - "Elasticsearch"
   - "Heroku"
   - "Microservices"
   - "CI/CD"
   - "Event Sourcing"
+  - "Jest"
   - "Refactoring"
   - "Code Review"
   - "Pair Programming"
   - "Interviewing"
   - "Engineering Guidelines"
-category: "SaaS / Platform Engineering & Growth Transformation"
-featured: true
-draft: false
-logo: "/images/projects/hubblehq_logo.jpg"
-coverImage: "/images/projects/hubblehq_cover.png"
-coverAlt: "Hubble platform modernization and search acceleration case study cover"
+challenge: "Hubble needed to modernize a fast-growing SaaS platform while increasing delivery speed and reliability. The challenge included refactoring legacy areas, improving search performance, and strengthening engineering practices—without slowing down product momentum tied directly to revenue and sales workflows."
+solution: "Protize partnered closely with the team to modernize architecture and delivery practices: service refactoring and modularization, search acceleration using Elasticsearch, improved CI/CD pipelines, and stronger engineering standards through code reviews, pair programming, and documented guidelines. We also supported interviewing and hiring enablement to raise the overall team bar."
+results:
+  - metric: "Platform Modernization"
+    value: "Refactoring + microservices direction for scalable delivery"
+  - metric: "Search Performance"
+    value: "Faster search and improved workflow responsiveness"
+  - metric: "Delivery Speed"
+    value: "Improved release confidence with CI/CD + testing"
+  - metric: "Engineering Practices"
+    value: "Established guidelines + reviews + pairing + hiring support"
+gallery:
+  - "/images/projects/hubblehq_cover.png"
+  - "/images/projects/hubblehq_logo.jpg"
 ---
+
 
 ## Client
 

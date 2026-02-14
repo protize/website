@@ -1,33 +1,44 @@
 ---
 title: "Broomberg — ERP/CRM Modernization, Team Build & Scale Enablement"
-excerpt: "Protize partnered with Broomberg to build core technology foundations, hire and lead the engineering team, and deliver an ERP/CRM modernization program that improved efficiency, revenue outcomes, and infrastructure economics."
-pubDate: 2015-08-06
-updatedDate: 2016-04-10
-author: "Protize Team"
-tags:
-  - "Consultancy"
-  - "Engineering"
-  - "Fundraising"
-  - "Hiring"
+category: "Platform"
+client: "Broomberg"
+date: "2015-08-06"
+featured: true
+featuredImage: "/images/logos/broomberg.avif"
+shortDescription: "Protize partnered with Broomberg to build core technology foundations, hire and lead the engineering team, and deliver an ERP/CRM modernization program that improved efficiency, revenue outcomes, and infrastructure economics."
+liveUrl: "" # optional - add if available
+githubUrl: "" # optional - add if available
+duration: "Aug 2015 – Apr 2016"
+teamSize: 4
+technologies:
   - "Django"
   - "Node.js"
   - "AWS"
   - "Redis"
-  - "Architecture"
-  - "Microservices"
   - "Angular"
-  - "ERP"
-  - "CRM"
+  - "Microservices"
+  - "Architecture"
   - "Continuous Deployment"
   - "Automation Testing"
   - "Technical Due Diligence"
-category: "B2C Services / Operational Technology Transformation"
-featured: true
-draft: false
-logo: "/images/logos/broomberg.avif"
-coverImage: "/images/projects/broomberg_cover.png"
-coverAlt: "Broomberg ERP CRM modernization and scaling case study cover"
+  - "ERP"
+  - "CRM"
+challenge: "Broomberg needed to modernize its ERP/CRM and operational workflows while scaling delivery capacity. The challenge included establishing strong engineering foundations, improving reliability and deployment velocity, and building the right team to support growth—without disrupting ongoing business operations."
+solution: "Protize led the modernization program end-to-end: architecture and infrastructure uplift on AWS, ERP/CRM improvements, automation testing and CI/CD practices, and delivery process hardening. In parallel, Protize supported hiring and team leadership—defining roles, interview frameworks, onboarding, and execution practices to scale engineering throughput."
+results:
+  - metric: "Delivery Program"
+    value: "ERP/CRM modernization + operational automation"
+  - metric: "Team Enablement"
+    value: "Hiring + leadership + scale-ready execution process"
+  - metric: "Engineering Velocity"
+    value: "Improved release cadence through CI/CD and testing"
+  - metric: "Infrastructure"
+    value: "Better reliability and cost efficiency on AWS"
+gallery:
+  - "/images/projects/broomberg_cover.png"
+  - "/images/logos/broomberg.avif"
 ---
+
 
 ## Client
 

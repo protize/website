@@ -1,34 +1,45 @@
 ---
 title: "Midori Investments — Data Science-Led Investment Strategy & Risk Modernization"
-excerpt: "Protize partnered with Midori Investments to build and scale a data science function for investment research, portfolio strategy, and IT risk controls using Node, Python, AI/ML, and Azure."
-pubDate: 2020-04-12
-updatedDate: 2021-07-06
-author: "Protize Team"
-tags:
-  [
-    "Consultancy",
-    "Fintech",
-    "Node.js",
-    "Python",
-    "AI/ML",
-    "Azure",
-    "Data Science",
-    "Investment Models",
-    "Portfolio Review",
-    "Asset Allocation",
-    "Security",
-    "Risk Assessment",
-    "Encrypted Storage",
-    "Self-Hosted Git",
-    "VPN",
-  ]
-category: "Fintech / Investment Analytics & Risk Transformation"
+category: "Fintech"
+client: "Midori Investments"
+date: "2020-04-12"
 featured: true
-draft: false
-logo: "/images/projects/midori-investment.avif"
-coverImage: "/images/projects/midori_cover_with_correct_cover.png"
-coverAlt: "Midori Investments data science and risk modernization case study cover"
+featuredImage: "/images/projects/midori-investment.avif"
+shortDescription: "Protize partnered with Midori Investments to build and scale a data science function for investment research, portfolio strategy, and IT risk controls using Node, Python, AI/ML, and Azure."
+liveUrl: "" # optional - add if available
+githubUrl: "" # optional - add if available
+duration: "Apr 2020 – Jul 2021"
+teamSize: 3
+technologies:
+  - "Node.js"
+  - "Python"
+  - "AI/ML"
+  - "Azure"
+  - "Data Science"
+  - "Investment Models"
+  - "Portfolio Review"
+  - "Asset Allocation"
+  - "Security"
+  - "Risk Assessment"
+  - "Encrypted Storage"
+  - "Self-Hosted Git"
+  - "VPN"
+challenge: "Midori Investments needed to build a data science capability for investment research and portfolio strategy while strengthening IT risk controls. The challenge included designing repeatable research workflows, enabling data-driven asset allocation and portfolio review, and implementing secure engineering foundations (access control, encrypted storage, and protected development workflows) suitable for finance-grade risk and compliance expectations."
+solution: "Protize helped establish and scale the data science function by building research pipelines and investment models using Python and Node.js, enabling portfolio review and asset allocation analysis. Alongside analytics, we modernized risk and security controls—introducing secure development practices, encrypted data storage, VPN access patterns, and a self-hosted Git setup. The program was delivered on Azure with an emphasis on reliability, auditability, and secure collaboration."
+results:
+  - metric: "Data Science Function"
+    value: "Established scalable research + modeling workflows"
+  - metric: "Investment Strategy"
+    value: "Improved portfolio review and asset allocation analysis"
+  - metric: "Risk Controls"
+    value: "Upgraded IT security posture with controls and hardening"
+  - metric: "Platform"
+    value: "Azure-based implementation with secure development workflow"
+gallery:
+  - "/images/projects/midori_cover_with_correct_cover.png"
+  - "/images/projects/midori-investment.avif"
 ---
+
 
 ## Client
 

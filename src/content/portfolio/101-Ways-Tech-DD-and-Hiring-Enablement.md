@@ -1,26 +1,39 @@
 ---
 title: "101 Ways — Technology Due Diligence, Assessment & Senior Hiring Enablement"
-excerpt: "Protize supports 101 Ways with client-facing technology due diligence, technical assessments, and strategic recruitment across high-impact consulting engagements."
-pubDate: 2019-08-06
-updatedDate: 2026-02-06
-author: "Protize Team"
-tags:
-  - "Consultancy"
-  - "Hiring"
-  - "Assessment"
-  - "Due Diligence"
-  - "Talent Strategy"
-  - "Technical Interviewing"
-  - "Contractor Hiring"
-  - "Technology Consulting"
-  - "Delivery Advisory"
-category: "Technology Consultancy / Due Diligence & Talent Transformation"
+category: "Consulting"
+client: "101 Ways"
+date: "2019-08-06"
 featured: true
-draft: false
-logo: "/images/logos/101-ways.avif"
-coverImage: "/images/projects/101-ways-cover.png"
-coverAlt: "101 Ways technology due diligence and hiring enablement case study cover"
+featuredImage: "/images/logos/101-ways.avif"
+shortDescription: "Protize supports 101 Ways with client-facing technology due diligence, technical assessments, and strategic recruitment across high-impact consulting engagements."
+liveUrl: "" # optional - add if available
+githubUrl: "" # optional - add if available
+duration: "Ongoing / Multi-engagement"
+teamSize: 2
+technologies:
+  - "Code Review"
+  - "Hiring Enablement"
+  - "Delivery Advisory"
+  - "Technical Due Diligence"
+  - "System Architecture Review"
+  - "Interview Frameworks"
+  - "Senior/Lead Hiring"
+  - "Assessment Design"
+challenge: "101 Ways needed a reliable technical partner to support multiple consulting engagements—covering technology due diligence, hands-on technical assessments, and senior hiring enablement—while maintaining consistent evaluation quality and fast turnaround for client-facing deliverables."
+solution: "Protize partnered with 101 Ways to deliver structured due diligence and assessment workflows: architecture and codebase reviews, risk/feasibility summaries, technical interview frameworks, and senior hiring enablement (role definition, screening rubrics, interviews, and final recommendation notes)."
+results:
+  - metric: "Engagement Type"
+    value: "Due diligence + assessments + senior hiring"
+  - metric: "Outcome"
+    value: "Consistent evaluation quality for client-facing decisions"
+  - metric: "Hiring Enablement"
+    value: "Improved screening + interview structure for senior roles"
+  - metric: "Delivery"
+    value: "Faster turnaround on technical advisory outputs"
+gallery:
+  - "/images/projects/101-ways-cover.png"
 ---
+
 
 ## Client
 

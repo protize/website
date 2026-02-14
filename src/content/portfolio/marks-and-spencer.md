@@ -1,38 +1,51 @@
 ---
 title: "Marks & Spencer — Enterprise Commerce Modernization"
-excerpt: "Protize partnered with Marks & Spencer to lead enterprise-scale engineering transformation across multiple portfolios, modernizing frontend architecture and platform capabilities for speed, scalability, experimentation, and cost efficiency."
-pubDate: 2021-09-19
-updatedDate: 2026-02-06
-author: "Protize Team"
-tags:
-  [
-    "Principal Consultancy",
-    "React",
-    "TypeScript",
-    "Next.js",
-    "GraphQL",
-    "Mesh",
-    "Terraform",
-    "CI/CD",
-    "Playwright",
-    "Jest",
-    "Akamai",
-    "WCS",
-    "Azure",
-    "New Relic",
-    "LaunchDarkly",
-    "Architecture",
-    "Agile Delivery",
-    "Hiring",
-    "Platform Engineering",
-  ]
-category: "Enterprise Retail / Digital Transformation"
+category: "Enterprise"
+client: "Marks & Spencer"
+date: "2021-09-19"
 featured: true
-draft: false
-logo: "/images/projects/marks_and_spencer_logo.jpg"
-coverImage: "/images/projects/marks_and_spencer_cover.png"
-coverAlt: "Marks & Spencer enterprise commerce modernization case study cover"
+featuredImage: "/images/projects/marks_and_spencer_logo.jpg"
+shortDescription: "Protize partnered with Marks & Spencer to lead enterprise-scale engineering transformation across multiple portfolios, modernizing frontend architecture and platform capabilities for speed, scalability, experimentation, and cost efficiency."
+liveUrl: "" # optional - add if available
+githubUrl: "" # optional - add if available
+duration: "Sep 2021 – Ongoing"
+teamSize: 6
+technologies:
+  - "React"
+  - "TypeScript"
+  - "Next.js"
+  - "GraphQL"
+  - "GraphQL Mesh"
+  - "Terraform"
+  - "CI/CD"
+  - "Playwright"
+  - "Jest"
+  - "Akamai"
+  - "WCS"
+  - "Azure"
+  - "New Relic"
+  - "LaunchDarkly"
+  - "Platform Engineering"
+  - "Architecture"
+  - "Agile Delivery"
+  - "Hiring"
+  - "Principal Consultancy"
+challenge: "Marks & Spencer needed to modernize enterprise commerce across multiple portfolios while maintaining delivery velocity and reliability at scale. Key challenges included improving frontend performance and developer experience, enabling faster experimentation and feature releases, strengthening observability and platform tooling, and reducing operational cost without compromising customer experience."
+solution: "Protize led an enterprise modernization program covering architecture, platform capabilities, and engineering practices. We upgraded frontend foundations (React/Next.js/TypeScript), improved API and integration strategy (GraphQL + Mesh), strengthened CI/CD and quality engineering (Playwright/Jest), enabled safe experimentation (LaunchDarkly), and improved observability (New Relic). Infrastructure and delivery improvements were supported through Terraform, Azure-based platform work, and collaboration across agile teams with hiring enablement."
+results:
+  - metric: "Delivery Speed"
+    value: "Faster releases and safer experimentation at scale"
+  - metric: "Platform Scalability"
+    value: "Modernized frontend + API foundations for growth"
+  - metric: "Quality Engineering"
+    value: "Improved automation testing and CI/CD reliability"
+  - metric: "Operational Efficiency"
+    value: "Better observability and cost-aware platform improvements"
+gallery:
+  - "/images/projects/marks_and_spencer_cover.png"
+  - "/images/projects/marks_and_spencer_logo.jpg"
 ---
+
 
 ## Client
 
