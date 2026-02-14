@@ -6,7 +6,7 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Contact Us">
   <!-- Hero Section -->
-  <section class="py-10 lg:pt-32 lg:pb-16">
+  <section class="py-10 lg:py-20">
     <div class="container-custom">
       <FadeIn client:load direction="up" delay={0.1}>
         <h1
@@ -125,7 +125,7 @@ import Layout from "../layouts/Layout.astro";
                 <textarea
                   id="message"
                   name="message"
-                  rows="6"
+                  rows="7"
                   required
                   class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none"
                   placeholder="Tell us about your project..."></textarea>
@@ -181,7 +181,7 @@ import Layout from "../layouts/Layout.astro";
                 Contact Information
               </h3>
 
-              <div class="space-y-6">
+              <div class="space-y-[22px]">
                 <div class="flex items-start space-x-4">
                   <div
                     class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0"
