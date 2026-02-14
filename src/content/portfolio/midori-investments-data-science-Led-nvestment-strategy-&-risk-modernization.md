@@ -3,7 +3,7 @@ title: "Midori Investments — Data Science-Led Investment Strategy & Risk Moder
 category: "Fintech"
 client: "Midori Investments"
 date: "2020-04-12"
-featured: true
+featured: false
 featuredImage: "/images/projects/midori-investment.avif"
 shortDescription: "Protize partnered with Midori Investments to build and scale a data science function for investment research, portfolio strategy, and IT risk controls using Node, Python, AI/ML, and Azure."
 liveUrl: "" # optional - add if available

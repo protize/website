@@ -3,7 +3,7 @@ title: "KoolKanya — Career Platform MVP Strategy, Build & Team Enablement"
 category: "Platform"
 client: "KoolKanya"
 date: "2018-08-07"
-featured: true
+featured: false
 featuredImage: "/images/projects/koolkanya-logo.jpg"
 shortDescription: "Protize partnered with KoolKanya from idea stage to beta launch, defining the tech vision, accelerating product discovery, and enabling scalable engineering delivery with strong hiring support."
 liveUrl: "" # optional - add if available

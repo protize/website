@@ -3,7 +3,7 @@ title: "Hubble — Platform Modernization, Search Acceleration & Revenue-Driven 
 category: "SaaS"
 client: "Hubble"
 date: "2016-09-01"
-featured: true
+featured: false
 featuredImage: "/images/projects/hubblehq_logo.jpg"
 shortDescription: "Protize partnered with Hubble to modernize architecture, improve delivery speed, and build high-performance search and sales workflow systems that supported major revenue growth."
 liveUrl: "" # optional - add if available

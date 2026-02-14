@@ -3,7 +3,7 @@ title: "101 Ways — Technology Due Diligence, Assessment & Senior Hiring Enable
 category: "Consulting"
 client: "101 Ways"
 date: "2019-08-06"
-featured: true
+featured: false
 featuredImage: "/images/logos/101-ways.avif"
 shortDescription: "Protize supports 101 Ways with client-facing technology due diligence, technical assessments, and strategic recruitment across high-impact consulting engagements."
 liveUrl: "" # optional - add if available

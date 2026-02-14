@@ -3,7 +3,7 @@ title: "Credenc — Digital Lending Workflow Automation & Approval Intelligence"
 category: "Fintech"
 client: "Credenc"
 date: "2021-11-03"
-featured: true
+featured: false
 featuredImage: "/images/projects/credenc_logo.jpg"
 shortDescription: "Protize supported Credenc in accelerating lending operations through automated loan approval workflows, credit scoring integration, and end-to-end digital onboarding automation."
 liveUrl: "" # optional - add if available

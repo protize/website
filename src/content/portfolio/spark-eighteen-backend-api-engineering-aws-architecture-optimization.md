@@ -3,7 +3,7 @@ title: "Spark Eighteen — Backend API Engineering & AWS Architecture Optimizati
 category: "Platform"
 client: "Spark Eighteen"
 date: "2022-02-01"
-featured: true
+featured: false
 featuredImage: "/images/projects/spark-eighteen-logo.jpg"
 shortDescription: "Protize supported Spark Eighteen by building scalable backend APIs, integrating Strapi-based content workflows, and optimizing AWS architecture across multi-project delivery."
 liveUrl: "" # optional - add if available

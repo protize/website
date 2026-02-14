@@ -4,7 +4,7 @@ import FadeIn from "../animations/FadeIn";
 type Action = {
   label: string;
   href: string;
-  variant?: "primary" | "outline";
+  variant?: "primary" | "secondary";
   icon?: boolean;
 };
 
@@ -12,7 +12,6 @@ type Props = {
   title?: string;
   subtitle?: string;
   actions?: Action[];
-  theme?: "light" | "dark";
   gradientFrom?: string;
   gradientTo?: string;
   showPattern?: boolean;
@@ -25,38 +24,23 @@ const {
   subtitle = "Let's discuss how our IT solutions can help you achieve your business goals. Get started with a free consultation today.",
   actions = [
     {
-      label: "Schedule a Consultation",
+      label: "Schedule a Call",
       href: "/contact-us",
       variant: "primary",
       icon: true,
     },
-    { label: "View Our Work", href: "/portfolio", variant: "outline" },
+    { label: "View Our Work", href: "/portfolio", variant: "secondary" },
   ],
-  theme = "light",
   gradientFrom = "from-primary/30",
   gradientTo = "to-accent/30",
   showPattern = true,
   showBlobs = true,
   className = "",
 } = Astro.props as Props;
-
-const textClass = theme === "dark" ? "text-white" : "text-black";
-const subTextClass = theme === "dark" ? "text-white/70" : "text-black/70";
-
-// Button styles
-const primaryBtn =
-  theme === "dark"
-    ? "bg-white text-primary hover:bg-gray-100"
-    : "bg-white text-primary hover:bg-gray-100";
-
-const outlineBtn =
-  theme === "dark"
-    ? "bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary"
-    : "bg-transparent border-2 border-white text-primary hover:bg-white hover:text-primary";
 ---
 
 <section
-  class={`section-padding relative overflow-hidden bg-gradient-to-br ${gradientFrom} ${gradientTo} ${textClass} ${className}`}
+  class={`section-padding relative overflow-hidden bg-gradient-to-br ${gradientFrom} ${gradientTo} text-black ${className}`}
 >
   {
     showPattern && (
@@ -85,7 +69,7 @@ const outlineBtn =
           {title}
         </h2>
 
-        <p class={`text-xl mb-12 leading-relaxed ${subTextClass}`}>
+        <p class="text-xl mb-12 leading-relaxed text-black/70">
           {subtitle}
         </p>
 
@@ -96,14 +80,12 @@ const outlineBtn =
             actions.map((a) => (
               <a
                 href={a.href}
-                class={`px-8 py-4 rounded-lg font-semibold transition-all duration-300 inline-flex items-center
-                ${a.variant === "outline" ? outlineBtn : primaryBtn}
-                ${a.variant === "primary" ? "hover:shadow-2xl hover:scale-105" : ""}`}
+                class={`${a.variant === "secondary" ? "btn-secondary" : "btn-primary"} inline-flex items-center`}
               >
                 {a.label}
                 {a.icon && (
                   <svg
-                    class="w-5 h-5 ml-2"
+                    class="inline-block w-6 h-6 ml-2"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"

@@ -1,8 +1,20 @@
 ---
 import FadeIn from "../animations/FadeIn";
-import projects from "../../data/projects.json";
+import ProjectCard from "../portfolio/ProjectCard.astro";
+import { getCollection } from "astro:content";
 
-const featuredProjects = projects.filter((p) => p.featured).slice(0, 3);
+const portfolioEntries = await getCollection("portfolio");
+
+const projects = portfolioEntries
+  .filter((entry) => entry.data.featured)
+  .sort(
+    (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
+  )
+  .map((entry) => ({
+    id: entry.id,
+    slug: entry.slug,
+    ...entry.data,
+  }));
 ---
 
 <section class="section-padding bg-gray-light">
@@ -18,60 +30,15 @@ const featuredProjects = projects.filter((p) => p.featured).slice(0, 3);
         </p>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
         {
-          featuredProjects.map((project, index) => (
-            <a href={`/portfolio/${project.slug}`} class="group block">
-              <div class="card overflow-hidden hover:scale-105 p-0">
-                <div class="relative h-64 overflow-hidden bg-gradient-to-br from-primary/10 to-accent/10">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    loading="lazy"
-                  />
-                </div>
-
-                <div class="p-6">
-                  <h3 class="text-xl font-heading font-bold mb-2 group-hover:text-primary transition-colors">
-                    {project.title}
-                  </h3>
-                  <p class="text-gray-600 mb-4 line-clamp-2">
-                    {project.shortDescription}
-                  </p>
-
-                  <div class="flex flex-wrap gap-2 mb-4">
-                    {project.technologies.slice(0, 5).map((tech) => (
-                      <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded font-medium">
-                        {tech}
-                      </span>
-                    ))}
-                    {project.technologies.length > 3 && (
-                      <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded font-medium">
-                        +{project.technologies.length - 3}
-                      </span>
-                    )}
-                  </div>
-
-                  <div class="flex items-center text-primary font-semibold group-hover:translate-x-2 transition-transform">
-                    View Case Study
-                    <svg
-                      class="w-4 h-4 ml-2"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M13 7l5 5m0 0l-5 5m5-5H6"
-                      />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </a>
+          projects.slice(0, 3).map((project) => (
+            <div
+              class="project-card h-full flex"
+              data-category={project.category}
+            >
+              <ProjectCard project={project} />
+            </div>
           ))
         }
       </div>
@@ -80,7 +47,7 @@ const featuredProjects = projects.filter((p) => p.featured).slice(0, 3);
         <a href="/portfolio" class="btn-primary">
           View All Projects
           <svg
-            class="inline-block w-5 h-5 ml-2"
+            class="inline-block w-6 h-6 ml-2"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
