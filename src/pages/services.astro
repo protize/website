@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import ServicesHero from "../components/services/ServicesHero.astro";
 import ServicesGrid from "../components/services/ServicesGrid.astro";
 import FaqService from "../components/services/FaqService.astro";
-import ServiceCta from "../components/services/ServiceCta.astro";
+import CTASection from "../components/home/CTASection.astro";
 ---
 
 <Layout title="Services">
@@ -16,5 +16,16 @@ import ServiceCta from "../components/services/ServiceCta.astro";
   <FaqService />
 
   <!-- CTA -->
-  <ServiceCta />
+  <CTASection
+    title="Ready to Get Started?"
+    subtitle="Let's discuss how we can help bring your project to life"
+    actions={[
+      {
+        label: "Contact Us Today",
+        href: "/contact-us",
+        variant: "primary",
+        icon: true,
+      },
+    ]}
+  />
 </Layout>
