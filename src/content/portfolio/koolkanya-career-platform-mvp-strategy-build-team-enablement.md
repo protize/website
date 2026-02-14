@@ -1,30 +1,44 @@
 ---
 title: "KoolKanya — Career Platform MVP Strategy, Build & Team Enablement"
-excerpt: "Protize partnered with KoolKanya from idea stage to beta launch, defining the tech vision, accelerating product discovery, and enabling scalable engineering delivery with strong hiring support."
-pubDate: 2018-08-07
-updatedDate: 2019-01-10
-author: "Protize Team"
-tags:
-  - "Consultancy"
-  - "Coaching"
-  - "Hiring"
+category: "Platform"
+client: "KoolKanya"
+date: "2018-08-07"
+featured: true
+featuredImage: "/images/projects/koolkanya-logo.jpg"
+shortDescription: "Protize partnered with KoolKanya from idea stage to beta launch, defining the tech vision, accelerating product discovery, and enabling scalable engineering delivery with strong hiring support."
+liveUrl: "" # optional - add if available
+githubUrl: "" # optional - add if available
+duration: "Aug 2018 – Jan 2019"
+teamSize: 3
+technologies:
   - "React"
   - "Node.js"
+  - "AWS"
   - "Microservices"
   - "CI/CD"
-  - "AWS"
   - "Product Discovery"
   - "Design Sprints"
   - "MVP Development"
   - "Outsourced Team Management"
   - "Recruitment"
-category: "Career Tech / Early-Stage Product Transformation"
-featured: true
-draft: false
-logo: "/images/projects/koolkanya-logo.jpg"
-coverImage: "/images/projects/koolkanya-cover.png"
-coverAlt: "KoolKanya career platform MVP and engineering transformation case study cover"
+  - "Hiring"
+  - "Coaching"
+challenge: "KoolKanya needed to go from idea to a working beta quickly, while defining a clear technology vision and building a delivery engine that could scale. The challenge included rapid product discovery, MVP scope decisions, and setting up an engineering approach that allowed fast iteration—supported by structured hiring and team enablement."
+solution: "Protize drove product discovery and MVP strategy through sprints and prioritization, then delivered the MVP with a scalable service-oriented architecture. We established CI/CD foundations, guided engineering practices, and supported hiring/recruitment—helping set up the team, onboarding process, and delivery rhythms for sustainable growth."
+results:
+  - metric: "MVP Delivery"
+    value: "Beta launch from idea stage within months"
+  - metric: "Product Discovery"
+    value: "Clear roadmap and prioritized MVP scope"
+  - metric: "Team Enablement"
+    value: "Hiring support + coaching + delivery rhythms"
+  - metric: "Scalability"
+    value: "Microservices-ready foundations on AWS"
+gallery:
+  - "/images/projects/koolkanya-cover.png"
+  - "/images/projects/koolkanya-logo.jpg"
 ---
+
 
 ## Client
 

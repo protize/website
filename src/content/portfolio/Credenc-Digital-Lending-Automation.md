@@ -1,18 +1,24 @@
 ---
 title: "Credenc — Digital Lending Workflow Automation & Approval Intelligence"
-excerpt: "Protize supported Credenc in accelerating lending operations through automated loan approval workflows, credit scoring integration, and end-to-end digital onboarding automation."
-pubDate: 2021-11-03
-updatedDate: 2024-11-06
-author: "Protize Team"
-tags:
+category: "Fintech"
+client: "Credenc"
+date: "2021-11-03"
+featured: true
+featuredImage: "/images/projects/credenc_logo.jpg"
+shortDescription: "Protize supported Credenc in accelerating lending operations through automated loan approval workflows, credit scoring integration, and end-to-end digital onboarding automation."
+liveUrl: "" # optional - add if available
+githubUrl: "" # optional - add if available
+duration: "Nov 2021 – Ongoing"
+teamSize: 3
+technologies:
   - "React.js"
   - "React Native"
   - "Node.js"
   - "Express.js"
-  - "API Integration"
   - "AWS"
   - "MySQL"
   - "PHP"
+  - "API Integration"
   - "Loan Approval Engine"
   - "CRIF Integration"
   - "KYC Automation"
@@ -21,13 +27,22 @@ tags:
   - "E-NACH"
   - "Digio Integration"
   - "Process Automation"
-category: "Fintech / Lending Process Automation"
-featured: true
-draft: false
-logo: "/images/projects/credenc_logo.jpg"
-coverImage: "/images/projects/credenc_cover.png"
-coverAlt: "Credenc lending automation and loan approval intelligence case study cover"
+challenge: "Credenc needed to scale lending operations with faster turnaround times and fewer manual steps. The key challenge was building reliable automated loan approval workflows, integrating external credit scoring (CRIF), and enabling secure digital onboarding with KYC and e-sign/e-mandate flows—while keeping the system stable under increasing application volume."
+solution: "Protize delivered an end-to-end automation program: streamlined digital onboarding, integrated CRIF-based credit scoring, implemented an approval workflow/decision engine, and connected digital compliance flows (KYC, e-sign, e-mandate/e-NACH) via third-party providers such as Digio. The solution included API-led architecture across services, operational monitoring, and scalable deployment on AWS."
+results:
+  - metric: "Workflow Automation"
+    value: "Reduced manual loan processing with automated approvals"
+  - metric: "Credit Scoring"
+    value: "Integrated CRIF scoring into decision workflow"
+  - metric: "Digital Onboarding"
+    value: "Enabled KYC + e-sign + e-mandate/e-NACH journeys"
+  - metric: "Operations"
+    value: "Improved approval speed and consistency under load"
+gallery:
+  - "/images/projects/credenc_cover.png"
+  - "/images/projects/credenc_logo.jpg"
 ---
+
 
 ## Client
 

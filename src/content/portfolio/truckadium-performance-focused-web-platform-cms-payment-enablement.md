@@ -1,27 +1,42 @@
 ---
 title: "Truckadium — Performance-Focused Web Platform, CMS & Payment Enablement"
-excerpt: "Protize helped Truckadium improve web performance with Next.js, implement custom CMS capabilities, and integrate payment workflows to support scalable content and conversion journeys."
-pubDate: 2017-01-10
-updatedDate: 2019-04-09
-author: "Protize Team"
-tags:
+category: "Platform"
+client: "Truckadium"
+date: "2017-01-10"
+featured: true
+featuredImage: "/images/projects/Truckadium.jpg"
+shortDescription: "Protize helped Truckadium improve web performance with Next.js, implement custom CMS capabilities, and integrate payment workflows to support scalable content and conversion journeys."
+liveUrl: "" # optional - add if available
+githubUrl: "" # optional - add if available
+duration: "Jan 2017 – Apr 2019"
+teamSize: 2
+technologies:
   - "Next.js"
   - "AWS"
+  - "MongoDB"
+  - "Redux.js"
   - "Custom CMS Development"
   - "Thinkific Integration"
-  - "Redux.js"
   - "PayPal Integration"
-  - "MongoDB"
   - "Performance Optimization"
   - "Google PageSpeed"
   - "Web Platform Engineering"
-category: "EdTech / Web Performance & Platform Engineering"
-featured: true
-draft: false
-logo: "/images/projects/Truckadium.jpg"
-coverImage: "/images/projects/Truckadium-cover.png"
-coverAlt: "Truckadium web performance, CMS, and payment integration case study cover"
+challenge: "Truckadium needed a faster, more scalable web platform to support content-heavy learning journeys and improve conversions. The challenge included improving performance and SEO, enabling a flexible CMS for ongoing updates, and integrating reliable payment workflows—while keeping the platform maintainable as content and traffic grew."
+solution: "Protize rebuilt and optimized the web experience using Next.js with performance-first patterns (SSR/SSG where appropriate, caching, optimized assets) and delivered custom CMS capabilities for scalable content management. We integrated Thinkific for learning workflows and implemented PayPal-based payment flows, backed by MongoDB for content and operational data. The result was a platform designed for speed, stability, and conversion-focused journeys."
+results:
+  - metric: "Performance"
+    value: "Improved PageSpeed and faster user journeys"
+  - metric: "Content Operations"
+    value: "Custom CMS enabled scalable content publishing"
+  - metric: "Payments"
+    value: "Integrated PayPal checkout for conversion workflows"
+  - metric: "Platform Scalability"
+    value: "Next.js architecture prepared for growth"
+gallery:
+  - "/images/projects/Truckadium-cover.png"
+  - "/images/projects/Truckadium.jpg"
 ---
+
 
 ## Client
 

@@ -17,21 +17,30 @@ const Insights = defineCollection({
   }),
 });
 
-const Portfolio = defineCollection({
+const portfolioCollection = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(),
-    excerpt: z.string().optional(),
-    pubDate: z.coerce.date(),
-    updatedDate: z.coerce.date().optional(),
-    author: z.string().default("Protize Team"),
-    tags: z.array(z.string()).default([]),
-    category: z.string().default("Uncategorized"),
+    category: z.string(),
+    client: z.string(),
+    date: z.string(),
     featured: z.boolean().default(false),
-    draft: z.boolean().default(false),
-    logo: z.string().optional(),
-    coverImage: z.string().optional(),
-    coverAlt: z.string().optional(),
+    featuredImage: z.string(),
+    shortDescription: z.string(),
+    liveUrl: z.string().optional(),
+    githubUrl: z.string().optional(),
+    duration: z.string(),
+    teamSize: z.number(),
+    technologies: z.array(z.string()),
+    challenge: z.string(),
+    solution: z.string(),
+    results: z.array(
+      z.object({
+        metric: z.string(),
+        value: z.string(),
+      }),
+    ),
+    gallery: z.array(z.string()),
   }),
 });
 
@@ -51,6 +60,6 @@ export const Services = defineCollection({
 
 export const collections = {
   insights: Insights,
-  portfolio: Portfolio,
+  portfolio: portfolioCollection,
   services: Services,
 };

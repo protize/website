@@ -1,11 +1,16 @@
 ---
 title: "Logizip LLC — Cloud TMS Modernization, Automation & Intelligent Operations"
-excerpt: "Protize helped Logizip modernize trucking operations through a cloud-based Trucking Management System, scalable web/mobile architecture, and AI-driven automation for faster processing and improved operational efficiency."
-pubDate: 2021-11-06
-updatedDate: 2023-10-23
-author: "Protize Team"
-tags:
-  - "Consultancy"
+category: "Platform"
+client: "Logizip LLC"
+date: "2021-11-06"
+featured: true
+featuredImage: "/images/projects/Logizip-LLC-logo.jpg"
+shortDescription: "Protize helped Logizip modernize trucking operations through a cloud-based Trucking Management System, scalable web/mobile architecture, and AI-driven automation for faster processing and improved operational efficiency."
+liveUrl: "" # optional - add if available
+githubUrl: "" # optional - add if available
+duration: "Nov 2021 – Oct 2023"
+teamSize: 4
+technologies:
   - "React.js"
   - "NestJS"
   - "GraphQL"
@@ -13,22 +18,31 @@ tags:
   - "Redux.js"
   - "Express.js"
   - "Python"
-  - "Team Management"
+  - "Cloud TMS"
+  - "Logistics Automation"
   - "OpenAI Integration"
   - "WhatsApp Integration"
   - "Google OAuth2"
   - "BorderConnect Integration"
   - "GoMotive Integration"
   - "Trimble Maps Integration"
-  - "Cloud TMS"
-  - "Logistics Automation"
-category: "Logistics / Cloud Platform & AI Automation"
-featured: true
-draft: false
-logo: "/images/projects/Logizip-LLC-logo.jpg"
-coverImage: "/images/projects/Logizip-LLC-cover.png"
-coverAlt: "Logizip cloud trucking management modernization and AI automation case study cover"
+  - "Team Management"
+challenge: "Logizip needed to modernize trucking operations with a cloud-first TMS that could scale across web and mobile, integrate key logistics partners (tracking, maps, compliance), and reduce manual work. The challenge included building reliable automation flows, integrating multiple third-party systems, and improving operational speed without disrupting daily fleet workflows."
+solution: "Protize delivered a cloud-based TMS modernization program with a scalable architecture (React + NestJS + GraphQL + PostgreSQL). We implemented operational automations and intelligent workflows using Python services and OpenAI-assisted automation, plus deep integrations including WhatsApp notifications, Google OAuth2, BorderConnect, GoMotive, and Trimble Maps. We also supported team management and delivery processes to scale output predictably."
+results:
+  - metric: "Platform Modernization"
+    value: "Cloud TMS with scalable web + service architecture"
+  - metric: "Automation"
+    value: "Reduced manual operations via workflow automation"
+  - metric: "Integrations"
+    value: "BorderConnect + GoMotive + Trimble Maps + WhatsApp"
+  - metric: "Operational Efficiency"
+    value: "Faster processing and improved day-to-day execution"
+gallery:
+  - "/images/projects/Logizip-LLC-cover.png"
+  - "/images/projects/Logizip-LLC-logo.jpg"
 ---
+
 
 ## Client
 

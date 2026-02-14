@@ -1,27 +1,408 @@
 ---
-import { getCollection, getEntry, render } from "astro:content";
-import BlogPost from "../../layouts/BlogPost.astro";
+import Layout from "../../layouts/Layout.astro";
+import FadeIn from "../../components/animations/FadeIn";
+import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
-  const allPosts = await getCollection("portfolio", ({ data }) => !data.draft);
-
-  return allPosts
-    .sort(
-      (a, b) =>
-        new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime(),
-    )
-    .map(({ slug }) => ({ params: { slug } }));
+  const portfolioEntries = await getCollection("portfolio");
+  return portfolioEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
 }
 
-const { slug } = Astro.params;
-const entry = await getEntry("portfolio", slug);
-if (!entry) {
-  throw new Error(`Case study not found: ${slug}`);
-}
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+const project = entry.data;
 
-const { Content } = await render(entry);
+// Get related projects (same category, excluding current)
+const allProjects = await getCollection("portfolio");
+const relatedProjects = allProjects
+  .filter((p) => p.data.category === project.category && p.slug !== entry.slug)
+  .slice(0, 3);
 ---
 
-<BlogPost {...entry.data} backUrl="portfolio">
-  <Content />
-</BlogPost>
+<Layout title={project.title}>
+  <!-- Hero Section -->
+  <section
+    class="pt-32 pb-16 bg-gradient-to-br from-gray-light via-white to-blue-50"
+  >
+    <div class="container-custom">
+      <FadeIn client:load direction="up">
+        <nav class="text-sm text-gray-600 mb-6">
+          <a href="/" class="hover:text-primary">Home</a>
+          <span class="mx-2">/</span>
+          <a href="/portfolio" class="hover:text-primary">Portfolio</a>
+          <span class="mx-2">/</span>
+          <span class="text-primary font-medium">{project.title}</span>
+        </nav>
+      </FadeIn>
+
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <FadeIn client:load direction="up" delay={0.1}>
+            <div class="inline-block mb-4">
+              <span
+                class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold"
+              >
+                {project.category}
+              </span>
+            </div>
+          </FadeIn>
+
+          <FadeIn client:load direction="up" delay={0.2}>
+            <h1
+              class="text-4xl md:text-5xl font-heading font-bold mb-4 text-navy"
+            >
+              {project.title}
+            </h1>
+          </FadeIn>
+
+          <FadeIn client:load direction="up" delay={0.3}>
+            <p class="text-xl text-gray-600 mb-6 leading-relaxed">
+              {project.shortDescription}
+            </p>
+          </FadeIn>
+
+          <FadeIn client:load direction="up" delay={0.4}>
+            <div class="flex flex-wrap gap-6 mb-6">
+              <div>
+                <div class="text-sm text-gray-500 mb-1">Client</div>
+                <div class="font-semibold text-navy">{project.client}</div>
+              </div>
+              <div>
+                <div class="text-sm text-gray-500 mb-1">Date</div>
+                <div class="font-semibold text-navy">
+                  {
+                    new Date(project.date).toLocaleDateString("en-US", {
+                      month: "long",
+                      year: "numeric",
+                    })
+                  }
+                </div>
+              </div>
+              <div>
+                <div class="text-sm text-gray-500 mb-1">Duration</div>
+                <div class="font-semibold text-navy">{project.duration}</div>
+              </div>
+              <div>
+                <div class="text-sm text-gray-500 mb-1">Team Size</div>
+                <div class="font-semibold text-navy">
+                  {project.teamSize} members
+                </div>
+              </div>
+            </div>
+          </FadeIn>
+
+          <FadeIn client:load direction="up" delay={0.5}>
+            <div class="flex flex-wrap gap-4">
+              {
+                project.liveUrl && (
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-primary"
+                  >
+                    <svg
+                      class="w-5 h-5 mr-2 inline-block"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      />
+                    </svg>
+                    View Live Site
+                  </a>
+                )
+              }
+              <a href="/contact" class="btn-secondary">
+                Start Similar Project
+              </a>
+            </div>
+          </FadeIn>
+        </div>
+
+        <FadeIn client:load direction="right" delay={0.3}>
+          <div class="relative">
+            <img
+              src={project.featuredImage}
+              alt={project.title}
+              class="rounded-2xl shadow-2xl w-full"
+            />
+            <div
+              class="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/20 rounded-full blur-3xl -z-10"
+            >
+            </div>
+          </div>
+        </FadeIn>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Overview -->
+  <section class="section-padding bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <!-- Challenge -->
+        <FadeIn client:load direction="up">
+          <div class="mb-12">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-4"
+              >
+                <svg
+                  class="w-6 h-6 text-primary"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                  ></path>
+                </svg>
+              </div>
+              <h2 class="text-3xl font-heading font-bold text-navy">
+                The Challenge
+              </h2>
+            </div>
+            <p class="text-lg text-gray-700 leading-relaxed">
+              {project.challenge}
+            </p>
+          </div>
+        </FadeIn>
+
+        <!-- Solution -->
+        <FadeIn client:load direction="up" delay={0.1}>
+          <div class="mb-12">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-4"
+              >
+                <svg
+                  class="w-6 h-6 text-primary"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                  ></path>
+                </svg>
+              </div>
+              <h2 class="text-3xl font-heading font-bold text-navy">
+                Our Solution
+              </h2>
+            </div>
+            <p class="text-lg text-gray-700 leading-relaxed">
+              {project.solution}
+            </p>
+          </div>
+        </FadeIn>
+
+        <!-- Technologies Used -->
+        <FadeIn client:load direction="up" delay={0.2}>
+          <div class="mb-12">
+            <h3 class="text-2xl font-heading font-bold mb-4 text-navy">
+              Technologies Used
+            </h3>
+            <div class="flex flex-wrap gap-3">
+              {
+                project.technologies.map((tech) => (
+                  <span class="px-4 py-2 bg-gradient-to-br from-primary/10 to-accent/10 text-primary rounded-lg font-medium border border-primary/20">
+                    {tech}
+                  </span>
+                ))
+              }
+            </div>
+          </div>
+        </FadeIn>
+
+        <!-- Full Content from Markdown -->
+        <FadeIn client:load direction="up" delay={0.3}>
+          <div
+            class="prose prose-lg max-w-none prose-headings:font-heading prose-headings:text-navy prose-a:text-primary prose-code:text-primary prose-pre:bg-gray-100 prose-img:rounded-xl"
+          >
+            <Content />
+          </div>
+        </FadeIn>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results & Metrics -->
+  {
+    project.results && project.results.length > 0 && (
+      <section class="section-padding bg-gradient-to-br from-primary to-accent text-white">
+        <div class="container-custom">
+          <FadeIn client:load direction="up">
+            <div class="text-center mb-12">
+              <h2 class="text-4xl md:text-5xl font-heading font-bold mb-4">
+                The Results
+              </h2>
+              <p class="text-xl opacity-90 max-w-2xl mx-auto">
+                Measurable impact and real business value delivered
+              </p>
+            </div>
+          </FadeIn>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {project.results.map((result, index) => (
+              <FadeIn client:load direction="up" delay={index * 0.1}>
+                <div class="text-center p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20">
+                  <div class="text-4xl md:text-5xl font-bold mb-2">
+                    {result.value}
+                  </div>
+                  <div class="text-lg opacity-90">{result.metric}</div>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  <!-- Project Gallery -->
+  {
+    project.gallery && project.gallery.length > 0 && (
+      <section class="section-padding bg-gray-light">
+        <div class="container-custom">
+          <FadeIn client:load direction="up">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-12 text-center">
+              Project <span class="gradient-text">Gallery</span>
+            </h2>
+          </FadeIn>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            {project.gallery.map((image, index) => (
+              <FadeIn client:load direction="up" delay={index * 0.1}>
+                <div class="card p-0 overflow-hidden group cursor-pointer">
+                  <img
+                    src={image}
+                    alt={`${project.title} screenshot ${index + 1}`}
+                    class="w-full h-auto group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  <!-- Related Projects -->
+  {
+    relatedProjects.length > 0 && (
+      <section class="section-padding bg-white">
+        <div class="container-custom">
+          <FadeIn client:load direction="up">
+            <div class="text-center mb-12">
+              <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">
+                Related <span class="gradient-text">Projects</span>
+              </h2>
+              <p class="text-gray-600">
+                Explore more {project.category} projects
+              </p>
+            </div>
+          </FadeIn>
+
+          <div class="grid md:grid-cols-3 gap-8">
+            {relatedProjects.map((relatedProject, index) => (
+              <FadeIn client:load direction="up" delay={index * 0.1}>
+                <a
+                  href={`/portfolio/${relatedProject.slug}`}
+                  class="card p-0 overflow-hidden group hover:scale-105"
+                >
+                  <div class="relative h-48 overflow-hidden bg-gradient-to-br from-primary/10 to-accent/10">
+                    <img
+                      src={relatedProject.data.featuredImage}
+                      alt={relatedProject.data.title}
+                      class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="p-6">
+                    <span class="text-sm text-primary font-medium">
+                      {relatedProject.data.category}
+                    </span>
+                    <h3 class="text-xl font-heading font-bold mt-2 mb-2 group-hover:text-primary transition-colors">
+                      {relatedProject.data.title}
+                    </h3>
+                    <p class="text-gray-600 text-sm line-clamp-2">
+                      {relatedProject.data.shortDescription}
+                    </p>
+                  </div>
+                </a>
+              </FadeIn>
+            ))}
+          </div>
+
+          <FadeIn client:load direction="up" delay={0.4}>
+            <div class="text-center mt-12">
+              <a href="/portfolio" class="btn-secondary">
+                View All Projects
+              </a>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+    )
+  }
+
+  <!-- CTA Section -->
+  <section
+    class="section-padding bg-gradient-to-br from-navy to-primary text-white"
+  >
+    <div class="container-custom text-center">
+      <FadeIn client:load direction="up">
+        <h2 class="text-4xl md:text-5xl font-heading font-bold mb-6">
+          Let's Build Something Amazing Together
+        </h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+          Ready to start your project? We're here to help you achieve your
+          goals.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/contact"
+            class="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all inline-flex items-center justify-center"
+          >
+            Get Started
+            <svg
+              class="w-5 h-5 ml-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+          </a>
+          <a
+            href="/services"
+            class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary transition-all inline-flex items-center justify-center"
+          >
+            Our Services
+          </a>
+        </div>
+      </FadeIn>
+    </div>
+  </section>
+</Layout>
