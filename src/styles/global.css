@@ -53,7 +53,7 @@
   }
 
   .card {
-    @apply bg-white rounded-xl border-t shadow-sm hover:shadow-md transition-all duration-300 p-6;
+    @apply bg-white rounded-xl border transition-all duration-300 p-6;
   }
 
   .section-padding {
