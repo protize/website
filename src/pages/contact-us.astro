@@ -8,7 +8,7 @@ import Layout from "../layouts/Layout.astro";
   <!-- Hero Section -->
   <section class="py-10 lg:py-20">
     <div class="container-custom">
-      <FadeIn client:load direction="up" delay={0.1}>
+      <FadeIn client:load direction="up">
         <h1
           class="text-4xl md:text-5xl text-center font-heading font-bold mb-6"
         >
@@ -28,7 +28,7 @@ import Layout from "../layouts/Layout.astro";
     <div class="container-custom">
       <div class="grid lg:grid-cols-2 gap-16">
         <!-- Contact Form -->
-        <FadeIn client:load direction="left">
+        <FadeIn client:load direction="up">
           <div class="card">
             <h2
               class="text-2xl md:text-3xl font-heading font-bold mb-6 text-navy"
@@ -145,10 +145,7 @@ import Layout from "../layouts/Layout.astro";
                 </label>
               </div>
 
-              <button
-                type="submit"
-                class="w-full btn-primary flex justify-center"
-              >
+              <button type="submit" class="btn-primary">
                 Send Message
                 <svg
                   class="w-5 h-5 ml-2"
@@ -173,7 +170,7 @@ import Layout from "../layouts/Layout.astro";
 
         <!-- Contact Information -->
         <div class="space-y-8">
-          <FadeIn client:load direction="right">
+          <FadeIn client:load direction="up">
             <div
               class="card bg-gradient-to-br from-primary to-accent text-white"
             >

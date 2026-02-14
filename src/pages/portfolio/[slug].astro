@@ -28,16 +28,6 @@ const relatedProjects = allProjects
     class="pt-32 pb-16 bg-gradient-to-br from-gray-light via-white to-blue-50"
   >
     <div class="container-custom">
-      <FadeIn client:load direction="up">
-        <nav class="text-sm text-gray-600 mb-6">
-          <a href="/" class="hover:text-primary">Home</a>
-          <span class="mx-2">/</span>
-          <a href="/portfolio" class="hover:text-primary">Portfolio</a>
-          <span class="mx-2">/</span>
-          <span class="text-primary font-medium">{project.title}</span>
-        </nav>
-      </FadeIn>
-
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <div>
           <FadeIn client:load direction="up" delay={0.1}>

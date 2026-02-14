@@ -63,21 +63,6 @@ const certifications = [
               class="w-full h-auto"
               loading="lazy"
             />
-            <!-- Overlay with stats -->
-            <!-- <div
-              class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-navy/90 to-transparent p-8"
-            >
-              <div class="grid grid-cols-2 gap-4 text-white">
-                <div>
-                  <div class="text-3xl font-bold">98%</div>
-                  <div class="text-sm">Client Satisfaction</div>
-                </div>
-                <div>
-                  <div class="text-3xl font-bold">28+</div>
-                  <div class="text-sm">Projects Delivered</div>
-                </div>
-              </div>
-            </div> -->
           </div>
 
           <!-- Decorative Element -->
@@ -93,19 +78,6 @@ const certifications = [
           {
             features.map((feature, index) => (
               <div class="flex items-start space-x-4 py-1.5 rounded-lg hover:bg-gray-light transition-colors group">
-                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                  <svg
-                    class="w-4 h-4 text-primary"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clip-rule="evenodd"
-                    />
-                  </svg>
-                </div>
                 <div>
                   <h4 class="font-semibold text-lg mb-1 text-navy">
                     {feature.title}

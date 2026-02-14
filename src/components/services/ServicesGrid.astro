@@ -19,13 +19,6 @@ import services from "../../data/services";
                   >
                     {/* Content */}
                     <div class={index % 2 === 1 ? "lg:order-2" : ""}>
-                      <div class="inline-block mb-4">
-                        <span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold">
-                          {service.icon} Service{" "}
-                          {(index + 1).toString().padStart(2, "0")}
-                        </span>
-                      </div>
-
                       <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-navy">
                         {service.title}
                       </h2>

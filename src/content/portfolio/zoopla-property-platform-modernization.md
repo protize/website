@@ -3,7 +3,7 @@ title: "Zoopla — Property Platform Modernization & Engineering Transformation"
 category: "Enterprise"
 client: "Zoopla"
 date: "2019-08-02"
-featured: true
+featured: false
 featuredImage: "/images/projects/zoopla.avif"
 shortDescription: "Protize partnered with Zoopla to modernize architecture, scale engineering delivery, and strengthen quality, security, and observability across high-traffic property platform systems."
 liveUrl: "" # optional - add if available

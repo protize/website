@@ -3,7 +3,7 @@ title: "Truckadium — Performance-Focused Web Platform, CMS & Payment Enablemen
 category: "Platform"
 client: "Truckadium"
 date: "2017-01-10"
-featured: true
+featured: false
 featuredImage: "/images/projects/Truckadium.jpg"
 shortDescription: "Protize helped Truckadium improve web performance with Next.js, implement custom CMS capabilities, and integrate payment workflows to support scalable content and conversion journeys."
 liveUrl: "" # optional - add if available
