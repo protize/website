@@ -1,0 +1,76 @@
+[33m56e2954[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mnew-portfolio[m[33m, [m[1;31morigin/new-portfolio[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m HEAD@{0}: rebase (finish): returning to refs/heads/new-portfolio
+[33m56e2954[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mnew-portfolio[m[33m, [m[1;31morigin/new-portfolio[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m HEAD@{1}: rebase (start): checkout main
+[33mbf1e67a[m HEAD@{2}: checkout: moving from main to new-portfolio
+[33m56e2954[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mnew-portfolio[m[33m, [m[1;31morigin/new-portfolio[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m HEAD@{3}: pull origin main: Fast-forward
+[33mbd554f0[m HEAD@{4}: checkout: moving from new-portfolio to main
+[33mbf1e67a[m HEAD@{5}: commit: update portfilio
+[33mbd554f0[m HEAD@{6}: rebase (finish): returning to refs/heads/new-portfolio
+[33mbd554f0[m HEAD@{7}: rebase (start): checkout main
+[33m4011f60[m HEAD@{8}: checkout: moving from main to new-portfolio
+[33mbd554f0[m HEAD@{9}: pull origin main: Fast-forward
+[33m4011f60[m HEAD@{10}: checkout: moving from new-portfolio to main
+[33m4011f60[m HEAD@{11}: checkout: moving from main to new-portfolio
+[33m4011f60[m HEAD@{12}: commit: update
+[33m1e72a97[m HEAD@{13}: commit: fix build
+[33md15e0b6[m HEAD@{14}: pull origin main: Fast-forward
+[33me08c546[m HEAD@{15}: checkout: moving from new-layout to main
+[33m3ecc9e6[m[33m ([m[1;31morigin/new-layout[m[33m, [m[1;32mnew-layout[m[33m)[m HEAD@{16}: commit: update
+[33maec8c65[m[33m ([m[1;31morigin/new/home[m[33m, [m[1;32mnew/home[m[33m)[m HEAD@{17}: checkout: moving from new/home to new-layout
+[33maec8c65[m[33m ([m[1;31morigin/new/home[m[33m, [m[1;32mnew/home[m[33m)[m HEAD@{18}: checkout: moving from main to new/home
+[33me08c546[m HEAD@{19}: checkout: moving from demo to main
+[33me08c546[m HEAD@{20}: rebase (finish): returning to refs/heads/demo
+[33me08c546[m HEAD@{21}: rebase (start): checkout main
+[33maec8c65[m[33m ([m[1;31morigin/new/home[m[33m, [m[1;32mnew/home[m[33m)[m HEAD@{22}: checkout: moving from new/home to demo
+[33maec8c65[m[33m ([m[1;31morigin/new/home[m[33m, [m[1;32mnew/home[m[33m)[m HEAD@{23}: commit: update services
+[33m1a2aa48[m HEAD@{24}: commit: update services
+[33mad50a99[m HEAD@{25}: checkout: moving from main to new/home
+[33me08c546[m HEAD@{26}: pull origin main: Fast-forward
+[33m9fecbd6[m HEAD@{27}: checkout: moving from new/home to main
+[33mad50a99[m HEAD@{28}: commit: update
+[33m12530b3[m HEAD@{29}: commit: update
+[33m0cad5f9[m HEAD@{30}: commit: update
+[33m487932b[m HEAD@{31}: commit: update
+[33m99b2bbe[m HEAD@{32}: commit: update contact
+[33m6f00b02[m HEAD@{33}: commit: update home
+[33m9fecbd6[m HEAD@{34}: checkout: moving from main to new/home
+[33m9fecbd6[m HEAD@{35}: commit: update
+[33mc6e8b51[m HEAD@{36}: commit: update
+[33mff31216[m HEAD@{37}: commit: update services
+[33mad59ef7[m HEAD@{38}: pull origin main: Fast-forward
+[33m4278338[m HEAD@{39}: commit: update
+[33mdcfd347[m HEAD@{40}: commit: update fix
+[33m33567c7[m HEAD@{41}: commit: fix build
+[33m0f972e5[m HEAD@{42}: pull origin main: Fast-forward
+[33m1023366[m HEAD@{43}: checkout: moving from shadcn to main
+[33m985ff31[m[33m ([m[1;31morigin/shadcn[m[33m, [m[1;32mshadcn[m[33m)[m HEAD@{44}: commit: update
+[33md2b4239[m HEAD@{45}: commit: update
+[33m1023366[m HEAD@{46}: checkout: moving from main to shadcn
+[33m1023366[m HEAD@{47}: commit: update portfolio
+[33m946743e[m HEAD@{48}: commit: update
+[33m7ac7337[m HEAD@{49}: commit: update portfolio
+[33mb42c574[m HEAD@{50}: pull origin main: Fast-forward
+[33md9d740e[m HEAD@{51}: reset: moving to HEAD
+[33md9d740e[m HEAD@{52}: commit: update
+[33mccb1bb5[m HEAD@{53}: commit: update contact
+[33m11cd604[m HEAD@{54}: commit: update
+[33m9efd8e8[m HEAD@{55}: commit: update
+[33m9db3786[m HEAD@{56}: commit: update services
+[33m8388ae9[m HEAD@{57}: commit: update
+[33m2637d77[m HEAD@{58}: commit: update
+[33m53367f5[m HEAD@{59}: commit: update portfolio
+[33mf7ffd72[m HEAD@{60}: commit: update portfolio
+[33md130fd8[m HEAD@{61}: commit: update
+[33m6a94791[m HEAD@{62}: pull origin main: Fast-forward
+[33m1800edd[m HEAD@{63}: reset: moving to HEAD
+[33m1800edd[m HEAD@{64}: reset: moving to HEAD
+[33m1800edd[m HEAD@{65}: reset: moving to HEAD
+[33m1800edd[m HEAD@{66}: pull origin main: Fast-forward
+[33m7f077a7[m HEAD@{67}: checkout: moving from improve-portfolio to main
+[33m18ae773[m[33m ([m[1;31morigin/improve-portfolio[m[33m, [m[1;32mimprove-portfolio[m[33m)[m HEAD@{68}: commit: update
+[33m7f077a7[m HEAD@{69}: checkout: moving from main to improve-portfolio
+[33m7f077a7[m HEAD@{70}: pull origin main: Fast-forward
+[33m4023f9c[m HEAD@{71}: checkout: moving from fix-layout to main
+[33mfe283d1[m[33m ([m[1;31morigin/fix-layout[m[33m, [m[1;32mfix-layout[m[33m)[m HEAD@{72}: commit: update home
+[33m4023f9c[m HEAD@{73}: checkout: moving from main to fix-layout
+[33m4023f9c[m HEAD@{74}: commit: update
+[33m07d2e58[m HEAD@{75}: clone: from github-work:protize/website.git
