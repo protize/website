@@ -1,0 +1,50 @@
+[
+  {
+    "slug": "marks-and-spencer",
+    "title": "Marks & Spencer — Enterprise Commerce Modernization",
+    "image": "/images/projects/marks_and_spencer_logo.jpg",
+    "featured": true,
+    "shortDescription": "Protize worked with Marks & Spencer to drive enterprise-wide technology modernization across multiple portfolios.",
+    "technologies": ["Next.js", "Node.js", "PostgreSQL", "TypeScript"]
+  },
+  {
+    "slug": "broomberg-erp-crm-modernization-team-build-scale-enablement",
+    "title": "Broomberg — ERP/CRM Modernization, Team Build & Scale Enablement",
+    "image": "/images/logos/broomberg.avif",
+    "featured": true,
+    "shortDescription": "Protize supported Broomberg’s growth journey by building and leading a focused engineering function.",
+    "technologies": ["React Native", "Node.js", "Firebase"]
+  },
+  {
+    "slug": "zoopla-property-platform-modernization",
+    "title": "Zoopla — Property Platform Modernization & Engineering Transformation",
+    "image": "/images/logos/zoopla.avif",
+    "featured": true,
+    "shortDescription": "Protize collaborated with Zoopla to guide large-scale engineering transformation.",
+    "technologies": ["React", "TypeScript", "AWS"]
+  },
+  {
+    "slug": "enterprise-cloud-migration",
+    "title": "Enterprise Cloud Migration",
+    "image": "/images/portfolio/cloud.jpg",
+    "featured": false,
+    "shortDescription": "Large-scale migration of on-premise infrastructure to AWS cloud.",
+    "technologies": ["AWS", "Terraform", "Docker"]
+  },
+  {
+    "slug": "edulearn-online-platform",
+    "title": "EduLearn Online Platform",
+    "image": "/images/portfolio/education.jpg",
+    "featured": false,
+    "shortDescription": "Interactive e-learning platform with live classes and assessments.",
+    "technologies": ["Vue.js", "Node.js", "MongoDB"]
+  },
+  {
+    "slug": "foodiehub-delivery-app",
+    "title": "FoodieHub Delivery App",
+    "image": "/images/portfolio/food.jpg",
+    "featured": false,
+    "shortDescription": "On-demand food delivery app with real-time tracking.",
+    "technologies": ["Flutter", "Firebase", "Node.js"]
+  }
+]
