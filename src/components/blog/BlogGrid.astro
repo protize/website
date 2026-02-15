@@ -1,0 +1,65 @@
+---
+import type { CollectionEntry } from "astro:content";
+import FadeIn from "../animations/FadeIn";
+
+type Props = {
+  posts: CollectionEntry<"blog">[];
+};
+
+const { posts = [] } = Astro.props as Props;
+
+const formatDate = (dateLike: any) =>
+  new Date(dateLike).toLocaleDateString("en-US", {
+    month: "short",
+    day: "2-digit",
+    year: "numeric",
+  });
+---
+
+<FadeIn client:load direction="up">
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    {
+      posts.map((post) => (
+        <a
+          href={`/blog/${post.id}`}
+          class="group block rounded-2xl overflow-hidden border border-gray-200 bg-white"
+        >
+          {post.data.coverImage && (
+            <img
+              src={post.data.coverImage}
+              alt={post.data.coverAlt ?? post.data.title}
+              class="h-52 w-full object-cover"
+              loading="lazy"
+            />
+          )}
+
+          <div class="p-5">
+            <h2 class="text-lg font-semibold text-gray-800 group-hover:text-primary transition-colors">
+              {post.data.title}
+            </h2>
+
+            <p class="text-sm text-gray-500 mt-1">
+              {formatDate(post.data.pubDate)}
+            </p>
+
+            {post.data.description && (
+              <p class="mt-2 text-sm text-gray-600 leading-relaxed line-clamp-3">
+                {post.data.description}
+              </p>
+            )}
+
+            {post.data.tags?.length > 0 && (
+              <div class="mt-3 flex flex-wrap gap-2">
+                {post.data.tags.slice(0, 3).map((t: string) => (
+                  <span class="text-xs bg-purple-50 text-primary px-2.5 py-1 rounded-full border border-gray-200">
+                    {t}
+                  </span>
+                ))}
+              </div>
+            )}
+          </div>
+        </a>
+      ))
+    }
+  </div>
+</FadeIn>

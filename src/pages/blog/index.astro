@@ -1,0 +1,30 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import BlogHero from "../../components/blog/BlogHero.astro";
+import FeatureBlog from "../../components/blog/FeatureBlog.astro";
+import BlogGrid from "../../components/blog/BlogGrid.astro";
+
+const raw = await getCollection("blog");
+
+const allPosts = raw
+  .filter((p) => !p.data.draft)
+  .sort((a, b) => +new Date(b.data.pubDate) - +new Date(a.data.pubDate));
+
+const featuredPost = allPosts.find((p) => p.data.featured === true) ?? null;
+
+// ✅ remove featured from normal listing
+const posts = featuredPost
+  ? allPosts.filter((p) => p.id !== featuredPost.id)
+  : allPosts;
+---
+
+<Layout title="Blog">
+  <BlogHero />
+
+  <div class="container-custom pb-10">
+    {featuredPost && <FeatureBlog featuredPost={featuredPost} />}
+
+    <BlogGrid posts={posts} />
+  </div>
+</Layout>
