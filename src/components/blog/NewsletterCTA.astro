@@ -1,0 +1,85 @@
+---
+import FadeIn from "../animations/FadeIn";
+
+type Props = {
+  title?: string;
+  subtitle?: string;
+  placeholder?: string;
+  buttonText?: string;
+  note?: string;
+
+  // optional styling hooks
+  className?: string;
+  sectionClass?: string;
+
+  // form behavior
+  action?: string; // if you want to post to any endpoint
+  method?: "GET" | "POST";
+  inputName?: string; // default "email"
+};
+
+const {
+  title = "Stay Updated",
+  subtitle = "Get the latest articles, insights, and updates delivered directly to your inbox. No spam, unsubscribe anytime.",
+  placeholder = "Enter your email",
+  buttonText = "Subscribe Now",
+  note = "",
+
+  className = "",
+  sectionClass = "section-padding bg-gradient-to-br from-primary/30 to-accent/30 text-black",
+
+  action = "",
+  method = "POST",
+  inputName = "email",
+} = Astro.props as Props;
+---
+
+<section class={`${sectionClass} ${className}`}>
+  <div class="container-custom text-center">
+    <FadeIn client:load direction="up">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-heading font-bold mb-6">
+          {title}
+        </h2>
+
+        <p class="text-xl mb-8 opacity-90">{subtitle}</p>
+
+        <form
+          class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-xl mx-auto"
+          action={action || undefined}
+          method={action ? method : undefined}
+        >
+          <input
+            type="email"
+            name={inputName}
+            placeholder={placeholder}
+            class="w-auto sm:w-[360px] px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+            required
+          />
+
+          <button
+            type="submit"
+            class="btn-primary w-auto shrink-0 inline-flex items-center"
+          >
+            {buttonText}
+            <svg
+              class="inline-block w-6 h-6 ml-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+          </button>
+        </form>
+
+        {note && <p class="text-sm opacity-75 mt-4">{note}</p>}
+      </div>
+    </FadeIn>
+  </div>
+</section>
