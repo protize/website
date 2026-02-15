@@ -185,21 +185,27 @@ const socialLinks = [
         <!-- Newsletter -->
         <div class="mt-6">
           <h5 class="font-semibold mb-3">Newsletter</h5>
-          <form class="flex">
+          <form
+            class="flex flex-col gap-3 sm:flex-row sm:gap-0 w-full max-w-md"
+          >
             <input
               type="email"
               placeholder="Your email"
-              class="flex-1 px-4 py-2 rounded-l-lg bg-white/10 border border-white/20 focus:outline-none focus:border-primary text-white placeholder-gray-400"
+              class="w-full px-4 py-3 sm:py-2 rounded-lg sm:rounded-r-none sm:rounded-l-lg bg-white/10 border border-white/20 focus:outline-none focus:border-primary text-white placeholder-gray-400"
+              required
             />
+
             <button
               type="submit"
-              class="px-4 py-2 bg-primary hover:bg-blue-700 rounded-r-lg transition-colors duration-300"
+              class="w-full sm:w-auto px-4 py-3 sm:py-2 bg-primary hover:bg-blue-700 rounded-lg sm:rounded-l-none sm:rounded-r-lg transition-colors duration-300 inline-flex items-center justify-center"
+              aria-label="Subscribe"
             >
               <svg
                 class="w-5 h-5"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
+                aria-hidden="true"
               >
                 <path
                   stroke-linecap="round"

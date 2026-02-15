@@ -4,6 +4,7 @@ import { getCollection } from "astro:content";
 import BlogHero from "../../components/blog/BlogHero.astro";
 import FeatureBlog from "../../components/blog/FeatureBlog.astro";
 import BlogGrid from "../../components/blog/BlogGrid.astro";
+import NewsletterCTA from "../../components/blog/NewsletterCTA.astro";
 
 const raw = await getCollection("blog");
 
@@ -27,4 +28,6 @@ const posts = featuredPost
 
     <BlogGrid posts={posts} />
   </div>
+
+  <NewsletterCTA />
 </Layout>
