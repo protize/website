@@ -43,13 +43,9 @@ const safeCategories = ["All", ...categories.filter((c) => c && c !== "All")];
                   type="button"
                   data-category={category}
                   aria-pressed={i === 0 ? "true" : "false"}
-                  class={`category-btn relative isolate rounded-xl px-4 md:px-5 py-2 text-sm md:text-[15px] font-semibold transition
-                    focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40
-                    ${
-                      i === 0
-                        ? "bg-primary text-white shadow-md"
-                        : "text-gray-700 hover:bg-gray-100 hover:text-black"
-                    }`}
+                  class="category-btn relative isolate rounded-xl px-4 md:px-5 py-2 text-sm md:text-[15px] font-semibold transition
+    focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40
+    text-gray-700 hover:bg-gray-100 hover:text-black"
                 >
                   <span class="relative z-10">{category}</span>
                 </button>
@@ -85,14 +81,24 @@ const safeCategories = ["All", ...categories.filter((c) => c && c !== "All")];
     const projectCards = document.querySelectorAll(".project-card");
     if (!categoryBtns.length || !projectCards.length) return;
 
+    const ACTIVE = ["bg-primary", "text-white", "shadow-md"];
+    const INACTIVE = ["text-gray-700"];
+    const HOVER = ["hover:bg-gray-100", "hover:text-black"];
+
     const setActiveBtn = (activeBtn) => {
       categoryBtns.forEach((b) => {
-        b.classList.remove("bg-primary", "text-white", "shadow-md");
-        b.classList.add("text-gray-700");
+        b.classList.remove(...ACTIVE);
+        b.classList.add(...INACTIVE);
+        // hover enable for inactive
+        b.classList.add(...HOVER);
         b.setAttribute("aria-pressed", "false");
       });
-      activeBtn.classList.add("bg-primary", "text-white", "shadow-md");
-      activeBtn.classList.remove("text-gray-700");
+
+      // active state
+      activeBtn.classList.add(...ACTIVE);
+      activeBtn.classList.remove(...INACTIVE);
+      // hover disable for active (optional)
+      activeBtn.classList.remove(...HOVER);
       activeBtn.setAttribute("aria-pressed", "true");
     };
 

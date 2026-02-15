@@ -215,118 +215,125 @@ const defaultTab = "frontend";
       </div>
 
       <!-- Tabs -->
-      <FadeIn client:load direction="up">
-        <div class="flex flex-wrap justify-center gap-3 mb-10">
+      <div class="mt-8 flex justify-center mb-10">
+        <div
+          class="inline-flex flex-wrap justify-center gap-2 rounded-2xl border border-gray-200 bg-white/70 backdrop-blur px-2 py-2 shadow-sm"
+        >
           {
             tabs.map((t) => (
               <button
                 type="button"
-                class="tab-pill"
                 data-tab-trigger={t.key}
                 aria-selected={t.key === defaultTab ? "true" : "false"}
+                class="tab-pill relative isolate rounded-xl px-4 md:px-5 py-2 text-sm md:text-[15px] font-semibold transition
+    focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40
+    text-gray-700 hover:bg-gray-100 hover:text-black"
               >
-                {t.label}
+                <span class="relative z-10">{t.label}</span>
               </button>
             ))
           }
         </div>
+      </div>
 
-        <!-- Banner (each tab has its own scroller; only active one is visible) -->
-        <div class="relative">
-          <div
-            class="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10"
-          >
-          </div>
-          <div
-            class="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10"
-          >
-          </div>
+      <!-- Banner (each tab has its own scroller; only active one is visible) -->
+      <div class="relative">
+        <div
+          class="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10"
+        >
+        </div>
+        <div
+          class="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10"
+        >
+        </div>
 
-          {
-            tabs.map((t) => {
-              const loopItems = [...t.items]; // repeat for infinite feel
-              return (
-                <div
-                  class="tab-panel"
-                  data-tab-panel={t.key}
-                  hidden={t.key !== defaultTab}
-                >
-                  <div class="overflow-hidden py-4">
-                    <div class="flex animate-scroll">
-                      {loopItems.map((tech, i) => (
-                        <div class="flex-shrink-0 mx-4 bg-white rounded-xl border border-gray-200 hover:border-primary transition-colors px-5 py-3">
-                          <div class="flex flex-col items-center gap-3">
-                            <img
-                              src={tech.icon}
-                              alt={tech.name}
-                              class="w-20 h-20"
-                            />
-                            <div class="text-gray-900 font-semibold whitespace-nowrap">
-                              {tech.name}
-                            </div>
+        {
+          tabs.map((t) => {
+            const loopItems = [...t.items]; // repeat for infinite feel
+            return (
+              <div
+                class="tab-panel"
+                data-tab-panel={t.key}
+                hidden={t.key !== defaultTab}
+              >
+                <div class="overflow-hidden py-4">
+                  <div class="flex animate-scroll">
+                    {loopItems.map((tech, i) => (
+                      <div class="flex-shrink-0 mx-4 bg-white rounded-xl border border-gray-200 hover:border-primary transition-colors px-5 py-3">
+                        <div class="flex flex-col items-center gap-3">
+                          <img
+                            src={tech.icon}
+                            alt={tech.name}
+                            class="w-20 h-20"
+                          />
+                          <div class="text-gray-900 font-semibold whitespace-nowrap">
+                            {tech.name}
                           </div>
                         </div>
-                      ))}
-                    </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
-              );
-            })
-          }
-        </div>
-      </FadeIn>
+              </div>
+            );
+          })
+        }
+      </div>
     </FadeIn>
   </div>
 
   <script is:inline define:vars={{ defaultTab }}>
-    const root = document.querySelector("[data-tech-tabs]");
-    if (!root) return;
+    function initTechTabs() {
+      const root = document.querySelector("[data-tech-tabs]");
+      if (!root) return;
 
-    const triggers = Array.from(root.querySelectorAll("[data-tab-trigger]"));
-    const panels = Array.from(root.querySelectorAll("[data-tab-panel]"));
+      const triggers = Array.from(root.querySelectorAll("[data-tab-trigger]"));
+      const panels = Array.from(root.querySelectorAll("[data-tab-panel]"));
+      if (!triggers.length || !panels.length) return;
 
-    function setActive(key) {
+      const ACTIVE = ["bg-primary", "text-white", "shadow-md"];
+      const INACTIVE = ["text-gray-700"];
+      const HOVER = ["hover:bg-gray-100", "hover:text-black"];
+
+      function setActive(key) {
+        triggers.forEach((btn) => {
+          const active = btn.getAttribute("data-tab-trigger") === key;
+
+          btn.setAttribute("aria-selected", String(active));
+
+          // reset
+          btn.classList.remove(...ACTIVE);
+          btn.classList.add(...INACTIVE);
+          btn.classList.add(...HOVER);
+
+          // active
+          if (active) {
+            btn.classList.add(...ACTIVE);
+            btn.classList.remove(...INACTIVE);
+            btn.classList.remove(...HOVER);
+          }
+        });
+
+        panels.forEach((p) => {
+          const show = p.getAttribute("data-tab-panel") === key;
+          p.toggleAttribute("hidden", !show);
+        });
+      }
+
       triggers.forEach((btn) => {
-        const active = btn.getAttribute("data-tab-trigger") === key;
-        btn.classList.toggle("is-active", active);
-        btn.setAttribute("aria-selected", String(active));
+        btn.addEventListener("click", () => {
+          setActive(btn.getAttribute("data-tab-trigger"));
+        });
       });
 
-      panels.forEach((p) => {
-        const show = p.getAttribute("data-tab-panel") === key;
-        p.toggleAttribute("hidden", !show);
-      });
+      setActive(defaultTab);
     }
 
-    triggers.forEach((btn) => {
-      btn.addEventListener("click", () =>
-        setActive(btn.getAttribute("data-tab-trigger")),
-      );
-    });
-
-    setActive(defaultTab);
+    document.addEventListener("DOMContentLoaded", initTechTabs);
+    document.addEventListener("astro:page-load", initTechTabs);
   </script>
 
   <style>
-    /* tabs like screenshot */
-    .tab-pill {
-      padding: 10px 22px;
-      border-radius: 999px;
-      background: #00000042;
-      color: #000;
-      font-weight: 700;
-      font-size: 14px;
-      line-height: 1;
-      transition: all 0.25s ease;
-    }
-    .tab-pill:hover {
-      opacity: 0.92;
-    }
-    .tab-pill.is-active {
-      background: #3b82f6;
-      color: #fff;
-    }
-
     @keyframes scroll {
       0% {
         transform: translateX(0);
@@ -340,6 +347,7 @@ const defaultTab = "frontend";
       animation: scroll 28s linear infinite;
       will-change: transform;
     }
+
     .animate-scroll:hover {
       animation-play-state: paused;
     }
