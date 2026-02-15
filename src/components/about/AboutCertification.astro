@@ -1,0 +1,79 @@
+---
+import FadeIn from "../animations/FadeIn";
+---
+
+<section class="section-padding">
+  <div class="container-custom">
+    <FadeIn client:load direction="up">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-4xl md:text-5xl font-heading font-bold mb-6">
+          Certifications & <span class="gradient-text">Partnerships</span>
+        </h2>
+        <p class="text-xl text-gray-600">
+          Recognized by industry leaders for our excellence and expertise
+        </p>
+      </div>
+
+      <!-- Certifications -->
+      <div class="mb-16">
+        <h3 class="text-2xl font-heading font-bold text-center mb-8 text-navy">
+          Our Certifications
+        </h3>
+        <div class="grid md:grid-cols-4 gap-6">
+          {
+            [
+              "ISO 9001:2015",
+              "ISO 27001:2013",
+              "SOC 2 Type II",
+              "CMMI Level 3",
+            ].map((cert) => (
+              <div class="card text-center hover:scale-105 transition-transform">
+                <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg
+                    class="w-8 h-8 text-primary"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+                    />
+                  </svg>
+                </div>
+                <p class="font-semibold text-navy">{cert}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <!-- Partnerships -->
+      <div>
+        <h3 class="text-2xl font-heading font-bold text-center mb-8 text-navy">
+          Technology Partners
+        </h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+          {
+            [
+              "AWS Partner",
+              "Microsoft Gold",
+              "Google Cloud",
+              "Oracle Partner",
+              "Salesforce",
+              "MongoDB Partner",
+            ].map((partner, index) => (
+              <div class="bg-white rounded-xl p-6 flex items-center justify-center hover:shadow-lg transition-shadow">
+                <span class="text-center font-medium text-gray-700">
+                  {partner}
+                </span>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </FadeIn>
+  </div>
+</section>

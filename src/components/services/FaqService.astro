@@ -1,36 +1,53 @@
 ---
 import FadeIn from "../animations/FadeIn";
+
+export type FAQItem = { q: string; a: string };
+
+type Props = {
+  title?: string;
+  highlight?: string;
+  items?: FAQItem[];
+  className?: string;
+};
+
+const {
+  title = "Frequently Asked",
+  highlight = "Questions",
+  items = [
+    {
+      q: "How long does a typical project take?",
+      a: "Project timelines vary based on complexity. Simple websites take 4-6 weeks, while complex applications can take 3-6 months. We'll provide a detailed timeline during consultation.",
+    },
+    {
+      q: "Do you offer ongoing support and maintenance?",
+      a: "Yes, we offer comprehensive support and maintenance packages to ensure your solution continues to perform optimally after launch.",
+    },
+    {
+      q: "What is your development process?",
+      a: "We follow an agile methodology with regular client check-ins. Our process includes Discovery, Design, Development, Testing, and Deployment phases.",
+    },
+    {
+      q: "Can you work with our existing tech stack?",
+      a: "Absolutely! Our team has experience with a wide range of technologies and can integrate with your existing systems seamlessly.",
+    },
+  ],
+  className = "",
+} = Astro.props;
 ---
 
-<section class="section-padding bg-gray-light">
+<section class={`section-padding ${className}`}>
   <div class="container-custom">
     <FadeIn client:load direction="up">
       <div class="text-center max-w-3xl mx-auto mb-16">
         <h2 class="text-4xl md:text-5xl font-heading font-bold mb-6">
-          Frequently Asked <span class="gradient-text">Questions</span>
+          {title}
+          <span class="gradient-text">{highlight}</span>
         </h2>
       </div>
 
       <div class="max-w-3xl mx-auto space-y-4">
         {
-          [
-            {
-              q: "How long does a typical project take?",
-              a: "Project timelines vary based on complexity. Simple websites take 4-6 weeks, while complex applications can take 3-6 months. We'll provide a detailed timeline during consultation.",
-            },
-            {
-              q: "Do you offer ongoing support and maintenance?",
-              a: "Yes, we offer comprehensive support and maintenance packages to ensure your solution continues to perform optimally after launch.",
-            },
-            {
-              q: "What is your development process?",
-              a: "We follow an agile methodology with regular client check-ins. Our process includes Discovery, Design, Development, Testing, and Deployment phases.",
-            },
-            {
-              q: "Can you work with our existing tech stack?",
-              a: "Absolutely! Our team has experience with a wide range of technologies and can integrate with your existing systems seamlessly.",
-            },
-          ].map((faq, index) => (
+          items.map((faq) => (
             <details class="group card cursor-pointer">
               <summary class="flex justify-between items-center font-semibold text-lg text-navy">
                 {faq.q}

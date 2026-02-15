@@ -1,0 +1,82 @@
+---
+import FadeIn from "../animations/FadeIn";
+import {
+  Target,
+  Lightbulb,
+  Users,
+  TrendingUp,
+  Zap,
+  BadgeCheck,
+} from "lucide-react";
+
+const VALUES = [
+  {
+    icon: Target,
+    title: "Excellence",
+    description:
+      "We pursue excellence in every project, never settling for good enough. Our commitment to quality drives us to deliver exceptional results that exceed expectations.",
+  },
+  {
+    icon: BadgeCheck,
+    title: "Integrity",
+    description:
+      "We build trust through transparency, honesty, and ethical practices. Our word is our bond, and we take responsibility for our actions and commitments.",
+  },
+  {
+    icon: Lightbulb,
+    title: "Innovation",
+    description:
+      "We embrace change and constantly seek better ways to solve problems. Our culture encourages creativity, experimentation, and continuous learning.",
+  },
+  {
+    icon: Users,
+    title: "Collaboration",
+    description:
+      "We believe in the power of teamwork and open communication. Success is achieved together, and we value every team member's contribution.",
+  },
+  {
+    icon: Zap,
+    title: "Impact",
+    description:
+      "We measure our success by the positive impact we create for our clients, team, and community. Every project is an opportunity to make a difference.",
+  },
+  {
+    icon: TrendingUp,
+    title: "Growth",
+    description:
+      "We invest in our people and foster an environment of continuous learning. Personal and professional growth is essential to our collective success.",
+  },
+];
+---
+
+<section class="section-padding">
+  <div class="container-custom">
+    <FadeIn client:load direction="up">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-4xl md:text-5xl font-heading font-bold mb-6">
+          Our Core Values
+        </h2>
+        <p class="text-xl opacity-90">
+          The principles that guide everything we do
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {
+          VALUES.map((value) => {
+            const Icon = value.icon;
+            return (
+              <div class="card">
+                <Icon className="w-10 h-10 text-primary mb-4" />
+                <h3 class="text-2xl font-heading font-bold mb-3">
+                  {value.title}
+                </h3>
+                <p class="opacity-90 leading-relaxed">{value.description}</p>
+              </div>
+            );
+          })
+        }
+      </div>
+    </FadeIn>
+  </div>
+</section>

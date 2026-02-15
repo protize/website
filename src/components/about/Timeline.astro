@@ -1,0 +1,103 @@
+---
+import FadeIn from "../animations/FadeIn";
+import {
+  PartyPopper,
+  Trophy,
+  Users,
+  Award,
+  Globe,
+  Sparkles,
+} from "lucide-react";
+
+const MILESTONES = [
+  {
+    year: "2011",
+    title: "Protize is Born",
+    description:
+      "Protize began as a small team of passionate engineers focused on building clean, reliable, and scalable software for growing businesses.",
+    icon: PartyPopper,
+  },
+  {
+    year: "2014",
+    title: "First Product Launches",
+    description:
+      "Delivered our first production-ready web applications and established a strong delivery process with quality-first engineering.",
+    icon: Trophy,
+  },
+  {
+    year: "2017",
+    title: "Team Expansion",
+    description:
+      "Scaled our team and strengthened our capabilities across web, mobile, backend, and cloud to serve more clients end-to-end.",
+    icon: Users,
+  },
+  {
+    year: "2020",
+    title: "Cloud & Platform Strength",
+    description:
+      "Expanded into cloud architecture and DevOps, helping clients modernize infrastructure and improve performance and reliability.",
+    icon: Award,
+  },
+  {
+    year: "2023",
+    title: "Global Delivery",
+    description:
+      "Started supporting international clients with distributed delivery and remote collaboration—shipping projects across multiple regions.",
+    icon: Globe,
+  },
+  {
+    year: "2024",
+    title: "Innovation Hub",
+    description:
+      "Accelerated innovation with AI-enabled workflows and advanced automation, increasing delivery speed and measurable client outcomes.",
+    icon: Sparkles,
+  },
+];
+---
+
+<section class="section-padding">
+  <div class="container-custom">
+    <FadeIn client:load direction="up">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-4xl md:text-5xl font-heading font-bold mb-6">
+          Our <span class="gradient-text">Journey</span>
+        </h2>
+        <p class="text-xl text-gray-600">Key milestones that shaped Protize</p>
+      </div>
+
+      <div class="max-w-4xl mx-auto">
+        {
+          MILESTONES.map((milestone) => {
+            const Icon = milestone.icon;
+
+            return (
+              <div class="flex gap-8 mb-12 group">
+                <div class="flex-shrink-0">
+                  <div class="w-20 h-20 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                    <Icon className="w-9 h-9 text-white" />
+                  </div>
+                </div>
+
+                <div class="flex-grow">
+                  <div class="flex items-center gap-4 mb-2">
+                    <span class="text-3xl font-bold gradient-text">
+                      {milestone.year}
+                    </span>
+                    <div class="flex-grow h-px bg-gradient-to-r from-primary/50 to-transparent" />
+                  </div>
+
+                  <h3 class="text-2xl font-heading font-bold mb-2 text-navy group-hover:text-primary transition-colors">
+                    {milestone.title}
+                  </h3>
+                  <p class="text-gray-700 leading-relaxed">
+                    {milestone.description}
+                  </p>
+                </div>
+              </div>
+            );
+          })
+        }
+      </div>
+    </FadeIn>
+  </div>
+</section>
