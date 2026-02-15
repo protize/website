@@ -7,17 +7,17 @@ const tabs = [
     label: "Frontend",
     items: [
       { name: "HTML", icon: "/images/tech-stack/html5.svg" },
-      { name: "CSS", icon: "/images/tech-stack/css3.svg" },
+      { name: "CSS", icon: "/images/tech-stack/css3.webp" },
       { name: "JavaScript", icon: "/images/tech-stack/javascript.svg" },
       { name: "TypeScript", icon: "/images/tech-stack/typescript.svg" },
 
       { name: "Angular", icon: "/images/tech-stack/angular.svg" },
       { name: "React", icon: "/images/tech-stack/react.svg" },
-      { name: "Vue", icon: "/images/tech-stack/vuedotjs.svg" },
+      { name: "Vue", icon: "/images/tech-stack/vue.svg" },
       { name: "Svelte", icon: "/images/tech-stack/svelte.svg" },
 
       { name: "Next.js", icon: "/images/tech-stack/nextdotjs.svg" },
-      { name: "Astro", icon: "/images/tech-stack/astro.svg" },
+      { name: "Astro", icon: "/images/tech-stack/astro.png" },
       { name: "Vite", icon: "/images/tech-stack/vite.svg" },
 
       { name: "Tailwind", icon: "/images/tech-stack/tailwindcss.svg" },
@@ -45,8 +45,9 @@ const tabs = [
       { name: "FastAPI", icon: "/images/tech-stack/fastapi.svg" },
       { name: "Django", icon: "/images/tech-stack/django.svg" },
 
-      { name: "Java", icon: "/images/tech-stack/openjdk.svg" },
+      { name: "Java", icon: "/images/tech-stack/java.png" },
       { name: "Spring Boot", icon: "/images/tech-stack/springboot.svg" },
+      { name: "Spring", icon: "/images/tech-stack/spring.png" },
 
       { name: "Go", icon: "/images/tech-stack/go.svg" },
       { name: "Gin", icon: "/images/tech-stack/gin.svg" },
@@ -73,7 +74,7 @@ const tabs = [
       { name: "Swift", icon: "/images/tech-stack/swift.svg" },
       { name: "Kotlin", icon: "/images/tech-stack/kotlin.svg" },
       { name: "Ionic", icon: "/images/tech-stack/ionic.svg" },
-      { name: "Xamarin", icon: "/images/tech-stack/xamarin.svg" },
+      { name: "Xamarin", icon: "/images/tech-stack/xamarin.webp" },
     ],
   },
 
@@ -82,19 +83,19 @@ const tabs = [
     label: "Database",
     items: [
       { name: "MySQL", icon: "/images/tech-stack/mysql.svg" },
-      { name: "PostgreSQL", icon: "/images/tech-stack/postgresql.svg" },
+      { name: "PostgreSQL", icon: "/images/tech-stack/postgresql.png" },
       { name: "MongoDB", icon: "/images/tech-stack/mongodb.svg" },
-      { name: "Firebase", icon: "/images/tech-stack/firebase.svg" },
+      { name: "Firebase", icon: "/images/tech-stack/firebase.png" },
       { name: "Redis", icon: "/images/tech-stack/redis.svg" },
-      { name: "Memcached", icon: "/images/tech-stack/memcached.svg" },
+      { name: "Memcached", icon: "/images/tech-stack/memcached.png" },
 
-      { name: "Elasticsearch", icon: "/images/tech-stack/elasticsearch.svg" },
-      { name: "OpenSearch", icon: "/images/tech-stack/opensearch.svg" },
+      { name: "Elasticsearch", icon: "/images/tech-stack/elastic-search.png" },
+      { name: "OpenSearch", icon: "/images/tech-stack/open-search.png" },
 
       { name: "SQLite", icon: "/images/tech-stack/sqlite.svg" },
       { name: "MariaDB", icon: "/images/tech-stack/mariadb.svg" },
 
-      { name: "DynamoDB", icon: "/images/tech-stack/amazondynamodb.svg" },
+      { name: "DynamoDB", icon: "/images/tech-stack/dynamodb.png" },
 
       { name: "RabbitMQ", icon: "/images/tech-stack/rabbitmq.svg" },
       { name: "Kafka", icon: "/images/tech-stack/apachekafka.svg" },
@@ -105,20 +106,20 @@ const tabs = [
     key: "devops",
     label: "DevOps",
     items: [
-      { name: "AWS", icon: "/images/tech-stack/amazonaws.svg" },
-      { name: "Azure", icon: "/images/tech-stack/microsoftazure.svg" },
-      { name: "Google Cloud", icon: "/images/tech-stack/googlecloud.svg" },
+      { name: "AWS", icon: "/images/tech-stack/aws.png" },
+      { name: "Azure", icon: "/images/tech-stack/azure.jpg" },
+      { name: "Google Cloud", icon: "/images/tech-stack/google-cloud.png" },
 
       { name: "Docker", icon: "/images/tech-stack/docker.svg" },
       { name: "Kubernetes", icon: "/images/tech-stack/kubernetes.svg" },
       { name: "Nginx", icon: "/images/tech-stack/nginx.svg" },
 
       { name: "Terraform", icon: "/images/tech-stack/terraform.svg" },
-      { name: "Ansible", icon: "/images/tech-stack/ansible.svg" },
+      { name: "Ansible", icon: "/images/tech-stack/ansible.png" },
 
       { name: "GitHub Actions", icon: "/images/tech-stack/githubactions.svg" },
       { name: "GitLab CI", icon: "/images/tech-stack/gitlab.svg" },
-      { name: "Jenkins", icon: "/images/tech-stack/jenkins.svg" },
+      { name: "Jenkins", icon: "/images/tech-stack/jenkins.jpg" },
 
       { name: "Linux", icon: "/images/tech-stack/linux.svg" },
       { name: "NPM", icon: "/images/tech-stack/npm.svg" },
@@ -243,7 +244,7 @@ const defaultTab = "frontend";
 
           {
             tabs.map((t) => {
-              const loopItems = [...t.items, ...t.items]; // repeat for infinite feel
+              const loopItems = [...t.items]; // repeat for infinite feel
               return (
                 <div
                   class="tab-panel"
