@@ -1,0 +1,50 @@
+---
+import Layout from "../layouts/Layout.astro";
+import FadeIn from "../components/animations/FadeIn";
+import team from "../data/team.json";
+import TeamHero from "../components/team/TeamHero.astro";
+import TeamStats from "../components/team/TeamStats.astro";
+import TeamLeader from "../components/team/TeamLeader.astro";
+import TeamMember from "../components/team/TeamMember.astro";
+import TeamCulture from "../components/team/TeamCulture.astro";
+import TeamTestimonial from "../components/team/TeamTestimonial.astro";
+import CTASection from "../components/home/CTASection.astro";
+
+// Separate leadership and team members
+const leadership = team.filter((member) => member.isLeadership);
+const teamMembers = team.filter((member) => !member.isLeadership);
+---
+
+<Layout title="Our Team">
+  <!-- Hero Section -->
+  <TeamHero />
+
+  <!-- Team Stats -->
+  <TeamStats />
+
+  <!-- Leadership Team -->
+  <TeamLeader leadership={leadership} />
+
+  <!-- Team Members -->
+  <TeamMember teamMembers={teamMembers} />
+
+  <!-- Team Culture -->
+  <TeamCulture />
+
+  <!-- Testimonials from Team -->
+  <TeamTestimonial />
+
+  <!-- Join Our Team CTA -->
+  <CTASection
+    title="Want to Join Our Team?"
+    subtitle="We're always looking for talented individuals who are passionate about technology and want to make a real impact. Check out our open positions and become part of something special."
+    actions={[
+      {
+        label: "Contact HR",
+        href: "/contact-us",
+        variant: "primary",
+        icon: true,
+      },
+    ]}
+  />
+</Layout>

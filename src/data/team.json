@@ -1,0 +1,137 @@
+[
+  {
+    "name": "Abhishek Gupta",
+    "role": "CEO & Founder",
+    "image": "/images/team-img/abhishek.png",
+    "bio": "Abhishek leads Protize with a focus on building reliable, high-performance digital products. He partners closely with clients to define clear outcomes, drive delivery, and ensure long-term scalability.",
+    "expertise": [
+      "Leadership & Strategy",
+      "Product Delivery",
+      "Digital Transformation"
+    ],
+    "social": {
+      "linkedin": "https://linkedin.com",
+      "twitter": "https://twitter.com",
+      "email": "sarah@protize.com"
+    },
+    "isLeadership": true
+  },
+  {
+    "name": "Karan Bohra",
+    "role": "Lead Software Engineer",
+    "image": "/images/team-img/karan.png",
+    "bio": "Karan architects and delivers scalable backend systems and cloud-native services. He focuses on clean system design, performance, and production reliability across complex projects.",
+    "expertise": [
+      "System Design",
+      "Cloud Architecture",
+      "DevOps & Reliability"
+    ],
+    "social": {
+      "linkedin": "https://linkedin.com",
+      "github": "https://github.com",
+      "email": "michael@protize.com"
+    },
+    "isLeadership": true
+  },
+  {
+    "name": "Manil Malhotra",
+    "role": "Lead Software Engineer",
+    "image": "/images/team-img/manil.png",
+    "bio": "Manil leads engineering execution and helps teams ship features with strong code quality. He enjoys mentoring developers and improving performance, testing, and development workflows.",
+    "expertise": [
+      "Backend Engineering",
+      "API Architecture",
+      "Code Quality & Mentorship"
+    ],
+    "social": {
+      "linkedin": "https://linkedin.com",
+      "dribbble": "https://dribbble.com",
+      "email": "emily@protize.com"
+    },
+    "isLeadership": true
+  },
+  {
+    "name": "Ishan Baisoya",
+    "role": "Business Analyst",
+    "image": "/images/team-img/ishan-baisoya.png",
+    "bio": "Ishan bridges business goals and engineering execution by translating requirements into clear user stories and workflows. He ensures alignment, clarity, and measurable outcomes throughout delivery.",
+    "expertise": [
+      "Requirement Analysis",
+      "Process Mapping",
+      "Stakeholder Management"
+    ],
+    "social": {
+      "linkedin": "https://linkedin.com",
+      "github": "https://github.com"
+    },
+    "isLeadership": true
+  },
+  {
+    "name": "Jayshrilal Pandit",
+    "role": "Software Developer",
+    "image": "/images/team-img/jay.png",
+    "bio": "Jay builds modern web applications with a focus on performance and secure integrations. He works across frontend and backend to deliver clean, maintainable features.",
+    "expertise": ["React & Next.js", "Node.js APIs", "Database Integration"],
+    "social": {
+      "linkedin": "https://linkedin.com",
+      "github": "https://github.com"
+    },
+    "isLeadership": false
+  },
+  {
+    "name": "Jatin Jayal",
+    "role": "Software Engineer",
+    "image": "/images/team-img/jatin.png",
+    "bio": "Jatin designs and implements cloud infrastructure that is secure, scalable, and cost-efficient. He supports deployments, observability, and reliability for production systems.",
+    "expertise": ["AWS & Azure", "Kubernetes", "Infrastructure Automation"],
+    "social": {
+      "linkedin": "https://linkedin.com",
+      "twitter": "https://twitter.com"
+    },
+    "isLeadership": false
+  },
+  {
+    "name": "Alok Sharma",
+    "role": "Full Stack Developer",
+    "image": "/images/team-img/alok.png",
+    "bio": "Alok develops end-to-end features with a strong focus on user experience and engineering quality. He enjoys building responsive UIs and robust APIs for real-world business needs.",
+    "expertise": [
+      "Full-Stack Development",
+      "UI Engineering",
+      "API Integration"
+    ],
+    "social": {
+      "linkedin": "https://linkedin.com",
+      "behance": "https://behance.com"
+    },
+    "isLeadership": false
+  },
+  {
+    "name": "Alankrit Agrawal",
+    "role": "Data Scientist",
+    "image": "/images/team-img/alankrit.png",
+    "bio": "Alankrit works on analytics and data-driven automation to help teams make better decisions. He builds pipelines, dashboards, and models that turn raw data into actionable insights.",
+    "expertise": [
+      "Data Analytics",
+      "Machine Learning",
+      "Automation & Pipelines"
+    ],
+    "social": {
+      "linkedin": "https://linkedin.com",
+      "github": "https://github.com"
+    },
+    "isLeadership": false
+  },
+  {
+    "name": "Sidharth Mehra",
+    "role": "UI/UX Designer",
+    "image": "/images/team-img/sid.png",
+    "bio": "Sidharth designs clean, accessible interfaces and design systems that scale. He collaborates closely with engineers to ensure consistent UI, great UX, and smooth product experiences.",
+    "expertise": ["UI/UX Design", "Design Systems", "Prototyping & Research"],
+    "social": {
+      "linkedin": "https://linkedin.com",
+      "codepen": "https://codepen.io"
+    },
+    "isLeadership": false
+  }
+]

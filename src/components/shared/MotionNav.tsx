@@ -128,7 +128,7 @@ export default function MobileNav({ navItems }) {
               <div className="mt-6">
                 <a
                   href="/contact-us"
-                  className="inline-flex px-6 py-3 rounded-full outline-none relative overflow-hidden border duration-300 ease-linear bg-primary text-white justify-center w-full text-center"
+                  className="btn-secondary"
                   onClick={() => setOpen(false)}
                 >
                   Contact Us

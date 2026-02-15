@@ -1,0 +1,119 @@
+---
+import FadeIn from "../animations/FadeIn";
+import { Linkedin, Mail, X } from "lucide-react";
+
+type LeadershipSocial = {
+  linkedin?: string;
+  twitter?: string;
+  email?: string;
+};
+
+type LeadershipMember = {
+  name: string;
+  role: string;
+  bio: string;
+  image?: string;
+  social?: LeadershipSocial;
+};
+
+type Props = {
+  teamMembers: LeadershipMember[];
+};
+
+const { teamMembers } = Astro.props;
+---
+
+<section id="team" class="section-padding">
+  <div class="container-custom">
+    <FadeIn client:load direction="up">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-4xl md:text-5xl font-heading font-bold mb-6">
+          Our Talented <span class="gradient-text">Team</span>
+        </h2>
+        <p class="text-xl text-gray-600">
+          The experts who bring our projects to life
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {
+          teamMembers.map((member) => (
+            <article class="group overflow-hidden rounded-2xl border border-gray-200 bg-white ">
+              <div class="relative">
+                <div class="h-24 bg-gradient-to-br from-primary/20 to-accent/20" />
+
+                <div class="absolute left-1/2 top-12 -translate-x-1/2">
+                  <div class="rounded-full bg-gradient-to-br from-primary to-accent p-[3px] shadow-lg">
+                    {member.image ? (
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        loading="lazy"
+                        class="h-24 w-24 rounded-full object-cover bg-white"
+                      />
+                    ) : (
+                      <div class="h-24 w-24 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white text-2xl font-bold">
+                        {member.name
+                          .split(" ")
+                          .map((n) => n?.[0])
+                          .join("")
+                          .slice(0, 2)}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+
+              <div class="px-6 pt-16 pb-6 text-center">
+                <h3 class="text-xl font-heading font-bold text-navy transition-colors group-hover:text-primary">
+                  {member.name}
+                </h3>
+                <p class="mt-1 text-primary font-semibold">{member.role}</p>
+
+                <p class="mt-4 text-gray-700 leading-relaxed line-clamp-4">
+                  {member.bio}
+                </p>
+
+                <div class="mt-6 flex justify-center gap-3">
+                  {member.social?.linkedin && (
+                    <a
+                      href={member.social.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="LinkedIn"
+                      class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 text-gray-800 transition hover:bg-primary hover:text-white hover:scale-105"
+                    >
+                      <Linkedin className="h-5 w-5" />
+                    </a>
+                  )}
+
+                  {member.social?.twitter && (
+                    <a
+                      href={member.social.twitter}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="X"
+                      class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 text-gray-800 transition hover:bg-primary hover:text-white hover:scale-105"
+                    >
+                      <X className="h-5 w-5" />
+                    </a>
+                  )}
+
+                  {member.social?.email && (
+                    <a
+                      href={`mailto:${member.social.email}`}
+                      aria-label="Email"
+                      class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 text-gray-800 transition hover:bg-primary hover:text-white hover:scale-105"
+                    >
+                      <Mail className="h-5 w-5" />
+                    </a>
+                  )}
+                </div>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </FadeIn>
+  </div>
+</section>

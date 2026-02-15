@@ -1,0 +1,370 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const LAST_UPDATED = "October 17, 2025";
+---
+
+<Layout title="Terms & Conditions">
+  <main class="container-custom py-10 sm:py-16">
+    {/* Header */}
+    <header class="mx-auto max-w-4xl">
+      <div
+        class="rounded-2xl border border-gray-200 bg-white p-6 sm:p-8 shadow-sm"
+      >
+        <p class="text-sm font-semibold text-primary">Legal</p>
+
+        <h1
+          class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight text-navy"
+        >
+          Terms & Conditions
+        </h1>
+
+        <div
+          class="mt-2 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-gray-500"
+        >
+          <span>Last updated: {LAST_UPDATED}</span>
+          <span class="hidden sm:inline">•</span>
+          <a
+            href="mailto:support@protize.com"
+            class="text-primary underline underline-offset-4"
+          >
+            support@protize.com
+          </a>
+        </div>
+
+        <p class="mt-5 text-gray-700 leading-relaxed">
+          These Terms & Conditions (“<strong>Terms</strong>”) govern your access
+          to and use of the Protize website, products, and services
+          (collectively, the “<strong>Services</strong>”) provided by
+          <strong> Protize</strong> (“<strong>we</strong>”, “<strong>us</strong
+          >”, “<strong>our</strong>”). By accessing or using the Services, you
+          agree to be bound by these Terms. If you do not agree, do not use the
+          Services.
+        </p>
+      </div>
+
+      {/* Quick links */}
+      <nav
+        class="mt-6 rounded-2xl border border-gray-200 bg-white p-4 sm:p-5 shadow-sm"
+      >
+        <p class="text-sm font-semibold text-gray-700 mb-3">Quick links</p>
+        <div class="flex flex-wrap gap-2">
+          {
+            [
+              ["#acceptance", "Acceptance"],
+              ["#accounts", "Accounts"],
+              ["#use", "Acceptable Use"],
+              ["#fees", "Fees"],
+              ["#liability", "Liability"],
+              ["#termination", "Termination"],
+              ["#contact", "Contact"],
+            ].map(([href, label]) => (
+              <a
+                href={href}
+                class="rounded-full border border-gray-200 bg-gray-50 px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100 hover:text-black transition"
+              >
+                {label}
+              </a>
+            ))
+          }
+        </div>
+      </nav>
+    </header>
+
+    {/* Content */}
+    <div class="mx-auto mt-10 max-w-4xl space-y-6">
+      <section
+        id="acceptance"
+        class="rounded-2xl border border-gray-200 bg-white p-6 sm:p-8 shadow-sm"
+      >
+        <h2 class="text-2xl font-bold text-navy">
+          1) Acceptance of Terms & Changes
+        </h2>
+        <p class="mt-4 text-gray-700 leading-relaxed">
+          Your use of the Services constitutes acceptance of these Terms. We may
+          revise these Terms at any time by posting an updated version with the
+          “Last updated” date shown above. Material changes may be communicated
+          via email or site notice. Your continued use after changes indicates
+          acceptance.
+        </p>
+      </section>
+
+      <section
+        class="rounded-2xl border border-gray-200 bg-white p-6 sm:p-8 shadow-sm"
+      >
+        <h2 class="text-2xl font-bold text-navy">2) Eligibility</h2>
+        <p class="mt-4 text-gray-700 leading-relaxed">
+          You must be at least the age of majority in your jurisdiction, or have
+          valid consent from a parent/guardian, to use the Services. If you are
+          accessing on behalf of an organization, you represent that you have
+          authority to bind that organization to these Terms.
+        </p>
+      </section>
+
+      <section
+        id="accounts"
+        class="rounded-2xl border border-gray-200 bg-white p-6 sm:p-8 shadow-sm"
+      >
+        <h2 class="text-2xl font-bold text-navy">3) Accounts & Security</h2>
+        <ul class="mt-4 list-disc pl-5 space-y-2 text-gray-700">
+          <li>
+            You agree to provide accurate, complete information and keep it
+            updated.
+          </li>
+          <li>
+            You are responsible for maintaining the confidentiality of your
+            credentials and for all activities under your account.
+          </li>
+          <li>
+            Notify us promptly of any unauthorized use or security incident.
+          </li>
+        </ul>
+      </section>
+
+      <section
+        id="use"
+        class="rounded-2xl border border-gray-200 bg-white p-6 sm:p-8 shadow-sm"
+      >
+        <h2 class="text-2xl font-bold text-navy">4) Acceptable Use</h2>
+        <p class="mt-4 text-gray-700">You agree not to:</p>
+        <ul class="mt-3 list-disc pl-5 space-y-2 text-gray-700">
+          <li>Violate any applicable law or regulation.</li>
+          <li>
+            Infringe, misappropriate, or violate intellectual property or
+            privacy rights.
+          </li>
+          <li>Upload or transmit malicious code, spam, or illegal content.</li>
+          <li>
+            Reverse engineer, decompile, or attempt to gain unauthorized access
+            to the Services or related systems.
+          </li>
+          <li>
+            Use the Services to build a competing product or service, or to
+            benchmark without permission.
+          </li>
+        </ul>
+      </section>
+
+      <section
+        class="rounded-2xl border border-gray-200 bg-white p-6 sm:p-8 shadow-sm"
+      >
+        <h2 class="text-2xl font-bold text-navy">5) User Content & License</h2>
+        <p class="mt-4 text-gray-700 leading-relaxed">
+          You retain ownership of content you submit (“<strong
+            >User Content</strong
+          >”). You grant Protize a worldwide, non-exclusive, royalty-free
+          license to host, store, reproduce, and display User Content as
+          necessary to provide and improve the Services. You represent that you
+          have all rights to grant this license and that your User Content
+          complies with these Terms.
+        </p>
+      </section>
+
+      <section
+        class="rounded-2xl border border-gray-200 bg-white p-6 sm:p-8 shadow-sm"
+      >
+        <h2 class="text-2xl font-bold text-navy">6) Intellectual Property</h2>
+        <p class="mt-4 text-gray-700 leading-relaxed">
+          The Services, including text, graphics, logos, software, and other
+          materials, are owned by Protize or our licensors and are protected by
+          applicable intellectual property laws. Except as expressly permitted,
+          you may not copy, modify, distribute, sell, or lease any part of the
+          Services.
+        </p>
+      </section>
+
+      <section
+        class="rounded-2xl border border-gray-200 bg-white p-6 sm:p-8 shadow-sm"
+      >
+        <h2 class="text-2xl font-bold text-navy">
+          7) Third-Party Services & Links
+        </h2>
+        <p class="mt-4 text-gray-700 leading-relaxed">
+          The Services may integrate with or link to third-party sites or
+          services. We do not control and are not responsible for their content,
+          policies, or practices. Your use of third-party services is at your
+          own risk and may be subject to additional terms.
+        </p>
+      </section>
+
+      <section
+        id="fees"
+        class="rounded-2xl border border-gray-200 bg-white p-6 sm:p-8 shadow-sm"
+      >
+        <h2 class="text-2xl font-bold text-navy">
+          8) Fees, Payments & Taxes (If Applicable)
+        </h2>
+        <ul class="mt-4 list-disc pl-5 space-y-2 text-gray-700">
+          <li>
+            Prices, features, and billing cycles may change with notice as
+            required by law or contract.
+          </li>
+          <li>
+            You authorize Protize and its payment processors to charge the
+            provided payment method for subscriptions or purchases.
+          </li>
+          <li>
+            You are responsible for any applicable taxes, duties, or government
+            charges.
+          </li>
+        </ul>
+      </section>
+
+      <section
+        class="rounded-2xl border border-gray-200 bg-white p-6 sm:p-8 shadow-sm"
+      >
+        <h2 class="text-2xl font-bold text-navy">9) Privacy</h2>
+        <p class="mt-4 text-gray-700 leading-relaxed">
+          Your use of the Services is also governed by our
+          <a
+            class="text-primary underline underline-offset-4 ml-1"
+            href="/privacy-policy"
+          >
+            Privacy Policy
+          </a>
+          , which explains how we collect and process personal data.
+        </p>
+      </section>
+
+      <section
+        class="rounded-2xl border border-gray-200 bg-white p-6 sm:p-8 shadow-sm"
+      >
+        <h2 class="text-2xl font-bold text-navy">10) Disclaimers</h2>
+        <p class="mt-4 text-gray-700 leading-relaxed uppercase">
+          The Services are provided “as is” and “as available.” To the maximum
+          extent permitted by law, Protize disclaims all warranties, express or
+          implied, including merchantability, fitness for a particular purpose,
+          and non-infringement. We do not warrant that the Services will be
+          uninterrupted, secure, or error-free.
+        </p>
+      </section>
+
+      <section
+        id="liability"
+        class="rounded-2xl border border-gray-200 bg-white p-6 sm:p-8 shadow-sm"
+      >
+        <h2 class="text-2xl font-bold text-navy">
+          11) Limitation of Liability
+        </h2>
+        <p class="mt-4 text-gray-700 leading-relaxed uppercase">
+          To the maximum extent permitted by law, Protize and its affiliates,
+          officers, employees, and agents shall not be liable for any indirect,
+          incidental, special, consequential, or punitive damages, or any loss
+          of profits, revenue, data, or use, even if advised of the possibility.
+          Our total liability for any claim relating to the Services shall not
+          exceed the amount you paid (if any) for the Services during the twelve
+          (12) months preceding the event giving rise to the claim.
+        </p>
+      </section>
+
+      <section
+        class="rounded-2xl border border-gray-200 bg-white p-6 sm:p-8 shadow-sm"
+      >
+        <h2 class="text-2xl font-bold text-navy">12) Indemnification</h2>
+        <p class="mt-4 text-gray-700 leading-relaxed">
+          You agree to indemnify and hold Protize and its affiliates, officers,
+          employees, and agents harmless from any claims, liabilities, damages,
+          losses, and expenses, including reasonable legal fees, arising out of
+          or connected with your use of the Services, your User Content, or your
+          violation of these Terms.
+        </p>
+      </section>
+
+      <section
+        id="termination"
+        class="rounded-2xl border border-gray-200 bg-white p-6 sm:p-8 shadow-sm"
+      >
+        <h2 class="text-2xl font-bold text-navy">
+          13) Suspension & Termination
+        </h2>
+        <p class="mt-4 text-gray-700 leading-relaxed">
+          We may suspend or terminate your access to the Services, with or
+          without notice, if we believe you have violated these Terms, pose a
+          security risk, or for other lawful reasons. Upon termination, your
+          right to use the Services ceases immediately. Sections intended to
+          survive termination will continue to apply.
+        </p>
+      </section>
+
+      <section
+        class="rounded-2xl border border-gray-200 bg-white p-6 sm:p-8 shadow-sm"
+      >
+        <h2 class="text-2xl font-bold text-navy">
+          14) Governing Law & Dispute Resolution
+        </h2>
+        <p class="mt-4 text-gray-700 leading-relaxed">
+          These Terms are governed by the laws of the jurisdiction where Protize
+          is established, without regard to conflict-of-laws principles. Courts
+          located in that jurisdiction shall have exclusive jurisdiction. Where
+          required by law, you and Protize agree to attempt good-faith informal
+          resolution before pursuing formal proceedings.
+        </p>
+      </section>
+
+      <section
+        class="rounded-2xl border border-gray-200 bg-white p-6 sm:p-8 shadow-sm"
+      >
+        <h2 class="text-2xl font-bold text-navy">15) Miscellaneous</h2>
+        <ul class="mt-4 list-disc pl-5 space-y-2 text-gray-700">
+          <li>
+            <strong>Entire Agreement:</strong> These Terms constitute the entire
+            agreement between you and Protize regarding the Services.
+          </li>
+          <li>
+            <strong>Severability:</strong> If any provision is found unenforceable,
+            the remaining provisions will remain in full force.
+          </li>
+          <li>
+            <strong>No Waiver:</strong> Failure to enforce a provision is not a waiver
+            of our right to do so later.
+          </li>
+          <li>
+            <strong>Assignment:</strong> You may not assign these Terms without our
+            consent. We may assign them as part of a merger, acquisition, or sale
+            of assets.
+          </li>
+          <li>
+            <strong>Force Majeure:</strong> We are not liable for delays or failures
+            due to causes beyond our reasonable control.
+          </li>
+          <li>
+            <strong>Export Controls:</strong> You agree to comply with applicable
+            export and sanctions laws.
+          </li>
+        </ul>
+      </section>
+
+      <section
+        id="contact"
+        class="rounded-2xl border border-gray-200 bg-white p-6 sm:p-8 shadow-sm"
+      >
+        <h2 class="text-2xl font-bold text-navy">16) Contact Us</h2>
+        <div
+          class="mt-4 rounded-xl border border-gray-200 bg-gray-50 p-4 text-gray-700"
+        >
+          <p class="font-semibold text-gray-900">Protize</p>
+          <p class="mt-1">
+            Email:
+            <a
+              href="mailto:support@protize.com"
+              class="text-primary underline underline-offset-4 ml-1"
+            >
+              support@protize.com
+            </a>
+          </p>
+        </div>
+      </section>
+
+      <aside
+        class="rounded-2xl border border-gray-200 bg-white p-6 sm:p-8 text-sm text-gray-600 shadow-sm"
+      >
+        <p>
+          <strong>Note:</strong> These Terms are a general template tailored for
+          a technology website and may require updates based on your products, fees,
+          and jurisdiction. Please consult legal counsel to ensure compliance with
+          applicable laws.
+        </p>
+      </aside>
+    </div>
+  </main>
+</Layout>
