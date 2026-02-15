@@ -1,0 +1,98 @@
+---
+import FadeIn from "../animations/FadeIn";
+
+const { featuredPost } = Astro.props;
+
+function formatDate(dateLike: any) {
+  return new Date(dateLike).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+}
+
+if (!featuredPost) {
+  return null;
+}
+---
+
+<section class="pb-16">
+  <div>
+    <FadeIn client:load direction="up">
+      <a
+        href={`/blog/${featuredPost.id}`}
+        class="group block rounded-3xl overflow-hidden border border-gray-200 bg-white"
+      >
+        <div
+          class="grid gap-6 md:grid-cols-[300px,1fr] lg:grid-cols-[360px,1fr] items-start"
+        >
+          {
+            featuredPost.data.coverImage && (
+              <img
+                src={featuredPost.data.coverImage}
+                alt={featuredPost.data.coverAlt ?? featuredPost.data.title}
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+            )
+          }
+
+          <div class="flex flex-col py-6">
+            <span
+              class="inline-flex w-fit items-center rounded-full bg-orange-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-orange-600 ring-1 ring-orange-200"
+            >
+              Featured
+            </span>
+
+            <h2
+              class="mt-3 text-2xl lg:text-3xl font-extrabold leading-tight text-navy group-hover:text-primary transition-colors"
+            >
+              {featuredPost.data.title}
+            </h2>
+
+            {
+              featuredPost.data.description && (
+                <p class="mt-3 text-gray-600 text-[15px] sm:text-base leading-relaxed">
+                  {featuredPost.data.description}
+                </p>
+              )
+            }
+
+            <div
+              class="mt-4 flex flex-wrap items-center gap-2 text-sm text-gray-500"
+            >
+              <time
+                datetime={new Date(featuredPost.data.pubDate).toISOString()}
+              >
+                {formatDate(featuredPost.data.pubDate)}
+              </time>
+
+              {
+                featuredPost.data.author && (
+                  <>
+                    <span class="text-gray-300">•</span>
+                    <span class="font-medium text-gray-700">
+                      {featuredPost.data.author}
+                    </span>
+                  </>
+                )
+              }
+            </div>
+
+            {
+              featuredPost.data.tags?.length > 0 && (
+                <div class="mt-3 flex flex-wrap gap-2">
+                  {featuredPost.data.tags.slice(0, 4).map((t: string) => (
+                    <span class="inline-flex items-center rounded-full border border-purple-100 bg-purple-50 px-2.5 py-1 text-xs font-medium text-primary">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              )
+            }
+          </div>
+        </div>
+      </a>
+    </FadeIn>
+  </div>
+</section>

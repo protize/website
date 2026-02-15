@@ -1,5 +1,14 @@
 ---
-const { title, url = Astro.url?.href || "" } = Astro.props;
+type Props = {
+  title: string;
+  url?: string;
+  id?: string; // optional: if you want deterministic ids
+};
+
+const { title, url: passedUrl, id } = Astro.props as Props;
+
+// ✅ Prefer passed URL. Otherwise use Astro.url (SSR-safe).
+const url = passedUrl ?? Astro.url.href;
 
 const encodedURL = encodeURIComponent(url);
 const encodedTitle = encodeURIComponent(title);
@@ -7,26 +16,39 @@ const encodedTitle = encodeURIComponent(title);
 const shareLinks = {
   whatsapp: `https://wa.me/?text=${encodedTitle}%20${encodedURL}`,
   facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodedURL}`,
-  twitter: `https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedURL}`,
+  twitter: `https://x.com/intent/post?text=${encodedTitle}&url=${encodedURL}`, // ✅ updated
   linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedURL}`,
-  instagram: `https://www.instagram.com/`,
+  instagram: `https://www.instagram.com/`, // not real sharing, just link
+};
+
+// ✅ unique ids per component instance
+const uid = id ?? `share-${Math.random().toString(36).slice(2, 9)}`;
+
+const ids = {
+  btn: `${uid}-btn`,
+  modal: `${uid}-modal`,
+  overlay: `${uid}-overlay`,
+  close: `${uid}-close`,
+  copy: `${uid}-copy`,
+  native: `${uid}-native`,
 };
 ---
 
-<!-- Share button -->
 <div class="relative">
   <button
-    id="shareBtn"
+    id={ids.btn}
     class="inline-flex items-center gap-2 rounded-lg border border-gray-200 px-3 py-1.5 text-sm font-medium text-gray-700 hover:bg-gray-50"
     aria-haspopup="dialog"
-    aria-controls="shareModal"
+    aria-controls={ids.modal}
     aria-expanded="false"
+    type="button"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
       class="h-4 w-4"
       viewBox="0 0 24 24"
       fill="currentColor"
+      aria-hidden="true"
     >
       <path
         d="M18 8a3 3 0 10-2.83-4H15a3 3 0 00.17 1L8.91 9.07A3 3 0 007 8a3 3 0 100 6 3 3 0 001.91-.72l6.26 4.07A3 3 0 0015 19a3 3 0 103-3 3 3 0 00-.21-1.1l-6.2-4.02A3 3 0 0012 11a3 3 0 00-.25-1.2l6.04-3.93A3 3 0 0018 8z"
@@ -35,17 +57,18 @@ const shareLinks = {
     Share
   </button>
 
-  <!-- Modal -->
   <div
-    id="shareModal"
+    id={ids.modal}
     class="fixed inset-0 z-50 hidden"
     role="dialog"
     aria-modal="true"
+    aria-label="Share dialog"
   >
     <button
-      id="shareOverlay"
+      id={ids.overlay}
       class="absolute inset-0 bg-black/50"
-      aria-label="Close share dialog"></button>
+      aria-label="Close share dialog"
+      type="button"></button>
 
     <div
       class="absolute inset-x-4 top-16 mx-auto max-w-sm rounded-2xl bg-white p-5 shadow-xl"
@@ -53,20 +76,23 @@ const shareLinks = {
       <div class="mb-4 flex items-center justify-between">
         <h2 class="text-sm font-semibold text-gray-700">Share this post</h2>
         <button
-          id="shareClose"
+          id={ids.close}
           class="p-1 rounded hover:bg-gray-100"
           aria-label="Close"
+          type="button"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-5 w-5"
             fill="currentColor"
             viewBox="0 0 20 20"
-            ><path
+            aria-hidden="true"
+          >
+            <path
               fill-rule="evenodd"
               d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-              clip-rule="evenodd"></path></svg
-          >
+              clip-rule="evenodd"></path>
+          </svg>
         </button>
       </div>
 
@@ -76,13 +102,13 @@ const shareLinks = {
             <a
               href={link}
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               class="group flex flex-col items-center gap-1 rounded-lg p-2 hover:bg-gray-50"
             >
               <img
                 src={`/images/icons/${name}.png`}
                 alt={name}
-                class="h-6 w-6 text-gray-700 group-hover:opacity-80"
+                class="h-6 w-6 group-hover:opacity-80"
                 loading="lazy"
               />
               <span class="text-[11px] text-gray-600 capitalize">{name}</span>
@@ -93,14 +119,16 @@ const shareLinks = {
 
       <div class="mt-5 flex items-center justify-between gap-3">
         <button
-          id="nativeShare"
+          id={ids.native}
           class="flex-1 rounded-lg border border-gray-200 px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
+          type="button"
         >
           Share via device
         </button>
         <button
-          id="copyLink"
+          id={ids.copy}
           class="flex-1 rounded-lg border border-gray-200 px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
+          type="button"
         >
           Copy link
         </button>
@@ -109,23 +137,24 @@ const shareLinks = {
   </div>
 </div>
 
-<script>
-  (function () {
-    const modal = document.getElementById("shareModal");
-    const openBtn = document.getElementById("shareBtn");
-    const closeBtn = document.getElementById("shareClose");
-    const overlay = document.getElementById("shareOverlay");
-    const copyBtn = document.getElementById("copyLink");
-    const nativeBtn = document.getElementById("nativeShare");
+<script define:vars={{ ids, url, title }}>
+  (() => {
+    const modal = document.getElementById(ids.modal);
+    const openBtn = document.getElementById(ids.btn);
+    const closeBtn = document.getElementById(ids.close);
+    const overlay = document.getElementById(ids.overlay);
+    const copyBtn = document.getElementById(ids.copy);
+    const nativeBtn = document.getElementById(ids.native);
 
-    const url = window.location.href;
-    const title = document.title;
+    if (!modal || !openBtn || !closeBtn || !overlay || !copyBtn || !nativeBtn)
+      return;
 
     function openModal() {
       modal.classList.remove("hidden");
       openBtn.setAttribute("aria-expanded", "true");
       document.body.classList.add("overflow-hidden");
     }
+
     function closeModal() {
       modal.classList.add("hidden");
       openBtn.setAttribute("aria-expanded", "false");
@@ -135,6 +164,7 @@ const shareLinks = {
     openBtn.addEventListener("click", openModal);
     closeBtn.addEventListener("click", closeModal);
     overlay.addEventListener("click", closeModal);
+
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") closeModal();
     });
@@ -144,7 +174,9 @@ const shareLinks = {
         try {
           await navigator.share({ title, url });
           closeModal();
-        } catch {}
+        } catch {
+          // user cancelled; ignore
+        }
       } else {
         alert("Sharing not supported on this device.");
       }
@@ -153,8 +185,9 @@ const shareLinks = {
     copyBtn.addEventListener("click", async () => {
       try {
         await navigator.clipboard.writeText(url);
+        const prev = copyBtn.textContent;
         copyBtn.textContent = "Copied!";
-        setTimeout(() => (copyBtn.textContent = "Copy link"), 1200);
+        setTimeout(() => (copyBtn.textContent = prev || "Copy link"), 1200);
       } catch {
         alert("Unable to copy link.");
       }
