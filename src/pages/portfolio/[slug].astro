@@ -39,16 +39,19 @@ const relatedProjects = allProjects
 <Layout title={project.title}>
   <section class="py-10 md:py-20">
     <div class="container-custom">
-      <FadeIn client:load direction="up">
-        <div class="grid lg:grid-cols-2 gap-16 items-center">
-          <!-- LEFT CONTENT -->
-          <div>
-            <span
-              class="inline-flex items-center px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-6"
-            >
-              {project.category}
-            </span>
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <FadeIn client:load direction="up" delay={0.1}>
+            <div class="inline-block mb-4">
+              <span
+                class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold"
+              >
+                {project.category}
+              </span>
+            </div>
+          </FadeIn>
 
+          <FadeIn client:load direction="up" delay={0.2}>
             <h1
               class="text-3xl md:text-4xl font-heading font-bold text-navy leading-tight mb-6"
             >
@@ -116,7 +119,7 @@ const relatedProjects = allProjects
                 Start Similar Project
               </a>
             </div>
-          </div>
+          </FadeIn>
 
           <!-- RIGHT IMAGE -->
           <div class="relative">
@@ -127,7 +130,7 @@ const relatedProjects = allProjects
             />
           </div>
         </div>
-      </FadeIn>
+      </div>
     </div>
 
     <div class="container-custom mt-20">
