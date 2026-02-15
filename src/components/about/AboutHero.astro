@@ -1,0 +1,50 @@
+---
+import FadeIn from "../animations/FadeIn";
+---
+
+<section
+  class="py-10 lg:py-20 flex items-center justify-center overflow-hidden"
+>
+  <div class="container-custom">
+    <FadeIn client:load direction="up">
+      <div class="grid justify-items-center items-center">
+        <div class="text-center">
+          <h1
+            class="text-4xl md:text-[54px] font-heading font-bold mb-6 leading-tight max-w-3xl mx-auto"
+          >
+            Transforming Businesses Through <span class="gradient-text"
+              >Innovation</span
+            >
+          </h1>
+
+          <p
+            class="text-xl text-gray-600 leading-relaxed mb-6 max-w-3xl mx-auto"
+          >
+            At Protize, we're more than just an IT services company. We're your
+            partners in digital transformation, committed to delivering
+            solutions that drive real business value.
+          </p>
+
+          <div class="flex flex-wrap justify-center gap-4">
+            <a href="/contact" class="btn-primary">
+              Work With Us
+              <svg
+                class="inline-block w-6 h-6 ml-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+              </svg></a
+            >
+            <a href="/portfolio" class="btn-secondary"> View Our Work </a>
+          </div>
+        </div>
+      </div>
+    </FadeIn>
+  </div>
+</section>

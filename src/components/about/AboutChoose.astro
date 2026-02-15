@@ -1,0 +1,83 @@
+---
+import FadeIn from "../animations/FadeIn";
+import {
+  Zap,
+  Target,
+  ShieldCheck,
+  BarChart3,
+  Cpu,
+  MessagesSquare,
+} from "lucide-react";
+
+const REASONS = [
+  {
+    icon: Zap,
+    title: "Proven Expertise",
+    description:
+      "10+ years of delivering successful projects across diverse industries with cutting-edge technologies.",
+  },
+  {
+    icon: Target,
+    title: "Client-Centric Approach",
+    description:
+      "Your success is our priority. We listen, understand, and deliver solutions tailored to your needs.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Security First",
+    description:
+      "Enterprise-grade security practices and compliance with international standards protect your data.",
+  },
+  {
+    icon: BarChart3,
+    title: "Data-Driven Results",
+    description:
+      "We measure success through metrics and KPIs, ensuring tangible ROI on your investment.",
+  },
+  {
+    icon: Cpu,
+    title: "Latest Technologies",
+    description:
+      "We stay ahead of the curve, leveraging AI, ML, cloud, and emerging technologies.",
+  },
+  {
+    icon: MessagesSquare,
+    title: "Transparent Communication",
+    description:
+      "Regular updates, clear documentation, and open channels ensure you're always in the loop.",
+  },
+];
+---
+
+<section class="section-padding">
+  <div class="container-custom">
+    <FadeIn client:load direction="up">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-4xl md:text-5xl font-heading font-bold mb-6">
+          Why Partner With <span class="gradient-text">Protize</span>
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {
+          REASONS.map((reason) => {
+            const Icon = reason.icon;
+
+            return (
+              <div class="card">
+                <Icon className="w-10 h-10 text-primary mb-4" />
+
+                <h3 class="text-xl font-heading font-bold mb-3 text-navy">
+                  {reason.title}
+                </h3>
+                <p class="text-gray-700 leading-relaxed">
+                  {reason.description}
+                </p>
+              </div>
+            );
+          })
+        }
+      </div>
+    </FadeIn>
+  </div>
+</section>
