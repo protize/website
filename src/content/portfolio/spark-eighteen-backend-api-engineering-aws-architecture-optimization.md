@@ -22,80 +22,59 @@ technologies:
   - "Razorpay Integration"
   - "Web Crawling"
   - "Cloud Optimization"
-challenge: "Spark Eighteen needed reliable, scalable backend systems across multiple projects—covering API development, content workflows, and third-party integrations—while also improving AWS infrastructure efficiency. The challenge was to move fast across parallel deliveries without sacrificing stability, security, or operational cost control."
-solution: "Protize built and optimized backend services using Node.js/Express with well-structured REST APIs and MySQL persistence. We integrated Strapi to streamline content publishing workflows and implemented automation for data ingestion (web crawling) and payments (Razorpay). In parallel, we reviewed and optimized AWS architecture to improve reliability and reduce infrastructure overhead across multi-project deployments."
-results:
-  - metric: "API Delivery"
-    value: "Scalable backend APIs shipped across multi-project scope"
-  - metric: "Content Operations"
-    value: "Strapi workflow integration for faster publishing"
-  - metric: "Integrations"
-    value: "Razorpay + data ingestion automation via crawling"
-  - metric: "Cloud Efficiency"
-    value: "AWS architecture optimization for reliability and cost"
 gallery:
   - "/images/projects/spark-eighteen-cover.png"
   - "/images/projects/spark-eighteen-logo.jpg"
 ---
 
-
-## Client
-
-Spark Eighteen
-
-## Engagement Period
-
-Feb 2022 - Nov 2022
-
 ## Overview
 
-Protize contributed to backend platform development for Spark Eighteen across multiple projects, focusing on API-first architecture, cloud optimization, and integration-heavy workflows.  
-Key contributions included robust REST API implementation, Strapi integration, payment gateway enablement, and backend system performance improvements.
+Protize partnered with Spark Eighteen to strengthen backend platform delivery across multiple projects through API-first engineering, integration enablement, and cloud architecture optimization. The engagement focused on shipping reliable backend foundations that could scale with fast-moving product demands.
 
 ## Business Context
 
-Spark Eighteen required reliable backend foundations for fast-moving digital products with varied integration needs, including content APIs, payment workflows, and scalable cloud deployment patterns.
+Spark Eighteen required maintainable backend systems for integration-heavy digital products, including content-driven APIs, payment workflows, and data ingestion pipelines. The business needed faster execution with consistent reliability across parallel project tracks.
 
-## Challenges
+## Challenge
 
-- Need for maintainable and scalable backend APIs across projects
-- Integration requirements for CMS-driven API delivery
-- Requirement to improve cloud architecture efficiency on AWS
-- Support for payment and data ingestion workflows
-- Ensuring delivery speed without compromising backend reliability
+The organization needed robust and reusable API architecture across varied product requirements while maintaining delivery speed. Key constraints included CMS/API integration needs, third-party payment/data workflows, and cloud efficiency improvements on AWS.
 
-## Protize Scope
+## Solution
 
-- Backend REST API design and implementation for multiple products
-- Strapi integration for API-centric content/data workflows
-- AWS architecture optimization and deployment support
-- Razorpay integration for payment processing use cases
-- Web crawling pipeline support for data collection scenarios
-- Database-driven service implementation and backend architecture strengthening
-
-## Technology Stack
-
-Node.js, Express.js, AWS, Strapi, MySQL, Web Crawling Tools, Razorpay APIs
+Protize standardized backend service development on Node.js/Express with clear API patterns, persistent data models, and deployment discipline. We integrated Strapi for content operations, implemented Razorpay payment integrations, enabled crawling-based ingestion workflows, and refined AWS infrastructure for better scalability and cost-aware operations.
 
 ## What We Delivered
 
-- Implemented backend REST APIs for projects including:
+- Backend REST APIs across multiple projects, including:
   - Zorbs (UNICEF)
-  - Good Living
-- Integrated Strapi to accelerate API development and content-driven endpoints
-- Improved AWS deployment architecture for better scalability and operational efficiency
-- Implemented Razorpay integration flows for transaction enablement
-- Built/support data ingestion workflows (including web crawling use cases)
-- Standardized backend architecture patterns for easier project extension and maintenance
+  - Good Living  
+- Strapi integration for faster content-to-API workflow delivery  
+- AWS architecture refinements for scalability and operational reliability  
+- Razorpay integration for transaction-enabled backend use cases  
+- Data ingestion support, including web crawling pipeline scenarios  
+- Standardized backend architecture patterns for maintainability and extension
 
-## Outcomes
+## Technologies Stack
+  `Node.js`
+  `Express.js`
+  `Strapi`
+  `REST APIs`
+  `MySQL`
+  `AWS`
+  `Backend Architecture`
+  `API Development`
+  `Razorpay Integration`
+  `Web Crawling`
+  `Cloud Optimization`
 
-- Faster backend delivery cycles through reusable API architecture
-- Improved system stability and maintainability across projects
-- Streamlined CMS/API operations using Strapi
-- Better cloud utilization through AWS architecture refinements
-- Stronger integration ecosystem for payments and external data workflows
+## Results
 
-## Team & Delivery
+- Faster backend delivery cycles through reusable API architecture  
+- Improved reliability and maintainability across multi-project systems  
+- Streamlined CMS/API operations via Strapi integration  
+- Better cloud utilization through AWS architecture optimization  
+- Stronger integration readiness for payments and external data workflows
 
-Protize worked as a backend engineering partner, combining architecture thinking and hands-on execution to help Spark Eighteen deliver multi-project platforms with scalable and integration-ready foundations.
+## Team & Delivery Scale
+
+Protize worked as a backend engineering partner, combining architecture leadership and hands-on execution to help Spark Eighteen deliver integration-ready, scalable platform foundations.

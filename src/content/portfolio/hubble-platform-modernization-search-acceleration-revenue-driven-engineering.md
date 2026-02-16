@@ -26,79 +26,63 @@ technologies:
   - "Pair Programming"
   - "Interviewing"
   - "Engineering Guidelines"
-challenge: "Hubble needed to modernize a fast-growing SaaS platform while increasing delivery speed and reliability. The challenge included refactoring legacy areas, improving search performance, and strengthening engineering practices—without slowing down product momentum tied directly to revenue and sales workflows."
-solution: "Protize partnered closely with the team to modernize architecture and delivery practices: service refactoring and modularization, search acceleration using Elasticsearch, improved CI/CD pipelines, and stronger engineering standards through code reviews, pair programming, and documented guidelines. We also supported interviewing and hiring enablement to raise the overall team bar."
-results:
-  - metric: "Platform Modernization"
-    value: "Refactoring + microservices direction for scalable delivery"
-  - metric: "Search Performance"
-    value: "Faster search and improved workflow responsiveness"
-  - metric: "Delivery Speed"
-    value: "Improved release confidence with CI/CD + testing"
-  - metric: "Engineering Practices"
-    value: "Established guidelines + reviews + pairing + hiring support"
+
 gallery:
   - "/images/projects/hubblehq_cover.png"
   - "/images/projects/hubblehq_logo.jpg"
 ---
 
-
-## Client
-
-Hubble
-
-## Engagement Period
-
-Sep 2016 – Sep 2018
-
 ## Overview
 
-Protize worked with Hubble across multiple engineering initiatives including product feature delivery, architectural modernization, codebase refactoring, quality practices, and hiring support.  
-The engagement focused on scaling engineering systems to support growth and improving business outcomes through speed, reliability, and maintainability.
+Protize worked with Hubble across architecture modernization, feature delivery, refactoring, search acceleration, and engineering enablement. The engagement focused on improving speed, reliability, and maintainability while supporting business growth through stronger product and sales workflows.
 
 ## Business Context
 
-Hubble needed to increase delivery velocity and platform reliability while reducing technical debt and scaling core customer-facing capabilities such as search and sales workflows.
+As Hubble scaled, delivery velocity and platform reliability became critical to revenue execution. The company needed to reduce technical debt, improve core customer-facing performance (especially search), and establish engineering practices that could sustain faster, higher-quality releases.
 
-## Challenges
+## Challenge
 
-- Monolithic architecture slowing feature delivery and scalability
-- Accumulated tech debt impacting development efficiency
-- Need for faster and more reliable search experience
-- Limited automation in sales and lead tracking workflows
-- Requirement for stronger engineering practices across teams
+Hubble faced monolithic constraints, growing technical debt, and uneven engineering practices that slowed iteration. Search and sales workflows needed significant performance and reliability improvements, while release processes required stronger automation and quality controls.
 
-## Protize Scope
+## Solution
 
-- Product development across multiple projects and feature streams
-- Monolith decomposition and microservices migration strategy
-- CI/CD implementation and release process hardening
-- Refactoring and service decoupling for future-ready architecture
-- Pair programming, code reviews, interviewing, and engineering standards setup
-- Search performance and sales automation platform enhancements
-
-## Technology Stack
-
-React, Angular, Express, Jest, Python, Elasticsearch, Heroku
+Protize led a modernization program spanning service decoupling, microservices direction, CI/CD implementation, and codebase hardening. We improved real-time search performance using Elasticsearch, supported lead/sales workflow automation, and embedded quality practices through pair programming, code reviews, engineering standards, and hiring support.
 
 ## What We Delivered
 
-- Split core monolith into microservices for better scalability
-- Implemented CI/CD pipelines to accelerate and stabilize releases
-- Decoupled services to simplify migration toward event-sourcing architecture
-- Built a real-time search engine with significant speed improvements
-- Developed microservices for lead tracking and sales workflow automation
-- Established development guidelines and quality-oriented engineering rituals
+- Monolith decomposition direction with microservice-oriented architecture
+- CI/CD pipelines for faster and more stable releases
+- Service decoupling to support event-sourcing-aligned evolution
+- Real-time search engine improvements with Elasticsearch
+- Microservices for lead tracking and sales workflow automation
+- Engineering quality rituals: code reviews, pairing, and development guidelines
 
-## Outcomes
+## Technologies Stack
+  `React`
+  `Angular`
+  `Express`
+  `Python`
+  `Elasticsearch`
+  `Heroku`
+  `Microservices`
+  `CI/CD`
+  `Event Sourcing`
+  `Jest`
+  `Refactoring`
+  `Code Review`
+  `Pair Programming`
+  `Interviewing`
+  `Engineering Guidelines`
 
-- Supported business trajectory that **tripled monthly recurring revenue**
-- Platform components became **~2x faster** after modernization
+## Results
+
+- Supported business trajectory that **tripled monthly recurring revenue (MRR)**
+- Modernized platform components delivered **~2x performance improvement**
 - Reduced technical debt by approximately **1500 engineering hours**
-- Real-time search became **~3x faster**
-- Reliability improved to **~99.9% uptime**
+- Real-time search performance improved by **~3x**
+- Platform reliability improved to **~99.9% uptime**
 - Customer support and sales efficiency improved by **~25%**
 
-## Team & Delivery
+## Team & Delivery Scale
 
-Protize contributed across architecture, execution, and engineering excellence initiatives—combining hands-on delivery with mentorship, quality practices, and hiring support.
+Protize contributed across architecture, execution, and engineering excellence initiatives—combining hands-on delivery with mentorship, quality practices, and hiring enablement.

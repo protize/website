@@ -21,78 +21,57 @@ technologies:
   - "Performance Optimization"
   - "Google PageSpeed"
   - "Web Platform Engineering"
-challenge: "Truckadium needed a faster, more scalable web platform to support content-heavy learning journeys and improve conversions. The challenge included improving performance and SEO, enabling a flexible CMS for ongoing updates, and integrating reliable payment workflows—while keeping the platform maintainable as content and traffic grew."
-solution: "Protize rebuilt and optimized the web experience using Next.js with performance-first patterns (SSR/SSG where appropriate, caching, optimized assets) and delivered custom CMS capabilities for scalable content management. We integrated Thinkific for learning workflows and implemented PayPal-based payment flows, backed by MongoDB for content and operational data. The result was a platform designed for speed, stability, and conversion-focused journeys."
-results:
-  - metric: "Performance"
-    value: "Improved PageSpeed and faster user journeys"
-  - metric: "Content Operations"
-    value: "Custom CMS enabled scalable content publishing"
-  - metric: "Payments"
-    value: "Integrated PayPal checkout for conversion workflows"
-  - metric: "Platform Scalability"
-    value: "Next.js architecture prepared for growth"
+
 gallery:
   - "/images/projects/Truckadium-cover.png"
   - "/images/projects/Truckadium.jpg"
 ---
 
-
-## Client
-
-Truckadium
-
-## Engagement Period
-
-Jan 2017 – April 2019
-
 ## Overview
 
-Protize partnered with Truckadium to modernize and optimize its web platform using Next.js, with a strong focus on performance, content operations, and payment enablement.  
-The engagement delivered a faster web experience, scalable CMS workflows, and seamless integration points for course and payment ecosystems.
+Protize partnered with Truckadium to modernize its web platform with a focus on performance, content operations, and conversion enablement. The engagement delivered a faster user experience, scalable content workflows, and reliable ecosystem integrations for learning and payments.
 
 ## Business Context
 
-Truckadium required a high-performance web experience to improve discoverability and user engagement, while also needing flexible content publishing and reliable payment flows to support growth.
+Truckadium needed a high-performance digital platform to improve discoverability, engagement, and conversion. At the same time, the business required flexible content publishing capabilities and dependable payment integration to support sustained growth.
 
-## Challenges
+## Challenge
 
-- Suboptimal website performance affecting user experience and SEO signals
-- Need for structured and scalable content management workflows
-- Requirement to integrate external learning and payment platforms
-- Maintaining frontend consistency while scaling feature delivery
+Existing performance limitations affected user experience and SEO effectiveness, while content operations needed better structure and control. Truckadium also required seamless integration with course and payment ecosystems without compromising maintainability.
 
-## Protize Scope
+## Solution
 
-- Next.js-based performance optimization and frontend improvements
-- Google PageSpeed-focused technical enhancements
-- Custom CMS development for content operations
-- Payment workflow integration (PayPal)
-- Platform integrations including Thinkific
-- State and frontend data flow improvements using Redux patterns
-- Cloud deployment alignment on AWS-backed infrastructure
-
-## Technology Stack
-
-Next.js, AWS, Custom CMS, Thinkific, Redux.js, PayPal Integration, MongoDB
+Protize implemented a performance-oriented Next.js platform architecture and executed targeted optimization for speed and rendering quality. We built custom CMS capabilities for efficient publishing workflows, integrated Thinkific for learning journeys, and enabled PayPal payment workflows with reliable data/state handling patterns.
 
 ## What We Delivered
 
-- Improved frontend performance architecture using Next.js best practices
-- Optimizations targeting better Google PageSpeed outcomes
-- Custom CMS capabilities for easier content updates and governance
-- PayPal payment integration for transaction enablement
-- Thinkific ecosystem integration for course/content alignment
-- Data and state flow refinements to support maintainable frontend growth
+- Next.js-based frontend modernization for speed and scalability
+- Targeted optimization initiatives for improved Google PageSpeed outcomes
+- Custom CMS capabilities for content publishing and operational control
+- PayPal integration for conversion-focused transaction journeys
+- Thinkific integration for course/content ecosystem alignment
+- State/data flow improvements to support maintainable product evolution
 
-## Outcomes
+## Technologies Stack
+  `Next.js`
+  `AWS`
+  `MongoDB`
+  `Redux.js`
+  `Custom CMS Development`
+  `Thinkific Integration`
+  `PayPal Integration`
+  `Performance Optimization`
+  `Google PageSpeed`
+  `Web Platform Engineering`
 
-- Improved website performance and responsiveness
-- Higher Google PageSpeed scores through targeted optimization
-- Faster content publishing and operational control via custom CMS
-- Streamlined payment and course platform integration workflows
+## Results
+
+- Improved website responsiveness and overall platform performance
+- Higher Google PageSpeed scores through focused optimization work
+- Faster content publishing and stronger governance via custom CMS
+- Streamlined payment and learning workflow integrations
 - More scalable foundation for ongoing product and marketing initiatives
 
-## Team & Delivery
+## Team & Delivery Scale
 
-Protize delivered the engagement through a blend of frontend performance engineering, backend/content integration support, and cloud-aware architecture practices.
+Protize delivered this engagement through a blend of frontend performance engineering, integration-focused product execution, and cloud-aware architecture support.

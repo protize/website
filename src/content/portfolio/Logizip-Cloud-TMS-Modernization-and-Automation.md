@@ -27,81 +27,66 @@ technologies:
   - "GoMotive Integration"
   - "Trimble Maps Integration"
   - "Team Management"
-challenge: "Logizip needed to modernize trucking operations with a cloud-first TMS that could scale across web and mobile, integrate key logistics partners (tracking, maps, compliance), and reduce manual work. The challenge included building reliable automation flows, integrating multiple third-party systems, and improving operational speed without disrupting daily fleet workflows."
-solution: "Protize delivered a cloud-based TMS modernization program with a scalable architecture (React + NestJS + GraphQL + PostgreSQL). We implemented operational automations and intelligent workflows using Python services and OpenAI-assisted automation, plus deep integrations including WhatsApp notifications, Google OAuth2, BorderConnect, GoMotive, and Trimble Maps. We also supported team management and delivery processes to scale output predictably."
-results:
-  - metric: "Platform Modernization"
-    value: "Cloud TMS with scalable web + service architecture"
-  - metric: "Automation"
-    value: "Reduced manual operations via workflow automation"
-  - metric: "Integrations"
-    value: "BorderConnect + GoMotive + Trimble Maps + WhatsApp"
-  - metric: "Operational Efficiency"
-    value: "Faster processing and improved day-to-day execution"
+
 gallery:
   - "/images/projects/Logizip-LLC-cover.png"
   - "/images/projects/Logizip-LLC-logo.jpg"
 ---
 
-
-## Client
-
-Logizip LLC
-
-## Engagement Period
-
-Nov 2021 - Oct 2023
-
 ## Overview
 
-Protize partnered with Logizip LLC to modernize logistics operations through a cloud-based Trucking Management System (TMS).  
-The engagement covered architecture leadership, full-stack development for web and mobile applications, critical third-party integrations, and AI-powered workflow automation.
+Protize partnered with Logizip LLC to modernize logistics operations through a cloud-based Trucking Management System (TMS). The engagement combined architecture leadership, full-stack product development, intelligent automation, and deep third-party integrations to improve execution speed and operational control.
 
 ## Business Context
 
-Logizip needed a robust digital foundation to streamline trucking operations, improve dispatch and order workflows, and enable secure, scalable growth across logistics processes.
+Logizip required a robust digital foundation to streamline dispatch, order handling, and fleet workflows across growing operational demands. The business needed a scalable platform that could unify systems, reduce manual overhead, and support secure, real-time decision-making.
 
-## Challenges
+## Challenge
 
-- Operational complexity across trucking workflows
-- Need for scalable cloud architecture across web and mobile channels
-- Fragmented external systems requiring deep integrations
-- Manual order handling causing turnaround delays
-- Need for stronger authentication and communication automation
+Legacy and fragmented processes created inefficiencies across trucking operations, while external dependencies required reliable integration with logistics, mapping, and compliance tools. The platform had to support high-throughput operations across web and mobile without disrupting existing workflows.
 
-## Protize Scope
+## Solution
 
-- Architecture and solution design for cloud TMS platform
-- Full-stack web and mobile development leadership
-- Integration of logistics and mapping partners
-- Security and access enhancements via OAuth2
-- AI/automation integration for order handling and communication
-- Cross-functional team coordination and delivery governance
-
-## Technology Stack
-
-GraphQL, React.js, NestJS, PostgreSQL, Redux.js, Express.js, Python, OpenAI, WhatsApp APIs, Google OAuth2
+Protize implemented a cloud-first TMS architecture with modular services and integration-ready APIs. We delivered automation pipelines using Python and OpenAI-assisted workflows, connected ecosystem services including BorderConnect, GoMotive, and Trimble Maps, and strengthened identity/security through Google OAuth2 and controlled communication automation via WhatsApp.
 
 ## What We Delivered
 
-- Designed and developed a cloud-based Trucking Management System
-- Built web/mobile product capabilities on scalable full-stack architecture
-- Integrated ecosystem services:
+- Cloud-based Trucking Management System with scalable architecture
+- Full-stack web/mobile capabilities for dispatch and operations workflows
+- Integration of ecosystem services:
   - BorderConnect
   - GoMotive
   - Trimble Maps
   - Google OAuth2
-- Implemented OpenAI + WhatsApp integrations for automated order processing and communication workflows
-- Strengthened platform security, extensibility, and operational visibility
+- OpenAI + WhatsApp-enabled automation for order processing and communication
+- Security, extensibility, and operational visibility improvements for day-to-day execution
 
-## Outcomes
+## Technologies Stack
+  `React.js`
+  `NestJS`
+  `GraphQL`
+  `PostgreSQL`
+  `Redux.js`
+  `Express.js`
+  `Python`
+  `Cloud TMS`
+  `Logistics Automation`
+  `OpenAI Integration`
+  `WhatsApp Integration`
+  `Google OAuth2`
+  `BorderConnect Integration`
+  `GoMotive Integration`
+  `Trimble Maps Integration`
+  `Team Management`
+
+## Results
 
 - Increased trucking operational efficiency by **~25%**
-- Improved workflow automation and processing turnaround
-- Enhanced TMS capabilities through deep ecosystem integrations
-- Better security and authentication posture with OAuth2-based access
-- Established scalable foundation for continued logistics product growth
+- Faster processing and improved turnaround through workflow automation
+- Stronger operational continuity via deep ecosystem integrations
+- Improved security posture through OAuth2-based authentication controls
+- Scalable platform foundation established for continued product growth
 
-## Team & Delivery
+## Team & Delivery Scale
 
-Protize led platform architecture and implementation while enabling cross-team collaboration, communication standards, and delivery management across product and engineering streams.
+Protize led architecture and implementation while enabling cross-functional collaboration, delivery governance, and execution discipline across product and engineering teams.

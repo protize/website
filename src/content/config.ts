@@ -32,14 +32,6 @@ const portfolioCollection = defineCollection({
     duration: z.string(),
     teamSize: z.number(),
     technologies: z.array(z.string()),
-    challenge: z.string(),
-    solution: z.string(),
-    results: z.array(
-      z.object({
-        metric: z.string(),
-        value: z.string(),
-      }),
-    ),
     gallery: z.array(z.string()),
   }),
 });

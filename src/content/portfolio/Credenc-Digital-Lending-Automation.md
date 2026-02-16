@@ -27,80 +27,64 @@ technologies:
   - "E-NACH"
   - "Digio Integration"
   - "Process Automation"
-challenge: "Credenc needed to scale lending operations with faster turnaround times and fewer manual steps. The key challenge was building reliable automated loan approval workflows, integrating external credit scoring (CRIF), and enabling secure digital onboarding with KYC and e-sign/e-mandate flows—while keeping the system stable under increasing application volume."
-solution: "Protize delivered an end-to-end automation program: streamlined digital onboarding, integrated CRIF-based credit scoring, implemented an approval workflow/decision engine, and connected digital compliance flows (KYC, e-sign, e-mandate/e-NACH) via third-party providers such as Digio. The solution included API-led architecture across services, operational monitoring, and scalable deployment on AWS."
-results:
-  - metric: "Workflow Automation"
-    value: "Reduced manual loan processing with automated approvals"
-  - metric: "Credit Scoring"
-    value: "Integrated CRIF scoring into decision workflow"
-  - metric: "Digital Onboarding"
-    value: "Enabled KYC + e-sign + e-mandate/e-NACH journeys"
-  - metric: "Operations"
-    value: "Improved approval speed and consistency under load"
 gallery:
   - "/images/projects/credenc_cover.png"
   - "/images/projects/credenc_logo.jpg"
 ---
 
-
-## Client
-
-Credenc
-
-## Engagement Period
-
-Nov 2021 - Nov 2024
-
 ## Overview
 
-Protize helped Credenc improve team productivity and reduce process turnaround time by automating critical lending operations and onboarding journeys.  
-The engagement focused on loan decisioning acceleration, compliance workflow automation, and ecosystem integrations for smoother customer conversion.
+Protize partnered with Credenc to modernize lending operations through workflow automation, faster decisioning, and seamless digital onboarding. The engagement focused on reducing manual effort, improving turnaround time, and building a scalable foundation for growth.
 
 ## Business Context
 
-Credenc needed faster, more reliable loan processing with reduced manual intervention across approval, compliance, and mandate flows.  
-There was also a need to strengthen lead-to-approval conversion through external platform integrations.
+Credenc needed reliable, high-throughput processing across loan approvals, compliance, and mandate flows. As application volumes increased, the business required stronger underwriting consistency, better conversion from onboarding journeys, and tighter integration with external ecosystems.
 
-## Challenges
+## Challenge
 
-- Manual-heavy lending workflows causing slower turnaround
-- Fragmented onboarding steps across KYC, e-signing, and mandates
-- Need for integrated credit scoring within approval flow
-- Requirement to improve collaboration with external lead-generation ecosystems
+Manual-heavy approval and onboarding steps were slowing operations and introducing inconsistency. Credenc needed integrated credit scoring, secure digital compliance journeys, and a stable API-first system that could handle higher demand without compromising control or customer experience.
 
-## Protize Scope
+## Solution
 
-- Product and engineering execution for lending workflow automation
-- Design and implementation of automated Loan Approval Engine
-- CRIF integration for real-time credit scoring decision support
-- Automation of KYC, E-Signing, E-Mandate, and E-NACH flows via Digio
-- API-driven integrations with educational platforms for lead intake and approvals
-- Continuous process improvements to raise operational efficiency
-
-## Technology Stack
-
-React.js, React Native, Node.js, Express.js, APIs, AWS, MySQL, PHP
+Protize implemented a lending automation stack centered on a configurable approval engine, CRIF-integrated credit scoring, and fully digitized onboarding flows. We connected KYC, e-sign, e-mandate, and e-NACH workflows via Digio integrations, and improved operational reliability through service-oriented architecture and cloud-native deployment on AWS.
 
 ## What We Delivered
 
-- Automated Loan Approval Engine for faster and consistent decisions
-- CRIF credit-scoring integration embedded in underwriting workflow
-- End-to-end digital onboarding automation using Digio:
+- Automated Loan Approval Engine for faster and more consistent decisions
+- CRIF scoring integration embedded into underwriting workflow
+- End-to-end digital onboarding automation with Digio integrations:
   - KYC
-  - E-Signing
+  - E-Sign
   - E-Mandate
   - E-NACH
-- External partner integrations for lead capture and approval pipeline continuity
-- Process optimization initiatives to improve team-level productivity
+- API-driven partner integrations for lead intake and approval continuity
+- Process optimization initiatives to improve team productivity and throughput
 
-## Outcomes
+## Technologies Stack
+  `React.js`
+  `React Native`
+  `Node.js`
+  `Express.js`
+  `AWS`
+  `MySQL`
+  `PHP`
+  `API Integration`
+  `Loan Approval Engine`
+  `CRIF Integration`
+  `KYC Automation`
+  `E-Sign`
+  `E-Mandate`
+  `E-NACH`
+  `Digio Integration`
+  `Process Automation`
 
-- Improved internal productivity across lending operations
-- Reduced process turnaround time in approval and onboarding flows
+## Results
+
+- Reduced manual effort across lending and onboarding operations
+- Faster turnaround across approval and compliance workflows
 - Stronger underwriting consistency with integrated credit scoring
-- Higher operational scalability through API-first automation architecture
+- Improved scalability and reliability through API-first automation architecture
 
-## Team & Delivery
+## Team & Delivery Scale
 
-Protize worked across architecture, API integration, and product engineering to streamline core lending journeys and build a more scalable, automation-driven operating model.
+Protize worked across architecture, API integration, and product engineering to streamline core lending journeys and establish a scalable, automation-driven operating model.

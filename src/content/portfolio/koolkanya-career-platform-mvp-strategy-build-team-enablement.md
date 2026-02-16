@@ -23,77 +23,58 @@ technologies:
   - "Recruitment"
   - "Hiring"
   - "Coaching"
-challenge: "KoolKanya needed to go from idea to a working beta quickly, while defining a clear technology vision and building a delivery engine that could scale. The challenge included rapid product discovery, MVP scope decisions, and setting up an engineering approach that allowed fast iteration—supported by structured hiring and team enablement."
-solution: "Protize drove product discovery and MVP strategy through sprints and prioritization, then delivered the MVP with a scalable service-oriented architecture. We established CI/CD foundations, guided engineering practices, and supported hiring/recruitment—helping set up the team, onboarding process, and delivery rhythms for sustainable growth."
-results:
-  - metric: "MVP Delivery"
-    value: "Beta launch from idea stage within months"
-  - metric: "Product Discovery"
-    value: "Clear roadmap and prioritized MVP scope"
-  - metric: "Team Enablement"
-    value: "Hiring support + coaching + delivery rhythms"
-  - metric: "Scalability"
-    value: "Microservices-ready foundations on AWS"
+
 gallery:
   - "/images/projects/koolkanya-cover.png"
   - "/images/projects/koolkanya-logo.jpg"
 ---
 
-
-## Client
-
-KoolKanya (Career Growth Platform for Women)
-
-## Engagement Period
-
-Aug 2018 – Jan 2019
-
 ## Overview
 
-Protize collaborated closely with the founder to shape KoolKanya’s technology vision and deliver the beta product from idea stage.  
-The engagement covered product discovery, architecture planning, outsourced team governance, and end-to-end tech hiring support.
+Protize partnered closely with KoolKanya from the idea stage to shape technology vision, define MVP strategy, and execute a beta launch path. The engagement combined product discovery, architecture direction, delivery governance, and hiring enablement to create a foundation for scale.
 
 ## Business Context
 
-KoolKanya needed to move quickly from concept to a usable product while balancing speed, quality, and scalability.  
-The goal was to validate user demand early and launch an extensible foundation for future growth.
+KoolKanya needed to validate user demand quickly while balancing speed, quality, and long-term scalability. The business required a practical approach to move from concept to market with clear scope, disciplined execution, and a team model that could grow post-launch.
 
-## Challenges
+## Challenge
 
-- No production system at project start (idea-stage initiative)
-- Need for rapid MVP definition with limited early-stage resources
-- Requirement to coordinate outsourced engineering with quality standards
-- Need to set up a practical hiring pipeline for long-term scaling
+The initiative began without an existing production system, requiring rapid MVP definition under early-stage constraints. Key challenges included managing outsourced engineering quality, preventing scope drift, and setting up a sustainable hiring pipeline for future scaling.
 
-## Protize Scope
+## Solution
 
-- Founder-level tech vision and roadmap alignment
-- Product discovery and requirement scoping
-- Prototype planning and design sprint facilitation
-- Engineering architecture direction for scalable MVP
-- Outsourced team management and quality governance
-- Tech recruitment support: JD creation, sourcing, interviewing, offer negotiation
-
-## Technology Stack
-
-React, Node.js, Microservices, CI/CD, AWS
+Protize drove sprint-led product discovery, translated insights into a prioritized MVP roadmap, and guided implementation on scalable architecture patterns. In parallel, we established CI/CD and quality controls, managed outsourced delivery rigor, and supported end-to-end recruitment and team onboarding.
 
 ## What We Delivered
 
 - Low-fidelity prototypes and structured design sprint outputs
-- Prioritized product scope for faster, lower-risk MVP execution
-- Managed outsourced team of 10 engineers with delivery controls
-- Established code quality and scalable architecture guidelines
-- Supported end-to-end recruitment processes for tech roles
-- Iterative launch process based on user testing and feedback loops
+- Prioritized MVP scope for faster, lower-risk execution
+- Governance model for outsourced engineering delivery quality
+- Scalable architecture and code quality guidelines
+- CI/CD foundations for reliable iteration and release confidence
+- End-to-end hiring support across role definition, interviews, and onboarding
 
-## Outcomes
+## Technologies Stack
+  `React`
+  `Node.js`
+  `AWS`
+  `Microservices`
+  `CI/CD`
+  `Product Discovery`
+  `Design Sprints`
+  `MVP Development`
+  `Outsourced Team Management`
+  `Recruitment`
+  `Hiring`
+  `Coaching`
 
-- Product discovery and scoping approach saved **~6 months** of development time
-- First version launched in **~2 months** after iterative testing cycles
-- Managed outsourced engineering unit of **10 engineers** with stable delivery rhythm
-- Built a stronger hiring and execution foundation for future scaling
+## Results
 
-## Team & Delivery
+- Product discovery approach saved **~6 months** of potential development effort
+- First usable version launched in **~2 months** through iterative testing cycles
+- Outsourced engineering unit of **10 engineers** managed with stable delivery cadence
+- Stronger hiring, onboarding, and execution foundations for scale
+
+## Team & Delivery Scale
 
 Protize acted as a strategic technology partner, combining product thinking, engineering leadership, and recruitment execution to move KoolKanya from idea to launch-ready platform.

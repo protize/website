@@ -1,27 +1,61 @@
 ---
+import {
+  Share2,
+  X,
+  MessageCircle,
+  Facebook,
+  Twitter,
+  Linkedin,
+  Instagram,
+  Send,
+  Copy,
+} from "lucide-react";
+
 type Props = {
   title: string;
   url?: string;
-  id?: string; // optional: if you want deterministic ids
+  id?: string;
 };
 
 const { title, url: passedUrl, id } = Astro.props as Props;
 
-// ✅ Prefer passed URL. Otherwise use Astro.url (SSR-safe).
 const url = passedUrl ?? Astro.url.href;
-
 const encodedURL = encodeURIComponent(url);
 const encodedTitle = encodeURIComponent(title);
 
-const shareLinks = {
-  whatsapp: `https://wa.me/?text=${encodedTitle}%20${encodedURL}`,
-  facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodedURL}`,
-  twitter: `https://x.com/intent/post?text=${encodedTitle}&url=${encodedURL}`, // ✅ updated
-  linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedURL}`,
-  instagram: `https://www.instagram.com/`, // not real sharing, just link
-};
+const shareItems = [
+  {
+    key: "whatsapp",
+    label: "WhatsApp",
+    href: `https://wa.me/?text=${encodedTitle}%20${encodedURL}`,
+    icon: MessageCircle,
+  },
+  {
+    key: "facebook",
+    label: "Facebook",
+    href: `https://www.facebook.com/sharer/sharer.php?u=${encodedURL}`,
+    icon: Facebook,
+  },
+  {
+    key: "twitter",
+    label: "X",
+    href: `https://x.com/intent/tweet?text=${encodedTitle}&url=${encodedURL}`,
+    icon: Twitter,
+  },
+  {
+    key: "linkedin",
+    label: "LinkedIn",
+    href: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedURL}`,
+    icon: Linkedin,
+  },
+  {
+    key: "instagram",
+    label: "Instagram",
+    href: `https://www.instagram.com/`,
+    icon: Instagram,
+  },
+];
 
-// ✅ unique ids per component instance
 const uid = id ?? `share-${Math.random().toString(36).slice(2, 9)}`;
 
 const ids = {
@@ -37,23 +71,13 @@ const ids = {
 <div class="relative">
   <button
     id={ids.btn}
-    class="inline-flex items-center gap-2 rounded-lg border border-gray-200 px-3 py-1.5 text-sm font-medium text-gray-700 hover:bg-gray-50"
+    class="inline-flex items-center gap-2 rounded-lg border border-primary/20 px-3 py-1.5 text-sm font-medium text-primary hover:bg-primary/10 transition"
     aria-haspopup="dialog"
     aria-controls={ids.modal}
     aria-expanded="false"
     type="button"
   >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      class="h-4 w-4"
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      aria-hidden="true"
-    >
-      <path
-        d="M18 8a3 3 0 10-2.83-4H15a3 3 0 00.17 1L8.91 9.07A3 3 0 007 8a3 3 0 100 6 3 3 0 001.91-.72l6.26 4.07A3 3 0 0015 19a3 3 0 103-3 3 3 0 00-.21-1.1l-6.2-4.02A3 3 0 0012 11a3 3 0 00-.25-1.2l6.04-3.93A3 3 0 0018 8z"
-      ></path>
-    </svg>
+    <Share2 className="h-4 w-4" />
     Share
   </button>
 
@@ -74,62 +98,54 @@ const ids = {
       class="absolute inset-x-4 top-16 mx-auto max-w-sm rounded-2xl bg-white p-5 shadow-xl"
     >
       <div class="mb-4 flex items-center justify-between">
-        <h2 class="text-sm font-semibold text-gray-700">Share this post</h2>
+        <h2 class="text-sm font-semibold text-primary">Share this post</h2>
         <button
           id={ids.close}
-          class="p-1 rounded hover:bg-gray-100"
+          class="p-1 rounded hover:bg-primary/10 text-primary transition"
           aria-label="Close"
           type="button"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            aria-hidden="true"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-              clip-rule="evenodd"></path>
-          </svg>
+          <X className="h-5 w-5" />
         </button>
       </div>
 
       <div class="grid grid-cols-5 gap-3 text-center">
         {
-          Object.entries(shareLinks).map(([name, link]) => (
-            <a
-              href={link}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group flex flex-col items-center gap-1 rounded-lg p-2 hover:bg-gray-50"
-            >
-              <img
-                src={`/images/icons/${name}.png`}
-                alt={name}
-                class="h-6 w-6 group-hover:opacity-80"
-                loading="lazy"
-              />
-              <span class="text-[11px] text-gray-600 capitalize">{name}</span>
-            </a>
-          ))
+          shareItems.map((item) => {
+            const Icon = item.icon;
+            return (
+              <a
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group flex flex-col items-center gap-1 rounded-lg p-2 hover:bg-primary/10 transition"
+                aria-label={`Share on ${item.label}`}
+                title={`Share on ${item.label}`}
+              >
+                <Icon className="h-6 w-6 text-primary group-hover:opacity-80" />
+                <span class="text-[11px] text-primary/80">{item.label}</span>
+              </a>
+            );
+          })
         }
       </div>
 
       <div class="mt-5 flex items-center justify-between gap-3">
         <button
           id={ids.native}
-          class="flex-1 rounded-lg border border-gray-200 px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
+          class="flex-1 inline-flex items-center justify-center gap-2 rounded-lg border border-primary/20 px-3 py-2 text-sm font-medium text-primary hover:bg-primary/10 transition"
           type="button"
         >
+          <Send className="h-4 w-4" />
           Share via device
         </button>
+
         <button
           id={ids.copy}
-          class="flex-1 rounded-lg border border-gray-200 px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
+          class="flex-1 inline-flex items-center justify-center gap-2 rounded-lg border border-primary/20 px-3 py-2 text-sm font-medium text-primary hover:bg-primary/10 transition"
           type="button"
         >
+          <Copy className="h-4 w-4" />
           Copy link
         </button>
       </div>
@@ -175,7 +191,7 @@ const ids = {
           await navigator.share({ title, url });
           closeModal();
         } catch {
-          // user cancelled; ignore
+          // ignore cancel
         }
       } else {
         alert("Sharing not supported on this device.");

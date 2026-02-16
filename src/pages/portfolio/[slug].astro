@@ -102,51 +102,29 @@ const relatedProjects = allProjects
       </FadeIn>
     </div>
 
-    <div class="mt-20">
-      <FadeIn client:load direction="up">
-        <div class="space-y-10">
-          <!-- Challenge -->
-          <div class="">
-            <h2 class="text-3xl font-heading font-bold text-navy mb-6">
-              The Challenge
-            </h2>
-            <p class="text-lg text-gray-700 leading-relaxed">
-              {project.challenge}
-            </p>
-          </div>
-
-          <!-- Solution -->
-          <div class="">
-            <h2 class="text-3xl font-heading font-bold text-navy mb-6">
-              Our Solution
-            </h2>
-            <p class="text-lg text-gray-700 leading-relaxed">
-              {project.solution}
-            </p>
-          </div>
-        </div>
-        <div class="space-y-10 mt-10">
-          <h3 class="text-2xl font-heading font-bold mb-6 text-navy">
-            Technologies Used
-          </h3>
-
-          <div class="flex flex-wrap gap-3">
-            {
-              project.technologies.map((tech) => (
-                <span class="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm font-medium shadow-sm transition">
-                  {tech}
-                </span>
-              ))
-            }
-          </div>
-        </div>
-      </FadeIn>
-    </div>
-
     <!-- Markdown Content -->
     <div class="">
       <div
-        class="leading-8 space-y-6 [&>h2]:mt-10 [&>h2]:text-2xl [&>h2]:font-bold [&>h3]:mt-8 [&>h3]:text-xl [&>p]:text-[17px] [&>ul]:list-disc [&>ul]:pl-6 [&>ol]:list-decimal [&>ol]:pl-6 [&>a]:underline [&_code]:bg-[#24292E] [&_code]:text-white [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:rounded [&_pre]:bg-gray-900 [&_pre]:text-white [&_pre]:p-4 [&_pre]:rounded-xl [&_img]:rounded-xl"
+        class="leading-8 space-y-6
+  [&>h2]:mt-10 [&>h2]:text-2xl [&>h2]:font-bold
+  [&>h3]:mt-8 [&>h3]:text-xl
+  [&>p]:text-[17px]
+  [&>ul]:list-disc [&>ul]:pl-6
+  [&>ol]:list-decimal [&>ol]:pl-6
+  [&>a]:underline
+  [&_code]:bg-primary/10
+  [&_code]:text-primary
+  [&_code]:px-2
+  [&_code]:py-0.5
+  [&_code]:rounded-md
+  [&_code]:font-medium
+  [&_code]:border
+  [&_code]:border-primary/20
+  [&_pre]:bg-gray-900
+  [&_pre]:text-white
+  [&_pre]:p-4
+  [&_pre]:rounded-xl
+  [&_img]:rounded-xl"
       >
         <Content />
       </div>

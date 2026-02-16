@@ -30,30 +30,11 @@ technologies:
   - "Agile Delivery"
   - "Hiring"
   - "Principal Consultancy"
-challenge: "Marks & Spencer needed to modernize enterprise commerce across multiple portfolios while maintaining delivery velocity and reliability at scale. Key challenges included improving frontend performance and developer experience, enabling faster experimentation and feature releases, strengthening observability and platform tooling, and reducing operational cost without compromising customer experience."
-solution: "Protize led an enterprise modernization program covering architecture, platform capabilities, and engineering practices. We upgraded frontend foundations (React/Next.js/TypeScript), improved API and integration strategy (GraphQL + Mesh), strengthened CI/CD and quality engineering (Playwright/Jest), enabled safe experimentation (LaunchDarkly), and improved observability (New Relic). Infrastructure and delivery improvements were supported through Terraform, Azure-based platform work, and collaboration across agile teams with hiring enablement."
-results:
-  - metric: "Delivery Speed"
-    value: "Faster releases and safer experimentation at scale"
-  - metric: "Platform Scalability"
-    value: "Modernized frontend + API foundations for growth"
-  - metric: "Quality Engineering"
-    value: "Improved automation testing and CI/CD reliability"
-  - metric: "Operational Efficiency"
-    value: "Better observability and cost-aware platform improvements"
+
 gallery:
   - "/images/projects/marks_and_spencer_cover.png"
   - "/images/projects/marks_and_spencer_logo.jpg"
 ---
-
-
-## Client
-
-Marks & Spencer (FTSE 100, UK Retail)
-
-## Engagement Period
-
-Sep 2021 – Present
 
 ## Overview
 
@@ -61,43 +42,54 @@ Protize worked with Marks & Spencer to drive enterprise-wide technology moderniz
 
 ## Business Context
 
-M&S is one of the largest retailers in the UK with high digital traffic and complex multi-team engineering operations. The platform required modernization to improve user experience, release confidence, and operational efficiency.
+M&S is one of the largest retailers in the UK, operating at high digital traffic scale with complex multi-team engineering workflows. The platform needed modernization to improve customer experience, release confidence, and operational efficiency.
 
-## Challenges
+## Challenge
 
-- Legacy frontend and platform constraints
-- Inconsistent engineering standards across teams
-- High-scale traffic performance demands
-- Limited experimentation and analytics capabilities
-- Need for better security and delivery reliability
+Marks & Spencer needed to modernize enterprise commerce across multiple portfolios while maintaining delivery velocity and reliability at scale. Key challenges included improving frontend performance and developer experience, enabling faster experimentation and feature releases, strengthening observability and platform tooling, and reducing operational cost without compromising customer experience.
 
-## Protize Scope
+## Solution
 
-- Engineering coaching and agile transformation
-- Multi-portfolio delivery leadership
-- Hiring and capability development support
-- Frontend architecture redesign for enterprise rollout
-- Platform enablement for experimentation, caching, analytics, and security
-
-## Technology Stack
-
-React, TypeScript, Next.js, GraphQL, Mesh, Terraform, CI/CD, Playwright, Jest, Akamai, WCS, Azure, New Relic, LaunchDarkly (LD)
+Protize led an enterprise modernization program covering architecture, platform capabilities, and engineering practices. We upgraded frontend foundations (React/Next.js/TypeScript), improved API and integration strategy (GraphQL + Mesh), strengthened CI/CD and quality engineering (Playwright/Jest), enabled safe experimentation (LaunchDarkly), and improved observability (New Relic). Infrastructure and delivery improvements were supported through Terraform, Azure-based platform work, and collaboration across agile teams with hiring enablement.
 
 ## What We Delivered
 
-- Modern frontend architecture aligned for large-scale rollout
+- Modern frontend architecture aligned for enterprise-scale rollout
+- Improved API integration strategy using GraphQL + Mesh
 - Edge-function oriented delivery approach for performance and cost control
 - Platform standards for experimentation, analytics, caching, and CMS integration
 - Test automation and release hardening with Playwright + Jest + CI/CD
 - Observability and controlled rollout foundations via New Relic and LaunchDarkly
+- Cross-portfolio engineering collaboration, coaching, and hiring enablement
 
-## Outcomes
+## Technologies Stack
+  `React`
+  `TypeScript`
+  `Next.js`
+  `GraphQL`
+  `GraphQL Mesh`
+  `Terraform`
+  `CI/CD`
+  `Playwright`
+  `Jest`
+  `Akamai`
+  `WCS`
+  `Azure`
+  `New Relic`
+  `LaunchDarkly`
+  `Platform Engineering`
+  `Architecture`
+  `Agile Delivery`
+  `Hiring`
+  `Principal Consultancy`
 
-- Architecture designed to support **50M+ page views/month**
-- Cost strategy targeting **up to 50% optimization**
-- Modern stack rollout contributing to **~2x page speed**
-- Stronger platform reliability and experimentation readiness
+## Results
+
+- **Platform Traffic Capacity:** Architecture designed to support 50M+ page views/month.
+- **Page Performance:** Modern stack rollout contributed to ~2x page speed improvement.
+- **Cost Efficiency:** Optimization strategy targeting up to 50% cost reduction.
+- **Release Confidence:** Safer experimentation and stronger reliability through CI/CD + feature flags.
 
 ## Team & Delivery Scale
 
-Protize consulted and led initiatives across platform and product portfolios, coordinating transformation efforts with **100+ engineers**.
+Protize consulted and led initiatives across platform and product portfolios, coordinating transformation efforts with **10+ engineers**.
