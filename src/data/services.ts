@@ -198,7 +198,7 @@ export const services: Service[] = [
     description:
       "Build intelligent systems that automate workflows, enhance customer experiences, and generate actionable insights. We design and deploy AI/ML solutions—from LLM-based assistants and RAG search to custom ML models—integrated securely into your web, mobile, and enterprise platforms.",
     features: [
-      "LLM Apps & Assistants (Chatbots, Copilots)",
+      "LLM Apps & Assistants (Chatbot, Copilots)",
       "RAG (Retrieval-Augmented Generation)",
       "Vector Search & Knowledge Bases",
       "Text Classification & NLP Pipelines",
@@ -235,7 +235,7 @@ export const services: Service[] = [
       "ETL Automation & Data Sync",
       "Alerts, Notifications & ChatOps Bots",
       "Batch Processing & File (CSV/Excel/PDF)",
-      "RPA-style Workflow Automations",
+      "RPA-style Workflow Automation",
       "Python Automation",
     ],
     technologies: [

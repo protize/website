@@ -1,7 +1,6 @@
 ---
 import Navitem from "../components/shared/Navitem.astro";
 import MotionNav from "../components/shared/MotionNav.tsx";
-import Container from "../components/shared/Container.astro";
 import { Image } from "astro:assets";
 
 const navItems = [
@@ -15,7 +14,7 @@ const navItems = [
 ---
 
 <header class="py-2">
-  <Container>
+  <div class="container-custom">
     <nav class="flex justify-between items-center w-full relative">
       <!-- logo -->
       <a href="/" class="flex items-center gap-3">
@@ -34,5 +33,5 @@ const navItems = [
       <!-- Mobile Menu Button: hydrate on the client -->
       <MotionNav client:load navItems={navItems} />
     </nav>
-  </Container>
+  </div>
 </header>
