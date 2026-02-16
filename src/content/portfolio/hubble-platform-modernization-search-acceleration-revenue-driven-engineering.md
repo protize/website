@@ -57,22 +57,23 @@ Protize led a modernization program spanning service decoupling, microservices d
 - Microservices for lead tracking and sales workflow automation
 - Engineering quality rituals: code reviews, pairing, and development guidelines
 
-## Technologies Stack
-  `React`
-  `Angular`
-  `Express`
-  `Python`
-  `Elasticsearch`
-  `Heroku`
-  `Microservices`
-  `CI/CD`
-  `Event Sourcing`
-  `Jest`
-  `Refactoring`
-  `Code Review`
-  `Pair Programming`
-  `Interviewing`
-  `Engineering Guidelines`
+## Technology Stack
+
+`React`
+`Angular`
+`Express`
+`Python`
+`Elasticsearch`
+`Heroku`
+`Microservices`
+`CI/CD`
+`Event Sourcing`
+`Jest`
+`Refactoring`
+`Code Review`
+`Pair Programming`
+`Interviewing`
+`Engineering Guidelines`
 
 ## Results
 

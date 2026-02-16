@@ -30,7 +30,7 @@ technologies:
   - "Security"
   - "Architecture"
   - "Agile Delivery"
-  
+
 gallery:
   - "/images/projects/zoopla_cover.png"
   - "/images/projects/zoopla.avif"
@@ -62,27 +62,28 @@ Protize introduced a modernization roadmap covering architecture, delivery proce
 - A/B testing standards for experimentation and UX optimization
 - Mentorship and onboarding acceleration for engineering capability growth
 
-## Technologies Stack
-  `React`
-  `TypeScript`
-  `Next.js`
-  `GraphQL`
-  `FastAPI`
-  `Serverless`
-  `AWS`
-  `Terraform`
-  `CloudFront`
-  `Docker`
-  `CI/CD`
-  `Apache Spark`
-  `Cypress`
-  `Jest`
-  `A/B Testing`
-  `Observability`
-  `Security`
-  `Architecture`
-  `Agile Delivery`
-  `Hiring`
+## Technology Stack
+
+`React`
+`TypeScript`
+`Next.js`
+`GraphQL`
+`FastAPI`
+`Serverless`
+`AWS`
+`Terraform`
+`CloudFront`
+`Docker`
+`CI/CD`
+`Apache Spark`
+`Cypress`
+`Jest`
+`A/B Testing`
+`Observability`
+`Security`
+`Architecture`
+`Agile Delivery`
+`Hiring`
 
 ## Results
 

@@ -47,32 +47,33 @@ Protize standardized backend service development on Node.js/Express with clear A
 
 - Backend REST APIs across multiple projects, including:
   - Zorbs (UNICEF)
-  - Good Living  
-- Strapi integration for faster content-to-API workflow delivery  
-- AWS architecture refinements for scalability and operational reliability  
-- Razorpay integration for transaction-enabled backend use cases  
-- Data ingestion support, including web crawling pipeline scenarios  
+  - Good Living
+- Strapi integration for faster content-to-API workflow delivery
+- AWS architecture refinements for scalability and operational reliability
+- Razorpay integration for transaction-enabled backend use cases
+- Data ingestion support, including web crawling pipeline scenarios
 - Standardized backend architecture patterns for maintainability and extension
 
-## Technologies Stack
-  `Node.js`
-  `Express.js`
-  `Strapi`
-  `REST APIs`
-  `MySQL`
-  `AWS`
-  `Backend Architecture`
-  `API Development`
-  `Razorpay Integration`
-  `Web Crawling`
-  `Cloud Optimization`
+## Technology Stack
+
+`Node.js`
+`Express.js`
+`Strapi`
+`REST APIs`
+`MySQL`
+`AWS`
+`Backend Architecture`
+`API Development`
+`Razorpay Integration`
+`Web Crawling`
+`Cloud Optimization`
 
 ## Results
 
-- Faster backend delivery cycles through reusable API architecture  
-- Improved reliability and maintainability across multi-project systems  
-- Streamlined CMS/API operations via Strapi integration  
-- Better cloud utilization through AWS architecture optimization  
+- Faster backend delivery cycles through reusable API architecture
+- Improved reliability and maintainability across multi-project systems
+- Streamlined CMS/API operations via Strapi integration
+- Better cloud utilization through AWS architecture optimization
 - Stronger integration readiness for payments and external data workflows
 
 ## Team & Delivery Scale

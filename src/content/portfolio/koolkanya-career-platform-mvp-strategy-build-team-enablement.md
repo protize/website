@@ -54,19 +54,20 @@ Protize drove sprint-led product discovery, translated insights into a prioritiz
 - CI/CD foundations for reliable iteration and release confidence
 - End-to-end hiring support across role definition, interviews, and onboarding
 
-## Technologies Stack
-  `React`
-  `Node.js`
-  `AWS`
-  `Microservices`
-  `CI/CD`
-  `Product Discovery`
-  `Design Sprints`
-  `MVP Development`
-  `Outsourced Team Management`
-  `Recruitment`
-  `Hiring`
-  `Coaching`
+## Technology Stack
+
+`React`
+`Node.js`
+`AWS`
+`Microservices`
+`CI/CD`
+`Product Discovery`
+`Design Sprints`
+`MVP Development`
+`Outsourced Team Management`
+`Recruitment`
+`Hiring`
+`Coaching`
 
 ## Results
 

@@ -61,23 +61,24 @@ Protize implemented a cloud-first TMS architecture with modular services and int
 - OpenAI + WhatsApp-enabled automation for order processing and communication
 - Security, extensibility, and operational visibility improvements for day-to-day execution
 
-## Technologies Stack
-  `React.js`
-  `NestJS`
-  `GraphQL`
-  `PostgreSQL`
-  `Redux.js`
-  `Express.js`
-  `Python`
-  `Cloud TMS`
-  `Logistics Automation`
-  `OpenAI Integration`
-  `WhatsApp Integration`
-  `Google OAuth2`
-  `BorderConnect Integration`
-  `GoMotive Integration`
-  `Trimble Maps Integration`
-  `Team Management`
+## Technology Stack
+
+`React.js`
+`NestJS`
+`GraphQL`
+`PostgreSQL`
+`Redux.js`
+`Express.js`
+`Python`
+`Cloud TMS`
+`Logistics Automation`
+`OpenAI Integration`
+`WhatsApp Integration`
+`Google OAuth2`
+`BorderConnect Integration`
+`GoMotive Integration`
+`Trimble Maps Integration`
+`Team Management`
 
 ## Results
 

@@ -62,26 +62,27 @@ Protize led an enterprise modernization program covering architecture, platform 
 - Observability and controlled rollout foundations via New Relic and LaunchDarkly
 - Cross-portfolio engineering collaboration, coaching, and hiring enablement
 
-## Technologies Stack
-  `React`
-  `TypeScript`
-  `Next.js`
-  `GraphQL`
-  `GraphQL Mesh`
-  `Terraform`
-  `CI/CD`
-  `Playwright`
-  `Jest`
-  `Akamai`
-  `WCS`
-  `Azure`
-  `New Relic`
-  `LaunchDarkly`
-  `Platform Engineering`
-  `Architecture`
-  `Agile Delivery`
-  `Hiring`
-  `Principal Consultancy`
+## Technology Stack
+
+`React`
+`TypeScript`
+`Next.js`
+`GraphQL`
+`GraphQL Mesh`
+`Terraform`
+`CI/CD`
+`Playwright`
+`Jest`
+`Akamai`
+`WCS`
+`Azure`
+`New Relic`
+`LaunchDarkly`
+`Platform Engineering`
+`Architecture`
+`Agile Delivery`
+`Hiring`
+`Principal Consultancy`
 
 ## Results
 

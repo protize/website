@@ -53,19 +53,20 @@ Protize led an end-to-end modernization program covering architecture strategy, 
 - AWS infrastructure optimization for reliability and cost control
 - Technical leadership support for due diligence during fundraising
 
-## Technologies Stack
-  `Django`
-  `Node.js`
-  `AWS`
-  `Redis`
-  `Angular`
-  `Microservices`
-  `Architecture`
-  `Continuous Deployment`
-  `Automation Testing`
-  `Technical Due Diligence`
-  `ERP`
-  `CRM`
+## Technology Stack
+
+`Django`
+`Node.js`
+`AWS`
+`Redis`
+`Angular`
+`Microservices`
+`Architecture`
+`Continuous Deployment`
+`Automation Testing`
+`Technical Due Diligence`
+`ERP`
+`CRM`
 
 ## Results
 

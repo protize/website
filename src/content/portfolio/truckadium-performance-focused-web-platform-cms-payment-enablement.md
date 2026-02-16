@@ -52,17 +52,18 @@ Protize implemented a performance-oriented Next.js platform architecture and exe
 - Thinkific integration for course/content ecosystem alignment
 - State/data flow improvements to support maintainable product evolution
 
-## Technologies Stack
-  `Next.js`
-  `AWS`
-  `MongoDB`
-  `Redux.js`
-  `Custom CMS Development`
-  `Thinkific Integration`
-  `PayPal Integration`
-  `Performance Optimization`
-  `Google PageSpeed`
-  `Web Platform Engineering`
+## Technology Stack
+
+`Next.js`
+`AWS`
+`MongoDB`
+`Redux.js`
+`Custom CMS Development`
+`Thinkific Integration`
+`PayPal Integration`
+`Performance Optimization`
+`Google PageSpeed`
+`Web Platform Engineering`
 
 ## Results
 

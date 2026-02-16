@@ -60,23 +60,24 @@ Protize implemented a lending automation stack centered on a configurable approv
 - API-driven partner integrations for lead intake and approval continuity
 - Process optimization initiatives to improve team productivity and throughput
 
-## Technologies Stack
-  `React.js`
-  `React Native`
-  `Node.js`
-  `Express.js`
-  `AWS`
-  `MySQL`
-  `PHP`
-  `API Integration`
-  `Loan Approval Engine`
-  `CRIF Integration`
-  `KYC Automation`
-  `E-Sign`
-  `E-Mandate`
-  `E-NACH`
-  `Digio Integration`
-  `Process Automation`
+## Technology Stack
+
+`React.js`
+`React Native`
+`Node.js`
+`Express.js`
+`AWS`
+`MySQL`
+`PHP`
+`API Integration`
+`Loan Approval Engine`
+`CRIF Integration`
+`KYC Automation`
+`E-Sign`
+`E-Mandate`
+`E-NACH`
+`Digio Integration`
+`Process Automation`
 
 ## Results
 

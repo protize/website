@@ -54,20 +54,21 @@ Protize designed a scalable operating model for research and portfolio analytics
 - Secure engineering environment with VPN, self-hosted Git, and encrypted storage
 - IT risk assessment support with governance and control improvements
 
-## Technologies Stack
-  `Node.js`
-  `Python`
-  `AI/ML`
-  `Azure`
-  `Data Science`
-  `Investment Models`
-  `Portfolio Review`
-  `Asset Allocation`
-  `Security`
-  `Risk Assessment`
-  `Encrypted Storage`
-  `Self-Hosted Git`
-  `VPN`
+## Technology Stack
+
+`Node.js`
+`Python`
+`AI/ML`
+`Azure`
+`Data Science`
+`Investment Models`
+`Portfolio Review`
+`Asset Allocation`
+`Security`
+`Risk Assessment`
+`Encrypted Storage`
+`Self-Hosted Git`
+`VPN`
 
 ## Results
 
