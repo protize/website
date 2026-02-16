@@ -1,11 +1,10 @@
 ---
-import Container from "../components/shared/Container.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Page Not Found">
   <main class="flex items-center justify-center h-[90vh] mt-10 bg-gray-50">
-    <Container className="text-center">
+    <div class="container-custom text-center">
       <h1 class="text-6xl font-extrabold text-purple-600 mb-3">404</h1>
       <p class="text-lg text-gray-600 mb-6">
         The page you are looking for doesn’t exist or has moved.
@@ -25,6 +24,6 @@ import Layout from "../layouts/Layout.astro";
           Read Blog
         </a>
       </div>
-    </Container>
+    </div>
   </main>
 </Layout>
