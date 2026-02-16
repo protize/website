@@ -3,41 +3,41 @@
     "name": "Abhishek Gupta",
     "role": "CEO & Founder",
     "image": "/images/team-img/abhishek.png",
-    "bio": "Abhishek leads Protize with a focus on building reliable, high-performance digital products. He partners closely with clients to define clear outcomes, drive delivery, and ensure long-term scalability.",
+    "bio": "Principal Software Engineer building scalable, high-performance systems with reliability and clean architecture.",
     "expertise": [
-      "Leadership & Strategy",
-      "Product Delivery",
-      "Digital Transformation"
+      "Technical Leadership",
+      "Distributed Systems",
+      "Production-Grade Architecture"
     ],
     "social": {
       "linkedin": "https://linkedin.com",
-      "twitter": "https://twitter.com",
-      "email": "sarah@protize.com"
+      "github": "https://github.com",
+      "email": "abhishek@protize.com"
     },
     "isLeadership": true
   },
   {
     "name": "Karan Bohra",
-    "role": "Lead Software Engineer",
+    "role": "Senior Software Engineer - Tech Lead",
     "image": "/images/team-img/karan.png",
-    "bio": "Karan architects and delivers scalable backend systems and cloud-native services. He focuses on clean system design, performance, and production reliability across complex projects.",
+    "bio": "Senior Tech Lead building scalable backends with performance and reliability.",
     "expertise": [
-      "System Design",
-      "Cloud Architecture",
-      "DevOps & Reliability"
+      "System Design & Architecture",
+      "Cloud-Native Engineering",
+      "Reliability & DevOps"
     ],
     "social": {
       "linkedin": "https://linkedin.com",
       "github": "https://github.com",
-      "email": "michael@protize.com"
+      "email": "karan@protize.com"
     },
     "isLeadership": true
   },
   {
     "name": "Manil Malhotra",
-    "role": "Lead Software Engineer",
+    "role": "Senior Software Engineer - DevOps",
     "image": "/images/team-img/manil.png",
-    "bio": "Manil leads engineering execution and helps teams ship features with strong code quality. He enjoys mentoring developers and improving performance, testing, and development workflows.",
+    "bio": "DevOps and backend engineer focused on scalable systems, automation, and reliability.",
     "expertise": [
       "Backend Engineering",
       "API Architecture",
@@ -45,8 +45,8 @@
     ],
     "social": {
       "linkedin": "https://linkedin.com",
-      "dribbble": "https://dribbble.com",
-      "email": "emily@protize.com"
+      "github": "https://github.com",
+      "email": "manil@protize.com"
     },
     "isLeadership": true
   },
@@ -54,7 +54,7 @@
     "name": "Ishan Baisoya",
     "role": "Business Analyst",
     "image": "/images/team-img/ishan-baisoya.png",
-    "bio": "Ishan bridges business goals and engineering execution by translating requirements into clear user stories and workflows. He ensures alignment, clarity, and measurable outcomes throughout delivery.",
+    "bio": "Business analyst and finance expert translating requirements into measurable outcomes for business growth.",
     "expertise": [
       "Requirement Analysis",
       "Process Mapping",
@@ -62,15 +62,16 @@
     ],
     "social": {
       "linkedin": "https://linkedin.com",
-      "github": "https://github.com"
+      "github": "https://github.com",
+      "email": "ishan@protize.com"
     },
     "isLeadership": true
   },
   {
     "name": "Jayshrilal Pandit",
-    "role": "Software Developer",
+    "role": "Full Stack Engineer",
     "image": "/images/team-img/jay.png",
-    "bio": "Jay builds modern web applications with a focus on performance and secure integrations. He works across frontend and backend to deliver clean, maintainable features.",
+    "bio": "Full-stack engineer specializing in backend systems, building performant, secure, and maintainable applications.",
     "expertise": ["React & Next.js", "Node.js APIs", "Database Integration"],
     "social": {
       "linkedin": "https://linkedin.com",
@@ -80,13 +81,13 @@
   },
   {
     "name": "Jatin Jayal",
-    "role": "Software Engineer",
+    "role": "Full Stack Engineer",
     "image": "/images/team-img/jatin.png",
-    "bio": "Jatin designs and implements cloud infrastructure that is secure, scalable, and cost-efficient. He supports deployments, observability, and reliability for production systems.",
+    "bio": "Full-stack engineer specializing in Python data analytics, building scalable, insight-driven applications and reliable.",
     "expertise": ["AWS & Azure", "Kubernetes", "Infrastructure Automation"],
     "social": {
       "linkedin": "https://linkedin.com",
-      "twitter": "https://twitter.com"
+      "github": "https://github.com"
     },
     "isLeadership": false
   },
@@ -94,7 +95,7 @@
     "name": "Alok Sharma",
     "role": "Full Stack Developer",
     "image": "/images/team-img/alok.png",
-    "bio": "Alok develops end-to-end features with a strong focus on user experience and engineering quality. He enjoys building responsive UIs and robust APIs for real-world business needs.",
+    "bio": "Full Stack Developer building end-to-end features with clean UI, robust APIs, and strong engineering quality.",
     "expertise": [
       "Full-Stack Development",
       "UI Engineering",
@@ -102,15 +103,15 @@
     ],
     "social": {
       "linkedin": "https://linkedin.com",
-      "behance": "https://behance.com"
+      "github": "https://github.com"
     },
     "isLeadership": false
   },
   {
     "name": "Alankrit Agrawal",
-    "role": "Data Scientist",
+    "role": "Data Analytics Engineer",
     "image": "/images/team-img/alankrit.png",
-    "bio": "Alankrit works on analytics and data-driven automation to help teams make better decisions. He builds pipelines, dashboards, and models that turn raw data into actionable insights.",
+    "bio": "Data Analytics Engineer specializing in Python automation, building pipelines, dashboards, and data products.",
     "expertise": [
       "Data Analytics",
       "Machine Learning",
@@ -126,11 +127,11 @@
     "name": "Sidharth Mehra",
     "role": "UI/UX Designer",
     "image": "/images/team-img/sid.png",
-    "bio": "Sidharth designs clean, accessible interfaces and design systems that scale. He collaborates closely with engineers to ensure consistent UI, great UX, and smooth product experiences.",
+    "bio": "UI/UX Designer creating clean, accessible interfaces and scalable design systems with seamless user experiences.",
     "expertise": ["UI/UX Design", "Design Systems", "Prototyping & Research"],
     "social": {
       "linkedin": "https://linkedin.com",
-      "codepen": "https://codepen.io"
+      "github": "https://github.com"
     },
     "isLeadership": false
   }

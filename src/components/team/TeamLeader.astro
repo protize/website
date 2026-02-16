@@ -35,7 +35,7 @@ const { leadership } = Astro.props;
         </p>
       </div>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {
           leadership.map((member) => (
             <article class="group overflow-hidden rounded-2xl border border-gray-200 bg-white ">
@@ -64,7 +64,7 @@ const { leadership } = Astro.props;
                 </div>
               </div>
 
-              <div class="px-6 pt-16 pb-6 text-center">
+              <div class="px-4 pt-16 pb-6 text-center">
                 <h3 class="text-xl font-heading font-bold text-navy transition-colors group-hover:text-primary">
                   {member.name}
                 </h3>
