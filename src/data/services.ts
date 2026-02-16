@@ -237,9 +237,9 @@ export const services: Service[] = [
       "Background Jobs & Scheduling",
       "ETL Automation & Data Sync",
       "Alerts, Notifications & ChatOps Bots",
-      "Batch Processing & File Pipelines (CSV/Excel/PDF)",
+      "Batch Processing & File (CSV/Excel/PDF)",
       "RPA-style Workflow Automations",
-      "DevOps Automation (Build/Deploy/Infra Tasks)",
+      "Python Automation",
     ],
     technologies: [
       "Node.js",
