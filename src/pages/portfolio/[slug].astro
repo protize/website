@@ -39,9 +39,9 @@ const relatedProjects = allProjects
 <Layout title={project.title}>
   <section class="py-10 md:py-20">
     <div class="container-custom">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <FadeIn client:load direction="up" delay={0.1}>
+      <FadeIn client:load direction="up">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
             <div class="inline-block mb-4">
               <span
                 class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold"
@@ -49,9 +49,7 @@ const relatedProjects = allProjects
                 {project.category}
               </span>
             </div>
-          </FadeIn>
 
-          <FadeIn client:load direction="up" delay={0.2}>
             <h1
               class="text-3xl md:text-4xl font-heading font-bold text-navy leading-tight mb-6"
             >
@@ -117,9 +115,21 @@ const relatedProjects = allProjects
               }
               <a href="/contact-us" class="btn-primary">
                 Start Similar Project
+                <svg
+                  class="inline-block w-6 h-6 ml-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                </svg>
               </a>
             </div>
-          </FadeIn>
+          </div>
 
           <!-- RIGHT IMAGE -->
           <div class="relative">
@@ -130,7 +140,7 @@ const relatedProjects = allProjects
             />
           </div>
         </div>
-      </div>
+      </FadeIn>
     </div>
 
     <div class="container-custom mt-20">
@@ -209,6 +219,19 @@ const relatedProjects = allProjects
             <div class="text-center mt-12">
               <a href="/portfolio" class="btn-primary">
                 View All Projects
+                <svg
+                  class="inline-block w-6 h-6 ml-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 7l5 5m0 0l-5 5m5-5H6"
+                  />
+                </svg>
               </a>
             </div>
           </FadeIn>

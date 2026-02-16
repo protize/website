@@ -69,9 +69,9 @@
   },
   {
     "name": "Jayshrilal Pandit",
-    "role": "Full Stack Engineer",
+    "role": "Senior Software Engineer",
     "image": "/images/team-img/jay.png",
-    "bio": "Full-stack engineer specializing in backend systems, building performant, secure, and maintainable applications.",
+    "bio": "Backend specialist building performant, secure, maintainable applications with strong frontend support.",
     "expertise": ["React & Next.js", "Node.js APIs", "Database Integration"],
     "social": {
       "linkedin": "https://linkedin.com",
@@ -81,9 +81,9 @@
   },
   {
     "name": "Jatin Jayal",
-    "role": "Full Stack Engineer",
+    "role": "Senior Software Engineer",
     "image": "/images/team-img/jatin.png",
-    "bio": "Full-stack engineer specializing in Python data analytics, building scalable, insight-driven applications and reliable.",
+    "bio": "Python data analytics specialist building scalable, insight-driven, reliable applications for business decisions.",
     "expertise": ["AWS & Azure", "Kubernetes", "Infrastructure Automation"],
     "social": {
       "linkedin": "https://linkedin.com",
@@ -93,9 +93,9 @@
   },
   {
     "name": "Alok Sharma",
-    "role": "Full Stack Developer",
+    "role": "Software Engineer",
     "image": "/images/team-img/alok.png",
-    "bio": "Full Stack Developer building end-to-end features with clean UI, robust APIs, and strong engineering quality.",
+    "bio": "Builds end-to-end features with clean UI, robust APIs, and strong engineering quality at scale.",
     "expertise": [
       "Full-Stack Development",
       "UI Engineering",
@@ -109,7 +109,7 @@
   },
   {
     "name": "Alankrit Agrawal",
-    "role": "Data Analytics Engineer",
+    "role": "Software Engineer",
     "image": "/images/team-img/alankrit.png",
     "bio": "Data Analytics Engineer specializing in Python automation, building pipelines, dashboards, and data products.",
     "expertise": [
@@ -125,9 +125,9 @@
   },
   {
     "name": "Sidharth Mehra",
-    "role": "UI/UX Designer",
+    "role": "Software Engineer",
     "image": "/images/team-img/sid.png",
-    "bio": "UI/UX Designer creating clean, accessible interfaces and scalable design systems with seamless user experiences.",
+    "bio": "UI/UX specialist designing clean, accessible interfaces and scalable design systems for seamless experiences.",
     "expertise": ["UI/UX Design", "Design Systems", "Prototyping & Research"],
     "social": {
       "linkedin": "https://linkedin.com",
