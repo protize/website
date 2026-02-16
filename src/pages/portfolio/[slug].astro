@@ -40,8 +40,8 @@ const relatedProjects = allProjects
   <section class="py-10 md:py-20">
     <div class="container-custom">
       <FadeIn client:load direction="up">
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
-          <div>
+        <div class="flex">
+          <div class="w-3/4">
             <div class="inline-block mb-4">
               <span
                 class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold"
@@ -89,14 +89,6 @@ const relatedProjects = allProjects
                 </p>
                 <p class="font-semibold text-navy">{project.duration}</p>
               </div>
-              <div>
-                <p class="text-xs uppercase tracking-wide text-gray-400 mb-1">
-                  Team
-                </p>
-                <p class="font-semibold text-navy">
-                  {project.teamSize} members
-                </p>
-              </div>
             </div>
 
             <!-- Buttons -->
@@ -132,11 +124,11 @@ const relatedProjects = allProjects
           </div>
 
           <!-- RIGHT IMAGE -->
-          <div class="relative">
+          <div class="relative w-1/4">
             <img
               src={project.featuredImage}
               alt={project.title}
-              class="rounded-3xl w-[70%] object-cover"
+              class="w-[70%] max-w-xl rounded-3xl object-cover"
             />
           </div>
         </div>

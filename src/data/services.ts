@@ -44,11 +44,15 @@ export const services: Service[] = [
     ],
     technologies: [
       "React",
-      "Vue.js",
       "Next.js",
       "Astro",
-      "Node.js",
+      "Framer Motion",
       "Tailwind CSS",
+      "Bootstrap",
+      "Node.js",
+      "Nestjs",
+      "Express",
+      "PostgreSQL",
     ],
   },
   {
@@ -70,14 +74,7 @@ export const services: Service[] = [
       "Real-time Synchronization",
       "App Store Deployment",
     ],
-    technologies: [
-      "React Native",
-      "Flutter",
-      "Swift",
-      "Kotlin",
-      "Firebase",
-      "Redux",
-    ],
+    technologies: ["React Native", "Flutter", "Swift", "Kotlin", "Redux"],
   },
   {
     id: "cloud-solutions",
