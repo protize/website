@@ -8,7 +8,7 @@ featuredImage: "/images/logos/101-ways.avif"
 shortDescription: "Protize supports 101 Ways with client-facing technology due diligence, technical assessments, and strategic recruitment across high-impact consulting engagements."
 liveUrl: "" # optional - add if available
 githubUrl: "" # optional - add if available
-duration: "Ongoing / Multi-engagement"
+duration: "Ongoing"
 teamSize: 2
 technologies:
   - "Code Review"
@@ -48,15 +48,16 @@ Protize established a practical due diligence and assessment model covering arch
 - Senior talent assessments from Principal to Senior Developer levels
 - Ongoing advisory collaboration with delivery and hiring stakeholders
 
-## Technology Stack
- `Code Review`
- `Hiring Enablement`
- `Delivery Advisory`
- `Technical Due Diligence`
- `System Architecture Review`
- `Interview Frameworks`
- `Senior/Lead Hiring`
- `Assessment Design`
+## Technology Stack & Services
+
+`Code Review`
+`Hiring Enablement`
+`Delivery Advisory`
+`Technical Due Diligence`
+`System Architecture Review`
+`Interview Frameworks`
+`Senior/Lead Hiring`
+`Assessment Design`
 
 ## Results
 

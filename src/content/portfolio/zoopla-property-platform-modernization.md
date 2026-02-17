@@ -96,4 +96,4 @@ Protize introduced a modernization roadmap covering architecture, delivery proce
 
 ## Team & Delivery Scale
 
-Protize consulted and led initiatives across numerous projects with **60+ engineers**, aligning architecture modernization, agile execution, quality systems, and platform best practices.
+Protize consulted and led initiatives across numerous projects with **10+ engineers**, aligning architecture modernization, agile execution, quality systems, and platform best practices.
