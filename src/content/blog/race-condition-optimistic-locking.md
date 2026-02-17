@@ -2,7 +2,7 @@
 title: "Avoiding Duplicate Operations: How We Solved a Race Condition in Our Payment System"
 description: "How we used optimistic locking to prevent duplicate operations and maintain data accuracy under high concurrency."
 pubDate: "2026-02-10"
-author: "Protize Engineering"
+author: "Protize Team"
 tags: ["engineering", "concurrency", "optimistic-locking", "distributed-systems", "backend"]
 category: "Engineering"
 coverImage: "https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170"

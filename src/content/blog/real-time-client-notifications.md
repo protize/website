@@ -2,7 +2,7 @@
 title: "Real-Time Client Notifications: How Telegram Alerts Improved Our Uptime and Account Balance Monitoring"
 description: "How Protize uses Telegram bots to deliver real-time alerts for client account balance updates, failed transactions, and server downtime — improving response time and client trust across IT consulting and payment gateway operations."
 pubDate: 2025-10-17
-author: "Protize Engineering"
+author: "Protize Team"
 tags: ["notifications", "telegram", "account-balance", "monitoring", "real-time", "payment-gateway", "it-consulting"]
 category: "Infrastructure"
 featured: true
