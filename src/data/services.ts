@@ -31,7 +31,7 @@ export const services: Service[] = [
     shortDescription:
       "Custom, responsive websites built with modern technologies for optimal performance and user experience.",
     description:
-      "We create stunning, high-performance websites tailored to your business needs. Our team leverages cutting-edge technologies to build scalable, responsive web applications that engage users and drive results. From simple landing pages to complex web platforms, we deliver solutions that exceed expectations.",
+      "We build websites that inspire trust, clearly communicate your value, and drive real growth—combining smart strategy, strong design, and scalable engineering from launch to long-term success. Every page is crafted to turn visitors into confident customers.",
     features: [
       "Responsive Design for All Devices",
       "SEO-Optimized Architecture",
@@ -63,7 +63,7 @@ export const services: Service[] = [
     shortDescription:
       "Native and cross-platform mobile applications for iOS and Android that users love.",
     description:
-      "Transform your ideas into powerful mobile applications. We specialize in creating intuitive, feature-rich mobile apps for iOS and Android platforms. Whether you need a native app or cross-platform solution, our experienced developers ensure seamless performance and exceptional user experience.",
+      "We build high-performance iOS and Android apps with end-to-end ownership—from strategy and architecture to development, testing, and release—delivering secure, scalable, user-focused products that boost trust, engagement, and long-term value.",
     features: [
       "Native iOS & Android Development",
       "Cross-Platform Solutions",
