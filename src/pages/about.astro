@@ -5,9 +5,9 @@ import AboutStory from "../components/about/AboutStory.astro";
 import AboutMissVision from "../components/about/AboutMissVision.astro";
 import AboutValue from "../components/about/AboutValue.astro";
 import Timeline from "../components/about/Timeline.astro";
-import CTASection from "../components/home/CTASection.astro";
 import AboutChoose from "../components/about/AboutChoose.astro";
-import FaqService from "../components/services/FaqService.astro";
+import CTASection from "../components/shared/CTASection.astro";
+import FaqSection from "../components/shared/FaqSection.astro";
 ---
 
 <Layout title="About Us">
@@ -33,7 +33,7 @@ import FaqService from "../components/services/FaqService.astro";
   <AboutChoose />
 
   <!-- Faq Section -->
-  <FaqService
+  <FaqSection
     title="Frequently Asked"
     highlight="Questions"
     items={[

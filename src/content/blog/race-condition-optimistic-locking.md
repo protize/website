@@ -107,7 +107,6 @@ Before deploying, we stress-tested the new logic to ensure it handled real-world
 
 ---
 
-![Server and code reflection in glass panels symbolizing concurrency safety](https://images.unsplash.com/photo-1605902711622-cfb43c4437d1?q=80&w=1600&auto=format&fit=crop)
 
 ### Final Thoughts
 

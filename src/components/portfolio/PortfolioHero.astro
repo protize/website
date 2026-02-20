@@ -3,7 +3,7 @@ import FadeIn from "../animations/FadeIn";
 ---
 
 <section
-  class="relative py-10 lg:py-20 flex items-center justify-center overflow-hidden"
+  class="relative py-10 lg:pt-20 flex items-center justify-center overflow-hidden"
 >
   <div class="container-custom relative z-10">
     <div class="text-center">
@@ -15,11 +15,30 @@ import FadeIn from "../animations/FadeIn";
           <span class="gradient-text mt-2">Portfolio</span>
         </h1>
 
-        <p class="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+        <p class="mb-6 text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
           Discover how we've helped businesses transform through innovative IT
           solutions. Each project represents our commitment to excellence and
           client success.
         </p>
+
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="#work" class="btn-primary">
+            Our Projects
+            <svg
+              class="inline-block w-6 h-6 ml-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+          </a>
+          <a href="/about" class="btn-secondary"> Know More </a>
+        </div>
       </FadeIn>
     </div>
   </div>

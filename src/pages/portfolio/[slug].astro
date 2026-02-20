@@ -3,7 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import FadeIn from "../../components/animations/FadeIn";
 import { getCollection } from "astro:content";
 import ProjectCard from "../../components/portfolio/ProjectCard.astro";
-import CTASection from "../../components/home/CTASection.astro";
+import CTASection from "../../components/shared/CTASection.astro";
 
 export async function getStaticPaths() {
   const portfolioEntries = await getCollection("portfolio");

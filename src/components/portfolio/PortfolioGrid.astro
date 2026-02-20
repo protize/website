@@ -19,7 +19,7 @@ const { categories = ["All"], projects = [] } = Astro.props as Props;
 const safeCategories = ["All", ...categories.filter((c) => c && c !== "All")];
 ---
 
-<section class="section-padding relative">
+<section id="work" class="section-padding relative">
   <div class="container-custom relative">
     <FadeIn client:load direction="up">
       <div class="text-center mb-10 md:mb-12">
