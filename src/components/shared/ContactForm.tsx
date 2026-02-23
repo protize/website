@@ -250,7 +250,7 @@ export default function ContactForm() {
                 <textarea
                     ref={messageRef}
                     id="message"
-                    rows={7}
+                    rows={5}
                     onBlur={() => handleBlur("message")}
                     className={`w-full px-4 py-3 rounded-lg border ${errors.message ? 'border-red-400' : 'border-gray-300'} focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none`}
                     placeholder="Tell us about your project..."
