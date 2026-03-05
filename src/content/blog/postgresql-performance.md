@@ -5,7 +5,7 @@ pubDate: 2026-05-02
 author: "Protize Team"
 tags: ["postgresql", "database", "performance", "sql", "optimization"]
 category: "Database"
-coverImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2034&auto=format&fit=crop"
+coverImage: "https://images.unsplash.com/photo-1667372459510-55b5e2087cd0?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 coverAlt: "Abstract data flow representing database performance"
 ---
 

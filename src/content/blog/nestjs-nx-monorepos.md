@@ -7,6 +7,7 @@ tags: ["nestjs", "nx", "monorepo", "backend", "architecture", "javascript"]
 category: "Backend"
 coverImage: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop"
 coverAlt: "Code on a computer screen representing backend development"
+featured: true
 ---
 
 Managing complex backends can quickly become a headache as your application grows. What starts as a clean codebase slowly turns into a tangled mess of duplicated types, inconsistent tooling, and CI pipelines that take 20 minutes to run even for a one-line change. Teams slow down. Bugs increase. Onboarding new developers takes weeks.

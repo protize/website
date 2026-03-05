@@ -5,7 +5,7 @@ pubDate: 2026-05-10
 author: "Protize Team"
 tags: ["nestjs", "websockets", "real-time", "notifications", "socket.io", "react"]
 category: "Backend"
-coverImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop"
+coverImage: "https://images.unsplash.com/photo-1685381949388-bb0402fbe133?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 coverAlt: "Glowing network nodes representing real-time communication"
 ---
 
